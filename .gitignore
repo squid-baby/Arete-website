@@ -1,0 +1,26 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local Claude Code settings
+.claude/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Netlify
+.netlify/
+
+# Node (if a build pipeline is added later)
+node_modules/
+
+# Local env / secrets
+.env
+.env.*
+
+# Backups
+*.bak
+*.orig

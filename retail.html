@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- ===== SEO: Primary tags ===== -->
+  <title>The Retail Room — Wellness Apothecary | Areté Float + Wellness</title>
+  <meta name="description" content="A carefully curated retail apothecary inside Areté Float + Wellness in Carrboro, NC. Body care, candles, books, and gifts from independent makers." />
+  <link rel="canonical" href="https://floatarete.com/retail.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Areté Float + Wellness" />
+  <meta property="og:title" content="The Retail Room | Areté Float + Wellness" />
+  <meta property="og:description" content="A small, curated wellness apothecary inside Areté in Carrboro, NC." />
+  <meta property="og:url" content="https://floatarete.com/retail.html" />
+  <meta property="og:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Retail Room | Areté Float + Wellness" />
+  <meta name="twitter:description" content="A small, curated wellness apothecary inside Areté in Carrboro, NC." />
+  <meta name="twitter:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Site-wide LocalBusiness schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://floatarete.com/#business",
+    "name": "Areté Float + Wellness",
+    "url": "https://floatarete.com",
+    "logo": "https://floatarete.com/assets/arete-logo.png",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "telephone": "+19196369899",
+    "email": "TheTeam@FloatArete.com",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.90975173817612,
+      "longitude": -79.07104206138438
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/floatarete/",
+      "https://www.facebook.com/floatarete",
+      "https://www.linkedin.com/company/106779704"
+    ]
+  }
+  </script>
+
+  <!-- ===== Page-specific schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "@id": "https://floatarete.com/retail.html",
+    "name": "The Retail Room at Areté",
+    "description": "A small, curated wellness apothecary inside Areté Float + Wellness — body care, candles, books, and gifts from independent makers.",
+    "url": "https://floatarete.com/retail.html",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "parentOrganization": {
+      "@id": "https://floatarete.com/#business"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "telephone": "+19196369899",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="retail.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!--
+    =====================================================================
+    HOW TO UPDATE THE CAROUSEL
+    =====================================================================
+    Edit the JSON below to swap, add, or remove the items shown in the
+    "In the shop this week" carousel. No code changes needed — just keep
+    the JSON valid (double-quoted keys & strings, commas between objects).
+
+    Each item supports:
+      name         — product name (required)
+      category     — small label tag, e.g. "Apothecary"
+      description  — one-sentence description
+      meta         — short note shown below (e.g. "Made in Portugal · $48")
+      image        — optional path or URL to a product photo.
+                     Leave "" to render a styled placeholder card.
+
+    Tip: you can paste this JSON straight into a CMS or Google Sheet
+    export later if you want non-developers to update it.
+    =====================================================================
+  -->
+  <script type="application/json" id="retail-items">
+  [
+    {
+      "name": "Linen tea towels",
+      "category": "Home",
+      "description": "Stonewashed linen, woven by a single family outside Porto. Three colorways, restocked irregularly.",
+      "meta": "Made in Portugal · $32",
+      "image": ""
+    },
+    {
+      "name": "Hand-thrown mug",
+      "category": "Ceramics",
+      "description": "Speckled stoneware from a one-woman studio outside Asheville. Each one a little different.",
+      "meta": "North Carolina · $46",
+      "image": ""
+    },
+    {
+      "name": "Cedar & moss tincture",
+      "category": "Apothecary",
+      "description": "Small-batch room mist made twenty miles up the road. Smells like a wet forest at dusk.",
+      "meta": "Local · $28",
+      "image": ""
+    },
+    {
+      "name": "Vitamin C serum",
+      "category": "Skincare",
+      "description": "A formulator-led serum we've put on our own faces for six months and counting. Stable, gentle, undramatic.",
+      "meta": "Jen's pick · $68",
+      "image": ""
+    },
+    {
+      "name": "Beeswax taper set",
+      "category": "Light",
+      "description": "Slow-burn pure beeswax tapers from a Vermont apiary. The honey smell is real.",
+      "meta": "Set of 4 · $24",
+      "image": ""
+    },
+    {
+      "name": "Bath soak — magnesium & rose",
+      "category": "Apothecary",
+      "description": "The soak we send guests home with after contrast and float. Quietly miraculous before sleep.",
+      "meta": "House blend · $22",
+      "image": ""
+    },
+    {
+      "name": "Pocket field notebook",
+      "category": "Curiosities",
+      "description": "Letterpress-stamped, sewn-bound, the kind of small thing that disappears into a coat pocket.",
+      "meta": "Sewn by hand · $18",
+      "image": ""
+    },
+    {
+      "name": "Resurfacing toner",
+      "category": "Skincare",
+      "description": "Currently on the bench. Lactic acid, low concentration, formulator-respected. Ask Jen.",
+      "meta": "New this week · $54",
+      "image": ""
+    }
+  ]
+  </script>
+</head>
+<body>
+  <div class="star-field" id="starField"></div>
+  <div class="whimsy-orb orb-1"></div>
+  <div class="whimsy-orb orb-2"></div>
+  <div class="whimsy-orb orb-3"></div>
+  <div class="mode-flash" id="modeFlash"></div>
+  <div id="root"></div>
+  <script>
+    (function(){
+      const sf = document.getElementById('starField');
+      for (let i = 0; i < 100; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const sz = Math.random() * 2 + 1;
+        s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;--dur:${Math.random()*3+2}s;--delay:${Math.random()*3}s;--min-o:${Math.random()*0.3+0.1};--max-o:${Math.random()*0.5+0.4};`;
+        sf.appendChild(s);
+      }
+      const toggle = document.getElementById('modeToggle');
+      const flash = document.getElementById('modeFlash');
+      toggle.addEventListener('click', () => {
+        flash.classList.add('on');
+        setTimeout(() => { window.location.href = 'whimsy_retail.html'; }, 250);
+      });
+    })();
+  </script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="retail.jsx"></script>
+</body>
+</html>

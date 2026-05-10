@@ -1,0 +1,19 @@
+# Areté Float + Wellness — robots.txt
+# https://floatarete.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block lightbox / query-string parameters that create duplicate URLs
+Disallow: /*?lightbox=
+Disallow: /*?fullscreen=
+Disallow: /*?image=
+
+# Don't index Wix artifacts even if they're somehow still live
+Disallow: /copy-of-*
+
+# AI crawlers — explicitly allowed (uncomment to block any specific one)
+# User-agent: GPTBot
+# Disallow: /
+
+Sitemap: https://floatarete.com/sitemap.xml

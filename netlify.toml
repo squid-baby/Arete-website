@@ -1,0 +1,50 @@
+# Areté Float + Wellness — Netlify config
+# Static publish: project root.
+[build]
+  publish = "."
+  # No build step — pages ship as plain HTML/CSS/JSX-via-Babel.
+  command = ""
+
+# ---- Security & SEO headers -----------------------------------------------
+# Address gaps flagged in the floatarete.com SEO audit
+# (Wix-controlled previously; we own them now.)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # CSP intentionally permissive for React+Babel CDN. Tighten when the site
+    # moves to a build step that ships pre-compiled JS.
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://aretefloattank.floathelm.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src https://aretefloattank.floathelm.com; frame-ancestors 'self';"
+
+# Long cache for assets (fonts, images, CSS — they're versioned via filename).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML aggressively — we want SEO/content updates to land fast.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"

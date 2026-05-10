@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- ===== SEO: Primary tags ===== -->
+  <title>Blog | Areté Float + Wellness | Carrboro, NC</title>
+  <meta name="description" content="Field notes from Areté Float + Wellness in Carrboro, NC — long reads on floating, infrared sauna, contrast therapy, massage, and the rituals of restoration." />
+  <link rel="canonical" href="https://floatarete.com/blog.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Areté Float + Wellness" />
+  <meta property="og:title" content="Blog | Areté Float + Wellness" />
+  <meta property="og:description" content="Long reads, short observations, and product spotlights on float, sauna, contrast therapy, massage, and the science of rest." />
+  <meta property="og:url" content="https://floatarete.com/blog.html" />
+  <meta property="og:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Areté Float + Wellness" />
+  <meta name="twitter:description" content="Long reads, short observations, and product spotlights on float, sauna, contrast therapy, massage, and the science of rest." />
+  <meta name="twitter:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Site-wide LocalBusiness schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://floatarete.com/#business",
+    "name": "Areté Float + Wellness",
+    "url": "https://floatarete.com",
+    "logo": "https://floatarete.com/assets/arete-logo.png",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "telephone": "+19196369899",
+    "email": "TheTeam@FloatArete.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.90975173817612,
+      "longitude": -79.07104206138438
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/floatarete/",
+      "https://www.facebook.com/floatarete",
+      "https://www.linkedin.com/company/106779704"
+    ]
+  }
+  </script>
+
+  <!-- ===== Per-page Blog schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://floatarete.com/blog#blog",
+    "name": "Areté Field Notes",
+    "url": "https://floatarete.com/blog.html",
+    "publisher": { "@id": "https://floatarete.com/#business" },
+    "description": "Long reads and short observations on floating, sauna, contrast therapy, massage, and the rituals of restoration."
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="blog.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!--
+    =====================================================================
+    HOW TO UPDATE THE BLOG POSTS
+    =====================================================================
+    Edit the JSON below to add, remove, or rearrange blog posts.
+    Order = display order (newest first).
+
+    Each post supports:
+      title       — full post title (required)
+      excerpt     — 1–2 sentence preview (required)
+      category    — used for filter chips + sidebar topic counts
+      tag         — extra label shown on featured post (optional)
+      author      — e.g. "Jen, founder"
+      date        — display date, e.g. "July 12, 2025"
+      archive     — month/year bucket for sidebar archive list, e.g. "July 2025"
+      readTime    — e.g. "5 min read"
+      href        — destination URL for the post (e.g. blog/cold-therapy.html)
+      image       — image path or full URL; leave "" for placeholder card
+      imageAlt    — accessibility alt text. NEVER use the filename.
+
+    First item in the list is treated as the FEATURED post (large card).
+    =====================================================================
+  -->
+  <script type="application/json" id="blog-posts">
+  [
+    {
+      "title": "How Contrast Therapy Boosts Health and Recovery",
+      "excerpt": "Contrast therapy basics — how alternating between a cold plunge and a sauna trains your nervous system, drives circulation, and quietly resets your day.",
+      "category": "Contrast Therapy",
+      "tag": "Recovery",
+      "author": "Jen, founder",
+      "date": "July 12, 2025",
+      "archive": "July 2025",
+      "readTime": "6 min read",
+      "href": "blog/how-contrast-therapy-boosts-health-and-recovery.html",
+      "image": "",
+      "imageAlt": "The contrast therapy room at Areté — cold plunge tub beside the cedar sauna"
+    },
+    {
+      "title": "Product Spotlight: Jinfiniti — Wellness at a Cellular Level",
+      "excerpt": "An honest look at the supplement line we've been testing for six months — what NAD+ optimization actually feels like, and who it isn't for.",
+      "category": "Skincare & Supplements",
+      "tag": "Spotlight",
+      "author": "Jen, founder",
+      "date": "March 18, 2025",
+      "archive": "March 2025",
+      "readTime": "8 min read",
+      "href": "blog/jinfiniti-wellness-at-a-cellular-level.html",
+      "image": "",
+      "imageAlt": "Jinfiniti supplement bottles arranged on a stoneware tray"
+    },
+    {
+      "title": "The Benefits of Cold Therapy for Inflammation",
+      "excerpt": "Cold therapy might be the key to reducing inflammation, boosting your immune system, and finding mental clarity. The research, the protocol, and what to expect your first time in.",
+      "category": "Contrast Therapy",
+      "author": "The Areté team",
+      "date": "October 4, 2024",
+      "archive": "October 2024",
+      "readTime": "7 min read",
+      "href": "blog/the-benefits-of-cold-therapy-for-inflammation.html",
+      "image": "",
+      "imageAlt": "Close-up of ice and water in the Areté cold plunge"
+    },
+    {
+      "title": "Massage Benefits: Wellness with Our Expert Therapists",
+      "excerpt": "Massage isn't a luxury — it's a recovery protocol. Our therapists on what changes after one session, three sessions, and why we built dedicated rooms for it.",
+      "category": "Massage",
+      "author": "The Areté team",
+      "date": "September 22, 2024",
+      "archive": "September 2024",
+      "readTime": "5 min read",
+      "href": "blog/massage-benefits-with-our-expert-therapists.html",
+      "image": "",
+      "imageAlt": "Hands of an Areté massage therapist mid-session in the warm-lit treatment room"
+    },
+    {
+      "title": "Floatation what?",
+      "excerpt": "You may have first heard about float tanks from Stranger Things, but they've been around since the 1950s — and the benefits are deeper, weirder, and more useful than the show suggested.",
+      "category": "Floating",
+      "author": "Jen, founder",
+      "date": "March 16, 2017",
+      "archive": "March 2017",
+      "readTime": "4 min read",
+      "href": "blog/floatation-what.html",
+      "image": "assets/Floatroom_watercolor_wide.png",
+      "imageAlt": "Watercolor illustration of an open float tank glowing blue in a warm, candlelit room"
+    },
+    {
+      "title": "Spring Snow",
+      "excerpt": "If you're anything like us, this time of year you have to remind yourself the good comes from the bad — pollen, sneezes, longer days, and the slow return of warmth.",
+      "category": "Notes",
+      "author": "Jen, founder",
+      "date": "March 29, 2017",
+      "archive": "March 2017",
+      "readTime": "3 min read",
+      "href": "blog/spring-snow.html",
+      "image": "",
+      "imageAlt": "Pollen-dusted blossoms after a late spring snow"
+    }
+  ]
+  </script>
+</head>
+<body class="light">
+  <div id="root"></div>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="blog.jsx"></script>
+</body>
+</html>

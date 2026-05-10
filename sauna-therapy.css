@@ -1,0 +1,274 @@
+/* ─────────────────────────── SAUNA THEME OVERRIDES ─────────────────────────── */
+/* Adds warm terracotta accents on top of styles.css base, plus sauna-specific
+   layouts (6-benefit grid, hero placeholder, pairs-with cards). */
+
+:root, body.light {
+  --candle: #C8633A;        /* warm terracotta */
+  --candle-soft: #F6E7D9;   /* hot-cream wash */
+  --accent2: #D89A4E;       /* warm amber for secondary glints */
+}
+
+body.whimsy {
+  --candle: #E89A65;        /* glowing ember in dark mode */
+  --candle-soft: rgba(232, 154, 101, 0.18);
+  --accent2: #F2C79A;
+}
+
+/* Stage gradient — replace the cool blue/purple wash with warm hearth glow */
+.stage {
+  background:
+    radial-gradient(ellipse 900px 600px at 20% -10%, rgba(200, 99, 58, 0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 100%, rgba(216, 154, 78, 0.08), transparent 60%),
+    #EFE7DD !important;
+}
+body.whimsy .stage {
+  background:
+    radial-gradient(ellipse 900px 600px at 20% -10%, rgba(232, 154, 101, 0.22), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 100%, rgba(242, 199, 154, 0.12), transparent 60%),
+    #1B0F08 !important;
+}
+
+/* ─────────────────────────── Hero photo (replaces float's video) */
+.hero__visual--sauna {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+.sauna-hero-img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 40px 60px rgba(120, 60, 30, 0.28))
+          drop-shadow(0 12px 24px rgba(120, 60, 30, 0.18));
+  animation: sauna-hero-glow 6s ease-in-out infinite;
+}
+@keyframes sauna-hero-glow {
+  0%, 100% {
+    filter: drop-shadow(0 40px 60px rgba(120, 60, 30, 0.28))
+            drop-shadow(0 12px 24px rgba(120, 60, 30, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 40px 60px rgba(200, 99, 58, 0.34))
+            drop-shadow(0 12px 24px rgba(200, 99, 58, 0.22));
+  }
+}
+
+.hero--mobile .sauna-hero-img { max-width: 320px; }
+
+.hero__stat-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  background: rgba(200, 99, 58, 0.08);
+  border: 1px solid rgba(200, 99, 58, 0.16);
+  border-radius: 999px;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-70);
+}
+.hero__stat-row strong {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--candle);
+  margin-right: 2px;
+}
+.hero__stat-row span { display: inline-flex; align-items: center; gap: 6px; }
+.hero__stat-divider {
+  width: 1px; height: 14px;
+  background: rgba(13, 27, 62, 0.18);
+}
+
+/* ─────────────────────────── 6-benefit grid */
+.benefits--grid6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 48px !important;
+  border-top: 1px solid var(--ink-14);
+  border-bottom: 1px solid var(--ink-14);
+}
+.benefits--grid6.benefits--mobile {
+  grid-template-columns: 1fr;
+  padding: 32px 24px !important;
+}
+.benefit--cell {
+  padding: 36px 32px;
+  border-right: 1px solid var(--ink-14);
+  border-bottom: 1px solid var(--ink-14);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: background .4s ease;
+}
+.benefit--cell:nth-child(3n) { border-right: none; }
+.benefit--cell:nth-last-child(-n+3) { border-bottom: none; }
+.benefits--grid6.benefits--mobile .benefit--cell {
+  border-right: none;
+}
+.benefits--grid6.benefits--mobile .benefit--cell:last-child { border-bottom: none; }
+.benefit--cell:hover { background: rgba(200, 99, 58, 0.04); }
+
+.benefit--cell .benefit__num {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--candle);
+  letter-spacing: 0.04em;
+}
+.benefit--cell h3 {
+  margin: 0;
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  width: auto !important;
+}
+.benefit--cell p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-70);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.benefit--cell .benefit__metric {
+  margin-top: 4px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--candle);
+  font-weight: 600;
+}
+
+/* ─────────────────────────── Pairs-with cards (inside Deepen tab) */
+.pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+.deepen--mobile .pairs-grid { grid-template-columns: 1fr; }
+.pair-card {
+  background: var(--bg);
+  border: 1px solid var(--ink-14);
+  border-radius: 10px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .35s ease;
+  position: relative;
+}
+.pair-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--candle);
+  box-shadow: 0 14px 30px rgba(200, 99, 58, 0.12);
+}
+.pair-card__kicker {
+  font-size: 9.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--candle);
+}
+.pair-card h4 {
+  margin: 0;
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+}
+.pair-card p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-70);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.pair-card__link {
+  margin-top: 6px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  transition: gap .25s ease;
+}
+.pair-card:hover .pair-card__link { gap: 12px; color: var(--candle); }
+
+/* ─────────────────────────── Pricing — single hero plan + supporting cards */
+.pricing--sauna .pricing__grid {
+  grid-template-columns: 1.2fr 1fr 1fr;
+}
+.pricing--sauna.pricing--mobile .pricing__grid {
+  grid-template-columns: 1fr;
+}
+.plan--feature {
+  background: linear-gradient(135deg, var(--ink) 0%, #2A1810 100%);
+  color: var(--bg);
+  border-color: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.plan--feature::before {
+  content: "";
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 99, 58, 0.32), transparent 70%);
+  pointer-events: none;
+}
+.plan--feature h3,
+.plan--feature .plan__price,
+.plan--feature p,
+.plan--feature .plan__link {
+  position: relative;
+}
+.plan--feature .plan__link { border-color: rgba(255,255,255,0.3); }
+
+/* ─────────────────────────── Final CTA orb — warm */
+.final {
+  background: linear-gradient(135deg, var(--ink) 0%, #1F1108 100%) !important;
+}
+.final__orb {
+  background: radial-gradient(closest-side, rgba(200, 99, 58, 0.32), transparent 70%) !important;
+}
+.final h2 em { color: var(--candle) !important; }
+
+/* ─────────────────────────── Hero meta sauna stat chips */
+.hero__meta--sauna {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero__meta--sauna .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--ink-14);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+.hero__meta--sauna .chip strong {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--candle);
+}

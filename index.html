@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- ===== SEO: Primary tags ===== -->
+  <title>Float Tank, Sauna &amp; Massage | Areté Float + Wellness | Carrboro, NC</title>
+  <meta name="description" content="Areté is a wellness sanctuary in Carrboro, NC offering floatation therapy, infrared sauna, contrast therapy, massage, halotherapy, and red light therapy." />
+  <link rel="canonical" href="https://floatarete.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Areté Float + Wellness" />
+  <meta property="og:title" content="Areté Float + Wellness | Carrboro, NC" />
+  <meta property="og:description" content="A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage in Carrboro, NC." />
+  <meta property="og:url" content="https://floatarete.com/" />
+  <meta property="og:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Areté Float + Wellness | Carrboro, NC" />
+  <meta name="twitter:description" content="A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage in Carrboro, NC." />
+  <meta name="twitter:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Site-wide LocalBusiness schema (reuse on every page) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://floatarete.com/#business",
+    "name": "Areté Float + Wellness",
+    "url": "https://floatarete.com",
+    "logo": "https://floatarete.com/assets/arete-logo.png",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "telephone": "+19196369899",
+    "email": "TheTeam@FloatArete.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.90975173817612,
+      "longitude": -79.07104206138438
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/floatarete/",
+      "https://www.facebook.com/floatarete",
+      "https://www.linkedin.com/company/106779704"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floatation Therapy" }, "price": "89", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Infrared Sauna" }, "price": "45", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contrast Therapy" }, "price": "25", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Massage" }, "price": "95", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Red Light Therapy" }, "price": "35", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Halotherapy" }, "price": "30", "priceCurrency": "USD" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="home.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body class="light">
+  <div class="star-field" id="starField"></div>
+  <div class="whimsy-orb orb-1"></div>
+  <div class="whimsy-orb orb-2"></div>
+  <div class="whimsy-orb orb-3"></div>
+  <div class="mode-flash" id="modeFlash"></div>
+
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="home.jsx"></script>
+</body>
+</html>

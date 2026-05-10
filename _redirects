@@ -1,0 +1,102 @@
+# =============================================================================
+# Areté Float + Wellness — Netlify _redirects
+# =============================================================================
+# Place this file at the ROOT of your Netlify publish folder.
+# For this project that means the project root (no separate /public or /dist).
+#
+# Format: /old-path  /new-path  301
+# Netlify reads this file automatically on deploy. No further configuration.
+#
+# To test after launch, visit any old URL — e.g. floatarete.com/about-us —
+# it should land on the new equivalent.
+# =============================================================================
+
+
+# ---------- Core pages (Wix → new) ----------
+/about-us                                    /about.html                    301
+/pricing                                     /memberships.html              301
+/faq                                         /faq.html                     301
+/blog-1                                      /blog.html                    301
+/shop                                        /retail.html                  301
+/forum                                       /                             301
+
+
+# ---------- Service pages ----------
+/what-is-floating                            /float.html                   301
+/first-time-floater                          /float.html                   301
+/before-you-float                            /float.html                   301
+/before-you-sauna                            /sauna.html                   301
+/new-why-sauna                               /sauna.html                   301
+/coldplunge                                  /Contrast-Therapy.html        301
+/massage                                     /Massage.html                 301
+/meetourtherapists                           /about.html                   301
+
+
+# ---------- Pages to kill (Wix duplicates / artifacts / typos) ----------
+/copy-of-why-sauna-why-infrared              /sauna.html                   301
+/copy-of-part-time-experience-creato         /                             301
+/covid-19-we-re-keeing-you-safe              /                             301
+
+
+# ---------- Blog posts ----------
+# Stale Wix single-post URLs → redirect to blog index until individual posts ship.
+/single-post/2017/03/29/spring-snow                                        /blog.html                                                  301
+/single-post/2017/03/16/floatation-what                                    /blog.html                                                  301
+/single-post/how-contrast-therapy-boosts-health-and-recovery               /blog/how-contrast-therapy-boosts-health-and-recovery.html  301
+/single-post/jinfiniti-wellness-at-a-cellular-level                        /blog/jinfiniti-wellness-at-a-cellular-level.html           301
+/single-post/the-benefits-of-cold-therapy-for-inflammation                 /blog/the-benefits-of-cold-therapy-for-inflammation.html    301
+/single-post/experience-the-ultimate-in-wellness-with-our-massage-therapist-massage-benefits  /blog/massage-benefits-with-our-expert-therapists.html  301
+
+
+# ---------- Blog: Wix paginated index ----------
+/blog-1/page/*                               /blog.html                    301
+/blog-1/archive/*                            /blog.html                    301
+/blog-1/tags/*                               /blog.html                    301
+
+
+# ---------- Workshops & events ----------
+# 19 historical event pages live in the old sitemap. Per the audit, these go
+# to /events if you build it; for now redirect anything matching to /blog.
+/workshops-events                            /blog.html                    301
+/event/*                                     /blog.html                    301
+
+
+# ---------- Misc Wix housekeeping ----------
+/terms-conditions                            /                             301
+/waivers-intake-forms                        /memberships.html             301
+/work-with-us                                /                             301
+
+
+# ---------- Internal moves (prototype → production) ----------
+/home                                        /                             301
+/home.html                                   /                             301
+/index.html                                  /                             301
+
+
+# ---------- Extensionless aliases (kept for inbound links / shareability) ----------
+# 301s, not rewrites — the .html URL is the canonical. Sending users to the
+# canonical avoids duplicate-content noise in Search Console.
+/about                                       /about.html                   301
+/faq                                         /faq.html                     301
+/blog                                        /blog.html                    301
+/packages                                    /packages.html                301
+/memberships                                 /memberships.html             301
+/float                                       /float.html                   301
+/sauna                                       /sauna.html                   301
+/halotherapy                                 /halotherapy.html             301
+/red-light                                   /red_light.html               301
+/red_light                                   /red_light.html               301
+/contrast-therapy                            /Contrast-Therapy.html        301
+/Contrast-Therapy                            /Contrast-Therapy.html        301
+/massage-therapy                             /Massage.html                 301
+/Massage                                     /Massage.html                 301
+/retail                                      /retail.html                  301
+
+
+# =============================================================================
+# Optional safety net:
+# Catch any remaining Wix URLs we missed and send to homepage rather than 404.
+# UNCOMMENT only after verifying every important URL above is mapped, since
+# this rule is greedy and will swallow anything not matched higher up.
+# =============================================================================
+# /*    /    301

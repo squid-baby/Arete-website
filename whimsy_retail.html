@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Retail Room — The House of Arete</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/magic.css">
+<link rel="stylesheet" href="styles/room-card.css">
+</head>
+<body>
+  <a class="room-back" href="whimsy.html">← back to the house</a>
+
+  <div class="room-page" data-screen-label="Retail Room">
+    <article class="room-card">
+      <h1 class="room-title">
+        <span class="ornament">❦</span>
+        Retail Room
+        <span class="ornament">❦</span>
+      </h1>
+
+      <figure class="room-photo">
+        <!-- Drop your retail-room photo here when ready -->
+        <div class="placeholder">retail room photograph</div>
+        <!-- <img src="../assets/rooms/retail.jpg" alt="The Retail Room" /> -->
+      </figure>
+
+      <p class="room-tagline">Apothecary curiosities, hand-picked treasures, and small rituals to take home.</p>
+
+      <div class="room-icons">
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z"/>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"/>
+            </svg>
+          </span>
+          <span class="label">Curated Goods</span>
+        </div>
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3v3M15 3v3M9 17v4M15 17v4"/>
+              <rect x="7" y="6" width="10" height="11" rx="2"/>
+              <path d="M10 10h4M10 13h4"/>
+            </svg>
+          </span>
+          <span class="label">Tinctures &amp; Oils</span>
+        </div>
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>
+            </svg>
+          </span>
+          <span class="label">Small Rituals</span>
+        </div>
+      </div>
+
+      <div class="embers" id="embers"></div>
+    </article>
+  </div>
+
+<script src="scripts/embers.js"></script>
+<script>
+  seedEmbers(document.getElementById('embers'), 22);
+</script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+/* ===== Massage page additions ===== */
+
+/* ---------- Hero placeholder visual ---------- */
+.massage-hero-slot {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(124, 107, 138, 0.05) 0px,
+      rgba(124, 107, 138, 0.05) 1px,
+      rgba(124, 107, 138, 0.10) 1px,
+      rgba(124, 107, 138, 0.10) 12px
+    ),
+    linear-gradient(180deg, var(--candle-soft) 0%, var(--paper) 100%);
+  border: 1px dashed rgba(124, 107, 138, 0.35);
+}
+.massage-hero-slot__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  padding: 32px;
+}
+.massage-hero-slot__mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+}
+.massage-hero-slot__line {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--candle);
+  max-width: 280px;
+}
+.massage-hero-slot__sub {
+  font-size: 12px;
+  color: var(--ink-55);
+  letter-spacing: 0.06em;
+  font-style: italic;
+  font-family: var(--display-font);
+}
+.massage-hero-slot__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--ink-30);
+  display: grid;
+  place-items: center;
+  color: var(--candle);
+  margin-bottom: 4px;
+}
+
+/* ---------- Philosophy ("how we work") ---------- */
+.philosophy {
+  padding: 96px 48px 80px;
+  position: relative;
+}
+.philosophy--mobile { padding: 64px 24px; }
+.philosophy__head {
+  max-width: 1100px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.philosophy__kicker {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-bottom: 16px;
+}
+.philosophy__head h2 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.philosophy__head h2 em {
+  color: var(--candle);
+  font-style: italic;
+}
+
+.philosophy__grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink-14);
+  border-bottom: 1px solid var(--ink-14);
+}
+.philosophy--mobile .philosophy__grid {
+  grid-template-columns: 1fr;
+}
+
+.phil-cell {
+  padding: 40px 36px;
+  border-right: 1px solid var(--ink-14);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.phil-cell:last-child { border-right: none; }
+.philosophy--mobile .phil-cell {
+  border-right: none;
+  border-bottom: 1px solid var(--ink-14);
+  padding: 32px 4px;
+}
+.philosophy--mobile .phil-cell:last-child { border-bottom: none; }
+
+.phil-cell__mark {
+  font-family: var(--display-font);
+  font-style: italic;
+  color: var(--candle);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+.phil-cell h3 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.phil-cell p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-70);
+}
+
+.philosophy__pull {
+  max-width: 760px;
+  margin: 56px auto 0;
+  text-align: center;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+.philosophy__pull::before,
+.philosophy__pull::after {
+  content: "·";
+  display: inline-block;
+  margin: 0 14px;
+  color: var(--candle);
+  font-style: normal;
+}
+
+/* ---------- Flow (shape of a session) ---------- */
+.flow {
+  padding: 110px 48px 120px;
+  border-top: 1px solid var(--ink-14);
+  background: var(--bg);
+  position: relative;
+}
+.flow--mobile { padding: 72px 24px 80px; }
+
+.flow__head {
+  max-width: 760px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+.flow--mobile .flow__head { margin-bottom: 48px; text-align: left; }
+
+.flow__kicker {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--candle);
+  margin-bottom: 18px;
+}
+.flow__head h2 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.flow__head h2 em {
+  font-style: italic;
+  color: var(--candle);
+}
+.flow--mobile .flow__head h2 { font-size: 32px; }
+
+.flow__lede {
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-70);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flow--mobile .flow__lede { font-size: 14px; margin-left: 0; margin-right: 0; }
+
+/* horizontal rail (desktop) */
+.flow__rail {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  padding-top: 36px;
+}
+.flow--mobile .flow__rail {
+  grid-template-columns: 1fr;
+  gap: 36px;
+  padding-top: 8px;
+  padding-left: 22px;
+}
+
+.flow__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 41px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ink-14) 8%, var(--ink-14) 92%, transparent);
+}
+.flow--mobile .flow__line {
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  width: 1px;
+  height: auto;
+  background: linear-gradient(180deg, transparent, var(--ink-14) 8%, var(--ink-14) 92%, transparent);
+}
+
+.flow-step {
+  position: relative;
+  padding-top: 22px;
+  opacity: 0;
+  animation: flowFade 0.7s ease forwards;
+}
+@keyframes flowFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.flow--mobile .flow-step { padding-top: 0; padding-left: 0; }
+
+.flow-step__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--candle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flow-step__dot span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--candle);
+}
+.flow--mobile .flow-step__dot {
+  left: -22px;
+  top: 4px;
+}
+
+.flow-step__min {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--candle);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.flow-step h4 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.flow-step p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-70);
+  max-width: 240px;
+}
+.flow--mobile .flow-step p { max-width: none; }
+
+.flow__pull {
+  max-width: 720px;
+  margin: 80px auto 0;
+  text-align: center;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.flow--mobile .flow__pull {
+  margin-top: 48px;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* ---------- (legacy) Modalities — kept for any stale refs ---------- */
+.modalities {
+  padding: 96px 48px;
+  border-top: 1px solid var(--ink-14);
+  background: var(--bg);
+}
+.modalities--mobile { padding: 64px 24px; }
+.modalities__head {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.modalities--mobile .modalities__head {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.modalities__title {
+  flex: 1;
+}
+.modalities__kicker {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-bottom: 14px;
+}
+.modalities__title h2 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.modalities__note {
+  max-width: 320px;
+  font-size: 14px;
+  color: var(--ink-70);
+  line-height: 1.6;
+  font-style: italic;
+  font-family: var(--display-font);
+}
+
+.modalities__grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-14);
+  border: 1px solid var(--ink-14);
+}
+.modalities--mobile .modalities__grid {
+  grid-template-columns: 1fr;
+}
+
+.modality {
+  background: var(--bg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+  transition: background 0.4s ease;
+}
+.modality:hover {
+  background: var(--paper);
+}
+.modality__num {
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--candle);
+  letter-spacing: 0.06em;
+}
+.modality h4 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.modality p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-70);
+}
+.modality__tag {
+  margin-top: auto;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  padding-top: 16px;
+}
+
+/* ---------- Meet the Therapists ---------- */
+.therapists {
+  padding: 110px 48px 100px;
+  border-top: 1px solid var(--ink-14);
+  background: var(--bg);
+}
+.therapists--mobile {
+  padding: 64px 24px 56px;
+}
+.therapists__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+.therapists--mobile .therapists__head {
+  margin-bottom: 40px;
+}
+.therapists__kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-bottom: 16px;
+}
+.therapists__head h2 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.therapists__head h2 em {
+  font-style: italic;
+  color: var(--candle);
+}
+.therapists__lede {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-70);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.therapists__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--ink-14);
+  border: 1px solid var(--ink-14);
+}
+.therapists--mobile .therapists__grid {
+  grid-template-columns: 1fr;
+}
+
+.therapist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 32px;
+  background: var(--paper);
+  min-width: 0;
+}
+.therapists--mobile .therapist-card {
+  gap: 20px;
+  padding: 28px;
+}
+.therapists--mobile .therapist-card__photo {
+  width: 100%;
+  max-width: 280px;
+}
+@media (max-width: 900px) {
+  .therapists__grid { grid-template-columns: 1fr; }
+  .therapist-card { padding: 24px; gap: 20px; }
+}
+.therapist-card__photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
+  background:
+    repeating-linear-gradient(135deg, rgba(13,27,62,0.04) 0 12px, rgba(13,27,62,0.08) 12px 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  color: var(--ink-55);
+  letter-spacing: 0.1em;
+  text-align: center;
+  overflow: hidden;
+}
+.therapist-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.therapist-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+.therapist-card__name {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.therapist-card__role {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--candle);
+  margin-bottom: 16px;
+}
+.therapist-card__bio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-70);
+  margin: 0 0 16px;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.therapist-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.therapist-card__tags li {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-70);
+  padding: 6px 10px;
+  border: 1px solid var(--ink-14);
+  border-radius: 999px;
+}
+.therapist-card__creds {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-55);
+  padding-top: 14px;
+  border-top: 1px solid var(--ink-14);
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+}
+.therapist-card__book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 12px 16px;
+  border: 1px solid var(--ink);
+  align-self: center;
+  transition: background 160ms ease, color 160ms ease;
+}
+.therapist-card__book:hover,
+.therapist-card__book:focus-visible {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* ---------- Hero visual size adjust on massage page ---------- */
+.hero__visual--massage {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.hero__visual--massage .massage-hero-slot {
+  flex: 1;
+  max-width: 460px;
+  min-height: 480px;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Massage Room — The House of Arete</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/magic.css">
+<link rel="stylesheet" href="styles/room-card.css">
+</head>
+<body>
+  <a class="room-back" href="whimsy.html">← back to the house</a>
+
+  <div class="room-page" data-screen-label="Massage Room">
+    <article class="room-card">
+      <h1 class="room-title">
+        <span class="ornament">❦</span>
+        Massage Room
+        <span class="ornament">❦</span>
+      </h1>
+
+      <figure class="room-photo">
+        <div class="placeholder">massage room photograph</div>
+      </figure>
+
+      <p class="room-tagline">Slow hands, warm stones, and the long exhale you've been waiting for.</p>
+
+      <div class="room-icons">
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 14c4-4 14-4 18 0"/>
+              <path d="M3 18c4-4 14-4 18 0"/>
+              <path d="M5 9c2-2 12-2 14 0"/>
+            </svg>
+          </span>
+          <span class="label">Deep Tissue</span>
+        </div>
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 5v2M12 17v2M5 12h2M17 12h2M7 7l1.5 1.5M15.5 15.5L17 17M7 17l1.5-1.5M15.5 8.5L17 7"/>
+            </svg>
+          </span>
+          <span class="label">Hot Stones</span>
+        </div>
+        <div class="room-icon">
+          <span class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3c-3 4-3 7 0 10 3-3 3-6 0-10z"/>
+              <path d="M12 13v8"/>
+            </svg>
+          </span>
+          <span class="label">Aromatherapy</span>
+        </div>
+      </div>
+
+      <div class="embers" id="embers"></div>
+    </article>
+  </div>
+
+<script src="scripts/embers.js"></script>
+<script>seedEmbers(document.getElementById('embers'), 22);</script>
+</body>
+</html>

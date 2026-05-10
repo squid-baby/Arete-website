@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- ===== SEO: Primary tags ===== -->
+  <title>Halotherapy (Salt Therapy) | Areté Float + Wellness</title>
+  <meta name="description" content="Dry salt halotherapy sessions in Carrboro, NC. A clean, drug-free way to support respiratory health, skin clarity, and seasonal allergy relief." />
+  <link rel="canonical" href="https://floatarete.com/halotherapy.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Areté Float + Wellness" />
+  <meta property="og:title" content="Halotherapy | Areté Float + Wellness" />
+  <meta property="og:description" content="Dry salt halotherapy in Carrboro, NC for respiratory health, skin, and allergies." />
+  <meta property="og:url" content="https://floatarete.com/halotherapy.html" />
+  <meta property="og:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Halotherapy | Areté Float + Wellness" />
+  <meta name="twitter:description" content="Dry salt halotherapy in Carrboro, NC for respiratory health, skin, and allergies." />
+  <meta name="twitter:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Site-wide LocalBusiness schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://floatarete.com/#business",
+    "name": "Areté Float + Wellness",
+    "url": "https://floatarete.com",
+    "logo": "https://floatarete.com/assets/arete-logo.png",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "telephone": "+19196369899",
+    "email": "TheTeam@FloatArete.com",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.90975173817612,
+      "longitude": -79.07104206138438
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/floatarete/",
+      "https://www.facebook.com/floatarete",
+      "https://www.linkedin.com/company/106779704"
+    ]
+  }
+  </script>
+
+  <!-- ===== Page-specific schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Halotherapy",
+    "serviceType": "Dry salt halotherapy (salt therapy)",
+    "provider": {
+      "@id": "https://floatarete.com/#business"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Carrboro"
+      },
+      {
+        "@type": "City",
+        "name": "Chapel Hill"
+      },
+      {
+        "@type": "City",
+        "name": "Durham"
+      }
+    ],
+    "description": "Pharmaceutical-grade dry salt aerosol sessions. A drug-free, non-invasive support for respiratory health, skin clarity, and seasonal allergies.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "30.00",
+      "availability": "https://schema.org/InStock",
+      "url": "https://floatarete.com/halotherapy.html"
+    }
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================================================
+       Halotherapy — page-local styles
+       ========================================================= */
+
+    /* Salt radial section ----------------------------------- */
+    .ht-radial {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .timeline--mobile .ht-radial {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .ht-radial__diagram {
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 12px 30px -20px rgba(13,27,62,0.18);
+    }
+
+    .ht-radial__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ht-quad {
+      --quad-color: rgb(232,155,142);
+      text-align: left;
+      cursor: pointer;
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-left: 3px solid transparent;
+      border-radius: 10px;
+      padding: 14px 18px;
+      transition: border-color .35s ease, background .35s ease, transform .35s ease;
+      font-family: inherit;
+      color: inherit;
+    }
+    .ht-quad:hover { transform: translateY(-1px); }
+    .ht-quad.is-on {
+      border-left-color: var(--quad-color);
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--quad-color) 9%, var(--paper)) 0%,
+        var(--paper) 80%);
+    }
+    .ht-quad__head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .ht-quad__title {
+      font-family: var(--display-font);
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: var(--quad-color);
+      line-height: 1;
+    }
+    .ht-quad__kicker {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+    }
+    .ht-quad__job {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink, #0d1b3e);
+      margin: 0;
+      max-width: 44ch;
+    }
+
+    /* Citations row ----------------------------------------- */
+    .rl-cite {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--ink-70, rgba(13,27,62,0.6));
+    }
+    .rl-cite sup { margin-right: 4px; }
+
+    /* Pricing — single add-on card -------------------------- */
+    .ht-pricing {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .ht-pricing__card {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 14px;
+      padding: 36px 40px 28px;
+      box-shadow: 0 12px 30px -20px rgba(13,27,62,0.18);
+    }
+    .pricing--mobile .ht-pricing__card {
+      padding: 28px 24px 22px;
+    }
+    .ht-pricing__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .pricing--mobile .ht-pricing__row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .ht-pricing__name {
+      font-family: var(--display-font);
+      font-weight: 400;
+      font-size: clamp(28px, 2.4vw, 36px);
+      line-height: 1.1;
+      margin: 0 0 8px;
+      color: var(--ink, #0d1b3e);
+      letter-spacing: -0.01em;
+    }
+    .ht-pricing__sub {
+      font-size: 14.5px;
+      line-height: 1.6;
+      max-width: 46ch;
+      margin: 0;
+      color: var(--ink-70, rgba(13,27,62,0.75));
+    }
+    .ht-pricing__price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      color: var(--candle, #E89B8E);
+      line-height: 1;
+    }
+    .ht-pricing__plus {
+      font-family: var(--display-font);
+      font-size: 56px;
+      line-height: 1;
+    }
+    .ht-pricing__num {
+      font-size: 88px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .ht-pricing__foot {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--ink-14, rgba(13,27,62,0.1));
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+    }
+    .ht-pricing__sep { opacity: 0.4; }
+    .ht-pricing__small {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--ink-70, rgba(13,27,62,0.6));
+    }
+
+    /* Add-on callout ---------------------------------------- */
+    .rl-addon {
+      max-width: 1100px;
+      margin: 56px auto 0;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 32px 36px;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--candle, #E89B8E) 10%, var(--paper)) 0%,
+        var(--paper) 70%);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 14px;
+    }
+    .pricing--mobile .rl-addon {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .rl-addon__mark {
+      font-family: var(--display-font);
+      font-size: 56px;
+      line-height: 1;
+      color: var(--candle, #E89B8E);
+      text-align: center;
+    }
+    .rl-addon__kicker {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+      margin-bottom: 10px;
+    }
+    .rl-addon__body h3 {
+      font-family: var(--display-font);
+      font-weight: 400;
+      font-size: clamp(22px, 2vw, 28px);
+      line-height: 1.2;
+      margin: 0 0 10px;
+      color: var(--ink, #0d1b3e);
+      letter-spacing: -0.01em;
+    }
+    .rl-addon__body p {
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 60ch;
+      margin: 0 0 18px;
+      color: var(--ink-70, rgba(13,27,62,0.75));
+    }
+    .rl-addon__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+    .rl-addon__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink, #0d1b3e);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink-14, rgba(13,27,62,0.2));
+      padding-bottom: 4px;
+      transition: color .25s, border-color .25s;
+    }
+    .rl-addon__link:hover {
+      color: var(--candle, #E89B8E);
+      border-color: var(--candle, #E89B8E);
+    }
+
+    /* Tab body — allow multiple <p> + citation row ---------- */
+    .tabs__body p + p {
+      margin-top: 14px;
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="star-field" id="starField"></div>
+  <div class="whimsy-orb orb-1"></div>
+  <div class="whimsy-orb orb-2"></div>
+  <div class="whimsy-orb orb-3"></div>
+  <div class="mode-flash" id="modeFlash"></div>
+  <div id="root"></div>
+  <script>
+    (function(){
+      const sf = document.getElementById('starField');
+      for (let i = 0; i < 100; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const sz = Math.random() * 2 + 1;
+        s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;--dur:${Math.random()*3+2}s;--delay:${Math.random()*3}s;--min-o:${Math.random()*0.3+0.1};--max-o:${Math.random()*0.5+0.4};`;
+        sf.appendChild(s);
+      }    })();
+  </script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="halotherapy.jsx"></script>
+</body>
+</html>

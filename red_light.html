@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- ===== SEO: Primary tags ===== -->
+  <title>Red Light Therapy in Carrboro, NC | Areté Float + Wellness</title>
+  <meta name="description" content="Clinical-grade red and near-infrared light therapy in Carrboro, NC for skin, recovery, and cellular repair. Targeted wavelengths in a private suite." />
+  <link rel="canonical" href="https://floatarete.com/red_light.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Areté Float + Wellness" />
+  <meta property="og:title" content="Red Light Therapy | Areté Float + Wellness" />
+  <meta property="og:description" content="Clinical-grade red and near-infrared light therapy in Carrboro, NC." />
+  <meta property="og:url" content="https://floatarete.com/red_light.html" />
+  <meta property="og:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Twitter ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Red Light Therapy | Areté Float + Wellness" />
+  <meta name="twitter:description" content="Clinical-grade red and near-infrared light therapy in Carrboro, NC." />
+  <meta name="twitter:image" content="https://floatarete.com/assets/arete-logo.png" />
+
+  <!-- ===== Site-wide LocalBusiness schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://floatarete.com/#business",
+    "name": "Areté Float + Wellness",
+    "url": "https://floatarete.com",
+    "logo": "https://floatarete.com/assets/arete-logo.png",
+    "image": "https://floatarete.com/assets/arete-logo.png",
+    "telephone": "+19196369899",
+    "email": "TheTeam@FloatArete.com",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "213 E. Braxton Foushee St",
+      "addressLocality": "Carrboro",
+      "addressRegion": "NC",
+      "postalCode": "27510",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.90975173817612,
+      "longitude": -79.07104206138438
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/floatarete/",
+      "https://www.facebook.com/floatarete",
+      "https://www.linkedin.com/company/106779704"
+    ]
+  }
+  </script>
+
+  <!-- ===== Page-specific schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Red Light Therapy",
+    "serviceType": "Red and near-infrared photobiomodulation",
+    "provider": {
+      "@id": "https://floatarete.com/#business"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Carrboro"
+      },
+      {
+        "@type": "City",
+        "name": "Chapel Hill"
+      },
+      {
+        "@type": "City",
+        "name": "Durham"
+      }
+    ],
+    "description": "Targeted red (660nm) and near-infrared (850nm) light therapy in a private suite. Supports skin, recovery, mitochondrial health, and cellular repair.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "35.00",
+      "availability": "https://schema.org/InStock",
+      "url": "https://floatarete.com/red_light.html"
+    }
+  }
+  </script>
+
+  <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =========================================================
+       Red Light Therapy — page-local styles
+       ========================================================= */
+
+    /* Wavelengths section ----------------------------------- */
+    .rl-wave {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .timeline--mobile .rl-wave {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .rl-wave__diagram {
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 12px 30px -20px rgba(13,27,62,0.18);
+    }
+
+    .rl-wave__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rl-band {
+      --band-color: rgb(206,68,78);
+      text-align: left;
+      cursor: pointer;
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-left: 3px solid transparent;
+      border-radius: 10px;
+      padding: 18px 22px;
+      transition: border-color .35s ease, background .35s ease, transform .35s ease;
+      font-family: inherit;
+      color: inherit;
+    }
+    .rl-band:hover { transform: translateY(-1px); }
+    .rl-band.is-on {
+      border-left-color: var(--band-color);
+      background: linear-gradient(90deg,
+        color-mix(in srgb, var(--band-color) 7%, var(--paper)) 0%,
+        var(--paper) 80%);
+    }
+    .rl-band__head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+    .rl-band__nm {
+      font-family: var(--display-font);
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      color: var(--band-color);
+      line-height: 1;
+    }
+    .rl-band__label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+    }
+    .rl-band__meta {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+      margin-bottom: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .rl-band__dot { opacity: 0.5; }
+    .rl-band__job {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink, #0d1b3e);
+      margin: 0;
+      max-width: 44ch;
+    }
+
+    /* Citations row in science tab -------------------------- */
+    .rl-cite {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--ink-70, rgba(13,27,62,0.6));
+    }
+    .rl-cite sup { margin-right: 4px; }
+
+    /* Add-on callout ---------------------------------------- */
+    .rl-addon {
+      max-width: 1100px;
+      margin: 56px auto 0;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 32px 36px;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--candle, #7C6B8A) 9%, var(--paper)) 0%,
+        var(--paper) 70%);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 14px;
+    }
+    .pricing--mobile .rl-addon {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .rl-addon__mark {
+      font-family: var(--display-font);
+      font-size: 56px;
+      line-height: 1;
+      color: var(--candle, #7C6B8A);
+      text-align: center;
+    }
+    .rl-addon__kicker {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+      margin-bottom: 10px;
+    }
+    .rl-addon__body h3 {
+      font-family: var(--display-font);
+      font-weight: 400;
+      font-size: clamp(22px, 2vw, 28px);
+      line-height: 1.2;
+      margin: 0 0 10px;
+      color: var(--ink, #0d1b3e);
+      letter-spacing: -0.01em;
+    }
+    .rl-addon__body p {
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 60ch;
+      margin: 0 0 18px;
+      color: var(--ink-70, rgba(13,27,62,0.75));
+    }
+    .rl-addon__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+    .rl-addon__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink, #0d1b3e);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink-14, rgba(13,27,62,0.2));
+      padding-bottom: 4px;
+      transition: color .25s, border-color .25s;
+    }
+    .rl-addon__link:hover {
+      color: var(--candle, #7C6B8A);
+      border-color: var(--candle, #7C6B8A);
+    }
+
+    /* Tab body — allow multiple <p> + citation row ---------- */
+    .tabs__body p + p {
+      margin-top: 14px;
+    }
+
+    /* =========================================================
+       Bundle Spotlight — sauna + red light pairing
+       ========================================================= */
+    .bundle {
+      max-width: 1200px;
+      margin: 96px auto 0;
+      padding: 0 32px;
+    }
+    .bundle--mobile { padding: 0 20px; margin-top: 56px; }
+
+    .bundle__inner {
+      position: relative;
+      padding: 56px 64px 48px;
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 18% 0%, rgba(206,68,78,0.10) 0%, rgba(206,68,78,0) 55%),
+        radial-gradient(ellipse at 100% 100%, rgba(124,107,138,0.10) 0%, rgba(124,107,138,0) 55%),
+        linear-gradient(180deg, color-mix(in srgb, var(--candle, #7C6B8A) 4%, var(--paper)) 0%, var(--paper) 100%);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      box-shadow: 0 30px 60px -45px rgba(13,27,62,0.25);
+      overflow: hidden;
+    }
+    .bundle--mobile .bundle__inner {
+      padding: 36px 24px 32px;
+    }
+    .bundle__inner::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 12px;
+      border: 1px dashed rgba(206,68,78,0.18);
+      pointer-events: none;
+    }
+
+    .bundle__head {
+      max-width: 720px;
+      position: relative;
+    }
+    .bundle__kicker {
+      display: inline-block;
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgb(206,68,78);
+      margin-bottom: 14px;
+    }
+    .bundle__head h2 {
+      font-family: var(--display-font);
+      font-weight: 400;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--ink, #0d1b3e);
+      margin: 0 0 16px;
+    }
+    .bundle__head h2 em {
+      font-style: italic;
+      color: rgb(206,68,78);
+    }
+    .bundle__lede {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink-70, rgba(13,27,62,0.75));
+      max-width: 60ch;
+      margin: 0;
+    }
+
+    .bundle__flow {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 24px;
+      align-items: stretch;
+      position: relative;
+    }
+    .bundle--mobile .bundle__flow {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .bundle__step {
+      position: relative;
+      padding: 26px 28px 24px;
+      background: var(--paper);
+      border: 1px solid var(--ink-14, rgba(13,27,62,0.14));
+      border-radius: 12px;
+    }
+    .bundle__step--accent {
+      border-color: rgba(206,68,78,0.35);
+      background: linear-gradient(160deg, color-mix(in srgb, rgb(206,68,78) 4%, var(--paper)) 0%, var(--paper) 70%);
+    }
+    .bundle__step-num {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      color: var(--ink-70, rgba(13,27,62,0.55));
+      display: inline-block;
+      margin-right: 14px;
+    }
+    .bundle__step-time {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.55));
+    }
+    .bundle__step h3 {
+      font-family: var(--display-font);
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 10px 0 8px;
+      color: var(--ink, #0d1b3e);
+    }
+    .bundle__step--accent h3 { color: rgb(206,68,78); }
+    .bundle__step p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+      margin: 0;
+      max-width: 32ch;
+    }
+    .bundle__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(206,68,78,0.55);
+    }
+    .bundle--mobile .bundle__arrow {
+      transform: rotate(90deg);
+      padding: 4px 0;
+    }
+
+    .bundle__cta {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .bundle--mobile .bundle__cta {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+    }
+    .bundle__price {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .bundle__price-from {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.55));
+    }
+    .bundle__price-num {
+      font-family: var(--display-font);
+      font-size: 56px;
+      line-height: 1;
+      color: var(--ink, #0d1b3e);
+    }
+    .bundle__price-dollar {
+      font-size: 0.45em;
+      vertical-align: 0.7em;
+      margin-right: 3px;
+      opacity: 0.65;
+    }
+    .bundle__price-strike {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--ink-70, rgba(13,27,62,0.55));
+    }
+    .bundle__solo {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.65));
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink-14, rgba(13,27,62,0.18));
+      padding-bottom: 4px;
+      transition: color .25s, border-color .25s;
+    }
+    .bundle__solo:hover {
+      color: var(--ink, #0d1b3e);
+      border-color: var(--ink-70, rgba(13,27,62,0.5));
+    }
+
+    /* =========================================================
+       Pricing — bundle vs solo split
+       ========================================================= */
+    .pricing__grid--bundles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pricing--mobile .pricing__grid--bundles {
+      grid-template-columns: 1fr;
+    }
+    .plan--bundle {
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(206,68,78,0.07) 0%, rgba(206,68,78,0) 55%),
+        var(--paper);
+      border-color: rgba(206,68,78,0.30) !important;
+    }
+    .plan--bundle.plan--on {
+      box-shadow: 0 24px 50px -36px rgba(206,68,78,0.45);
+    }
+    .plan--bundle .plan__badge {
+      background: rgb(206,68,78) !important;
+      color: #fff !important;
+    }
+
+    .pricing__divider {
+      max-width: 1100px;
+      margin: 56px auto 12px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .pricing__divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--ink-14, rgba(13,27,62,0.14));
+    }
+    .pricing__divider-label {
+      font-family: 'GT America Mono', 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-70, rgba(13,27,62,0.6));
+      white-space: nowrap;
+    }
+    .pricing__solo-note {
+      max-width: 640px;
+      margin: 0 auto 32px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink-70, rgba(13,27,62,0.7));
+    }
+    .pricing__grid--solo .plan {
+      background: color-mix(in srgb, var(--paper) 96%, transparent);
+    }
+
+    /* Primary link in the rl-addon callout */
+    .rl-addon__link--primary {
+      font-weight: 500 !important;
+      color: rgb(206,68,78) !important;
+      border-color: rgba(206,68,78,0.5) !important;
+      letter-spacing: 0.18em !important;
+    }
+    .rl-addon__link--primary:hover {
+      color: rgb(170,50,60) !important;
+      border-color: rgb(170,50,60) !important;
+    }
+
+    /* Final CTA pair */
+    .final__ctas {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="star-field" id="starField"></div>
+  <div class="whimsy-orb orb-1"></div>
+  <div class="whimsy-orb orb-2"></div>
+  <div class="whimsy-orb orb-3"></div>
+  <div class="mode-flash" id="modeFlash"></div>
+  <div id="root"></div>
+  <script>
+    (function(){
+      const sf = document.getElementById('starField');
+      for (let i = 0; i < 100; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const sz = Math.random() * 2 + 1;
+        s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;--dur:${Math.random()*3+2}s;--delay:${Math.random()*3}s;--min-o:${Math.random()*0.3+0.1};--max-o:${Math.random()*0.5+0.4};`;
+        sf.appendChild(s);
+      }    })();
+  </script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="red-light-therapy.jsx"></script>
+</body>
+</html>
