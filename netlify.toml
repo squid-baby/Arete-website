@@ -18,7 +18,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # CSP intentionally permissive for React+Babel CDN. Tighten when the site
     # moves to a build step that ships pre-compiled JS.
-    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://aretefloattank.floathelm.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src https://aretefloattank.floathelm.com; frame-ancestors 'self';"
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://aretefloattank.floathelm.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; media-src 'self' blob: https:; frame-src https://aretefloattank.floathelm.com; frame-ancestors 'self';"
 
 # Long cache for assets (fonts, images, CSS — they're versioned via filename).
 [[headers]]
