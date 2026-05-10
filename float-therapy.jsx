@@ -342,7 +342,7 @@ function Pricing({ mobile }) {
   { name: "New Guest", price: "$65", note: "Intro session — 60 min", highlight: true, link: BOOK.newGuest },
   { name: "60 Min\n\n", price: "$69", note: "Express float", link: BOOK.float60 },
   { name: "90 Min\n\n", price: "$89", note: "Most Poplar", link: BOOK.float90 },
-  { name: "Monthly", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "https://aretefloattank.floathelm.com/store/memberships/1215257" }];
+  { name: "Monthly", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "memberships.html" }];
 
   return (
     <section className={`pricing ${mobile ? "pricing--mobile" : ""}`}>
@@ -352,11 +352,11 @@ function Pricing({ mobile }) {
       </div>
       <div className="pricing__grid">
         {plans.map((p, i) =>
-        <div key={i} className={`plan ${p.highlight ? "plan--on" : ""}`} style={{ height: "355px" }}>
+        <div key={i} className={`plan ${p.highlight ? "plan--on" : ""}`} style={{ height: mobile ? "auto" : "355px" }}>
             <span className="plan__badge" style={{ visibility: p.highlight ? "visible" : "hidden" }}>Best first step</span>
             <h3>{p.name}</h3>
             <div className="plan__price" style={{ fontFamily: "LeJour" }}>{p.price}</div>
-            <p style={{ height: "30px", padding: "0px", margin: "40px 0px 45px" }}>{p.note}</p>
+            <p style={{ height: mobile ? "auto" : "30px", padding: "0px", margin: mobile ? "10px 0px 18px" : "40px 0px 45px" }}>{p.note}</p>
             <a href={p.link || BOOK.general} target="_blank" rel="noopener" className="plan__link">Reserve <IconArrow size={12} /></a>
           </div>
         )}
