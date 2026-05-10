@@ -780,8 +780,19 @@ body.whimsy .whimsy-stub { display: flex; opacity: 1; }
     text-align: center;
     gap: 32px;
   }
-  .home-footer { padding: 60px 24px 36px; }
-  .home-footer__inner { flex-direction: column; align-items: flex-start; }
+  .home-footer { padding: 60px 24px 36px; margin-top: 60px; }
+  .home-footer__inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .home-footer__logo { align-items: flex-start; }
+  .home-footer__links {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
   .home-footer__address { text-align: left; }
-  .home-footer__copy { flex-direction: column; gap: 8px; }
+  .home-footer__copy { flex-direction: column; gap: 8px; text-align: left; }
+}
+
+/* Hide the in-nav Light/Whimsy toggle on mobile (drawer-only layout). */
+@media (max-width: 768px) {
+  .mode-toggle { display: none !important; }
 }

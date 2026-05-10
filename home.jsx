@@ -87,54 +87,107 @@ const HeroPod = () =>
 
 
 /* ---------- Components ---------- */
-function Nav({ mode, onToggleMode }) {
+const IconMenu = ({ size = 22 }) =>
+<svg width={size} height={size} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M3 6h14M3 10h14M3 14h14" strokeLinecap="round" />
+  </svg>;
+
+const IconClose = ({ size = 22 }) =>
+<svg width={size} height={size} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" />
+  </svg>;
+
+function Nav({ mobile }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close drawer if viewport grows past mobile while open.
+  useEffect(() => { if (!mobile) setMenuOpen(false); }, [mobile]);
+
+  // Lock body scroll while the drawer is open.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [menuOpen]);
+
   return (
-    <nav className="nav">
+    <nav className={`nav ${mobile ? "nav--mobile" : ""}`}>
       <div className="nav__inner">
         <a className="nav__brand" href="/" aria-label="Areté home">
-          <img src="assets/arete-logo.png" alt="Areté" style={{ width: "122px" }} />
+          <img src="assets/arete-logo.png" alt="Areté" style={{ width: mobile ? "88px" : "122px" }} />
         </a>
 
-        <nav className="nav__links">
-          <div className="nav__dropdown">
-            <a href="#" className="nav__dropdown-trigger">
-              Services
-              <svg className="nav__dropdown-caret" width="9" height="9" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-            <div className="nav__dropdown-menu" role="menu">
-              <a href="float.html" role="menuitem">Float</a>
-              <a href="sauna.html" role="menuitem">Sauna</a>
-              <a href="red_light.html" role="menuitem">Red Light Therapy</a>
-              <a href="halotherapy.html" role="menuitem">Halotherapy</a>
-              <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
-              <a href="Massage.html" role="menuitem">Massage</a>
-              <a href="retail.html" role="menuitem">Retail</a>
+        {mobile ?
+        <button
+          className="nav__menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}>
+            {menuOpen ? <IconClose /> : <IconMenu />}
+          </button> :
+
+        <>
+            <nav className="nav__links">
+              <div className="nav__dropdown">
+                <a href="#" className="nav__dropdown-trigger">
+                  Services
+                  <svg className="nav__dropdown-caret" width="9" height="9" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+                <div className="nav__dropdown-menu" role="menu">
+                  <a href="float.html" role="menuitem">Float</a>
+                  <a href="sauna.html" role="menuitem">Sauna</a>
+                  <a href="red_light.html" role="menuitem">Red Light Therapy</a>
+                  <a href="halotherapy.html" role="menuitem">Halotherapy</a>
+                  <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
+                  <a href="Massage.html" role="menuitem">Massage</a>
+                  <a href="retail.html" role="menuitem">Retail</a>
+                </div>
+              </div>
+              <a href="memberships.html">Memberships</a>
+              <a href="packages.html">Packages</a>
+              <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
+              <a href="about.html">About</a>
+            </nav>
+
+            <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+              <a
+              className="mode-toggle"
+              href="whimsy.html"
+              aria-label="Switch to Whimsy mode"
+              style={{ textDecoration: "none" }}>
+
+                <span className="mode-toggle__label active">Light</span>
+                <div className="mode-toggle__track">
+                  <div className="mode-toggle__thumb">✦</div>
+                </div>
+                <span className="mode-toggle__label">Whimsy</span>
+              </a>
+              <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__cta">Book</a>
             </div>
-          </div>
+          </>
+        }
+      </div>
+
+      {mobile &&
+      <div className={`nav__mobile-drawer ${menuOpen ? "is-open" : ""}`}>
+          <span className="nav__mobile-group-label">Services</span>
+          <a className="nav__mobile-sub" href="float.html">Float</a>
+          <a className="nav__mobile-sub" href="sauna.html">Sauna</a>
+          <a className="nav__mobile-sub" href="red_light.html">Red Light Therapy</a>
+          <a className="nav__mobile-sub" href="halotherapy.html">Halotherapy</a>
+          <a className="nav__mobile-sub" href="Contrast-Therapy.html">Contrast Therapy</a>
+          <a className="nav__mobile-sub" href="Massage.html">Massage</a>
+          <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
           <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
           <a href="about.html">About</a>
-        </nav>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-          <a
-            className="mode-toggle"
-            href="whimsy.html"
-            aria-label="Switch to Whimsy mode"
-            style={{ textDecoration: "none" }}>
-            
-            <span className="mode-toggle__label active">Light</span>
-            <div className="mode-toggle__track">
-              <div className="mode-toggle__thumb">✦</div>
-            </div>
-            <span className="mode-toggle__label">Whimsy</span>
-          </a>
-          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__cta">Book</a>
+          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__mobile-cta">Book</a>
         </div>
-      </div>
+      }
     </nav>);
 
 }
@@ -416,6 +469,13 @@ function applyDarkNavy(hex) {
 /* ---------- App ---------- */
 function App() {
   const [mode, setMode] = useState("light");
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener ? mq.addEventListener("change", onChange) : mq.addListener(onChange);
+    return () => { mq.removeEventListener ? mq.removeEventListener("change", onChange) : mq.removeListener(onChange); };
+  }, []);
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
   useEffect(() => {applyDarkPurple(t.darkPurple);}, [t.darkPurple]);
@@ -457,7 +517,7 @@ function App() {
 
   return (
     <>
-      <Nav mode={mode} onToggleMode={() => setMode((m) => m === "light" ? "whimsy" : "light")} />
+      <Nav mobile={isMobile} />
       <main>
         <Hero />
         <Services />
