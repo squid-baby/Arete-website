@@ -747,7 +747,18 @@ a { text-decoration: none; color: inherit; }
 }
 .pricing--mobile .pricing__grid {
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 10px;
+}
+.pricing--mobile .plan {
+  padding: 18px 20px 16px;
+}
+.pricing--mobile .plan h3 {
+  font-size: 17px;
+  min-height: 0;
+}
+.pricing--mobile .plan__price {
+  font-size: 34px;
+  margin: 4px 0 2px;
 }
 .plan {
   background: var(--paper);
