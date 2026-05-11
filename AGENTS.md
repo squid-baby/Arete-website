@@ -1,5 +1,8 @@
 # AGENTS.md — FloatArete Website
 
+## Live site URL
+The current live site is **https://arete-float-wellness.netlify.app** — this is where changes will appear after merging. floatarete.com is the old Wix site and is not connected to this codebase yet.
+
 ## Who you're working with
 Jen is the site owner and is not technical. Use plain, friendly language. No jargon.
 
