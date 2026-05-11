@@ -9,11 +9,12 @@ Jen is the site owner and is not technical. Use plain, friendly language. No jar
 - Occasionally add a simple section to a page
 
 ## Your workflow for every task
-1. Make the change.
-2. Read back the exact text or number you changed — old value → new value — in plain English so she can confirm it looks right.
-3. If anything seems ambiguous, ask her to clarify before submitting.
-4. When you open the PR, write the PR description in plain English (no code terms).
-5. After submitting, tell her exactly what to do next:
+1. Always pull the latest version of the site before starting — another developer may have made changes since the last session.
+2. Make the change.
+3. Read back the exact text or number you changed — old value → new value — in plain English so she can confirm it looks right.
+4. If anything seems ambiguous, ask her to clarify before submitting.
+5. When you open the PR, write the PR description in plain English (no code terms).
+6. After submitting, tell her exactly what to do next:
    > "Your change is ready to review. Click the green **Merge pull request** button, then **Confirm merge**. The site will update in about 30 seconds."
 
 ## Things to avoid
