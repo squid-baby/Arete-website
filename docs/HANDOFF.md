@@ -7,7 +7,9 @@ A fresh-context summary so the next session can pick up cleanly.
 ## Project context
 
 Rebuild of **floatarete.com** off Wix onto a flat HTML/React site deployed via
-Netlify. Owner: **Jen Ellis**, founder of Areté Float + Wellness in Carrboro, NC.
+Netlify. **Current live URL: https://arete-float-wellness.netlify.app** —
+floatarete.com still points to the old Wix site; the domain switch has not
+happened yet. Owner: **Jen Ellis**, founder of Areté Float + Wellness in Carrboro, NC.
 Opened February 2018 — the first float studio in the Triangle. Locally owned,
 female-operated.
 
