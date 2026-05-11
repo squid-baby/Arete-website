@@ -324,8 +324,8 @@ function Experience() {
 
       <div className="experience-grid">
         <div className="experience-text reveal">
-          <div className="big-stat">54<span style={{ color: "rgb(74, 84, 110)", opacity: "1" }}>hours Feeling Grounded</span></div>
-          <p className="stat-label">AVERAGE TIME PEOPLE FEEL SHIFTED AFTER A SESSION</p>
+          <div className="big-stat">36 <span style={{ color: "rgb(74, 84, 110)", opacity: "1" }}>hours on call</span></div>
+          <p className="stat-label">AVERAGE WEEKLY TIME ADULTS WITH YOUNG KIDS SPEND CARING WHILE DOING EVERYTHING ELSE</p>
           <p>
             We've designed every room to do one thing: get you out of your head and back into your body. No phones. No noise. No schedule chasing you.
           </p>
