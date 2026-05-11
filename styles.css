@@ -176,10 +176,10 @@ body.whimsy .stage {
   font-family: var(--display-font);
 }
 .nav__brand img {
-  width: 112px; height: 112px;
+  width: 112px; height: auto;
   filter: drop-shadow(0 2px 6px rgba(13,27,62,0.08));
 }
-.nav--mobile .nav__brand img { width: 88px; height: 88px; }
+.nav--mobile .nav__brand img { width: 88px; height: auto; }
 .nav__wordmark {
   font-size: 18px;
   letter-spacing: 0.12em;
