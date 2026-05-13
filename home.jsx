@@ -28,8 +28,8 @@ const SERVICES = [
   id: "float",
   href: "float.html",
   name: "Float Tank",
-  desc: "1,000 lbs of Epsom salt, zero gravity, total sensory silence. An hour inside is unlike anything else.",
-  price: "From $89 · 60 or 90 min",
+  desc: "1,000 lbs of Epsom salt, 10 inches of water, zero gravity, total sensory silence. An experience unlike any other.",
+  price: "From $65 · 60 or 90 min",
   tag: "Most popular",
   glow: "glow-blue",
   Icon: IconFloat
@@ -39,7 +39,7 @@ const SERVICES = [
   href: "#sauna",
   name: "Infrared Sauna",
   desc: "Deep heat that works from the inside out. Detox, muscle relief, and the kind of warmth that stays with you.",
-  price: "From $45 · 30 or 45 min",
+  price: "From $25 · 15 or 30 min",
   glow: "glow-amber",
   Icon: IconSauna
 },
@@ -48,7 +48,7 @@ const SERVICES = [
   href: "Contrast-Therapy.html",
   name: "Contrast Therapy",
   desc: "The reset button. Cold immersion for inflammation, clarity, and that electric aliveness that lasts all day.",
-  price: "From $25 · Add-on or standalone",
+  price: "From $50 · 60 min Solo or with a friend.",
   glow: "glow-blue",
   Icon: IconCold
 },
@@ -56,8 +56,8 @@ const SERVICES = [
   id: "massage",
   href: "#massage",
   name: "Massage",
-  desc: "Therapeutic bodywork tailored to you. Swedish, deep tissue, or curated recovery — hands that listen.",
-  price: "From $95 · 60 or 90 min",
+  desc: "Therapeutic bodywork tailored to you. Curated rest and recovery designed around your unique needs.",
+  price: "From $110 · 60, 75, or 90 min",
   glow: "glow-purple",
   Icon: IconMassage
 },
@@ -65,8 +65,8 @@ const SERVICES = [
   id: "redlight",
   href: "#redlight",
   name: "Red Light Therapy",
-  desc: "Full-spectrum red and near-infrared light. Accelerates healing, supports collagen and cellular energy — without heat or UV.",
-  price: "From $35 · 20 or 40 min",
+  desc: "Full-spectrum red and near-infrared light. Accelerates healing, supports collagen and cellular energy, without heat or UV.",
+  price: "From $20 · 20 min",
   glow: "glow-red",
   Icon: IconRedLight
 },
@@ -75,7 +75,7 @@ const SERVICES = [
   href: "#halo",
   name: "Halotherapy",
   desc: "Dry salt air micronized into a therapeutic mist. Supports respiratory health, soothes skin, and quiets breath.",
-  price: "From $30 · 45 min",
+  price: "From $10 · 30 min - add on to any sauna session",
   glow: "glow-salt",
   Icon: IconHalo
 }];
@@ -325,7 +325,7 @@ function Experience() {
       <div className="experience-grid">
         <div className="experience-text reveal">
           <div className="big-stat">36 <span style={{ color: "rgb(74, 84, 110)", opacity: "1" }}>hours on call</span></div>
-          <p className="stat-label">AVERAGE WEEKLY TIME ADULTS WITH YOUNG KIDS SPEND CARING WHILE DOING EVERYTHING ELSE</p>
+          <p className="stat-label">AVERAGE WEEKLY TIME PARENTS OF YOUNG KIDS SPEND CARING FOR OTHERS AND KEEPING LIFE MOVING</p>
           <p>
             We've designed every room to do one thing: get you out of your head and back into your body. No phones. No noise. No schedule chasing you.
           </p>
