@@ -362,8 +362,7 @@ const INTRO_FLOAT = {
     "Cannot be purchased as a gift",
     "~Credits expire 60 days after first use"
   ],
-  chips: [{ label: "First-timers only" }, { label: "Best value to start" }, { label: "Not giftable", off: true }],
-  fine: "$50/float · normally $89"
+  chips: [{ label: "First-timers only" }, { label: "Best value to start" }]
 };
 
 const FIRE_PACKS = [
