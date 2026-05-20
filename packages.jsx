@@ -237,12 +237,14 @@ function PackCard({ pack }) {
         </div>
       </div>
 
-      <div className={`mp__save ${pack.savings ? "" : "mp__save--neutral"}`}>
-        <IconSpark size={9} />
-        {pack.savings
-          ? <span>Save <b>${pack.savings}</b> vs. à la carte</span>
-          : <span>{pack.savingsNote || "Add-on pricing"}</span>}
-      </div>
+      {!pack.hideSavings && (
+        <div className={`mp__save ${pack.savings ? "" : "mp__save--neutral"}`}>
+          <IconSpark size={9} />
+          {pack.savings
+            ? <span>Save <b>${pack.savings}</b> vs. à la carte</span>
+            : <span>{pack.savingsNote || "Add-on pricing"}</span>}
+        </div>
+      )}
 
       <ul className="mp__list">
         {pack.includes.map((line, i) => (
@@ -371,15 +373,15 @@ const FIRE_PACKS = [
     cadence: "Sauna or RLT · per person",
     color: "rgb(232, 155, 142)",
     savings: 14,
+    hideSavings: true,
     buy: BOOK.fire6,
     includes: [
       "6× 30-min sauna or 20-min RLT",
       "Mix and match across modalities",
-      "Bring a friend +$10/session",
+      "Bring a friend +$15/session",
       "~Reservations required"
     ],
-    chips: [{ label: "Mix & match" }, { label: "Per person" }],
-    fine: "≈$26.67/session"
+    chips: [{ label: "Mix & match" }, { label: "Per person" }]
   },
   {
     name: "8 Fire Credits",
@@ -387,15 +389,15 @@ const FIRE_PACKS = [
     cadence: "Sauna or RLT · per person",
     color: "rgb(232, 155, 142)",
     savings: 4,
+    hideSavings: true,
     buy: BOOK.fire8,
     includes: [
       "8× 30-min sauna or 20-min RLT",
       "Mix and match across modalities",
-      "Bring a friend +$10/session",
+      "Bring a friend +$15/session",
       "~Reservations required"
     ],
-    chips: [{ label: "Mix & match" }, { label: "Per person" }],
-    fine: "$28.50/session"
+    chips: [{ label: "Mix & match" }, { label: "Per person" }]
   },
   {
     name: "12 Fire Credits",
@@ -403,15 +405,15 @@ const FIRE_PACKS = [
     cadence: "Sauna or RLT · per person",
     color: "rgb(199, 112, 103)",
     savings: 24,
+    hideSavings: true,
     buy: BOOK.fire12,
     includes: [
       "12× 30-min sauna or 20-min RLT",
       "10% off regular-priced sessions",
-      "Bring a friend +$10/session",
+      "Bring a friend +$15/session",
       "~Reservations required"
     ],
-    chips: [{ label: "Best per-credit value" }, { label: "10% off à la carte" }],
-    fine: "$27/session · 10% off rate"
+    chips: [{ label: "Best per-credit value" }, { label: "10% off à la carte" }]
   }
 ];
 
