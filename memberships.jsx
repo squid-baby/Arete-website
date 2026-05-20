@@ -461,7 +461,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="bundles" index="05 · Bundled Wellness"
         title="Bundled" em="wellness"
-        lede="Float plus fire credits in one membership. Basic and Total are shareable with one other person, Ultimate is the all-in for daily users.">
+        lede="Float plus Fire & Ice credits in one membership. Basic and Total are shareable with one other person, Ultimate is the all-in for daily users.">
         {[BASIC_BUNDLE, TOTAL_BUNDLE].map(p => <PlanCard key={p.name} plan={p} />)}
         <FeatureCard plan={ULTIMATE} />
       </Modality>
