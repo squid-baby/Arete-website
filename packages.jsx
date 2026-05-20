@@ -268,7 +268,6 @@ function SignatureCard({ pack }) {
   return (
     <article className="mp mp--feature" style={{ "--mp-color": "var(--candle)" }}>
       <div className="mp__feature-body">
-        <span className="mp__feature-flag"><IconSpark size={9} /> Sampler</span>
         <span className="mp__cadence">One-time · all five modalities</span>
         <h3 className="mp__name">{pack.name}</h3>
         <p className="mp__feature-tag">A guided tour through everything Areté offers, one of each. The simplest way to find what your body responds to.</p>
@@ -362,8 +361,7 @@ const FIRE_PACKS = [
     includes: [
       "6× 30-min sauna or 20-min RLT",
       "Mix and match across modalities",
-      "Bring a friend +$15/session",
-      "~Reservations required"
+      "Bring a friend +$15/session"
     ],
     chips: [{ label: "Mix & match" }, { label: "Per person" }]
   },
@@ -378,8 +376,7 @@ const FIRE_PACKS = [
     includes: [
       "8× 30-min sauna or 20-min RLT",
       "Mix and match across modalities",
-      "Bring a friend +$15/session",
-      "~Reservations required"
+      "Bring a friend +$15/session"
     ],
     chips: [{ label: "Mix & match" }, { label: "Per person" }]
   },
@@ -393,8 +390,7 @@ const FIRE_PACKS = [
     buy: BOOK.fire12,
     includes: [
       "12× 30-min sauna or 20-min RLT",
-      "Bring a friend +$15/session",
-      "~Reservations required"
+      "Bring a friend +$15/session"
     ],
     chips: [{ label: "Best per-credit value" }]
   }
@@ -598,7 +594,7 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I bought the Signature Collection because I had no idea what I'd actually like. Turns out: red light, of all things. By the time the credits ran out I'd switched to the RLT pack and now I'm in three times a week. Best $245 I've spent on figuring myself out.</p>
+      <p>I bought the Signature Collection because I did not know which service would be the right fit. Trying everything once made the choice easy. Red light surprised me, and by the time I finished the collection, I knew exactly what I wanted to keep in my routine.</p>
       <div className="quote__who">Marlee K. · Areté guest, 2025</div>
     </section>
   );
