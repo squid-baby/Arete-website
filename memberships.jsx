@@ -246,7 +246,7 @@ function FeatureCard({ plan }) {
             <IconArrow size={11} />
           </a>
         </div>
-        <span className="mp__fine" style={{ textAlign: "left" }}>Massage giftable to one other person · Float, sauna, RLT and contrast not shareable</span>
+        <span className="mp__fine" style={{ textAlign: "left" }}>Massage giftable to one other person</span>
       </div>
     </article>
   );
@@ -280,10 +280,9 @@ const FLOAT_PLANS = [{
   signup: "https://aretefloattank.floathelm.com/store/memberships/1215257",
   includes: [
     "1× 90-minute float session each month",
-    "Additional floats at $55 (vs $89 drop-in)",
-    "Credits roll over 30 days"
+    "Additional floats at $55 (vs $89 drop-in)"
   ],
-  chips: [{ label: "30-day rollover" }, { label: "Not shareable" }],
+  chips: [{ label: "30-day rollover" }],
   fine: "$55 add'l floats"
 }];
 
@@ -296,7 +295,6 @@ const SAUNA_PLANS = [
     includes: [
       "6× 30-min sauna or 20-min RLT (mix & match)",
       "+$15 to bring a friend",
-      "Credits roll over 30 days",
       "~Reservations required"
     ],
     chips: [{ label: "30-day rollover" }, { label: "Mix & match" }, { label: "Per person" }]
@@ -309,7 +307,6 @@ const SAUNA_PLANS = [
     includes: [
       "8× 30-min sauna or 20-min RLT",
       "10% off other services & retail",
-      "Credits roll over 30 days",
       "+$15 to bring a friend"
     ],
     chips: [{ label: "30-day rollover" }, { label: "10% off retail" }, { label: "Mix & match" }]
@@ -322,7 +319,6 @@ const SAUNA_PLANS = [
     includes: [
       "12× 30-min sauna or 20-min RLT",
       "10% off other services",
-      "Credits roll over 30 days",
       "+$15 to bring a friend"
     ],
     chips: [{ label: "30-day rollover" }, { label: "Best per-credit value" }, { label: "10% off services" }]
@@ -339,7 +335,7 @@ const SAUNA_PLANS = [
       "15% off select retail",
       "$55 floats (vs $89 drop-in)"
     ],
-    chips: [{ label: "Unlimited" }, { label: "15% off retail" }, { label: "Not shareable" }]
+    chips: [{ label: "Unlimited" }, { label: "15% off retail" }]
   }
 ];
 
@@ -354,7 +350,7 @@ const RLT_PLANS = [{
     "1 session per calendar day",
     "10% off other services & retail"
   ],
-  chips: [{ label: "Unlimited" }, { label: "10% off" }, { label: "Not shareable" }]
+  chips: [{ label: "Unlimited" }, { label: "10% off" }]
 }];
 
 const CONTRAST_PLANS = [
@@ -365,7 +361,6 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1215279",
     includes: [
       "2× 60-min contrast sessions",
-      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
@@ -378,7 +373,6 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1215254",
     includes: [
       "3× 60-min contrast sessions",
-      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
@@ -391,7 +385,6 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1214567",
     includes: [
       "4× 60-min contrast sessions",
-      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
@@ -407,7 +400,6 @@ const BASIC_BUNDLE = {
   includes: [
     "1× 90-min float each month",
     "2× Fire & Ice credits (sauna/RLT = 1 each, contrast = 2)",
-    "Credits roll over 30 days",
     "10% off retail, gift certs & services",
     "Additional floats at $55"
   ],
@@ -422,7 +414,6 @@ const TOTAL_BUNDLE = {
   includes: [
     "1× 90-min float each month",
     "4× Fire & Ice credits (mix sauna, RLT, contrast)",
-    "Credits roll over 30 days",
     "10% off retail, gift certs & services",
     "Additional floats at $55",
     "Pause once, up to 2 months"
@@ -469,7 +460,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="contrast" index="04 · Contrast Therapy"
         title="Contrast" em="therapy"
-        lede="Cold plunge and sauna in private hourly sessions. Credits roll over 30 days so a busy week doesn't cost you a credit.">
+        lede="Cold plunge and sauna in private hourly sessions. Three tiers, all built to keep a steady recovery rhythm realistic.">
         {CONTRAST_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
