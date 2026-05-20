@@ -413,7 +413,7 @@ const RLT_PACK = {
     "Built for daily-ish dosing, recovery, skin, sleep",
     "~Credits expire 60 days after first use"
   ],
-  chips: [{ label: "RLT only" }, { label: "Daily-friendly" }, { label: "Non-transferable", off: true }],
+  chips: [{ label: "RLT only" }, { label: "Daily-friendly" }],
   fine: "$18/session"
 };
 
