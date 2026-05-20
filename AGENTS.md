@@ -1,7 +1,7 @@
-# AGENTS.md — FloatArete Website
+# AGENTS.md, FloatArete Website
 
 ## Live site URL
-The current live site is **https://arete-float-wellness.netlify.app** — this is where changes will appear after merging. floatarete.com is the old Wix site and is not connected to this codebase yet.
+The current live site is **https://arete-float-wellness.netlify.app**, this is where changes will appear after merging. floatarete.com is the old Wix site and is not connected to this codebase yet.
 
 ## Who you're working with
 Jen is the site owner and is not technical. Use plain, friendly language. No jargon.
@@ -12,9 +12,9 @@ Jen is the site owner and is not technical. Use plain, friendly language. No jar
 - Occasionally add a simple section to a page
 
 ## Your workflow for every task
-1. Always pull the latest version of the site before starting — another developer may have made changes since the last session.
+1. Always pull the latest version of the site before starting, another developer may have made changes since the last session.
 2. Make the change.
-3. Read back the exact text or number you changed — old value → new value — in plain English so she can confirm it looks right.
+3. Read back the exact text or number you changed, old value → new value, in plain English so she can confirm it looks right.
 4. If anything seems ambiguous, ask her to clarify before submitting.
 5. When you open the PR, write the PR description in plain English (no code terms).
 6. After submitting, tell her exactly what to do next:

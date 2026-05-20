@@ -1,5 +1,5 @@
 /* ============================================================
-   HOME PAGE — Areté
+   HOME PAGE, Areté
    Built on the same tokens as styles.css (var(--ink), var(--paper),
    var(--candle), var(--display-font), var(--sans))
    ============================================================ */
@@ -25,7 +25,7 @@ body.whimsy .star-field { opacity: 1; }
   50%      { opacity: var(--max-o, 0.9); transform: scale(1.3); }
 }
 
-/* Floating particles — light mode keeps them as soft dust accents around hero */
+/* Floating particles, light mode keeps them as soft dust accents around hero */
 .particle-field {
   position: absolute; inset: 0;
   pointer-events: none;
@@ -137,7 +137,7 @@ body.whimsy .star-field { opacity: 1; }
 }
 .btn-ghost:hover { border-color: var(--candle); color: var(--candle); }
 
-/* Hero visual — minimal pod */
+/* Hero visual, minimal pod */
 .home-hero__visual {
   position: relative;
   z-index: 2;

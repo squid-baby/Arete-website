@@ -1,5 +1,5 @@
 # =============================================================================
-# Areté Float + Wellness — Netlify _redirects
+# Areté Float + Wellness, Netlify _redirects
 # =============================================================================
 # Place this file at the ROOT of your Netlify publish folder.
 # For this project that means the project root (no separate /public or /dist).
@@ -7,7 +7,7 @@
 # Format: /old-path  /new-path  301
 # Netlify reads this file automatically on deploy. No further configuration.
 #
-# To test after launch, visit any old URL — e.g. floatarete.com/about-us —
+# To test after launch, visit any old URL, e.g. floatarete.com/about-us,
 # it should land on the new equivalent.
 # =============================================================================
 
@@ -74,7 +74,7 @@
 
 
 # ---------- Extensionless aliases (kept for inbound links / shareability) ----------
-# 301s, not rewrites — the .html URL is the canonical. Sending users to the
+# 301s, not rewrites, the .html URL is the canonical. Sending users to the
 # canonical avoids duplicate-content noise in Search Console.
 /about                                       /about.html                   301
 /faq                                         /faq.html                     301

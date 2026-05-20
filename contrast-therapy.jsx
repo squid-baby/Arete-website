@@ -96,7 +96,7 @@ function TopNav({ mobile }) {
 // ─── HERO MP4 PLAYBACK FIX (reuse for other service heroes) ──────────────────
 // Symptom: <video src="assets/foo.mp4"> never loads. video.error.code === 4
 // (MEDIA_ERR_SRC_NOT_SUPPORTED), readyState 0, networkState 3. The codec
-// (H.264 Main / Baseline / High, AAC) is fine — canPlayType returns "probably".
+// (H.264 Main / Baseline / High, AAC) is fine, canPlayType returns "probably".
 // Fetch returns 200 with correct Content-Type and full bytes.
 //
 // Cause: the dev server (claudeusercontent.com /serve/...) doesn't satisfy
@@ -113,14 +113,14 @@ function TopNav({ mobile }) {
 //
 // Runtime workaround: don't set <video src=...> directly. Fetch the mp4 with
 // fetch(), wrap the response Blob in URL.createObjectURL(), and use THAT as
-// src. The blob URL bypasses the range-request path entirely — the entire
+// src. The blob URL bypasses the range-request path entirely, the entire
 // file is in memory, so the media parser sees a normal seekable stream.
 // ──────────────────────────────────────────────────────────────────────────────
 function IceCube({ played }) {
   const videoRef = React.useRef(null);
   const [blobUrl, setBlobUrl] = React.useState(null);
 
-  // Fetch the mp4 once and expose it as a blob URL — see header comment.
+  // Fetch the mp4 once and expose it as a blob URL, see header comment.
   React.useEffect(() => {
     let revoke = null;
     let cancelled = false;
@@ -302,14 +302,14 @@ function Deepen({ mobile }) {
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
   "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 39°F plunge for two to three minutes. Repeat for three rounds. The contrast does the work.",
-  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two — at roughly 175°F sauna and 39°F plunge — trains your vascular system like a workout, releases norepinephrine and dopamine in measurable surges, reduces inflammatory markers, and shifts your nervous system into a sharper, calmer state. Studies show contrast bathing speeds muscle recovery, deepens sleep onset, and improves mood for hours after. Three rounds is the sweet spot most research converges on.",
-  "The first plunge is loud — your body protests, your breath quickens, and you'll want to leave. Stay 90 seconds. By round two it gets quieter; by round three many guests linger past three minutes. You'll leave alert, light, and unmistakably awake — a clean kind of energy that holds for hours."];
+  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F sauna and 39°F plunge, trains your vascular system like a workout, releases norepinephrine and dopamine in measurable surges, reduces inflammatory markers, and shifts your nervous system into a sharper, calmer state. Studies show contrast bathing speeds muscle recovery, deepens sleep onset, and improves mood for hours after. Three rounds is the sweet spot most research converges on.",
+  "The first plunge is loud, your body protests, your breath quickens, and you'll want to leave. Stay 90 seconds. By round two it gets quieter; by round three many guests linger past three minutes. You'll leave alert, light, and unmistakably awake, a clean kind of energy that holds for hours."];
 
   const faqs = [
-  { q: "Do I need to be in shape?", a: "No. The protocol is self-paced — you set your own time in the cold and the sauna. Most beginners start with shorter plunges and work up." },
+  { q: "Do I need to be in shape?", a: "No. The protocol is self-paced, you set your own time in the cold and the sauna. Most beginners start with shorter plunges and work up." },
   { q: "How cold is the plunge, really?", a: "We hold it at 38–40°F. It's a single-person tub, fully filtered and treated between every session." },
   { q: "Why infrared instead of a traditional sauna?", a: "Full-spectrum infrared heats your body directly rather than the air around you. The session feels gentler at the lungs but penetrates deeper into muscle, joints, and connective tissue." },
-  { q: "Is contrast therapy safe?", a: "For most healthy adults, yes — but if you're pregnant or have heart conditions, uncontrolled blood pressure, or are on certain medications, please check with your doctor first." },
+  { q: "Is contrast therapy safe?", a: "For most healthy adults, yes, but if you're pregnant or have heart conditions, uncontrolled blood pressure, or are on certain medications, please check with your doctor first." },
   { q: "How often should I come?", a: "Two to three times a week is where most regulars land. The benefits compound: better sleep, faster recovery, steadier mood, sharper mornings." }];
 
   return (
@@ -343,7 +343,7 @@ function Deepen({ mobile }) {
 // ---------- Pricing ----------
 function Pricing({ mobile }) {
   const plans = [
-  { name: "New Guest\n\n", price: "50", note: "Intro session — 60 min", highlight: true, link: BOOK.newGuest },
+  { name: "New Guest\n\n", price: "50", note: "Intro session, 60 min", highlight: true, link: BOOK.newGuest },
   { name: "Single\n\n", price: "60", note: "À la carte · 60 min", link: BOOK.single },
   { name: "2-Person\n", price: "90", note: "Share the contrast", link: BOOK.twoPerson },
   { name: "Memberships\n", price: "99", priceSuffix: "+", note: "From $99/mo · many tiers available", link: "https://floatarete.com/memberships.html" }];
@@ -376,7 +376,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>Three rounds and I walked out feeling like I'd slept for nine hours and run a 5k. I'm not the same person I was an hour ago.</p>
-      <div className="quote__who">— Daniel K. · Member since 2024</div>
+      <div className="quote__who">Daniel K. · Member since 2024</div>
     </section>);
 }
 
@@ -440,7 +440,7 @@ const CONTRAST_TONES = {
     heroTitle: "Heat then\nhush.",
     heroLede: "A full-spectrum infrared sauna and a single-person plunge, cycled three times. The body learns the rhythm; the mind goes quiet.",
     benefits: [
-    { t: "Sharpen the body", d: "Vessels open and close — circulation trained like a workout." },
+    { t: "Sharpen the body", d: "Vessels open and close, circulation trained like a workout." },
     { t: "Steady the mind", d: "A measured release of dopamine that holds for hours." },
     { t: "Recover faster", d: "Inflammation drops; sleep deepens; mornings arrive lighter." }]
   },
@@ -454,7 +454,7 @@ const CONTRAST_TONES = {
   },
   warm: {
     heroTitle: "Hot.\nThen cold.",
-    heroLede: "It's simpler than it sounds — and friendlier than it looks. Go at your pace. Stay as long as feels right. We'll be here when you're done.",
+    heroLede: "It's simpler than it sounds, and friendlier than it looks. Go at your pace. Stay as long as feels right. We'll be here when you're done.",
     benefits: [
     { t: "Find your rhythm", d: "You set the time in each room. We just hold the temperatures." },
     { t: "Wake up clearer", d: "Most folks leave brighter than they came in." },

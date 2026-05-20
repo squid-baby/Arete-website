@@ -1,4 +1,4 @@
-// home.jsx — Areté home page (Light mode)
+// home.jsx, Areté home page (Light mode)
 // Whimsy mode is stubbed in CSS via body.whimsy .whimsy-stub { display:flex }
 
 const { useState, useEffect, useRef } = React;
@@ -83,7 +83,7 @@ const SERVICES = [
 
 /* ---------- Hero image ---------- */
 const HeroPod = () =>
-<img src="assets/hero-image.png" alt="Floating in the tank — Areté" className="home-hero__image" style={{ width: "120px", opacity: "3", height: "200px" }} />;
+<img src="assets/hero-image.png" alt="Floating in the tank, Areté" className="home-hero__image" style={{ width: "120px", opacity: "3", height: "200px" }} />;
 
 
 /* ---------- Components ---------- */
@@ -217,7 +217,7 @@ function Hero() {
           <em>Come back to you.</em>
         </h1>
         <p className="home-hero__sub">
-          A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage — designed to help you let go and light up.
+          A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage, designed to help you let go and light up.
         </p>
         <div className="home-hero__ctas">
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
@@ -307,7 +307,7 @@ function EmailStrip() {
             </svg>
           </button>
         </form>
-        <p className="email-strip__privacy">We don't spam — we're here to lower stress, not add to it.</p>
+        <p className="email-strip__privacy">We don't spam, we're here to lower stress, not add to it.</p>
       </div>
     </section>);
 }
@@ -330,13 +330,13 @@ function Experience() {
             We've designed every room to do one thing: get you out of your head and back into your body. No phones. No noise. No schedule chasing you.
           </p>
           <p>
-            Located at the corner of Maple Ave &amp; E Braxton Foushee St in Carrboro — a healing space rooted in community.
+            Located at the corner of Maple Ave &amp; E Braxton Foushee St in Carrboro, a healing space rooted in community.
           </p>
         </div>
 
         <ul className="experience-list reveal">
           {[
-          ["01", "Handpicked products", "Every item in our retail room is something we actually believe in — curated for recovery, ritual, and real results."],
+          ["01", "Handpicked products", "Every item in our retail room is something we actually believe in, curated for recovery, ritual, and real results."],
           ["02", "Intentional experiences", "Sessions are never rushed. Transition time is built in. You arrive, you land, you leave changed."],
           ["03", "Rooted in community", "We're Carrboro through and through. A neighborhood sanctuary for neighbors who need it most."],
           ["04", "Made for you", "Whether it's your first float or your fiftieth, we meet you exactly where you are."]].
@@ -404,7 +404,7 @@ function WhimsyStub({ onBack }) {
           Whimsy mode is<br /><em>still dreaming.</em>
         </h2>
         <p className="whimsy-stub__sub">
-          We're crafting an illustrated, after-hours version of Areté — stars, candlelight, and a cutaway view of every room. Check back soon.
+          We're crafting an illustrated, after-hours version of Areté, stars, candlelight, and a cutaway view of every room. Check back soon.
         </p>
         <button className="whimsy-stub__back" onClick={onBack}>← Back to Light mode</button>
       </div>

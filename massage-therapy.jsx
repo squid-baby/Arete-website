@@ -98,7 +98,7 @@ function TopNav({ mobile }) {
 }
 
 // ---------- Rock massage video ----------
-// Uses the same blob-URL workaround as Contrast Therapy's IceCube — see
+// Uses the same blob-URL workaround as Contrast Therapy's IceCube, see
 // contrast-therapy.jsx for the full explanation. tl;dr: the dev sandbox
 // doesn't satisfy Range requests, so <video src="..."> from a normal URL
 // can fail. Fetch the mp4, wrap the Blob in an object URL, use that as src.
@@ -249,17 +249,17 @@ function Philosophy({ mobile }) {
   {
     mark: "i.",
     t: "We talk first.",
-    d: "Every session begins with a conversation — what hurts, what's heavy, what you'd like to leave behind on the table. We listen before we touch."
+    d: "Every session begins with a conversation, what hurts, what's heavy, what you'd like to leave behind on the table. We listen before we touch."
   },
   {
     mark: "ii.",
     t: "We tailor as we go.",
-    d: "Pressure, pace, focus, modality — all adjustable in the moment. Your only job is to say more, less, or stay right there. The plan is a starting point, not a script."
+    d: "Pressure, pace, focus, modality, all adjustable in the moment. Your only job is to say more, less, or stay right there. The plan is a starting point, not a script."
   },
   {
     mark: "iii.",
     t: "We send you off knowing.",
-    d: "Before you leave, we'll share what we noticed and a few small things to carry home — a stretch, a breath, a piece of attention. The work continues quietly between visits."
+    d: "Before you leave, we'll share what we noticed and a few small things to carry home, a stretch, a breath, a piece of attention. The work continues quietly between visits."
   }];
 
 
@@ -290,7 +290,7 @@ function Flow({ mobile }) {
   const steps = [
   { t: "Arrive", d: "Warm room, dim light, a brief check-in. We hear how your body is showing up today.", min: "0 min" },
   { t: "Read", d: "Hands listen first. Your therapist finds where you're holding before deciding what to bring.", min: "5 min" },
-  { t: "Adapt", d: "Swedish flow, deep pressure, sport work, hot stones — modalities blend in real time, shaped to what the day asks for.", min: "10–75 min" },
+  { t: "Adapt", d: "Swedish flow, deep pressure, sport work, hot stones, modalities blend in real time, shaped to what the day asks for.", min: "10–75 min" },
   { t: "Integrate", d: "A few unhurried minutes to settle, then notes and a small thing or two to carry home.", min: "75–90 min" }];
 
 
@@ -298,7 +298,7 @@ function Flow({ mobile }) {
     <section className={`flow ${mobile ? "flow--mobile" : ""}`}>
       <div className="flow__head">
         <span className="flow__kicker">The shape of a session</span>
-        <h2>Every Style , Any Way —<br /><em>every session is therapeutic.</em></h2>
+        <h2>Every Style, Any Way,<br /><em>every session is therapeutic.</em></h2>
         <p className="flow__lede">
           We don't ask you to pick a modality off a menu. Whether the day calls for long Swedish strokes, deep sport work, warm stones, or all three braided together, the session is built around what your body needs that morning.
         </p>
@@ -326,7 +326,7 @@ const THERAPISTS = [
 {
   name: "Jamie Taylor",
   role: "Lead LMBT",
-  bio: "“I grew up with a mother who suffered from severe migraines. Every night as a little one, I'd massage her head and neck and salve her sores. Healing by touch came natural to me. Fast forwarding to when I was 18 years old, I decided to get married and went to massage school to start a career. It began as a means to an end: keep us afloat. I got my massage bodywork therapy license and started practicing professionally in 1999 at hotels and various spas, and my new income allowed my husband and I to pay for college.\n\nTo be honest, my plan was to move on from massage after college to get into social work or teaching, but in 2005 I began practicing massage therapy on my own. While pursuing this industry, I became a mother to two beautiful, empathetic children, now supporting them through my work. I continued until 2019 when I decided to put rubber to the road to grow my small business. I rebranded as Taylored Body Healing — which has now joined the team at Areté — all in stride and renewing my passion to help you collect your calm.”",
+  bio: "“I grew up with a mother who suffered from severe migraines. Every night as a little one, I'd massage her head and neck and salve her sores. Healing by touch came natural to me. Fast forwarding to when I was 18 years old, I decided to get married and went to massage school to start a career. It began as a means to an end: keep us afloat. I got my massage bodywork therapy license and started practicing professionally in 1999 at hotels and various spas, and my new income allowed my husband and I to pay for college.\n\nTo be honest, my plan was to move on from massage after college to get into social work or teaching, but in 2005 I began practicing massage therapy on my own. While pursuing this industry, I became a mother to two beautiful, empathetic children, now supporting them through my work. I continued until 2019 when I decided to put rubber to the road to grow my small business. I rebranded as Taylored Body Healing, which has now joined the team at Areté, all in stride and renewing my passion to help you collect your calm.”",
   credentials: "LMBT #5002 · NC Licensed · Practicing since 1999",
   specialties: ["Therapeutic massage", "Pain relief", "Recovery"],
   photo: "assets/team/Jamie_painting.png",
@@ -383,7 +383,7 @@ function Therapists({ mobile }) {
         <span className="therapists__kicker">Meet the therapists</span>
         <h2>The hands you'll be <em>in.</em></h2>
         <p className="therapists__lede">
-          Two licensed therapists, decades of practice between them. Different backgrounds, different signatures — same care for the person on the table.
+          Two licensed therapists, decades of practice between them. Different backgrounds, different signatures, same care for the person on the table.
         </p>
       </div>
       <div className="therapists__grid">
@@ -418,15 +418,15 @@ function Deepen({ mobile }) {
   const [tab, setTab] = useState(1);
   const tabs = ["What to expect", "The science", "Who it's for"];
   const bodies = [
-  "You'll arrive a few minutes early, fill out a brief intake, and meet your therapist. We'll talk through what's going on — recent injuries, sticky spots, how much pressure feels right. Then you'll undress to your comfort, settle face-down on a warmed table under linens, and the session begins. Communication continues throughout — you can ask for more, less, or different at any moment. Afterward, water, a few notes, and the rest of your day a little softer.",
-  "Therapeutic massage measurably lowers cortisol, raises serotonin and dopamine, and shifts the autonomic nervous system toward parasympathetic dominance. Sustained pressure on connective tissue improves local circulation, reduces inflammatory markers, and downregulates pain signaling at the spinal level. For chronic tension, regular sessions are more effective than occasional deep work — the nervous system learns the pattern of release. For acute injury, manual therapy paired with movement consistently outperforms passive rest in recovery time and range-of-motion outcomes.",
-  "Anyone who lives in a body. The most common reasons people come to us: chronic neck and shoulder tension from screens, low-back pain from sitting or lifting, athletes between training blocks, expectant parents, post-surgical recovery (with clearance), and the simply overworked. If you're unsure whether massage is right for your situation, we'll talk it through before booking — and decline gracefully if it isn't."];
+  "You'll arrive a few minutes early, fill out a brief intake, and meet your therapist. We'll talk through what's going on, recent injuries, sticky spots, how much pressure feels right. Then you'll undress to your comfort, settle face-down on a warmed table under linens, and the session begins. Communication continues throughout, you can ask for more, less, or different at any moment. Afterward, water, a few notes, and the rest of your day a little softer.",
+  "Therapeutic massage measurably lowers cortisol, raises serotonin and dopamine, and shifts the autonomic nervous system toward parasympathetic dominance. Sustained pressure on connective tissue improves local circulation, reduces inflammatory markers, and downregulates pain signaling at the spinal level. For chronic tension, regular sessions are more effective than occasional deep work, the nervous system learns the pattern of release. For acute injury, manual therapy paired with movement consistently outperforms passive rest in recovery time and range-of-motion outcomes.",
+  "Anyone who lives in a body. The most common reasons people come to us: chronic neck and shoulder tension from screens, low-back pain from sitting or lifting, athletes between training blocks, expectant parents, post-surgical recovery (with clearance), and the simply overworked. If you're unsure whether massage is right for your situation, we'll talk it through before booking, and decline gracefully if it isn't."];
 
   const faqs = [
-  { q: "How do I choose a modality?", a: "You don't have to. Tell us what's going on — pain, stress, recovery, all three — and we'll recommend a starting point and blend as we go. Most sessions touch two or three modalities." },
+  { q: "How do I choose a modality?", a: "You don't have to. Tell us what's going on, pain, stress, recovery, all three, and we'll recommend a starting point and blend as we go. Most sessions touch two or three modalities." },
   { q: "What should I wear?", a: "Whatever you'd like. Most guests undress to their comfort level under the linens; some prefer to stay in shorts or a sports bra. The therapist only ever uncovers the area being worked on." },
-  { q: "How much pressure is too much?", a: "Pressure should feel intense but not bracing — if you're holding your breath or clenching, it's too much. Tell your therapist; they'll adjust immediately. There's no prize for white-knuckling it." },
-  { q: "Can I get a massage if I'm pregnant?", a: "Yes — our prenatal sessions are cleared for second and third trimesters, on a side-lying support system designed for it. Please mention your due date when booking." },
+  { q: "How much pressure is too much?", a: "Pressure should feel intense but not bracing, if you're holding your breath or clenching, it's too much. Tell your therapist; they'll adjust immediately. There's no prize for white-knuckling it." },
+  { q: "Can I get a massage if I'm pregnant?", a: "Yes, our prenatal sessions are cleared for second and third trimesters, on a side-lying support system designed for it. Please mention your due date when booking." },
   { q: "How often should I come in?", a: "For chronic tension or recovery work, every two to four weeks builds real change. For maintenance and stress, monthly is the sweet spot. We'll talk through what makes sense for your goals." },
   { q: "Should I tip?", a: "Tipping is welcome but never expected. Members and package holders often skip the tip and the therapists are paid the same either way." }];
 
@@ -463,7 +463,7 @@ function Pricing({ mobile }) {
   const plans = [
   { name: "60 Min\n\n", price: "125", note: "Targeted reset · Most asked-for", highlight: true, link: BOOK.massage60 },
   { name: "90 Min\n\n", price: "150", note: "Full body, unhurried", link: BOOK.massage90 },
-  { name: "Couples\n", price: "—", note: "Two tables, two therapists, one room", link: BOOK.general },
+  { name: "Couples\n", price: ",", note: "Two tables, two therapists, one room", link: BOOK.general },
   { name: "Packages\n", price: "\n", note: "\n\n\n\n\nMonthly memberships & multi-session packs", link: BOOK.general }];
 
   return (
@@ -492,7 +492,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I came in carrying a year of desk hours and left feeling like someone had quietly put my shoulders back where they belong. I'm rebooking before I leave, every time.</p>
-      <div className="quote__who">— Priya S. · Member since 2023</div>
+      <div className="quote__who">Priya S. · Member since 2023</div>
     </section>);
 }
 
@@ -556,7 +556,7 @@ const MASSAGE_DEFAULTS = /*EDITMODE-BEGIN*/{
 const MASSAGE_TONES = {
   poetic: {
     heroTitle: "Hands that\nlisten.",
-    heroLede: "A conversation in pressure and breath. Skilled hands meet what the body has been carrying — and slowly, kindly, ask it to let go.",
+    heroLede: "A conversation in pressure and breath. Skilled hands meet what the body has been carrying, and slowly, kindly, ask it to let go.",
     benefits: [
     { t: "Untie the knots", d: "Sustained, specific work where pain has set up camp." },
     { t: "Quiet the system", d: "Cortisol drops, breath deepens, the day's noise softens." },
@@ -572,7 +572,7 @@ const MASSAGE_TONES = {
   },
   warm: {
     heroTitle: "Slow hands.\nLong exhale.",
-    heroLede: "Tell us what hurts and what's heavy. We'll meet you there — pressure, pace, and focus shaped to the person on the table that day.",
+    heroLede: "Tell us what hurts and what's heavy. We'll meet you there, pressure, pace, and focus shaped to the person on the table that day.",
     benefits: [
     { t: "Ease where it aches", d: "Specific, patient work on the spots that have been calling for weeks." },
     { t: "Let the day go", d: "A full hour where nothing is asked of you. Most folks fall a little bit asleep." },

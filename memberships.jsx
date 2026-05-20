@@ -91,7 +91,7 @@ function Hero({ mobile }) {
           <span className="hero__line" style={{ animationDelay: "0.15s" }}>on a schedule.</span>
         </h1>
         <p className="hero__lede" style={{ margin: mobile ? "0 0 28px" : "0 auto 36px" }}>
-          A membership is two things: a small monthly discount, and a future promise to keep coming back to yourself. Pick the modality that fits your week — sauna, float, red light, contrast, or all of it — and let the rhythm do the work.
+          A membership is two things: a small monthly discount, and a future promise to keep coming back to yourself. Pick the modality that fits your week, sauna, float, red light, contrast, or all of it, and let the rhythm do the work.
         </p>
         <div className="hero__cta-row" style={{ justifyContent: mobile ? "stretch" : "center" }}>
           <a href="#tiers" className="btn btn--primary">
@@ -121,7 +121,7 @@ function WhyMembership({ mobile }) {
         <span className="mb-why__kicker">The math</span>
         <h3 className="mb-why__title">Always less than the door.</h3>
         <p className="mb-why__body">
-          Every tier is priced under its drop-in equivalent. The deeper you go, the more it saves —
+          Every tier is priced under its drop-in equivalent. The deeper you go, the more it saves,
           12 saunas a month at member rate is $54 less than walking in.
         </p>
       </div>
@@ -130,7 +130,7 @@ function WhyMembership({ mobile }) {
         <span className="mb-why__kicker">The science</span>
         <h3 className="mb-why__title">Dose matters more than novelty.</h3>
         <p className="mb-why__body">
-          The studied benefits of heat, cold, light, and float are dose-dependent — single sessions
+          The studied benefits of heat, cold, light, and float are dose-dependent, single sessions
           feel good, but the cardiovascular, mood, and sleep markers shift on consistent weekly use.
         </p>
         <span className="mb-why__cite">most protocols use 2–4×/week for 4–12 weeks</span>
@@ -140,7 +140,7 @@ function WhyMembership({ mobile }) {
         <span className="mb-why__kicker">The promise</span>
         <h3 className="mb-why__title">A standing date with yourself.</h3>
         <p className="mb-why__body">
-          The hardest part of a practice isn't the session — it's getting back. Pre-paid credits
+          The hardest part of a practice isn't the session, it's getting back. Pre-paid credits
           on the calendar make showing up the path of least resistance.
         </p>
       </div>
@@ -265,7 +265,7 @@ function Modality({ mobile, id, index, title, em, lede, children }) {
     <section id={id} className={`mod ${mobile ? "mod--mobile" : ""}`}>
       <div className="mod__head">
         <div>
-          <div className="mod__index">— {index}</div>
+          <div className="mod__index">{index}.</div>
         </div>
         <div>
           <h2 className="mod__title">{title} {em && <em>{em}</em>}</h2>
@@ -466,7 +466,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="rlt" index="03 · Red Light Therapy"
         title="Red Light" em="therapy"
-        lede="Mitochondrial support, recovery, skin. The dose-response is daily — this tier is built around making that practical.">
+        lede="Mitochondrial support, recovery, skin. The dose-response is daily, this tier is built around making that practical.">
         {RLT_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
@@ -478,7 +478,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="bundles" index="05 · Bundled Wellness"
         title="Bundled" em="wellness"
-        lede="Float plus fire credits in one membership. Basic and Total are shareable with one other person — Ultimate is the all-in for daily users.">
+        lede="Float plus fire credits in one membership. Basic and Total are shareable with one other person, Ultimate is the all-in for daily users.">
         {[BASIC_BUNDLE, TOTAL_BUNDLE].map(p => <PlanCard key={p.name} plan={p} />)}
         <FeatureCard plan={ULTIMATE} />
       </Modality>
@@ -490,9 +490,9 @@ function Tiers({ mobile }) {
 function Rules({ mobile }) {
   const rules = [
     ["Three-month minimum", "Every membership runs for at least three months before you can cancel. The science (and the budget) shows up over weeks, not days."],
-    ["Pause once, up to two months", "Travel, surgery, a busy season — pause your membership for up to two months. Credits stay active during the pause."],
-    ["Rollover where it makes sense", "Contrast tiers roll over one month (use it or lose it after that). Float and sauna credits don't roll over — the rhythm is the point."],
-    ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person. Most single-modality memberships are personal — guest add-ons are $15–$20/session."],
+    ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months. Credits stay active during the pause."],
+    ["Rollover where it makes sense", "Contrast tiers roll over one month (use it or lose it after that). Float and sauna credits don't roll over, the rhythm is the point."],
+    ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person. Most single-modality memberships are personal, guest add-ons are $15–$20/session."],
     ["Member rates on top", "All members get $55 floats. 8+ Fire, RLT, and Contrast 3+ memberships add 10% off retail and other services. Ultimate adds 15% off everything."],
     ["Cancel in writing", "Email theteam@floatarete.com 14 days before your renewal date. You'll have 30 days to use any remaining credits."]
   ];
@@ -526,8 +526,8 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I joined Total Wellness during a stretch where I'd stopped sleeping. Two saunas and a float a week later, the wheel started turning again. The membership is what keeps me going — without it, I'd skip the week I most need it.</p>
-      <div className="quote__who">— Reese P. · Member since 2024</div>
+      <p>I joined Total Wellness during a stretch where I'd stopped sleeping. Two saunas and a float a week later, the wheel started turning again. The membership is what keeps me going, without it, I'd skip the week I most need it.</p>
+      <div className="quote__who">Reese P. · Member since 2024</div>
     </section>
   );
 }

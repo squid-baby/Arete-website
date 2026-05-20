@@ -71,7 +71,7 @@ function TopNav({ mobile }) {
   return (
     <header className={`nav ${mobile ? "nav--mobile" : ""}`}>
       <div className="nav__inner">
-        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness — home">
+        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness, home">
           <img src="assets/arete-logo.png?v=2" alt="Areté Float + Wellness" style={{ width: mobile ? "88px" : "120px" }} />
         </a>
 
@@ -174,7 +174,7 @@ function Hero() {
       <div className="info-hero__eyebrow"><span>About Areté &middot; Carrboro, NC</span></div>
       <h1 className="info-hero__title">A neighborhood <em>sanctuary,</em><br />built on purpose.</h1>
       <p className="info-hero__sub">
-        Areté is independently owned and quietly run. We built every room around one question: what would actually help someone slow down? Below — the story, the principles, and the people who keep it running.
+        Areté is independently owned and quietly run. We built every room around one question: what would actually help someone slow down? Below, the story, the principles, and the people who keep it running.
       </p>
     </section>
   );
@@ -190,15 +190,15 @@ function Story() {
         <span className="about-story__kicker">Our story</span>
         <h2 className="about-story__heading">A studio shaped by <em>what we needed</em> ourselves.</h2>
         <p>
-          Areté opened because we needed it. Years before there was a building, there was a list — a quiet, growing list of the rooms we wished existed in our own town. A float tank, run with care. A cedar sauna hot enough to matter. A cold plunge clean enough to use. A massage room that actually felt restful. And a small shop with the kind of objects that only show up if a person — not an algorithm — chose them.
+          Areté opened because we needed it. Years before there was a building, there was a list, a quiet, growing list of the rooms we wished existed in our own town. A float tank, run with care. A cedar sauna hot enough to matter. A cold plunge clean enough to use. A massage room that actually felt restful. And a small shop with the kind of objects that only show up if a person, not an algorithm, chose them.
         </p>
         <p>
           We're at the corner of Maple and E. Braxton Foushee in Carrboro. The building has warm windows. The team is small. The rotation of products in the retail room changes often. The phones at the front desk are answered by humans who've also been on the table.
         </p>
         <p>
-          If you've never floated, never plunged, never sauna'd — start with one. We'll guide you through it. If you've done all three, you already know why we built this.
+          If you've never floated, never plunged, never sauna'd, start with one. We'll guide you through it. If you've done all three, you already know why we built this.
         </p>
-        <div className="about-story__sig">— Jen, founder</div>
+        <div className="about-story__sig">Jen, founder</div>
       </div>
     </section>
   );
@@ -275,11 +275,11 @@ function Visit() {
   return (
     <section className="info-visit">
       <h2>Come <em>see the rooms.</em></h2>
-      <p>No appointment needed for a tour — pop in any time we're open. If you want to book a session, the fastest way is online.</p>
+      <p>No appointment needed for a tour, pop in any time we're open. If you want to book a session, the fastest way is online.</p>
       <div className="info-visit__hours">
-        <div className="info-visit__hours-cell"><h4>Mon — Thu</h4><p>9 AM — 8 PM</p></div>
-        <div className="info-visit__hours-cell"><h4>Fri — Sat</h4><p>9 AM — 9 PM</p></div>
-        <div className="info-visit__hours-cell"><h4>Sunday</h4><p>10 AM — 6 PM</p></div>
+        <div className="info-visit__hours-cell"><h4>Mon, Thu</h4><p>9 AM, 8 PM</p></div>
+        <div className="info-visit__hours-cell"><h4>Fri, Sat</h4><p>9 AM, 9 PM</p></div>
+        <div className="info-visit__hours-cell"><h4>Sunday</h4><p>10 AM, 6 PM</p></div>
       </div>
       <a className="info-visit__cta" href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer">Book a session →</a>
     </section>

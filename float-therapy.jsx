@@ -243,7 +243,7 @@ function Benefits({ mobile, copy }) {
 function Timeline({ mobile }) {
   const steps = [
   { t: "Arrive", d: "Dim light, warm tea, a quiet room to settle.", min: "0 min" },
-  { t: "Rinse", d: "A brief shower — then into your private pod.", min: "5 min" },
+  { t: "Rinse", d: "A brief shower, then into your private pod.", min: "5 min" },
   { t: "Relax", d: "Lights dim. Music fades. You drift.", min: "10–70 min" },
   { t: "Return", d: "Rinse, dress, sip. Step back into the world softly.", min: "70–90 min" }];
 
@@ -295,12 +295,12 @@ function Deepen({ mobile }) {
   const [tab, setTab] = useState(1);
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
-  "Ten inches of water. A thousand pounds of Epsom salt. Skin-temperature. Your body becomes buoyant the moment you let go — no effort required. Light and sound fade to a chosen hush.",
-  "Twelve hundred pounds of magnesium sulfate hold you weightless while sensory input drops to near-zero — no light, no sound, no gravity to push back against. With nothing to defend against, your nervous system shifts out of fight-or-flight and into the parasympathetic state: heart rate slows, cortisol drops, breath deepens. EEG studies show floaters move from active beta brainwaves into slower alpha and theta — the same territory your brain visits in deep meditation and the moments just before sleep. Meanwhile, magnesium absorbs transdermally through the skin, easing muscle tension and supporting the very neurotransmitters (GABA, serotonin) that keep the calm response humming. Ninety minutes in; a quieter operating system out.",
-  "Most first-timers feel the quiet settle in around minute fifteen. Thoughts get quieter. Time stretches. You emerge rinsed, unhurried, and — most report — noticeably looser shoulders, lower back and even jaws relax. Your nervous system is completely reset for the first time in years. "];
+  "Ten inches of water. A thousand pounds of Epsom salt. Skin-temperature. Your body becomes buoyant the moment you let go, no effort required. Light and sound fade to a chosen hush.",
+  "Twelve hundred pounds of magnesium sulfate hold you weightless while sensory input drops to near-zero, no light, no sound, no gravity to push back against. With nothing to defend against, your nervous system shifts out of fight-or-flight and into the parasympathetic state: heart rate slows, cortisol drops, breath deepens. EEG studies show floaters move from active beta brainwaves into slower alpha and theta, the same territory your brain visits in deep meditation and the moments just before sleep. Meanwhile, magnesium absorbs transdermally through the skin, easing muscle tension and supporting the very neurotransmitters (GABA, serotonin) that keep the calm response humming. Ninety minutes in; a quieter operating system out.",
+  "Most first-timers feel the quiet settle in around minute fifteen. Thoughts get quieter. Time stretches. You emerge rinsed, unhurried, and, most report, noticeably looser shoulders, lower back and even jaws relax. Your nervous system is completely reset for the first time in years. "];
 
   const faqs = [
-  { q: "Will I feel claustrophobic?", a: "The pod is larger than it looks — you control the door, the light, and the music the entire time. You can float with the lid fully open." },
+  { q: "Will I feel claustrophobic?", a: "The pod is larger than it looks, you control the door, the light, and the music the entire time. You can float with the lid fully open." },
   { q: "Do I need to know how to swim?", a: "No. The salt density makes sinking impossible. You lie back and the water does the work." },
   { q: "What do I bring?", a: "Yourself. We provide towels, earplugs, robes, rinse products, and a quiet room afterward." },
   { q: "Is it hygienic?", a: "The saline solution is fully filtered between every session through multiple stages, including UV. The salt concentration alone is inhospitable to microbes." },
@@ -339,7 +339,7 @@ function Deepen({ mobile }) {
 // ---------- Pricing snapshot ----------
 function Pricing({ mobile }) {
   const plans = [
-  { name: "New Guest", price: "$65", note: "Intro session — 60 min", highlight: true, link: BOOK.newGuest },
+  { name: "New Guest", price: "$65", note: "Intro session, 60 min", highlight: true, link: BOOK.newGuest },
   { name: "60 Min\n\n", price: "$69", note: "Express float", link: BOOK.float60 },
   { name: "90 Min\n\n", price: "$89", note: "Most Poplar", link: BOOK.float90 },
   { name: "Monthly", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "memberships.html" }];
@@ -371,7 +371,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I arrived wound tight and left unreadable by my own stress. I've been back four times since.</p>
-      <div className="quote__who">— Maya R. · Floater since 2024</div>
+      <div className="quote__who">Maya R. · Floater since 2024</div>
     </section>);
 
 }

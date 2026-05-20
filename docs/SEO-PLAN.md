@@ -1,4 +1,4 @@
-# SEO Game Plan — floatarete.com
+# SEO Game Plan, floatarete.com
 
 A practical, priority-ordered checklist for the Wix → Netlify rebuild. Track
 each item to completion before launch, then keep the bottom section open as
@@ -25,7 +25,7 @@ the project root is correct. If you ever switch to a build step that outputs to
 ## 2 · Per-page SEO checklist
 
 Every page in the site must hit these. Use `home.html` as the reference
-implementation — its `<head>` is fully fitted out.
+implementation, its `<head>` is fully fitted out.
 
 - [ ] Exactly one `<h1>` reflecting the page's primary topic
 - [ ] Unique `<title>`, 50–60 chars, format: `[Topic] | Areté Float + Wellness | Carrboro, NC`
@@ -43,7 +43,7 @@ implementation — its `<head>` is fully fitted out.
 
 | Page | Schema type |
 |---|---|
-| Homepage (`/`) | `LocalBusiness` (full) — already on home.html |
+| Homepage (`/`) | `LocalBusiness` (full), already on home.html |
 | `/float`, `/sauna`, `/red-light`, `/Contrast-Therapy`, `/Massage`, `/halotherapy` | `Service` with `provider`, `areaServed`, `offers` |
 | `/memberships` | `OfferCatalog` |
 | `/blog` | `Blog` (already on blog.html) |
@@ -93,7 +93,7 @@ Hours, when shown in HTML, must match the hours in LocalBusiness schema.
 - [ ] Below-fold images use `loading="lazy"`.
 - [ ] Largest Contentful Paint < 2.5s on 4G.
 - [ ] No layout shift on hero (set explicit `width`/`height` or aspect-ratio).
-- [ ] Self-host fonts (already done — `assets/fonts/*.otf`) with `font-display: swap`.
+- [ ] Self-host fonts (already done, `assets/fonts/*.otf`) with `font-display: swap`.
 
 ---
 
@@ -110,7 +110,7 @@ Hours, when shown in HTML, must match the hours in LocalBusiness schema.
 
 ## 7 · Pre-launch checklist
 
-1. [ ] Open `https://floatarete.com/sitemap.xml` in browser — verify every old
+1. [ ] Open `https://floatarete.com/sitemap.xml` in browser, verify every old
        Wix URL we care about is either redirected or has a new equivalent.
 2. [ ] Cross-reference with Google Search Console → Coverage → Valid pages
        (this lists every URL Google has indexed, including ones not in the
@@ -138,13 +138,13 @@ Hours, when shown in HTML, must match the hours in LocalBusiness schema.
   fix anything flagged.
 - Watch Search Console > Performance for 6 months. The pages that get
   impressions but few clicks are usually a meta-description problem, not a
-  ranking problem — easy fix.
+  ranking problem, easy fix.
 
 ---
 
 ## Schema boilerplates
 
-### Service page (drop into `/float.html`, etc — fill `name`, `description`, `offers`)
+### Service page (drop into `/float.html`, etc, fill `name`, `description`, `offers`)
 
 ```html
 <script type="application/ld+json">
@@ -155,7 +155,7 @@ Hours, when shown in HTML, must match the hours in LocalBusiness schema.
   "serviceType": "Sensory deprivation float tank",
   "provider": { "@id": "https://floatarete.com/#business" },
   "areaServed": { "@type": "City", "name": "Carrboro" },
-  "description": "60- or 90-minute floats in 1,000 lbs of Epsom salt — sensory silence, zero gravity, and complete restoration.",
+  "description": "60- or 90-minute floats in 1,000 lbs of Epsom salt, sensory silence, zero gravity, and complete restoration.",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
@@ -198,7 +198,7 @@ Hours, when shown in HTML, must match the hours in LocalBusiness schema.
       "name": "What should I wear in a float tank?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most people float nude — the room is fully private and lockable. If you'd prefer a swimsuit, that's fine too."
+        "text": "Most people float nude, the room is fully private and lockable. If you'd prefer a swimsuit, that's fine too."
       }
     }
   ]

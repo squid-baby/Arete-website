@@ -14,7 +14,7 @@ body.whimsy {
   --accent2: #F2C79A;
 }
 
-/* Stage gradient — replace the cool blue/purple wash with warm hearth glow */
+/* Stage gradient, replace the cool blue/purple wash with warm hearth glow */
 .stage {
   background:
     radial-gradient(ellipse 900px 600px at 20% -10%, rgba(200, 99, 58, 0.10), transparent 60%),
@@ -208,7 +208,7 @@ body.whimsy .stage {
 }
 .pair-card:hover .pair-card__link { gap: 12px; color: var(--candle); }
 
-/* ─────────────────────────── Pricing — single hero plan + supporting cards */
+/* ─────────────────────────── Pricing, single hero plan + supporting cards */
 .pricing--sauna .pricing__grid {
   grid-template-columns: 1.2fr 1fr 1fr;
 }
@@ -239,7 +239,7 @@ body.whimsy .stage {
 }
 .plan--feature .plan__link { border-color: rgba(255,255,255,0.3); }
 
-/* ─────────────────────────── Final CTA orb — warm */
+/* ─────────────────────────── Final CTA orb, warm */
 .final {
   background: linear-gradient(135deg, var(--ink) 0%, #1F1108 100%) !important;
 }

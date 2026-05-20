@@ -138,7 +138,7 @@ function HaloVideo({ playing, intensity = 0.7 }) {
       background: `radial-gradient(circle at 50% 60%, rgba(232,155,142,${glowAlpha}) 0%, rgba(244,221,217,0.18) 45%, rgba(13,27,62,0.04) 100%)`,
       overflow: "hidden", position: "relative", borderRadius: "12px"
     }}>
-      {/* Salt particles drifting — present whether or not the mp4 loads */}
+      {/* Salt particles drifting, present whether or not the mp4 loads */}
       <SaltParticles playing={playing} intensity={intensity} />
 
       {blobUrl && !missing &&
@@ -168,7 +168,7 @@ function HaloVideo({ playing, intensity = 0.7 }) {
           <SaltCaveGlyph intensity={intensity} />
           <div>video placeholder</div>
           <div style={{ fontSize: "10px", opacity: 0.7, textTransform: "none", letterSpacing: "0.04em", maxWidth: "220px", lineHeight: 1.5 }}>
-            drop <code>assets/halotherapy.mp4</code> in — same handling as the contrast page
+            drop <code>assets/halotherapy.mp4</code> in, same handling as the contrast page
           </div>
         </div>
       }
@@ -176,10 +176,10 @@ function HaloVideo({ playing, intensity = 0.7 }) {
   );
 }
 
-// Decorative SVG of a salt-cave wall — placeholder while no mp4
+// Decorative SVG of a salt-cave wall, placeholder while no mp4
 function SaltCaveGlyph({ intensity }) {
   const stones = [];
-  // Irregular salt stone wall — varied rectangles with rounded corners
+  // Irregular salt stone wall, varied rectangles with rounded corners
   const rows = [
     [{ w: 28, h: 14 }, { w: 22, h: 14 }, { w: 32, h: 14 }, { w: 24, h: 14 }],
     [{ w: 20, h: 12 }, { w: 30, h: 12 }, { w: 26, h: 12 }, { w: 30, h: 12 }],
@@ -325,7 +325,7 @@ function SaltRadial({ mobile, intensity }) {
       id: 0,
       title: "Antibacterial",
       kicker: "Lowers microbial load",
-      job: "Salt is hygroscopic — it pulls water out of bacterial cells on contact, denaturing membranes and lowering colony counts in the airway during exposure.",
+      job: "Salt is hygroscopic, it pulls water out of bacterial cells on contact, denaturing membranes and lowering colony counts in the airway during exposure.",
       // angle range in degrees (0 = top), color
       a0: -45, a1: 45,
       color: "rgb(232,155,142)"
@@ -342,7 +342,7 @@ function SaltRadial({ mobile, intensity }) {
       id: 2,
       title: "Mucolytic",
       kicker: "Thins & moves mucus",
-      job: "Salt particles draw water into thick airway secretions and stimulate ciliary clearance. Stuck mucus loosens and moves — the dry cough that arrives mid-session is the mechanism working.",
+      job: "Salt particles draw water into thick airway secretions and stimulate ciliary clearance. Stuck mucus loosens and moves, the dry cough that arrives mid-session is the mechanism working.",
       a0: 135, a1: 225,
       color: "rgb(218,168,118)"
     },
@@ -350,7 +350,7 @@ function SaltRadial({ mobile, intensity }) {
       id: 3,
       title: "Antihistamine",
       kicker: "Calms allergic response",
-      job: "Hypertonic saline blunts mast-cell degranulation and reduces histamine release in the upper airway — useful for seasonal allergies, post-nasal drip, and chronic rhinitis.",
+      job: "Hypertonic saline blunts mast-cell degranulation and reduces histamine release in the upper airway, useful for seasonal allergies, post-nasal drip, and chronic rhinitis.",
       a0: 225, a1: 315,
       color: "rgb(180,128,148)"
     }
@@ -442,7 +442,7 @@ function SaltRadial({ mobile, intensity }) {
               );
             })}
 
-            {/* Center core — the salt particle */}
+            {/* Center core, the salt particle */}
             <circle cx={cx} cy={cy} r={rInner - 4} fill="url(#ht-core)" />
             <circle cx={cx} cy={cy} r={rInner - 4} fill="none" stroke="rgba(13,27,62,0.18)" strokeWidth="0.7" />
 
@@ -532,14 +532,14 @@ function Deepen({ mobile, showScience }) {
   const bodies = {
     "How it works": (
       <>
-        <p>You book a sauna and add halotherapy at the front desk. A halogenerator mounted in the cabin grinds pharmaceutical-grade sodium chloride into a dry aerosol — particles between one and five microns — and pushes it into the cedar room while you sit. You breathe normally through the nose. Twenty to thirty minutes later you step out, your sauna ends, and the cabin's ventilation clears the salt for the next guest.</p>
+        <p>You book a sauna and add halotherapy at the front desk. A halogenerator mounted in the cabin grinds pharmaceutical-grade sodium chloride into a dry aerosol, particles between one and five microns, and pushes it into the cedar room while you sit. You breathe normally through the nose. Twenty to thirty minutes later you step out, your sauna ends, and the cabin's ventilation clears the salt for the next guest.</p>
       </>
     ),
     "The science": (
       <>
-        <p>Halotherapy delivers <em>dry sodium chloride aerosol</em> — micronized salt particles small enough to bypass the upper airway and reach the bronchial tree. The mechanism is mechanical, osmotic, and immunomodulatory at once. Salt is hygroscopic: each particle that lands on a moist mucosal surface pulls water out of pathogens and into thick mucus, lowering microbial load and thinning secretions.</p>
+        <p>Halotherapy delivers <em>dry sodium chloride aerosol</em>, micronized salt particles small enough to bypass the upper airway and reach the bronchial tree. The mechanism is mechanical, osmotic, and immunomodulatory at once. Salt is hygroscopic: each particle that lands on a moist mucosal surface pulls water out of pathogens and into thick mucus, lowering microbial load and thinning secretions.</p>
         <p style={{ marginTop: "14px" }}>Particle size dictates depth. <strong>1–2 µm</strong> particles travel deepest, reaching the bronchioles and alveoli. <strong>3–5 µm</strong> particles deposit in the larger bronchi and trachea. Anything above ten microns is filtered out by the nose. Our halogenerator targets the lower-airway range, which is the band studied for asthma, COPD, and chronic bronchitis.</p>
-        <p style={{ marginTop: "14px" }}>Controlled trials show measurable improvements in FEV1, peak flow, and symptom scores in mild-to-moderate asthma after a course of sessions<sup>1</sup>, reduced exacerbations in chronic bronchitis<sup>2</sup>, and a clear effect on inflammatory skin conditions like atopic dermatitis<sup>3</sup> through a different route — salt deposition on the skin during exposure. Effects are dose-dependent and cumulative; a single session feels good, but the airway and skin shifts compound over a course.</p>
+        <p style={{ marginTop: "14px" }}>Controlled trials show measurable improvements in FEV1, peak flow, and symptom scores in mild-to-moderate asthma after a course of sessions<sup>1</sup>, reduced exacerbations in chronic bronchitis<sup>2</sup>, and a clear effect on inflammatory skin conditions like atopic dermatitis<sup>3</sup> through a different route, salt deposition on the skin during exposure. Effects are dose-dependent and cumulative; a single session feels good, but the airway and skin shifts compound over a course.</p>
         <p className="rl-cite">
           <span><sup>1</sup> Chervinskaya & Zilber, <em>Journal of Aerosol Medicine</em>, 1995.</span>
           <span><sup>2</sup> Rashleigh, Smith & Roberts, <em>International Journal of COPD</em>, 2014.</span>
@@ -549,16 +549,16 @@ function Deepen({ mobile, showScience }) {
     ),
     "What to expect": (
       <>
-        <p>The cabin smells faintly of the sea — clean, mineral, not sharp. You'll see the air glint as particles drift through the light. Most people notice deeper, easier breathing within the first ten minutes. A mild dry cough mid-session is normal and expected; it's mucus mobilizing. Afterward, the airway feels open for several hours and the skin looks faintly luminous from the salt deposition. You may want extra water on your way out.</p>
+        <p>The cabin smells faintly of the sea, clean, mineral, not sharp. You'll see the air glint as particles drift through the light. Most people notice deeper, easier breathing within the first ten minutes. A mild dry cough mid-session is normal and expected; it's mucus mobilizing. Afterward, the airway feels open for several hours and the skin looks faintly luminous from the salt deposition. You may want extra water on your way out.</p>
       </>
     )
   };
 
   const faqs = [
-    { q: "Do I need to do anything different in the sauna?", a: "Nothing. Sit, breathe through your nose, sweat as you normally would. The halogenerator runs the full length of your sauna session — there's no separate timer to manage." },
+    { q: "Do I need to do anything different in the sauna?", a: "Nothing. Sit, breathe through your nose, sweat as you normally would. The halogenerator runs the full length of your sauna session, there's no separate timer to manage." },
     { q: "Is it safe for kids and people with asthma?", a: "Halotherapy is well-tolerated and has been used for decades in respiratory clinics in Eastern Europe. Most people with asthma find it eases symptoms, but if you have severe or unstable asthma, brittle airways, or active TB, check with your pulmonologist first." },
     { q: "How often should I add it?", a: "For seasonal allergies or a stuck cold, two to three times a week for two weeks tends to produce a noticeable shift. For chronic respiratory or skin conditions, a longer course of two or three sessions a week for a month is the protocol most studies use." },
-    { q: "Will the salt damage my jewelry or phone?", a: "The aerosol is dry and the concentration is low — your phone and watch will be fine. We recommend leaving leather goods in the cubby anyway to keep them out of the heat." },
+    { q: "Will the salt damage my jewelry or phone?", a: "The aerosol is dry and the concentration is low, your phone and watch will be fine. We recommend leaving leather goods in the cubby anyway to keep them out of the heat." },
     { q: "Are there reasons to skip a session?", a: "Active respiratory infections with fever, severe COPD exacerbation, recent thoracic surgery, and active TB are reasons to wait. Salt sensitivity and severe hypertension warrant a quick check with your doctor first." }
   ];
 
@@ -605,7 +605,7 @@ function Pricing({ mobile }) {
           <div className="ht-pricing__row">
             <div>
               <h3 className="ht-pricing__name">Halotherapy</h3>
-              <p className="ht-pricing__sub">Runs the full length of your sauna session — no extra time, no extra room.</p>
+              <p className="ht-pricing__sub">Runs the full length of your sauna session, no extra time, no extra room.</p>
             </div>
             <div className="ht-pricing__price">
               <span className="ht-pricing__plus">+</span>
@@ -620,7 +620,7 @@ function Pricing({ mobile }) {
         </div>
       </div>
 
-      {/* Add-on callout — Halotherapy + Massage stack */}
+      {/* Add-on callout, Halotherapy + Massage stack */}
       <div className="rl-addon">
         <div className="rl-addon__mark">+</div>
         <div className="rl-addon__body">
@@ -645,7 +645,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I started adding the salt to my sauna during allergy season and never stopped. My sinuses are clearer than they've been in a decade, my eczema quieted down, and the ten dollars is the easiest yes on the menu.</p>
-      <div className="quote__who">— Mara K. · Member since 2023</div>
+      <div className="quote__who">Mara K. · Member since 2023</div>
     </section>);
 }
 
@@ -706,11 +706,11 @@ const HALO_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 const HALO_COPY = {
   heroTitle: "Sea air,\non a schedule.",
-  heroLede: "A halogenerator mists pharmaceutical-grade salt into your sauna. You breathe it in for the full session — airways open, mucus thins, skin softens, allergies quiet down.",
+  heroLede: "A halogenerator mists pharmaceutical-grade salt into your sauna. You breathe it in for the full session, airways open, mucus thins, skin softens, allergies quiet down.",
   benefits: [
-    { t: "Respiratory clearance", d: "Asthma, allergies, sinus congestion, post-nasal drip — micronized salt thins mucus and quiets airway inflammation across the bronchial tree." },
+    { t: "Respiratory clearance", d: "Asthma, allergies, sinus congestion, post-nasal drip, micronized salt thins mucus and quiets airway inflammation across the bronchial tree." },
     { t: "Skin & barrier", d: "Eczema, psoriasis, and acne respond to salt deposition on the skin during exposure. Itch eases, redness fades, the barrier rebuilds." },
-    { t: "Antimicrobial", d: "Salt is hygroscopic and antibacterial on contact. Pathogen load in the airway drops during and after exposure — useful at the edge of a cold." }
+    { t: "Antimicrobial", d: "Salt is hygroscopic and antibacterial on contact. Pathogen load in the airway drops during and after exposure, useful at the edge of a cold." }
   ]
 };
 

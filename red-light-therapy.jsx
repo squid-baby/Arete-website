@@ -143,7 +143,7 @@ function RedLightVideo({ playing, intensity = 0.7 }) {
       background: `radial-gradient(circle at 50% 50%, rgba(196,80,90,${glowAlpha}) 0%, rgba(196,168,224,0.08) 40%, rgba(13,27,62,0.04) 100%)`,
       overflow: "hidden", position: "relative", borderRadius: "12px"
     }}>
-      {/* Animated wavelength rings — visible whether or not the mp4 loads */}
+      {/* Animated wavelength rings, visible whether or not the mp4 loads */}
       <RLRings playing={playing} intensity={intensity} alpha={ringAlpha} />
 
       {blobUrl && !missing &&
@@ -173,7 +173,7 @@ function RedLightVideo({ playing, intensity = 0.7 }) {
           <RLPanelGlyph intensity={intensity} />
           <div>video placeholder</div>
           <div style={{ fontSize: "10px", opacity: 0.7, textTransform: "none", letterSpacing: "0.04em", maxWidth: "220px", lineHeight: 1.5 }}>
-            drop <code>assets/red-light.mp4</code> in — same handling as the contrast page
+            drop <code>assets/red-light.mp4</code> in, same handling as the contrast page
           </div>
         </div>
       }
@@ -181,7 +181,7 @@ function RedLightVideo({ playing, intensity = 0.7 }) {
   );
 }
 
-// Decorative SVG of a red light panel — used as the placeholder while no mp4
+// Decorative SVG of a red light panel, used as the placeholder while no mp4
 function RLPanelGlyph({ intensity }) {
   const dots = [];
   for (let r = 0; r < 5; r++) {
@@ -462,7 +462,7 @@ function Wavelengths({ mobile, intensity }) {
               <text x="50" y="226">MUSCLE · FASCIA</text>
             </g>
 
-            {/* 660nm beam — shallow */}
+            {/* 660nm beam, shallow */}
             <g style={{ opacity: active === 0 ? 1 : 0.35, transition: "opacity .4s" }}>
               <rect x="180" y="20" width="80" height="100" fill="url(#rl-660)" />
               <line x1="180" y1="20" x2="180" y2="120" stroke="rgba(206,68,78,0.5)" strokeWidth="0.6" strokeDasharray="2 3" />
@@ -470,7 +470,7 @@ function Wavelengths({ mobile, intensity }) {
               <text x="220" y="14" textAnchor="middle" fontFamily="'GT America Mono',monospace" fontSize="10" fill="rgb(206,68,78)" fontWeight="600">660 nm</text>
             </g>
 
-            {/* 850nm beam — deep */}
+            {/* 850nm beam, deep */}
             <g style={{ opacity: active === 1 ? 1 : 0.35, transition: "opacity .4s" }}>
               <rect x="340" y="20" width="80" height="220" fill="url(#rl-850)" />
               <line x1="340" y1="20" x2="340" y2="240" stroke="rgba(140,56,90,0.5)" strokeWidth="0.6" strokeDasharray="2 3" />
@@ -478,7 +478,7 @@ function Wavelengths({ mobile, intensity }) {
               <text x="380" y="14" textAnchor="middle" fontFamily="'GT America Mono',monospace" fontSize="10" fill="rgb(140,56,90)" fontWeight="600">850 nm</text>
             </g>
 
-            {/* Photons traveling — animated dots */}
+            {/* Photons traveling, animated dots */}
             {[0,1,2,3].map(i => (
               <circle key={`r-${i}`} cx={220} cy={20} r="2" fill="rgb(206,68,78)" opacity={active === 0 ? 0.9 : 0.3}>
                 <animate attributeName="cy" values="20;120" dur="1.6s" begin={`${i * 0.4}s`} repeatCount="indefinite" />
@@ -554,14 +554,14 @@ function Deepen({ mobile, showScience }) {
   const bodies = {
     "How it works": (
       <>
-        <p>Twenty minutes on a heated bench, eight inches from a full-body LED panel. Two wavelengths — 660 nm visible red and 850 nm near-infrared — bathe the skin and tissue beneath. Eyes covered, phone away, music optional. The light is warm but doesn't burn, never heats the room, and leaves no residue. You shower if you want, dress, and walk back into the day.</p>
+        <p>Twenty minutes on a heated bench, eight inches from a full-body LED panel. Two wavelengths, 660 nm visible red and 850 nm near-infrared, bathe the skin and tissue beneath. Eyes covered, phone away, music optional. The light is warm but doesn't burn, never heats the room, and leaves no residue. You shower if you want, dress, and walk back into the day.</p>
       </>
     ),
     "The science": (
       <>
-        <p>Photobiomodulation (PBM) — formerly low-level laser therapy — works at the mitochondrial scale. Photons in the 600–900 nm window are absorbed by <em>cytochrome c oxidase</em>, a key enzyme in the electron transport chain. The result is a measurable bump in ATP synthesis, a brief, beneficial spike in reactive oxygen species that triggers downstream repair signaling, and a release of nitric oxide that improves local blood flow.</p>
-        <p style={{ marginTop: "14px" }}>Different wavelengths reach different depths. <strong>660 nm</strong> is absorbed primarily in the epidermis and papillary dermis — the territory where collagen and elastin are made. <strong>850 nm</strong> passes through skin with minimal scatter and is absorbed in muscle, fascia, and joint capsule, which is why it's the wavelength studied for recovery, deep pain, and tendon repair. Together they cover the full clinical envelope.</p>
-        <p style={{ marginTop: "14px" }}>The literature is unusually consistent for a non-pharmaceutical modality — clinical reviews report accelerated wound healing<sup>1</sup>, measurable reduction in fine lines and improved skin texture<sup>2</sup>, faster muscle recovery and reduced DOMS, and reduced inflammatory markers across joint and tendon studies. Effects are dose-dependent: too little does nothing, and there's a biphasic curve where too much can blunt the benefit. Our protocol — twenty minutes, panel at hand-distance, three to five sessions a week — sits inside the well-studied window.</p>
+        <p>Photobiomodulation (PBM), formerly low-level laser therapy, works at the mitochondrial scale. Photons in the 600–900 nm window are absorbed by <em>cytochrome c oxidase</em>, a key enzyme in the electron transport chain. The result is a measurable bump in ATP synthesis, a brief, beneficial spike in reactive oxygen species that triggers downstream repair signaling, and a release of nitric oxide that improves local blood flow.</p>
+        <p style={{ marginTop: "14px" }}>Different wavelengths reach different depths. <strong>660 nm</strong> is absorbed primarily in the epidermis and papillary dermis, the territory where collagen and elastin are made. <strong>850 nm</strong> passes through skin with minimal scatter and is absorbed in muscle, fascia, and joint capsule, which is why it's the wavelength studied for recovery, deep pain, and tendon repair. Together they cover the full clinical envelope.</p>
+        <p style={{ marginTop: "14px" }}>The literature is unusually consistent for a non-pharmaceutical modality, clinical reviews report accelerated wound healing<sup>1</sup>, measurable reduction in fine lines and improved skin texture<sup>2</sup>, faster muscle recovery and reduced DOMS, and reduced inflammatory markers across joint and tendon studies. Effects are dose-dependent: too little does nothing, and there's a biphasic curve where too much can blunt the benefit. Our protocol, twenty minutes, panel at hand-distance, three to five sessions a week, sits inside the well-studied window.</p>
         <p className="rl-cite">
           <span><sup>1</sup> Avci et al., <em>Seminars in Cutaneous Medicine and Surgery</em>, 2013.</span>
           <span><sup>2</sup> Wunsch & Matuschka, <em>Photomedicine and Laser Surgery</em>, 2014.</span>
@@ -570,15 +570,15 @@ function Deepen({ mobile, showScience }) {
     ),
     "What to expect": (
       <>
-        <p>The first session is quieter than you'd think. The light is bright but warm — most people close their eyes and breathe. You may feel a gentle warmth on the skin, nothing more. Effects are cumulative: skin texture shifts over weeks, recovery times shorten across training cycles, and stubborn aches generally quiet down by session four to six. There's no downtime, no irritation, and you can pair it with sauna, float, or massage on the same visit.</p>
+        <p>The first session is quieter than you'd think. The light is bright but warm, most people close their eyes and breathe. You may feel a gentle warmth on the skin, nothing more. Effects are cumulative: skin texture shifts over weeks, recovery times shorten across training cycles, and stubborn aches generally quiet down by session four to six. There's no downtime, no irritation, and you can pair it with sauna, float, or massage on the same visit.</p>
       </>
     )
   };
 
   const faqs = [
-  { q: "Is it safe for my eyes?", a: "Yes — we provide opaque goggles for every session. The wavelengths we use don't carry the UV that damages skin or eyes, but bright light directly in the eyes is uncomfortable, so we cover them." },
+  { q: "Is it safe for my eyes?", a: "Yes, we provide opaque goggles for every session. The wavelengths we use don't carry the UV that damages skin or eyes, but bright light directly in the eyes is uncomfortable, so we cover them." },
   { q: "How often should I come?", a: "For skin and recovery, three to five sessions a week for the first month produces the most noticeable shift. After that, two to three a week maintains the gains comfortably." },
-  { q: "Will I feel anything in one session?", a: "Some people feel looser muscles or warmer skin the same day. Most of the benefits — collagen turnover, faster recovery — show up after a handful of sessions, the way the gym does." },
+  { q: "Will I feel anything in one session?", a: "Some people feel looser muscles or warmer skin the same day. Most of the benefits, collagen turnover, faster recovery, show up after a handful of sessions, the way the gym does." },
   { q: "Can I combine it with sauna or float?", a: "Absolutely, and many regulars do. A common pairing is sauna → red light → cold plunge, or red light immediately before a massage. Ask the front desk to stack them on one visit." },
   { q: "Are there reasons to skip a session?", a: "Active skin cancers, photosensitizing medications (some antibiotics, retinoids, certain antidepressants), recent injectables, and pregnancy are reasons to check with your doctor first. Otherwise, it's well-tolerated across ages and skin types." }];
 
@@ -618,7 +618,7 @@ function Pricing({ mobile }) {
 
   const soloPlans = [
   { name: "First Light\n\n", price: "35", note: "Red light intro · 20 min · first visit", link: BOOK.redLight },
-  { name: "Single — Red Light\n\n", price: "45", note: "À la carte · 20 min, just the panel", link: BOOK.redLight },
+  { name: "Single Red Light\n\n", price: "45", note: "À la carte · 20 min, just the panel", link: BOOK.redLight },
   { name: "Red Light · 5-Pack\n\n", price: "189", note: "$38 / session · solo red light", link: BOOK.general },
   { name: "Memberships\n", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "https://aretefloattank.floathelm.com/store/memberships/1205640" }];
 
@@ -646,7 +646,7 @@ function Pricing({ mobile }) {
         <span className="pricing__divider-line" />
       </div>
       <p className="pricing__solo-note">
-        We love when people try red light by itself first — it's the cleanest way to feel what the panel
+        We love when people try red light by itself first, it's the cleanest way to feel what the panel
         actually does to your body. Once you know that signal, the bundle makes even more sense.
       </p>
 
@@ -662,14 +662,14 @@ function Pricing({ mobile }) {
         )}
       </div>
 
-      {/* Add-on callout — sauna primary, others secondary */}
+      {/* Add-on callout, sauna primary, others secondary */}
       <div className="rl-addon">
         <div className="rl-addon__mark">+</div>
         <div className="rl-addon__body">
           <span className="rl-addon__kicker">Already booked a sauna?</span>
           <h3>Add 20 minutes of red light to your next sauna visit</h3>
           <p>
-            Walk straight from the cedar bench to the panel — warm tissue absorbs more light, and you
+            Walk straight from the cedar bench to the panel, warm tissue absorbs more light, and you
             leave with the recovery dose you came for. Bundle rate applies automatically when both are on the same booking.
           </p>
           <div className="rl-addon__links">
@@ -688,7 +688,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I came in for my shoulder. Six weeks later the shoulder's quiet, my skin looks better than it has in a decade, and I sleep through the night. I keep recommending it and people keep thanking me.</p>
-      <div className="quote__who">— Lena P. · Member since 2024</div>
+      <div className="quote__who">Lena P. · Member since 2024</div>
     </section>);
 }
 
@@ -756,7 +756,7 @@ const REDLIGHT_COPY = {
   heroTitle: "Slow medicine\nat the speed\nof light.",
   heroLede: "Twenty minutes under a full-body panel of 660 nm and 850 nm light. Skin softens, muscles loosen, mitochondria wake up. You leave warmer, looser, and quietly rebuilt.",
   benefits: [
-    { t: "Skin & collagen", d: "660 nm wavelengths drive collagen and elastin synthesis — finer texture, softened lines, brighter tone." },
+    { t: "Skin & collagen", d: "660 nm wavelengths drive collagen and elastin synthesis, finer texture, softened lines, brighter tone." },
     { t: "Muscle recovery", d: "Near-infrared cuts DOMS and shortens recovery between hard sessions. Athletes notice it first." },
     { t: "Tissue repair", d: "Wounds, scars, and stubborn soft-tissue injuries close faster. Inflammation quiets at the cellular level." }
   ]

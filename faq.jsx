@@ -45,7 +45,7 @@ function TopNav() {
   return (
     <header className="nav">
       <div className="nav__inner">
-        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness — home">
+        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness, home">
           <img src="assets/arete-logo.png?v=2" alt="Areté Float + Wellness" style={{ width: "120px" }} />
         </a>
         <nav className="nav__links" aria-label="Primary">
@@ -223,9 +223,9 @@ function App() {
           <h2>Still <em>have a question?</em></h2>
           <p>The fastest answer is usually a phone call. We pick up between 9 AM and close, every day.</p>
           <div className="info-visit__hours">
-            <div className="info-visit__hours-cell"><h4>Mon — Thu</h4><p>9 AM — 8 PM</p></div>
-            <div className="info-visit__hours-cell"><h4>Fri — Sat</h4><p>9 AM — 9 PM</p></div>
-            <div className="info-visit__hours-cell"><h4>Sunday</h4><p>10 AM — 6 PM</p></div>
+            <div className="info-visit__hours-cell"><h4>Mon, Thu</h4><p>9 AM, 8 PM</p></div>
+            <div className="info-visit__hours-cell"><h4>Fri, Sat</h4><p>9 AM, 9 PM</p></div>
+            <div className="info-visit__hours-cell"><h4>Sunday</h4><p>10 AM, 6 PM</p></div>
           </div>
           <a className="info-visit__cta" href="tel:+19196369899">Call 919-636-9899</a>
         </section>

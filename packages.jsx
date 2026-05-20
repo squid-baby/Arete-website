@@ -105,7 +105,7 @@ function Hero({ mobile }) {
           <span className="hero__line" style={{ animationDelay: "0.15s" }}>Save a little. No subscription.</span>
         </h1>
         <p className="hero__lede" style={{ margin: mobile ? "0 0 28px" : "0 auto 36px" }}>
-          Packages are prepaid bundles of sessions you use at your own pace. No monthly bill, no auto-renew —
+          Packages are prepaid bundles of sessions you use at your own pace. No monthly bill, no auto-renew,
           just a small discount for buying ahead. Try a sampler, build a sauna habit, or bring a friend along.
         </p>
         <div className="hero__cta-row" style={{ justifyContent: mobile ? "stretch" : "center" }}>
@@ -137,7 +137,7 @@ function WhyPackages({ mobile }) {
         <h3 className="mb-why__title">Pay once. Use when you can.</h3>
         <p className="mb-why__body">
           Packages are a single charge for a fixed number of sessions. No three-month minimum, no recurring
-          billing — when the credits run out, you decide whether to buy another or not.
+          billing, when the credits run out, you decide whether to buy another or not.
         </p>
       </div>
       <div className="mb-why__cell">
@@ -146,7 +146,7 @@ function WhyPackages({ mobile }) {
         <h3 className="mb-why__title">Cheaper than à la carte.</h3>
         <p className="mb-why__body">
           Every package is priced under the equivalent walk-in total. Fire credits and the Signature sampler
-          land at roughly 10–15% off — the more credits, the better the rate.
+          land at roughly 10–15% off, the more credits, the better the rate.
         </p>
       </div>
       <div className="mb-why__cell">
@@ -168,9 +168,9 @@ function Compare({ mobile }) {
   const rows = [
     ["Best for", "Trying things out · gifts · occasional use", "A weekly practice · steady rhythm"],
     ["Commitment", "One-time purchase", "3-month minimum, then month-to-month"],
-    ["Recurring charge", "No", "Yes — auto-renews monthly"],
+    ["Recurring charge", "No", "Yes, auto-renews monthly"],
     ["Discount", "≈10–15% off à la carte", "Up to ≈30% off + member rates on add-ons"],
-    ["Expiration", "60 days after first use (90 for Signature)", "Use within the month — no rollover (except contrast)"],
+    ["Expiration", "60 days after first use (90 for Signature)", "Use within the month, no rollover (except contrast)"],
     ["Sharing", "Single person unless noted", "Bundled tiers shareable with one other person"]
   ];
   return (
@@ -279,7 +279,7 @@ function SignatureCard({ pack }) {
         <span className="mp__feature-flag"><IconSpark size={9} /> Sampler · 15% off</span>
         <span className="mp__cadence">One-time · all five modalities</span>
         <h3 className="mp__name">{pack.name}</h3>
-        <p className="mp__feature-tag">A guided tour through everything Areté offers — one of each, at 15% off à la carte. The simplest way to find what your body responds to.</p>
+        <p className="mp__feature-tag">A guided tour through everything Areté offers, one of each, at 15% off à la carte. The simplest way to find what your body responds to.</p>
         <ul className="mp__list" style={{ marginTop: 22 }}>
           {pack.includes.map((l, i) => <li key={i}>{l}</li>)}
         </ul>
@@ -316,7 +316,7 @@ function Section({ mobile, id, index, title, em, lede, children }) {
     <section id={id} className={`mod ${mobile ? "mod--mobile" : ""}`}>
       <div className="mod__head">
         <div>
-          <div className="mod__index">— {index}</div>
+          <div className="mod__index">{index}.</div>
         </div>
         <div>
           <h2 className="mod__title">{title} {em && <em>{em}</em>}</h2>
@@ -356,7 +356,7 @@ const INTRO_FLOAT = {
   buy: BOOK.introFloat,
   includes: [
     "3× 90-minute float sessions",
-    "First-time customers only — single person",
+    "First-time customers only, single person",
     "Cannot be purchased as a gift",
     "~Credits expire 60 days after first use"
   ],
@@ -425,7 +425,7 @@ const RLT_PACK = {
   includes: [
     "8× individual 20-min red light therapy sessions",
     "Single person · non-transferable",
-    "Built for daily-ish dosing — recovery, skin, sleep",
+    "Built for daily-ish dosing, recovery, skin, sleep",
     "~Credits expire 60 days after first use"
   ],
   chips: [{ label: "RLT only" }, { label: "Daily-friendly" }, { label: "Non-transferable", off: true }],
@@ -443,10 +443,10 @@ const FRIEND_PACK = {
   includes: [
     "1× 30-minute sauna for one guest",
     "Book sauna for two, or add a note to your reservation",
-    "Paid at check-in — no online package needed"
+    "Paid at check-in, no online package needed"
   ],
   chips: [{ label: "Add-on" }, { label: "Sauna only" }],
-  fine: "No online link — book sauna for 2 or note it in your reservation",
+  fine: "No online link, book sauna for 2 or note it in your reservation",
   buyLabel: "Book sauna"
 };
 
@@ -463,19 +463,19 @@ function Packs({ mobile }) {
 
       <Section mobile={mobile} id="fire" index="02 · Fire Credits"
         title="Sauna" em="& red light, batched"
-        lede="One credit = one sauna or one RLT session. Mix and match across the heat-and-light week — credits are interchangeable, reservations required.">
+        lede="One credit = one sauna or one RLT session. Mix and match across the heat-and-light week, credits are interchangeable, reservations required.">
         {FIRE_PACKS.map(p => <PackCard key={p.name} pack={p} />)}
       </Section>
 
       <Section mobile={mobile} id="rlt" index="03 · Red Light Only"
         title="Red light" em="therapy pack"
-        lede="If sauna isn't your thing but daily red light is — eight sessions to commit to a real protocol, no fire credit needed.">
+        lede="If sauna isn't your thing but daily red light is, eight sessions to commit to a real protocol, no fire credit needed.">
         <PackCard pack={RLT_PACK} />
       </Section>
 
       <Section mobile={mobile} id="addons" index="04 · Add-ons"
         title="Bring" em="someone with you"
-        lede="Small add-ons for the sessions you've already booked — guest passes for sauna, with more on the way.">
+        lede="Small add-ons for the sessions you've already booked, guest passes for sauna, with more on the way.">
         <PackCard pack={FRIEND_PACK} />
       </Section>
     </div>
@@ -486,11 +486,11 @@ function Packs({ mobile }) {
 function Rules({ mobile }) {
   const rules = [
     ["Single person, single account", "Packages are for one person unless explicitly noted. Sessions can't be split between accounts or shared with a friend (the Bring-a-Friend add-on is the exception)."],
-    ["60-day expiration after first use", "Credits expire 60 days from the date of your first session — long enough for a real cadence, short enough to keep packages from sitting forever. The Signature Collection runs 90 days."],
+    ["60-day expiration after first use", "Credits expire 60 days from the date of your first session, long enough for a real cadence, short enough to keep packages from sitting forever. The Signature Collection runs 90 days."],
     ["Non-refundable, non-swappable", "Once purchased, packages can't be refunded, exchanged, or converted into different services. Credits cannot be redeemed for cash, retail, or other modalities."],
-    ["Reservations required", "Every credit needs an appointment. Book online through FloatHelm or by phone — same-day slots happen, but they aren't guaranteed."],
+    ["Reservations required", "Every credit needs an appointment. Book online through FloatHelm or by phone, same-day slots happen, but they aren't guaranteed."],
     ["Limit one Signature & Intro per customer", "The Signature Collection and Intro to Floating are once-per-person. Fire and RLT packages can be re-purchased anytime."],
-    ["Tip not included", "Massage gratuity isn't bundled into the Signature price — handled at the appointment, like any other massage."]
+    ["Tip not included", "Massage gratuity isn't bundled into the Signature price, handled at the appointment, like any other massage."]
   ];
   return (
     <section id="rules" className={`mb-rules ${mobile ? "mb-rules--mobile" : ""}`}>
@@ -577,7 +577,7 @@ function GiftCards({ mobile }) {
           <span className="mb-rules__kicker">Gift cards</span>
           <h2 className="pkg-gift__title">A package, but for someone else.</h2>
           <p className="pkg-gift__body">
-            Packages can't be purchased as gifts directly — but a gift card can. Pick any amount; the recipient
+            Packages can't be purchased as gifts directly, but a gift card can. Pick any amount; the recipient
             applies it to a single session, a package, or a membership when they're ready. Delivered by email,
             redeemable at the front desk or online.
           </p>
@@ -614,7 +614,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I bought the Signature Collection because I had no idea what I'd actually like. Turns out: red light, of all things. By the time the credits ran out I'd switched to the RLT pack and now I'm in three times a week. Best $245 I've spent on figuring myself out.</p>
-      <div className="quote__who">— Marlee K. · Areté guest, 2025</div>
+      <div className="quote__who">Marlee K. · Areté guest, 2025</div>
     </section>
   );
 }
@@ -623,12 +623,12 @@ function Quote() {
 function FAQ({ mobile }) {
   const [open, setOpen] = useState(0);
   const items = [
-    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share — pair it with one of your sauna credits to bring a guest. If you're both regulars, a Bundled Wellness membership lets you share with one other person."],
-    ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (Signature Collection runs 90 days instead of 60). Set a cadence that gets you in once a week and you'll have plenty of headroom — most people finish a Fire 8 in about 4–6 weeks."],
+    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna credits to bring a guest. If you're both regulars, a Bundled Wellness membership lets you share with one other person."],
+    ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (Signature Collection runs 90 days instead of 60). Set a cadence that gets you in once a week and you'll have plenty of headroom, most people finish a Fire 8 in about 4–6 weeks."],
     ["Do package credits stack with member discounts?", "No. Package pricing is its own discount lane. Once you're a member, member pricing on à la carte sessions usually beats buying additional packages, so most members don't double-up."],
-    ["Can I gift a package?", "The Intro to Floating is first-time-customer only and isn't giftable. For everything else, the cleanest path is a gift card — the recipient picks the package, modality, or membership themselves."],
-    ["Are packages refundable if I have to move or get injured?", "No. Packages are non-refundable and non-transferable. If something serious comes up, email theteam@floatarete.com — we handle hardship cases on a case-by-case basis but it's never automatic."],
-    ["What's a Fire credit, exactly?", "One credit = one 30-minute infrared sauna or one 20-minute red light therapy session. You decide which when you book — no need to declare upfront. Credits don't combine into longer sessions."]
+    ["Can I gift a package?", "The Intro to Floating is first-time-customer only and isn't giftable. For everything else, the cleanest path is a gift card, the recipient picks the package, modality, or membership themselves."],
+    ["Are packages refundable if I have to move or get injured?", "No. Packages are non-refundable and non-transferable. If something serious comes up, email theteam@floatarete.com, we handle hardship cases on a case-by-case basis but it's never automatic."],
+    ["What's a Fire credit, exactly?", "One credit = one 30-minute infrared sauna or one 20-minute red light therapy session. You decide which when you book, no need to declare upfront. Credits don't combine into longer sessions."]
   ];
   return (
     <section className={`pkg-faq ${mobile ? "pkg-faq--mobile" : ""}`} id="faq">

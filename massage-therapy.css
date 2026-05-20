@@ -322,7 +322,7 @@
   text-align: left;
 }
 
-/* ---------- (legacy) Modalities — kept for any stale refs ---------- */
+/* ---------- (legacy) Modalities, kept for any stale refs ---------- */
 .modalities {
   padding: 96px 48px;
   border-top: 1px solid var(--ink-14);

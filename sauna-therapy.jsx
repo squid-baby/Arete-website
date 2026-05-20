@@ -154,7 +154,7 @@ function Benefits({ mobile, copy }) {
 function Timeline({ mobile }) {
   const steps = [
   { t: "Arrive", d: "Settle in. Change into the provided robe and slippers in your private suite.", min: "0 min" },
-  { t: "Hydrate", d: "Cool electrolyte water before you step in — heat works better when you're topped off.", min: "5 min" },
+  { t: "Hydrate", d: "Cool electrolyte water before you step in, heat works better when you're topped off.", min: "5 min" },
   { t: "Heat", d: "Full-spectrum infrared. Phone away, breath slow. Sweat builds around minute fifteen.", min: "5–35 min" },
   { t: "Cool", d: "Step out, towel down, optional rinse. Heart rate eases as core temperature unwinds.", min: "35–40 min" },
   { t: "Return", d: "Lounge a beat. Re-hydrate. Walk back into the day a measurable degree calmer.", min: "40+ min" }];
@@ -206,14 +206,14 @@ function PairsWith({ mobile }) {
   {
     kicker: "Stack 1",
     name: "Red Light Therapy",
-    body: "Pair a 30-minute infrared session with a red-light protocol — same warm room, complementary mechanism. Mitochondrial repair on top of cellular detox.",
+    body: "Pair a 30-minute infrared session with a red-light protocol, same warm room, complementary mechanism. Mitochondrial repair on top of cellular detox.",
     href: "#",
     cta: "Read about red light"
   },
   {
     kicker: "Stack 2",
     name: "Cold Plunge",
-    body: "Heat then cold. The classic contrast loop — sauna dilates, plunge constricts, the whole vascular system gets a workout while you barely move.",
+    body: "Heat then cold. The classic contrast loop, sauna dilates, plunge constricts, the whole vascular system gets a workout while you barely move.",
     href: "Contrast-Therapy.html",
     cta: "Contrast therapy"
   },
@@ -244,21 +244,21 @@ function Deepen({ mobile }) {
   const tabs = ["The science", "What to expect", "Pairs with"];
 
   const faqs = [
-  { q: "Is infrared different from a traditional sauna?", a: "Yes — meaningfully. Traditional saunas heat the air around you (often 180–200°F) and you sweat from external convection. Infrared cabins run cooler (140–150°F) but the wavelengths penetrate one to two inches into tissue, so the heat builds from the inside out. Most people report a deeper, more comfortable sweat at lower air temperature." },
-  { q: "What do I wear, and what should I bring?", a: "Whatever feels right — swimsuit, shorts, or nothing at all (your suite is private). We provide robes, towels, slippers, cool electrolyte water, and a quiet rinse area afterward. Just leave the phone in the locker." },
-  { q: "Can I sauna on the same day as a float?", a: "Absolutely — and many members do. We recommend sauna first (sweat out tension), then float (let the magnesium and weightlessness reset the nervous system). Cold plunge between the two is the full reset stack." },
+  { q: "Is infrared different from a traditional sauna?", a: "Yes, meaningfully. Traditional saunas heat the air around you (often 180–200°F) and you sweat from external convection. Infrared cabins run cooler (140–150°F) but the wavelengths penetrate one to two inches into tissue, so the heat builds from the inside out. Most people report a deeper, more comfortable sweat at lower air temperature." },
+  { q: "What do I wear, and what should I bring?", a: "Whatever feels right, swimsuit, shorts, or nothing at all (your suite is private). We provide robes, towels, slippers, cool electrolyte water, and a quiet rinse area afterward. Just leave the phone in the locker." },
+  { q: "Can I sauna on the same day as a float?", a: "Absolutely, and many members do. We recommend sauna first (sweat out tension), then float (let the magnesium and weightlessness reset the nervous system). Cold plunge between the two is the full reset stack." },
   { q: "Who shouldn't use the sauna?", a: "If you're pregnant, have uncontrolled blood pressure, recent surgery, a fever, or are on medications that affect heat regulation, please check with your physician first. Our front-desk team will walk you through the intake form on your first visit." },
-  { q: "How often should I go?", a: "Most members aim for 2–4 sessions per week to compound the cardiovascular and detox benefits. Even one weekly session moves the needle on sleep and stress markers — start where you can sustain." }];
+  { q: "How often should I go?", a: "Most members aim for 2–4 sessions per week to compound the cardiovascular and detox benefits. Even one weekly session moves the needle on sleep and stress markers, start where you can sustain." }];
 
   const bodies = [
   // The science
-  "Full-spectrum infrared raises core temperature without overheating the air. Inside fifteen minutes, your body responds as if you'd run a few miles: heart rate climbs, blood vessels dilate, and a flood of heat-shock proteins (HSPs) hits the bloodstream. HSPs scavenge free radicals, repair damaged proteins, and protect against the oxidative stress that drives muscle breakdown and aging. Cortisol drops; serotonin and norepinephrine rise. Cellular metabolism accelerates, breaking liquid molecules apart and pulling stored toxins through the skin — which is why infrared sweat measures roughly seven times more dense in heavy metals and chemical residue than a traditional sauna's. Thirty minutes in; an immune system, cardiovascular network, and nervous system that all just got a workout you didn't have to do.",
+  "Full-spectrum infrared raises core temperature without overheating the air. Inside fifteen minutes, your body responds as if you'd run a few miles: heart rate climbs, blood vessels dilate, and a flood of heat-shock proteins (HSPs) hits the bloodstream. HSPs scavenge free radicals, repair damaged proteins, and protect against the oxidative stress that drives muscle breakdown and aging. Cortisol drops; serotonin and norepinephrine rise. Cellular metabolism accelerates, breaking liquid molecules apart and pulling stored toxins through the skin, which is why infrared sweat measures roughly seven times more dense in heavy metals and chemical residue than a traditional sauna's. Thirty minutes in; an immune system, cardiovascular network, and nervous system that all just got a workout you didn't have to do.",
 
   // What to expect
-  "First-timers usually feel the heat settle in around minute ten. The sweat is slow at first, then sudden — an honest, drenching sweat that keeps coming for several minutes after you step out. Your heart rate will climb the way it does on a brisk walk; that's normal and the point. Breathe slow, sip water, and don't push past comfortable. Most people leave noticeably looser in the shoulders and lower back, mentally clearer, and sleep an hour deeper that night. Plan a relaxed exit — this isn't a workout you want to rush back into traffic from.",
+  "First-timers usually feel the heat settle in around minute ten. The sweat is slow at first, then sudden, an honest, drenching sweat that keeps coming for several minutes after you step out. Your heart rate will climb the way it does on a brisk walk; that's normal and the point. Breathe slow, sip water, and don't push past comfortable. Most people leave noticeably looser in the shoulders and lower back, mentally clearer, and sleep an hour deeper that night. Plan a relaxed exit, this isn't a workout you want to rush back into traffic from.",
 
-  // Pairs with — handled separately as cards below this paragraph
-  "Sauna is a foundation, not an island. The same thirty minutes compounds when you stack it against complementary modalities — pre-load with red light to amplify the cellular repair, follow with a cold plunge to lock in the vascular tone, or finish in the float tank to drop the nervous system the rest of the way down."];
+  // Pairs with, handled separately as cards below this paragraph
+  "Sauna is a foundation, not an island. The same thirty minutes compounds when you stack it against complementary modalities, pre-load with red light to amplify the cellular repair, follow with a cold plunge to lock in the vascular tone, or finish in the float tank to drop the nervous system the rest of the way down."];
 
   return (
     <section className={`deepen ${mobile ? "deepen--mobile" : ""}`}>
@@ -308,7 +308,7 @@ function Pricing({ mobile }) {
             <span className="plan__badge" style={{ visibility: p.highlight ? "visible" : "hidden" }}>Most popular</span>
             <h3 style={{ whiteSpace: "pre-line" }}>{p.name}</h3>
             <div className="plan__price" style={{ fontFamily: "LeJour", height: "65.599998px" }}>
-              {p.price === "—" ? <span style={{ opacity: 0.5, fontSize: "22px" }}>$324
+              {p.price === "," ? <span style={{ opacity: 0.5, fontSize: "22px" }}>$324
             </span> : <><span style={{ fontSize: "0.55em", verticalAlign: "0.6em", marginRight: 4, opacity: 0.7 }}>$</span>{p.price}</>}
             </div>
             <p style={{ height: "auto", padding: "0", margin: "16px 0 28px" }}>{p.note}</p>
@@ -324,7 +324,7 @@ function Quote() {
     <section className="quote">
       <div className="quote__mark">"</div>
       <p>I started with one session a week for the back pain. Three months in I'm sleeping deeper than I have in a decade.</p>
-      <div className="quote__who">— Daniel K. · Member since 2024</div>
+      <div className="quote__who">Daniel K. · Member since 2024</div>
     </section>);
 }
 
@@ -390,12 +390,12 @@ const SIX_BENEFITS = [
 },
 {
   t: "Detoxification",
-  d: "Cellular metabolism accelerates and pushes stored toxins out through the skin — denser sweat than any traditional sauna can produce.",
+  d: "Cellular metabolism accelerates and pushes stored toxins out through the skin, denser sweat than any traditional sauna can produce.",
   metric: "7× detox vs. traditional"
 },
 {
   t: "Cardiovascular",
-  d: "Repeated sessions improve vascular function in patients with high blood pressure, diabetes, and cholesterol — a passive workout for the heart.",
+  d: "Repeated sessions improve vascular function in patients with high blood pressure, diabetes, and cholesterol, a passive workout for the heart.",
   metric: "30 min · 3× weekly"
 },
 {
@@ -417,7 +417,7 @@ const SIX_BENEFITS = [
 const TONES = {
   practical: {
     heroTitle: "Heat that\nworks deep.",
-    heroLede: "Full-spectrum infrared penetrates one to two inches into tissue — easing pain at the source while cortisol drops, white blood cells climb, and the cardiovascular system gets a workout you don't have to earn.",
+    heroLede: "Full-spectrum infrared penetrates one to two inches into tissue, easing pain at the source while cortisol drops, white blood cells climb, and the cardiovascular system gets a workout you don't have to earn.",
     benefits: SIX_BENEFITS
   },
   poetic: {
@@ -427,7 +427,7 @@ const TONES = {
   },
   bold: {
     heroTitle: "Burn it\noff. Reset.",
-    heroLede: "600 calories. Seven times the detox of a traditional cabin. Heat-shock proteins, cardiovascular tone, and a nervous system that finally exhales — in thirty minutes flat.",
+    heroLede: "600 calories. Seven times the detox of a traditional cabin. Heat-shock proteins, cardiovascular tone, and a nervous system that finally exhales, in thirty minutes flat.",
     benefits: SIX_BENEFITS
   }
 };

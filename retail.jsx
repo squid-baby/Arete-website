@@ -94,7 +94,7 @@ function Hero({ mobile }) {
           <span className="hero__line" style={{ animationDelay: "0.15s" }}>curiosities chosen.</span>
         </h1>
         <p className="hero__lede">
-          A small, deeply considered shop tucked inside Areté — home goods, apothecary, and lifestyle objects you won't find by scrolling. Every piece on the shelf has a reason it's there.
+          A small, deeply considered shop tucked inside Areté, home goods, apothecary, and lifestyle objects you won't find by scrolling. Every piece on the shelf has a reason it's there.
         </p>
         <div className="hero__cta-row">
           <a href="#carousel" className="btn btn--primary">
@@ -114,7 +114,7 @@ function Hero({ mobile }) {
       <div className="hero__visual">
           <div className="retail-hero-visual">
             <div className="retail-hero-visual__cell retail-hero-visual__cell--tall">
-              <div className="retail-hero-visual__placeholder">retail room — wide<br />1200×1500</div>
+              <div className="retail-hero-visual__placeholder">retail room, wide<br />1200×1500</div>
               <span className="retail-hero-visual__tag">the shop floor</span>
             </div>
             <div className="retail-hero-visual__cell">
@@ -141,12 +141,12 @@ function Curator({ mobile }) {
           <span className="curator__kicker">A note from Jen</span>
           <h2>Carrboro's most <em>thoughtfully curated</em> small shop.</h2>
           <p>
-            The internet has made almost everything findable — and almost nothing memorable. The shop is the opposite of an algorithm. Every object on the shelf has been held, considered, and quietly argued over before it earns its spot.
+            The internet has made almost everything findable, and almost nothing memorable. The shop is the opposite of an algorithm. Every object on the shelf has been held, considered, and quietly argued over before it earns its spot.
           </p>
           <p>
-            Linens woven by a single family in Portugal. Ceramics from a one-woman studio outside Asheville. Tinctures, balms, and home goods that have a maker, a story, and usually a long wait list. We rotate often — what's in this week may be gone next.
+            Linens woven by a single family in Portugal. Ceramics from a one-woman studio outside Asheville. Tinctures, balms, and home goods that have a maker, a story, and usually a long wait list. We rotate often, what's in this week may be gone next.
           </p>
-          <div className="curator__sig">— Jen, founder &amp; curator</div>
+          <div className="curator__sig">Jen, founder &amp; curator</div>
         </div>
       </div>
     </section>);
@@ -159,10 +159,10 @@ function Curator({ mobile }) {
 // --------------------------
 // The carousel reads its items from the JSON block in retail.html
 // (look for <script type="application/json" id="retail-items">).
-// Edit that JSON to swap, add, or remove products — no JSX changes needed.
+// Edit that JSON to swap, add, or remove products, no JSX changes needed.
 //
 // Each entry has: { name, category, description, meta, image }
-// `image` is optional — leave it blank ("") for a placeholder card.
+// `image` is optional, leave it blank ("") for a placeholder card.
 //
 function readItems() {
   try {
@@ -195,7 +195,7 @@ function Carousel({ mobile }) {
           <h2 className="carousel__title">A few <em>recent finds.</em></h2>
         </div>
         <p className="carousel__lede">
-          The selection rotates often. These are pieces we've fallen for lately — pop in to see what's actually on the shelf today.
+          The selection rotates often. These are pieces we've fallen for lately, pop in to see what's actually on the shelf today.
         </p>
       </div>
 
@@ -234,7 +234,7 @@ function Categories({ mobile }) {
   const cats = [
   { t: "Home & Linens", d: "Heirloom textiles, ceramics, and small objects for the table and the rest of the house." },
   { t: "Apothecary", d: "Small-batch tinctures, balms, soaps, and candles from makers we know by name." },
-  { t: "Skincare", d: "A rotating bench of the latest in clean, science-led skincare — researched relentlessly by Jen." },
+  { t: "Skincare", d: "A rotating bench of the latest in clean, science-led skincare, researched relentlessly by Jen." },
   { t: "Curiosities", d: "Books, paper, jewelry, ritual objects. Things that don't fit a category but couldn't be left behind." }];
 
   return (
@@ -266,12 +266,12 @@ function Skincare({ mobile }) {
           <span className="skincare__kicker">Jen's research bench</span>
           <h2>The skincare shelf, <em>obsessively kept.</em></h2>
           <p>
-            Jen has a knack for chasing down the latest in skincare — reading the studies, the formulator interviews, the niche industry forums — and bringing back only the lines that hold up. The bench rotates constantly; what's there is what we'd happily put on our own faces this week.
+            Jen has a knack for chasing down the latest in skincare, reading the studies, the formulator interviews, the niche industry forums, and bringing back only the lines that hold up. The bench rotates constantly; what's there is what we'd happily put on our own faces this week.
           </p>
           <ul className="skincare__list">
             <li>Independent, formulator-led brands. No private-label fillers.</li>
             <li>Refreshed every few weeks as new launches and reformulations arrive.</li>
-            <li>Honest guidance — we'll tell you when something <em>isn't</em> for you.</li>
+            <li>Honest guidance, we'll tell you when something <em>isn't</em> for you.</li>
             <li>Samples whenever possible. Skin is personal; trial it first.</li>
           </ul>
         </div>
@@ -289,20 +289,20 @@ function Visit({ mobile }) {
         <h2>The shop is open whenever <em>Areté is.</em></h2>
         <div className="visit__hours">
           <div className="visit__hours-cell">
-            <h4>Mon — Thu</h4>
-            <p>9 AM — 8 PM</p>
+            <h4>Mon, Thu</h4>
+            <p>9 AM, 8 PM</p>
           </div>
           <div className="visit__hours-cell">
-            <h4>Fri — Sat</h4>
-            <p>9 AM — 9 PM</p>
+            <h4>Fri, Sat</h4>
+            <p>9 AM, 9 PM</p>
           </div>
           <div className="visit__hours-cell">
             <h4>Sunday</h4>
-            <p>10 AM — 6 PM</p>
+            <p>10 AM, 6 PM</p>
           </div>
         </div>
         <p style={{ fontSize: 14, color: "var(--ink-70)", lineHeight: 1.65, maxWidth: 560, margin: "0 auto" }}>
-          No appointment needed. Come in between treatments, before yoga, or simply because. We're at 213 E Braxton Foushee Street in Carrboro — the building with the warm windows.
+          No appointment needed. Come in between treatments, before yoga, or simply because. We're at 213 E Braxton Foushee Street in Carrboro, the building with the warm windows.
         </p>
       </div>
     </section>);

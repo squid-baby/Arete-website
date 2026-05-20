@@ -29,7 +29,7 @@ function TopNav() {
   return (
     <header className="nav">
       <div className="nav__inner">
-        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness — home">
+        <a className="nav__brand" href="/" aria-label="Areté Float + Wellness, home">
           <img src="assets/arete-logo.png?v=2" alt="Areté Float + Wellness" style={{ width: "120px" }} />
         </a>
         <nav className="nav__links" aria-label="Primary">
@@ -72,7 +72,7 @@ function BlogHero() {
         Notes from <em>the sanctuary.</em>
       </h1>
       <p className="blog-hero__sub">
-        Long reads, short observations, and the occasional product spotlight — written by the team at Areté on floating, sauna, contrast therapy, massage, and the rituals of restoration.
+        Long reads, short observations, and the occasional product spotlight, written by the team at Areté on floating, sauna, contrast therapy, massage, and the rituals of restoration.
       </p>
     </section>
   );
