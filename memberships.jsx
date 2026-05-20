@@ -100,13 +100,6 @@ function Hero({ mobile }) {
           </a>
           <a href="#rules" className="btn btn--ghost">How memberships work</a>
         </div>
-        <div className="hero__meta" style={{ justifyContent: mobile ? "flex-start" : "center" }}>
-          <span><IconSpark /> 3-month minimum</span>
-          <span className="hero__meta-dot">·</span>
-          <span>Pause once · Cancel in writing</span>
-          <span className="hero__meta-dot">·</span>
-          <span>Carrboro, NC</span>
-        </div>
       </div>
     </section>
   );
@@ -253,7 +246,7 @@ function FeatureCard({ plan }) {
             <IconArrow size={11} />
           </a>
         </div>
-        <span className="mp__fine" style={{ textAlign: "left" }}>3-month minimum · Massage giftable to one other person · Float, sauna, RLT and contrast not shareable</span>
+        <span className="mp__fine" style={{ textAlign: "left" }}>Massage giftable to one other person · Float, sauna, RLT and contrast not shareable</span>
       </div>
     </article>
   );
@@ -287,8 +280,7 @@ const FLOAT_PLANS = [{
   signup: "https://aretefloattank.floathelm.com/store/memberships/1215257",
   includes: [
     "1× 90-minute float session each month",
-    "Additional floats at $55 (vs $89 drop-in)",
-    "~3-month minimum"
+    "Additional floats at $55 (vs $89 drop-in)"
   ],
   chips: [{ label: "Not shareable" }, { label: "No rollover", off: true }],
   fine: "$55 add'l floats"
@@ -438,8 +430,7 @@ const ULTIMATE = {
   includes: [
     "Unlimited float, sauna, RLT, and contrast therapy",
     "1× 60-minute massage each month (giftable)",
-    "15% off retail, gift certs & all other services",
-    "3-month minimum"
+    "15% off retail, gift certs & all other services"
   ],
   chips: [
     { label: "All four modalities" },
