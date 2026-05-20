@@ -469,7 +469,7 @@ function Rules({ mobile }) {
     ["Single person, single account", "Packages are for one person unless explicitly noted. Sessions can't be split between accounts or shared with a friend (the Bring-a-Friend add-on is the exception)."],
     ["60-day expiration after first use", "Credits expire 60 days from the date of your first session, long enough for a real cadence, short enough to keep packages from sitting forever. The Signature Collection runs 90 days."],
     ["Non-refundable, non-swappable", "Once purchased, packages can't be refunded, exchanged, or converted into different services. Credits cannot be redeemed for cash, retail, or other modalities."],
-    ["Reservations required", "Every credit needs an appointment. Book online through FloatHelm or by phone, same-day slots happen, but they aren't guaranteed."],
+    ["Reservations required", "Book online through FloatHelm or by phone. Same-day slots happen, but they aren't guaranteed."],
     ["Limit one Signature & Intro per customer", "The Signature Collection and Intro to Floating are once-per-person. Fire and RLT packages can be re-purchased anytime."],
     ["Tip not included", "Massage gratuity isn't bundled into the Signature price, handled at the appointment, like any other massage."]
   ];
@@ -556,11 +556,11 @@ function GiftCards({ mobile }) {
       <div className="pkg-gift__inner">
         <div className="pkg-gift__copy">
           <span className="mb-rules__kicker">Gift cards</span>
-          <h2 className="pkg-gift__title">A package, but for someone else.</h2>
+          <h2 className="pkg-gift__title">Let them choose what they need.</h2>
           <p className="pkg-gift__body">
-            Packages can't be purchased as gifts directly, but a gift card can. Pick any amount; the recipient
-            applies it to a single session, a package, or a membership when they're ready. Delivered by email,
-            redeemable at the front desk or online.
+            All packages except Intro to Floating can be purchased as gifts directly. Gift cards are the flexible
+            option when you want the recipient to choose a single session, package, or membership when they're ready.
+            Delivered by email, redeemable at the front desk or online.
           </p>
           <div className="pkg-gift__amounts">
             <span className="pkg-gift__chip">$50</span>
@@ -607,7 +607,7 @@ function FAQ({ mobile }) {
     ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna credits to bring a guest. If you're both regulars, a Bundled Wellness membership lets you share with one other person."],
     ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (Signature Collection runs 90 days instead of 60). Set a cadence that gets you in once a week and you'll have plenty of headroom, most people finish a Fire 8 in about 4–6 weeks."],
     ["Do package credits stack with member discounts?", "No. Package pricing is its own lane. Once you're a member, member rates on additional sessions usually make more sense than buying extra packages, so most members don't double-up."],
-    ["Can I gift a package?", "The Intro to Floating is first-time-customer only and isn't giftable. For everything else, the cleanest path is a gift card, the recipient picks the package, modality, or membership themselves."],
+    ["Can I gift a package?", "Yes. All packages can be gifted except Intro to Floating, which is reserved for first-time customers only."],
     ["Are packages refundable if I have to move or get injured?", "No. Packages are non-refundable and non-transferable. If something serious comes up, email theteam@floatarete.com, we handle hardship cases on a case-by-case basis but it's never automatic."],
     ["What's a Fire credit, exactly?", "One credit = one 30-minute infrared sauna or one 20-minute red light therapy session. You decide which when you book, no need to declare upfront. Credits don't combine into longer sessions."]
   ];
