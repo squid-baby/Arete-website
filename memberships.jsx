@@ -472,12 +472,12 @@ function Tiers({ mobile }) {
 // ---------- Ground rules ----------
 function Rules({ mobile }) {
   const rules = [
-    ["Three-month minimum", "Every membership runs for at least three months before you can cancel. The science (and the budget) shows up over weeks, not days."],
-    ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months. Credits stay active during the pause."],
+    ["Three-month minimum", "Every membership runs for at least three months before you can cancel or pause. The science (and the budget) shows up over weeks, not days."],
+    ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months after the three-month minimum. While paused, you do not have access to discounted member rates or benefits. Your membership must renew once after a pause before you can cancel."],
     ["30-day rollover", "All membership credits roll over for 30 days. If you cancel, any remaining credits expire 30 days after the membership ends."],
-    ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person. Most single-modality memberships are personal, guest add-ons are $15–$20/session."],
+    ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person for the duration of your membership. Most single-modality memberships are personal, guest add-ons are $15–$20/session."],
     ["Member rates on top", "All members get $55 floats. 8+ Fire, RLT, and Contrast 3+ memberships add 10% off retail and other services. Ultimate adds 15% off everything."],
-    ["Cancel in writing", "Email theteam@floatarete.com 14 days before your renewal date. Any remaining credits expire 30 days after the membership ends."]
+    ["Cancel or pause in writing", "We must be informed in writing at theteam@floatarete.com at least 14 days before your renewal date to pause or cancel. Any remaining credits expire 30 days after the membership ends."]
   ];
   return (
     <section id="rules" className={`mb-rules ${mobile ? "mb-rules--mobile" : ""}`}>
