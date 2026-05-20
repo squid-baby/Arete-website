@@ -293,9 +293,7 @@ const SAUNA_PLANS = [
     color: "rgb(232, 155, 142)", savings: 10,
     signup: "https://aretefloattank.floathelm.com/store/memberships/1220706",
     includes: [
-      "6× 30-min sauna or 20-min RLT (mix & match)",
-      "+$15 to bring a friend",
-      "~Reservations required"
+      "6× 30-min sauna or 20-min RLT (mix & match)"
     ],
     chips: [{ label: "30-day rollover" }, { label: "Mix & match" }, { label: "Per person" }]
   },
@@ -306,8 +304,7 @@ const SAUNA_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1203178",
     includes: [
       "8× 30-min sauna or 20-min RLT",
-      "10% off other services & retail",
-      "+$15 to bring a friend"
+      "10% off other services & retail"
     ],
     chips: [{ label: "30-day rollover" }, { label: "10% off retail" }, { label: "Mix & match" }]
   },
@@ -318,8 +315,7 @@ const SAUNA_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1203177",
     includes: [
       "12× 30-min sauna or 20-min RLT",
-      "10% off other services",
-      "+$15 to bring a friend"
+      "10% off other services"
     ],
     chips: [{ label: "30-day rollover" }, { label: "Best per-credit value" }, { label: "10% off services" }]
   },
@@ -448,7 +444,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="sauna" index="02 · Sauna & Fire Credits"
         title="Sauna" em="& fire credits"
-        lede="Full-spectrum infrared. Fire credits are interchangeable between sauna and red light, so you can build a heat-and-light week however you like.">
+        lede="Full-spectrum infrared. Fire credits are interchangeable between sauna and red light, so you can build a heat-and-light week however you like. All sauna memberships can bring a friend for $15.">
         {SAUNA_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
