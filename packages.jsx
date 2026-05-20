@@ -170,7 +170,7 @@ function Compare({ mobile }) {
     ["Commitment", "One-time purchase", "3-month minimum, then month-to-month"],
     ["Recurring charge", "No", "Yes, auto-renews monthly"],
     ["Discount", "≈10–15% off à la carte", "Up to ≈30% off + member rates on add-ons"],
-    ["Expiration", "60 days after first use (90 for Signature)", "Use within the month, no rollover (except contrast)"],
+    ["Expiration", "60 days after first use (90 for Signature)", "Membership credits roll over for 30 days"],
     ["Sharing", "Single person unless noted", "Bundled tiers shareable with one other person"]
   ];
   return (

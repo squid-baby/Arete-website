@@ -280,9 +280,10 @@ const FLOAT_PLANS = [{
   signup: "https://aretefloattank.floathelm.com/store/memberships/1215257",
   includes: [
     "1× 90-minute float session each month",
-    "Additional floats at $55 (vs $89 drop-in)"
+    "Additional floats at $55 (vs $89 drop-in)",
+    "Credits roll over 30 days"
   ],
-  chips: [{ label: "Not shareable" }, { label: "No rollover", off: true }],
+  chips: [{ label: "30-day rollover" }, { label: "Not shareable" }],
   fine: "$55 add'l floats"
 }];
 
@@ -295,9 +296,10 @@ const SAUNA_PLANS = [
     includes: [
       "6× 30-min sauna or 20-min RLT (mix & match)",
       "+$15 to bring a friend",
+      "Credits roll over 30 days",
       "~Reservations required"
     ],
-    chips: [{ label: "Mix & match" }, { label: "Per person" }]
+    chips: [{ label: "30-day rollover" }, { label: "Mix & match" }, { label: "Per person" }]
   },
   {
     name: "8 Fire Credits",
@@ -307,9 +309,10 @@ const SAUNA_PLANS = [
     includes: [
       "8× 30-min sauna or 20-min RLT",
       "10% off other services & retail",
+      "Credits roll over 30 days",
       "+$15 to bring a friend"
     ],
-    chips: [{ label: "10% off retail" }, { label: "Mix & match" }]
+    chips: [{ label: "30-day rollover" }, { label: "10% off retail" }, { label: "Mix & match" }]
   },
   {
     name: "12 Fire Credits",
@@ -319,9 +322,10 @@ const SAUNA_PLANS = [
     includes: [
       "12× 30-min sauna or 20-min RLT",
       "10% off other services",
+      "Credits roll over 30 days",
       "+$15 to bring a friend"
     ],
-    chips: [{ label: "Best per-credit value" }, { label: "10% off services" }]
+    chips: [{ label: "30-day rollover" }, { label: "Best per-credit value" }, { label: "10% off services" }]
   },
   {
     name: "Unlimited Sauna & RLT",
@@ -361,11 +365,11 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1215279",
     includes: [
       "2× 60-min contrast sessions",
-      "Sessions roll over 1 month",
+      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
-    chips: [{ label: "10% off" }, { label: "1-mo rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
   },
   {
     name: "Contrast · 3/mo",
@@ -374,11 +378,11 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1215254",
     includes: [
       "3× 60-min contrast sessions",
-      "Sessions roll over 1 month",
+      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
-    chips: [{ label: "10% off" }, { label: "1-mo rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
   },
   {
     name: "Contrast · 4/mo",
@@ -387,11 +391,11 @@ const CONTRAST_PLANS = [
     signup: "https://aretefloattank.floathelm.com/store/memberships/1214567",
     includes: [
       "4× 60-min contrast sessions",
-      "Sessions roll over 1 month",
+      "Credits roll over 30 days",
       "10% off other services & retail",
       "+$20 to bring a guest"
     ],
-    chips: [{ label: "Best for 4×/mo" }, { label: "10% off" }, { label: "1-mo rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "Best for 4×/mo" }, { label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
   }
 ];
 
@@ -403,10 +407,11 @@ const BASIC_BUNDLE = {
   includes: [
     "1× 90-min float each month",
     "2× Fire & Ice credits (sauna/RLT = 1 each, contrast = 2)",
+    "Credits roll over 30 days",
     "10% off retail, gift certs & services",
     "Additional floats at $55"
   ],
-  chips: [{ label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Early-access deals" }]
+  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Early-access deals" }]
 };
 
 const TOTAL_BUNDLE = {
@@ -417,11 +422,12 @@ const TOTAL_BUNDLE = {
   includes: [
     "1× 90-min float each month",
     "4× Fire & Ice credits (mix sauna, RLT, contrast)",
+    "Credits roll over 30 days",
     "10% off retail, gift certs & services",
     "Additional floats at $55",
     "Pause once, up to 2 months"
   ],
-  chips: [{ label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Pausable" }]
+  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Pausable" }]
 };
 
 const ULTIMATE = {
@@ -463,7 +469,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="contrast" index="04 · Contrast Therapy"
         title="Contrast" em="therapy"
-        lede="Cold plunge and sauna in private hourly sessions. Three tiers, all with one-month rollover so a busy week doesn't cost you a credit.">
+        lede="Cold plunge and sauna in private hourly sessions. Credits roll over 30 days so a busy week doesn't cost you a credit.">
         {CONTRAST_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
@@ -482,10 +488,10 @@ function Rules({ mobile }) {
   const rules = [
     ["Three-month minimum", "Every membership runs for at least three months before you can cancel. The science (and the budget) shows up over weeks, not days."],
     ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months. Credits stay active during the pause."],
-    ["Rollover where it makes sense", "Contrast tiers roll over one month (use it or lose it after that). Float and sauna credits don't roll over, the rhythm is the point."],
+    ["30-day rollover", "All membership credits roll over for 30 days. If you cancel, any remaining credits expire 30 days after the membership ends."],
     ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person. Most single-modality memberships are personal, guest add-ons are $15–$20/session."],
     ["Member rates on top", "All members get $55 floats. 8+ Fire, RLT, and Contrast 3+ memberships add 10% off retail and other services. Ultimate adds 15% off everything."],
-    ["Cancel in writing", "Email theteam@floatarete.com 14 days before your renewal date. You'll have 30 days to use any remaining credits."]
+    ["Cancel in writing", "Email theteam@floatarete.com 14 days before your renewal date. Any remaining credits expire 30 days after the membership ends."]
   ];
   return (
     <section id="rules" className={`mb-rules ${mobile ? "mb-rules--mobile" : ""}`}>
