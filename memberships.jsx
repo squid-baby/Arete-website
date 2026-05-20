@@ -399,7 +399,7 @@ const BASIC_BUNDLE = {
     "10% off retail, gift certs & services",
     "Additional floats at $55"
   ],
-  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Early-access deals" }]
+  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }]
 };
 
 const TOTAL_BUNDLE = {
@@ -409,12 +409,11 @@ const TOTAL_BUNDLE = {
   signup: "https://aretefloattank.floathelm.com/store/memberships/1203325",
   includes: [
     "1× 90-min float each month",
-    "4× Fire & Ice credits (mix sauna, RLT, contrast)",
+    "4× Fire & Ice credits (sauna/RLT = 1 each, contrast = 2)",
     "10% off retail, gift certs & services",
-    "Additional floats at $55",
-    "Pause once, up to 2 months"
+    "Additional floats at $55"
   ],
-  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }, { label: "Pausable" }]
+  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }]
 };
 
 const ULTIMATE = {
