@@ -558,9 +558,9 @@ function GiftCards({ mobile }) {
           <span className="mb-rules__kicker">Gift cards</span>
           <h2 className="pkg-gift__title">Let them choose what they need.</h2>
           <p className="pkg-gift__body">
-            All packages except Intro to Floating can be purchased as gifts directly. Gift cards are the flexible
-            option when you want the recipient to choose a single session, package, or membership when they're ready.
-            Delivered by email, redeemable at the front desk or online.
+            Choose a dollar amount when you want the recipient to decide later. All à la carte services and packages
+            can also be purchased as gift certificates. Gift cards are delivered by email and can be redeemed at the
+            front desk or online.
           </p>
           <div className="pkg-gift__amounts">
             <span className="pkg-gift__chip">$50</span>
