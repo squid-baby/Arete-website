@@ -1,52 +1,22 @@
 /* ===== Retail page additions ===== */
 
-/* ---------- Hero collage ---------- */
-.retail-hero-visual {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 4 / 5;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 12px;
-}
-.retail-hero-visual__cell {
-  position: relative;
-  overflow: hidden;
-  background:
-    repeating-linear-gradient(135deg,
-      rgba(124,107,138,0.05) 0 1px,
-      rgba(124,107,138,0.10) 1px 12px),
-    linear-gradient(180deg, var(--candle-soft) 0%, var(--paper) 100%);
-  border: 1px solid var(--ink-14);
-}
-.retail-hero-visual__cell--tall { grid-row: span 2; }
-.retail-hero-visual__cell img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-}
-.retail-hero-visual__placeholder {
-  position: absolute; inset: 0;
-  display: grid; place-items: center;
+/* ---------- Hero ---------- */
+.retail-hero--no-image {
+  grid-template-columns: minmax(0, 900px);
+  justify-content: center;
   text-align: center;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-55);
-  padding: 16px;
+  min-height: auto;
+  padding-bottom: 80px;
 }
-.retail-hero-visual__tag {
-  position: absolute;
-  bottom: 14px; left: 14px;
-  font-family: var(--display-font);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--paper);
-  background: rgba(13,27,62,0.55);
-  backdrop-filter: blur(4px);
-  padding: 4px 10px;
-  letter-spacing: 0.02em;
+.retail-hero--no-image .hero__eyebrow,
+.retail-hero--no-image .hero__cta-row,
+.retail-hero--no-image .hero__meta {
+  justify-content: center;
+}
+.retail-hero--no-image .hero__lede {
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------- Curator note ---------- */
@@ -93,6 +63,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  filter: saturate(0.92) contrast(0.98) brightness(1.04);
 }
 .curator__portrait:has(img)::after { display: none; }
 .curator__portrait::after {
@@ -225,7 +196,13 @@
     linear-gradient(180deg, var(--candle-soft) 0%, var(--paper) 100%);
   border: 1px solid var(--ink-14);
 }
-.carousel-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(0.98) brightness(1.04);
+}
 .carousel-card__placeholder {
   position: absolute; inset: 0;
   display: grid; place-items: center;
@@ -364,137 +341,16 @@
   color: var(--ink-70);
 }
 
-/* ---------- Skincare callout ---------- */
-.skincare {
-  padding: 110px 48px;
-  background: var(--paper);
-  border-top: 1px solid var(--ink-14);
-  border-bottom: 1px solid var(--ink-14);
+/* ---------- Final retail note ---------- */
+.retail-final__copy {
+  max-width: 720px;
+  margin: -18px auto 36px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(244,237,226,0.72);
   position: relative;
 }
-.skincare--mobile { padding: 72px 24px; }
-.skincare__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.skincare--mobile .skincare__inner {
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-.skincare__visual {
-  aspect-ratio: 1/1;
-  background:
-    repeating-linear-gradient(135deg,
-      rgba(124,107,138,0.05) 0 1px,
-      rgba(124,107,138,0.10) 1px 12px),
-    linear-gradient(180deg, var(--candle-soft) 0%, var(--paper) 100%);
-  border: 1px solid var(--ink-14);
-  display: grid;
-  place-items: center;
-  font-family: ui-monospace, monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-55);
-  padding: 20px;
-  text-align: center;
-}
-.skincare__kicker {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--candle);
-  margin-bottom: 16px;
-  display: inline-block;
-}
-.skincare h2 {
-  font-family: var(--display-font);
-  font-weight: 400;
-  font-size: clamp(32px, 3.4vw, 48px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  margin-bottom: 24px;
-}
-.skincare h2 em { font-style: italic; color: var(--candle); }
-.skincare p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--ink-70);
-  margin-bottom: 16px;
-}
-.skincare__list {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.skincare__list li {
-  display: flex;
-  gap: 12px;
+.final--mobile .retail-final__copy {
+  margin-top: -16px;
   font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-70);
-}
-.skincare__list li::before {
-  content: "❦";
-  color: var(--candle);
-  font-style: italic;
-  flex-shrink: 0;
-}
-
-/* ---------- Visit ---------- */
-.visit {
-  padding: 96px 48px;
-}
-.visit--mobile { padding: 64px 24px; }
-.visit__inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-.visit__kicker {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--ink-55);
-  margin-bottom: 16px;
-  display: inline-block;
-}
-.visit h2 {
-  font-family: var(--display-font);
-  font-weight: 400;
-  font-size: clamp(32px, 3.4vw, 48px);
-  line-height: 1.05;
-  margin-bottom: 36px;
-}
-.visit__hours {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  border-top: 1px solid var(--ink-14);
-  border-bottom: 1px solid var(--ink-14);
-  padding: 32px 0;
-  margin-bottom: 32px;
-}
-.visit--mobile .visit__hours { grid-template-columns: 1fr; gap: 18px; padding: 24px 0; }
-.visit__hours-cell {
-  text-align: center;
-}
-.visit__hours-cell h4 {
-  font-family: var(--display-font);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--candle);
-  margin-bottom: 8px;
-}
-.visit__hours-cell p {
-  font-size: 14px;
-  color: var(--ink-70);
-  letter-spacing: 0.04em;
 }

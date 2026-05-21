@@ -293,7 +293,6 @@ function Visit() {
       <div className="info-visit__hours">
         <div className="info-visit__hours-cell"><h4>Tue-Sun</h4><p>By appointment</p></div>
         <div className="info-visit__hours-cell"><h4>Monday</h4><p>Closed</p></div>
-        <div className="info-visit__hours-cell"><h4>Tours</h4><p>Please check ahead</p></div>
       </div>
       <a className="info-visit__cta" href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer">Book a session →</a>
     </section>

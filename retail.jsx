@@ -83,18 +83,18 @@ function TopNav({ mobile }) {
 // ---------- Hero ----------
 function Hero({ mobile }) {
   return (
-    <section className={`hero ${mobile ? "hero--mobile" : ""}`}>
+    <section className={`hero retail-hero retail-hero--no-image ${mobile ? "hero--mobile" : ""}`}>
       <div className="hero__text">
         <div className="hero__eyebrow">
           <span className="hero__eyebrow-line" />
           <span>The Retail Room · Carrboro, NC</span>
         </div>
         <h1 className="hero__title">
-          <span className="hero__line" style={{ animationDelay: "0s", color: "rgb(13, 27, 62)" }}>Treasures,</span>
-          <span className="hero__line" style={{ animationDelay: "0.15s" }}>curiosities chosen.</span>
+          <span className="hero__line" style={{ animationDelay: "0s", color: "rgb(13, 27, 62)" }}>Little things,</span>
+          <span className="hero__line" style={{ animationDelay: "0.15s" }}>chosen with care.</span>
         </h1>
         <p className="hero__lede">
-          A small, deeply considered shop tucked inside Areté, home goods, apothecary, and lifestyle objects you won't find by scrolling. Every piece on the shelf has a reason it's there.
+          A small shop tucked inside Areté with home goods, apothecary, skincare, books, cards, and gifts. We try to bring in things that feel a little less everywhere, though sometimes a good find is simply a good find.
         </p>
         <div className="hero__cta-row">
           <a href="#carousel" className="btn btn--primary">
@@ -104,28 +104,11 @@ function Hero({ mobile }) {
           <a href="#visit" className="btn btn--ghost">Plan a visit</a>
         </div>
         <div className="hero__meta">
-          <span><IconStar /> Open 7 days · Walk-ins welcome</span>
+          <span><IconStar /> Generally Tue-Sun · Check ahead for retail browsing</span>
           <span className="hero__meta-dot">·</span>
           <span>213 E Braxton Foushee St</span>
         </div>
       </div>
-
-      {!mobile &&
-      <div className="hero__visual">
-          <div className="retail-hero-visual">
-            <div className="retail-hero-visual__cell retail-hero-visual__cell--tall">
-              <div className="retail-hero-visual__placeholder">retail room, wide<br />1200×1500</div>
-              <span className="retail-hero-visual__tag">the shop floor</span>
-            </div>
-            <div className="retail-hero-visual__cell">
-              <div className="retail-hero-visual__placeholder">apothecary shelf<br />800×800</div>
-            </div>
-            <div className="retail-hero-visual__cell">
-              <div className="retail-hero-visual__placeholder">vignette<br />800×800</div>
-            </div>
-          </div>
-        </div>
-      }
     </section>);
 }
 
@@ -135,18 +118,18 @@ function Curator({ mobile }) {
     <section className={`curator ${mobile ? "curator--mobile" : ""}`}>
       <div className="curator__inner">
         <div className="curator__portrait">
-          <img src="assets/team/jen.png" alt="Portrait of Jen, founder and curator of Areté Float + Wellness" />
+          <img src="assets/retail/lounge-shop-good.jpg?v=2" alt="The Areté retail room with a couch, shelves, plants, and wood floors" />
         </div>
         <div>
           <span className="curator__kicker">A note from Jen</span>
-          <h2>Carrboro's most <em>thoughtfully curated</em> small shop.</h2>
+          <h2>A small shop with <em>a point of view.</em></h2>
           <p>
-            The internet has made almost everything findable, and almost nothing memorable. The shop is the opposite of an algorithm. Every object on the shelf has been held, considered, and quietly argued over before it earns its spot.
+            Retail at Areté is not super serious, but it is considered. I pick things that feel useful, beautiful, funny, comforting, or just a little different from what you see everywhere else.
           </p>
           <p>
-            Linens woven by a single family in Portugal. Ceramics from a one-woman studio outside Asheville. Tinctures, balms, and home goods that have a maker, a story, and usually a long wait list. We rotate often, what's in this week may be gone next.
+            I usually try to stay away from items you can grab on Amazon, but I am not precious about it. If something is good, it is good. The shelves change often, so the shop always has a little bit of a treasure-hunt feeling.
           </p>
-          <div className="curator__sig">Jen, founder &amp; curator</div>
+          <div className="curator__sig">Jen, founder &amp; owner</div>
         </div>
       </div>
     </section>);
@@ -195,7 +178,7 @@ function Carousel({ mobile }) {
           <h2 className="carousel__title">A few <em>recent finds.</em></h2>
         </div>
         <p className="carousel__lede">
-          The selection rotates often. These are pieces we've fallen for lately, pop in to see what's actually on the shelf today.
+          The selection changes often. Here are a few things we have liked lately, pop in to see what is actually on the shelf.
         </p>
       </div>
 
@@ -232,16 +215,16 @@ function Carousel({ mobile }) {
 // ---------- Categories ----------
 function Categories({ mobile }) {
   const cats = [
-  { t: "Home & Linens", d: "Heirloom textiles, ceramics, and small objects for the table and the rest of the house." },
-  { t: "Apothecary", d: "Small-batch tinctures, balms, soaps, and candles from makers we know by name." },
-  { t: "Skincare", d: "A rotating bench of the latest in clean, science-led skincare, researched relentlessly by Jen." },
-  { t: "Curiosities", d: "Books, paper, jewelry, ritual objects. Things that don't fit a category but couldn't be left behind." }];
+  { t: "Home & Linens", d: "Tea towels, ceramics, candles, and small things that make a room feel more like yours." },
+  { t: "Apothecary", d: "Soaps, balms, bath soaks, room sprays, and easy little add-ons for home." },
+  { t: "Skincare", d: "A rotating mix of products Jen has tried, liked, researched, or is currently excited about." },
+  { t: "Curiosities", d: "Books, cards, jewelry, paper goods, and the odds and ends that make retail fun." }];
 
   return (
     <section className={`cats ${mobile ? "cats--mobile" : ""}`}>
       <div className="cats__head">
         <span className="cats__kicker">What you'll find</span>
-        <h2>Four shelves, <em>one point of view.</em></h2>
+        <h2>A little bit of <em>this and that.</em></h2>
       </div>
       <div className="cats__grid">
         {cats.map((c, i) =>
@@ -256,66 +239,16 @@ function Categories({ mobile }) {
 
 }
 
-// ---------- Skincare callout ----------
-function Skincare({ mobile }) {
-  return (
-    <section className={`skincare ${mobile ? "skincare--mobile" : ""}`}>
-      <div className="skincare__inner">
-        <div className="skincare__visual">skincare bench<br />1000×1000</div>
-        <div>
-          <span className="skincare__kicker">Jen's research bench</span>
-          <h2>The skincare shelf, <em>obsessively kept.</em></h2>
-          <p>
-            Jen has a knack for chasing down the latest in skincare, reading the studies, the formulator interviews, the niche industry forums, and bringing back only the lines that hold up. The bench rotates constantly; what's there is what we'd happily put on our own faces this week.
-          </p>
-          <ul className="skincare__list">
-            <li>Independent, formulator-led brands. No private-label fillers.</li>
-            <li>Refreshed every few weeks as new launches and reformulations arrive.</li>
-            <li>Honest guidance, we'll tell you when something <em>isn't</em> for you.</li>
-            <li>Samples whenever possible. Skin is personal; trial it first.</li>
-          </ul>
-        </div>
-      </div>
-    </section>);
-
-}
-
-// ---------- Visit ----------
-function Visit({ mobile }) {
-  return (
-    <section className={`visit ${mobile ? "visit--mobile" : ""}`} id="visit">
-      <div className="visit__inner">
-        <span className="visit__kicker">Come by</span>
-        <h2>The shop is open whenever <em>Areté is.</em></h2>
-        <div className="visit__hours">
-          <div className="visit__hours-cell">
-            <h4>Mon, Thu</h4>
-            <p>9 AM, 8 PM</p>
-          </div>
-          <div className="visit__hours-cell">
-            <h4>Fri, Sat</h4>
-            <p>9 AM, 9 PM</p>
-          </div>
-          <div className="visit__hours-cell">
-            <h4>Sunday</h4>
-            <p>10 AM, 6 PM</p>
-          </div>
-        </div>
-        <p style={{ fontSize: 14, color: "var(--ink-70)", lineHeight: 1.65, maxWidth: 560, margin: "0 auto" }}>
-          No appointment needed. Come in between treatments, before yoga, or simply because. We're at 213 E Braxton Foushee Street in Carrboro, the building with the warm windows.
-        </p>
-      </div>
-    </section>);
-
-}
-
 // ---------- Final CTA ----------
 function FinalCTA({ mobile }) {
   return (
-    <section className={`final ${mobile ? "final--mobile" : ""}`}>
+    <section className={`final retail-final ${mobile ? "final--mobile" : ""}`} id="visit">
       <div className="final__orb" />
-      <h2>Small things,<br /><em>chosen. 
+      <h2>Come browse<br /><em>what is in. 
         </em></h2>
+      <p className="retail-final__copy">
+        Because the studio opens around the day's appointments, a quick call or message is the best way to make sure someone is here if you are coming just to shop. We are at 213 E Braxton Foushee Street in Carrboro, the building with the warm windows.
+      </p>
       <a href="#visit" className="btn btn--primary btn--lg">
         <span>Plan a visit</span>
         <IconArrow />
@@ -330,7 +263,7 @@ function StickyBar() {
   return (
     <div className="stickybar">
       <div>
-        <span className="stickybar__from">curated by</span>
+        <span className="stickybar__from">picked by</span>
         <span className="stickybar__price" style={{ fontSize: 18 }}>Jen</span>
       </div>
       <a href="#carousel" className="btn btn--primary btn--sm">
@@ -349,8 +282,6 @@ function ServicePage({ mobile }) {
       <Curator mobile={mobile} />
       <Carousel mobile={mobile} />
       <Categories mobile={mobile} />
-      <Skincare mobile={mobile} />
-      <Visit mobile={mobile} />
       <FinalCTA mobile={mobile} />
       {mobile && <StickyBar />}
     </div>);
