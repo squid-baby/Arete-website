@@ -288,7 +288,7 @@ function Team({ team }) {
 function Visit() {
   return (
     <section className="info-visit">
-      <h2>Come <em>see the rooms.</em></h2>
+      <h2>Come <em>visit Areté.</em></h2>
       <p>Our doors follow the day's appointment rhythm, so hours can shift with what is on the books. In general, Areté is available Tuesday through Sunday and closed on Mondays. If you would like a tour, send us a quick note before stopping by, or book online for the smoothest visit.</p>
       <div className="info-visit__hours">
         <div className="info-visit__hours-cell"><h4>Tue-Sun</h4><p>By appointment</p></div>
