@@ -188,17 +188,19 @@ function Story() {
       </div>
       <div className="about-story__body">
         <span className="about-story__kicker">Our story</span>
-        <h2 className="about-story__heading">A studio shaped by <em>what we needed</em> ourselves.</h2>
+        <h2 className="about-story__heading">Areté means becoming your <em>best self.</em></h2>
         <p>
-          Areté opened because we needed it. Years before there was a building, there was a list, a quiet, growing list of the rooms we wished existed in our own town. A float tank, run with care. A cedar sauna hot enough to matter. A cold plunge clean enough to use. A massage room that actually felt restful. And a small shop with the kind of objects that only show up if a person, not an algorithm, chose them.
+          At Areté, we believe wellness is not a trend. It is a lifelong journey. As the first studio of our kind in the Triangle, we have been proudly rooted in downtown Carrboro since opening our doors in February 2018. Locally owned and female-operated, Areté was built on the belief that real self-care starts with genuine connection and community.
         </p>
         <p>
-          We're at the corner of Maple and E. Braxton Foushee in Carrboro. The building has warm windows. The team is small. The rotation of products in the retail room changes often. The phones at the front desk are answered by humans who've also been on the table.
+          We offer first-class wellness and self-care experiences designed to help remind your mind and body that it is time to relax, recover, and create. Rooted in time-honored traditions and shaped with a modern touch, every service is thoughtfully chosen to help you slow down, reset, and step fully into your best self.
         </p>
         <p>
-          If you've never floated, never plunged, never sauna'd, start with one. We'll guide you through it. If you've done all three, you already know why we built this.
+          Areté is always growing and evolving, just as we believe we all should be. Whether you are booking a session, exploring our magical space, or simply stopping by to say hello, we are here to support you every step of the way.
         </p>
-        <div className="about-story__sig">Jen, founder</div>
+        <p>
+          Welcome to Areté, where becoming the best version of you is not just the goal. It is the experience.
+        </p>
       </div>
     </section>
   );
