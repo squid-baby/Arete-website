@@ -183,8 +183,20 @@ function Hero() {
 function Story() {
   return (
     <section className="about-story">
-      <div className="about-story__visual about-story__visual--photo">
-        <img src="assets/team/jen.png" alt="Portrait of Jen Ellis, founder of Areté Float + Wellness" />
+      <div className="about-story__visual about-story__definition" aria-label="Areté definition">
+        <div className="about-story__wordmark">
+          <span className="about-story__term">Areté</span>
+          <span className="about-story__rule" aria-hidden="true"></span>
+          <span className="about-story__pronunciation">&auml;-re-t&#257;'</span>
+        </div>
+        <div className="about-story__chevrons" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </div>
+        <div className="about-story__meaning">
+          <p>Virtue, moral excellence.</p>
+          <p>Becoming the best version of one's self.</p>
+        </div>
       </div>
       <div className="about-story__body">
         <span className="about-story__kicker">Our story</span>
@@ -309,7 +321,7 @@ function App() {
   }, [team]);
 
   return (
-    <div className="info-page">
+    <div className="info-page about-page">
       <TopNav mobile={isMobile} />
       <main>
         <Hero />

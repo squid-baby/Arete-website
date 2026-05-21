@@ -47,6 +47,9 @@
   line-height: 1.7;
   color: var(--ink-70);
 }
+.about-page .info-hero {
+  padding-bottom: 38px;
+}
 
 /* ---------- Container ---------- */
 .info-container {
@@ -54,7 +57,11 @@
   margin: 0 auto;
   padding: 70px 32px 100px;
 }
+.about-page .info-container {
+  padding-top: 28px;
+}
 @media (max-width: 720px) { .info-container { padding: 56px 24px 80px; } }
+@media (max-width: 720px) { .about-page .info-container { padding-top: 24px; } }
 
 /* ============================================================
    FAQ
@@ -191,12 +198,12 @@
 /* Story section */
 .about-story {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  padding: 60px 0 100px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 0 0 80px;
 }
-@media (max-width: 820px) { .about-story { grid-template-columns: 1fr; gap: 40px; padding: 40px 0 60px; } }
+@media (max-width: 820px) { .about-story { grid-template-columns: 1fr; gap: 28px; padding: 0 0 60px; } }
 .about-story__visual {
   aspect-ratio: 4 / 5;
   background:
@@ -211,6 +218,122 @@
 }
 .about-story__visual--photo { padding: 0; background: var(--ink-08, rgba(13,27,62,0.06)); overflow: hidden; aspect-ratio: 1085 / 1450; }
 .about-story__visual--photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.about-story__definition {
+  aspect-ratio: auto;
+  min-height: 128px;
+  background:
+    linear-gradient(135deg, rgba(124,107,138,0.08), rgba(255,255,255,0.62) 46%, rgba(184,169,201,0.10)),
+    var(--paper);
+  border-top: 1px solid var(--ink-14);
+  border-bottom: 1px solid var(--ink-14);
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) auto minmax(250px, 1.25fr);
+  gap: clamp(14px, 2.25vw, 33px);
+  align-items: center;
+  justify-content: center;
+  padding: clamp(15px, 2.1vw, 26px);
+  letter-spacing: 0;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+.about-story__wordmark {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: var(--ink);
+  min-width: 0;
+}
+.about-story__term {
+  font-family: var(--display-font);
+  font-size: clamp(39px, 3.45vw, 59px);
+  line-height: 0.9;
+  letter-spacing: 0;
+  max-width: 100%;
+}
+.about-story__rule {
+  width: min(173px, 100%);
+  height: 2px;
+  background: var(--candle);
+  opacity: 0.72;
+}
+.about-story__pronunciation {
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.35vw, 21px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-70);
+}
+.about-story__chevrons {
+  display: flex;
+  gap: 8px;
+}
+.about-story__chevrons span {
+  width: clamp(21px, 2.1vw, 33px);
+  height: clamp(21px, 2.1vw, 33px);
+  border-right: clamp(3px, 0.34vw, 5px) solid var(--candle);
+  border-top: clamp(3px, 0.34vw, 5px) solid var(--candle);
+  transform: rotate(45deg);
+  opacity: 0.78;
+}
+.about-story__meaning {
+  display: grid;
+  gap: clamp(8px, 1.5vw, 15px);
+  color: var(--ink);
+  min-width: 0;
+}
+.about-story__meaning p {
+  font-family: var(--sans);
+  font-size: clamp(13px, 1.35vw, 20px);
+  line-height: 1.24;
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: normal;
+}
+@media (max-width: 1180px) {
+  .about-story__definition {
+    grid-template-columns: minmax(0, 0.95fr) auto minmax(0, 1.35fr);
+  }
+  .about-story__term {
+    font-size: clamp(33px, 4.5vw, 51px);
+  }
+  .about-story__pronunciation {
+    font-size: clamp(12px, 1.95vw, 18px);
+  }
+  .about-story__meaning p {
+    font-size: clamp(12px, 1.9vw, 17px);
+  }
+}
+.about-story__body {
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (max-width: 620px) {
+  .about-story__definition {
+    min-height: 210px;
+    grid-template-columns: minmax(0, 0.85fr) auto minmax(0, 1.25fr);
+    gap: 10px;
+    padding: 18px 14px;
+    text-align: left;
+  }
+  .about-story__wordmark {
+    gap: 8px;
+  }
+  .about-story__term {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+  .about-story__pronunciation {
+    font-size: clamp(15px, 4.8vw, 22px);
+  }
+  .about-story__meaning p {
+    font-size: clamp(15px, 4.4vw, 20px);
+  }
+  .about-story__chevrons span {
+    width: 22px;
+    height: 22px;
+    border-width: 4px;
+  }
+}
 .about-story__kicker {
   font-family: var(--sans);
   font-size: 11px;
