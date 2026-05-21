@@ -486,6 +486,7 @@
   line-height: 1.65;
   color: var(--ink-70);
   margin: 0 0 12px;
+  white-space: pre-line;
 }
 .team-card__creds {
   font-family: var(--sans);
