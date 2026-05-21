@@ -199,8 +199,7 @@ function Story() {
         </div>
       </div>
       <div className="about-story__body">
-        <span className="about-story__kicker">Our story</span>
-        <h2 className="about-story__heading">Areté means becoming your <em>best self.</em></h2>
+        <h2 className="about-story__heading">Our story</h2>
         <p>
           At Areté, we believe wellness is not a trend. It is a lifelong journey. As the first studio of our kind in the Triangle, we have been proudly rooted in downtown Carrboro since opening our doors in February 2018. Locally owned and female-operated, Areté was built on the belief that real self-care starts with genuine connection and community.
         </p>
@@ -252,21 +251,23 @@ function TeamCard({ p }) {
       <div className="team-card__photo">
         {p.photo ? <img src={p.photo} alt={`Portrait of ${p.name}`} /> : <span>portrait<br />3:4</span>}
       </div>
-      <h3 className="team-card__name">{p.name}</h3>
-      <span className="team-card__role">{p.role}</span>
-      <p className="team-card__bio">{p.bio}</p>
-      {p.credentials && <div className="team-card__creds">{p.credentials}</div>}
-      {p.bookingUrl && (
-        <a
-          className="team-card__book"
-          href={p.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Book an appointment with ${p.name}`}
-        >
-          Book an appointment →
-        </a>
-      )}
+      <div className="team-card__content">
+        <h3 className="team-card__name">{p.name}</h3>
+        <span className="team-card__role">{p.role}</span>
+        <p className="team-card__bio">{p.bio}</p>
+        {p.credentials && <div className="team-card__creds">{p.credentials}</div>}
+        {p.bookingUrl && (
+          <a
+            className="team-card__book"
+            href={p.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Book an appointment with ${p.name}`}
+          >
+            Book an appointment →
+          </a>
+        )}
+      </div>
     </article>
   );
 }
@@ -275,8 +276,7 @@ function Team({ team }) {
   return (
     <section className="about-team">
       <div className="about-team__head">
-        <span className="about-team__kicker">The team</span>
-        <h2 className="about-team__heading">The people <em>on shift.</em></h2>
+        <span className="about-team__kicker">Meet the owner</span>
       </div>
       <div className="team-grid">
         {team.map((p, i) => <TeamCard key={i} p={p} />)}
