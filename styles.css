@@ -920,9 +920,9 @@ body.whimsy .stage {
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
-  max-width: 1100px; margin: 0 auto;
+  max-width: 1200px; margin: 0 auto;
   background: var(--ink-14);
   border: 1px solid var(--ink-14);
 }
@@ -932,7 +932,7 @@ body.whimsy .stage {
 
 .plan {
   background: var(--bg);
-  padding: 36px 28px;
+  padding: 36px 22px;
   display: flex; flex-direction: column;
   position: relative;
   transition: background .4s;
@@ -954,20 +954,32 @@ body.whimsy .stage {
 .plan h3 {
   font-family: var(--display-font);
   font-weight: 400;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  line-height: 1.2;
+  min-height: 2.4em;
+  margin-bottom: 16px;
 }
 .plan__price {
   font-family: var(--display-font);
-  font-size: 44px;
+  font-size: 40px;
+  line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  min-height: 40px;
+  margin-bottom: 16px;
 }
 .plan p {
   font-size: 13px;
   color: var(--ink-55);
   margin-bottom: 28px;
   flex: 1;
+}
+.pricing--mobile .plan h3 {
+  min-height: 0;
+  margin-bottom: 8px;
+}
+.pricing--mobile .plan__price {
+  min-height: 0;
+  margin-bottom: 8px;
 }
 .plan--on p { color: rgba(244,237,226,0.6); }
 .plan__link {
