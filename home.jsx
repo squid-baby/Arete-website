@@ -22,6 +22,39 @@ const IconRedLight = () =>
 const IconHalo = () =>
 <img src="assets/icons/halo.png?v=2" alt="" className="service-icon-img" />;
 
+const EXPERIENCE_STATS = [
+  {
+    value: "47%",
+    accent: "elsewhere",
+    label: "OF THE TIME, YOUR MIND IS SOMEWHERE ELSE. NO WONDER STILLNESS CAN FEEL LIKE A HOME YOU FORGOT YOU HAD"
+  },
+  {
+    value: "10",
+    accent: "inches",
+    label: "OF SKIN-TEMPERATURE SALTWATER CAN HOLD A BODY THAT HAS BEEN HOLDING EVERYTHING ELSE"
+  },
+  {
+    value: "80%",
+    accent: "of visits",
+    label: "TO PRIMARY CARE ARE ESTIMATED TO BE CONNECTED TO STRESS, WHICH MEANS REST IS NOT EXTRA. IT IS CARE"
+  },
+  {
+    value: "0",
+    accent: "notifications",
+    label: "THE RAREST LUXURY IS NOT ANOTHER THING TO DO. IT IS A PLACE WHERE NOTHING NEEDS YOU FOR A MINUTE"
+  },
+  {
+    value: "90",
+    accent: "seconds",
+    label: "IN THE COLD CAN FEEL LIKE A WHOLE CONVERSATION WITH YOUR NERVOUS SYSTEM"
+  },
+  {
+    value: "1",
+    accent: "body",
+    label: "HAS BEEN CARRYING EVERY DEADLINE, ERRAND, WORRY, AND PLAN. IT DESERVES SOMEWHERE TO PUT IT DOWN"
+  }
+];
+
 
 const SERVICES = [
 {
@@ -153,18 +186,6 @@ function Nav({ mobile }) {
             </nav>
 
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-              <a
-              className="mode-toggle"
-              href="whimsy.html"
-              aria-label="Switch to Whimsy mode"
-              style={{ textDecoration: "none" }}>
-
-                <span className="mode-toggle__label active">Light</span>
-                <div className="mode-toggle__track">
-                  <div className="mode-toggle__thumb">✦</div>
-                </div>
-                <span className="mode-toggle__label">Whimsy</span>
-              </a>
               <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__cta">Book</a>
             </div>
           </>
@@ -220,7 +241,7 @@ function Hero() {
           A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage, designed to help you let go and light up.
         </p>
         <div className="home-hero__ctas">
-          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
+          <a href="https://aretefloattank.floathelm.com/store" target="_blank" rel="noopener" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
           <a href="#services" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Explore Services</a>
         </div>
       </div>
@@ -313,6 +334,8 @@ function EmailStrip() {
 }
 
 function Experience() {
+  const [stat] = useState(() => EXPERIENCE_STATS[Math.floor(Math.random() * EXPERIENCE_STATS.length)]);
+
   return (
     <section className="section" id="experience" style={{ opacity: "1" }}>
       <div className="section__header reveal">
@@ -324,8 +347,8 @@ function Experience() {
 
       <div className="experience-grid">
         <div className="experience-text reveal">
-          <div className="big-stat">36 <span style={{ color: "rgb(74, 84, 110)", opacity: "1" }}>hours on call</span></div>
-          <p className="stat-label">AVERAGE WEEKLY TIME PARENTS OF YOUNG KIDS SPEND CARING FOR OTHERS AND KEEPING LIFE MOVING</p>
+          <div className="big-stat">{stat.value} <span style={{ color: "rgb(74, 84, 110)", opacity: "1" }}>{stat.accent}</span></div>
+          <p className="stat-label">{stat.label}</p>
           <p>
             We've designed every room to do one thing: get you out of your head and back into your body. No phones. No noise. No schedule chasing you.
           </p>
@@ -380,6 +403,7 @@ function Footer() {
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
           <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
         <div className="home-footer__address">

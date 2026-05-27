@@ -338,10 +338,10 @@ const INTRO_FLOAT = {
   price: 150,
   cadence: "First-time floaters · per person",
   color: "rgb(124, 107, 138)",
-  savings: 117,
+  savings: 57,
   buy: BOOK.introFloat,
   includes: [
-    "3× 90-minute float sessions",
+    "3× 60-minute float sessions",
     "First-time customers only, single person",
     "Cannot be purchased as a gift",
     "~Credits expire 60 days after first use"
