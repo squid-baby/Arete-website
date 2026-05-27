@@ -192,6 +192,57 @@
 .faq-item__a-inner a { color: var(--ink); border-bottom: 1px solid var(--candle); }
 
 /* ============================================================
+   TERMS
+   ============================================================ */
+.terms-content {
+  max-width: 920px;
+}
+.terms-card {
+  border-bottom: 1px solid var(--ink-14);
+  padding: 0 0 34px;
+  margin-bottom: 34px;
+}
+.terms-card:last-child {
+  margin-bottom: 0;
+}
+.terms-card h2 {
+  font-family: var(--display-font);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.08;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.terms-card p,
+.terms-card li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-70);
+}
+.terms-card p {
+  margin: 0 0 14px;
+}
+.terms-card p:last-child {
+  margin-bottom: 0;
+}
+.terms-card ul {
+  margin: 0;
+  padding-left: 22px;
+}
+.terms-card li {
+  margin-bottom: 10px;
+}
+.terms-card a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--candle);
+}
+.terms-card--contact {
+  background: var(--ink-06);
+  border-bottom: 0;
+  padding: 28px;
+}
+
+/* ============================================================
    ABOUT
    ============================================================ */
 
