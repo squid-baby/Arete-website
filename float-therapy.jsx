@@ -342,10 +342,10 @@ function Deepen({ mobile }) {
 function Pricing({ mobile }) {
   const plans = [
   { name: "New Guest", price: "$65", note: "Intro session, 60 min", highlight: true, link: BOOK.newGuest },
-  { name: "Intro to\nFloating", price: "$150", note: "3 floats, 60 min each", link: BOOK.introFloat },
-  { name: "60 Min\n\n", price: "$69", note: "Express float", link: BOOK.float60 },
-  { name: "90 Min\n\n", price: "$89", note: "Most Poplar", link: BOOK.float90 },
-  { name: "Monthly", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "memberships.html" }];
+  { name: "Intro to Floating", price: "$150", note: "3 floats, 60 min each", link: BOOK.introFloat },
+  { name: "60 Min", price: "$69", note: "Express float", link: BOOK.float60 },
+  { name: "90 Min", price: "$89", note: "Most Popular", link: BOOK.float90 },
+  { name: "Monthly", price: "", note: "Many Packages Available", link: "memberships.html" }];
 
   return (
     <section className={`pricing ${mobile ? "pricing--mobile" : ""}`}>
@@ -359,7 +359,7 @@ function Pricing({ mobile }) {
             <span className="plan__badge" style={{ visibility: p.highlight ? "visible" : "hidden" }}>Best first step</span>
             <h3>{p.name}</h3>
             <div className="plan__price" style={{ fontFamily: "LeJour" }}>{p.price}</div>
-            <p style={{ height: mobile ? "auto" : "30px", padding: "0px", margin: mobile ? "10px 0px 18px" : "40px 0px 45px" }}>{p.note}</p>
+            <p>{p.note}</p>
             <a href={p.link || BOOK.general} target="_blank" rel="noopener" className="plan__link">Reserve <IconArrow size={12} /></a>
           </div>
         )}
