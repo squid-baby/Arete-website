@@ -298,36 +298,33 @@ function Services() {
 
 }
 
+const EO_FORM_ID = "73949358-5a28-11f1-8422-e13077f50aaa";
+
+function EmailOctopusEmbed({ className }) {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!ref.current) return;
+    if (ref.current.querySelector(`script[data-form="${EO_FORM_ID}"]`)) return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://eomail5.com/form/${EO_FORM_ID}.js`;
+    s.setAttribute("data-form", EO_FORM_ID);
+    ref.current.appendChild(s);
+  }, []);
+  return <div ref={ref} className={className} />;
+}
+
 function EmailStrip() {
-  const [email, setEmail] = React.useState("");
-  const [done, setDone] = React.useState(false);
   return (
     <section className="email-strip reveal" aria-label="Newsletter signup">
-      <div className="email-strip__inner" style={{ height: "160px" }}>
+      <div className="email-strip__inner">
         <div className="email-strip__copy">
           <p className="email-strip__eyebrow">Stillness, in your inbox</p>
           <h3 className="email-strip__title">
             Notes on rest, ritual, and <em>returning to yourself</em>.
           </h3>
         </div>
-        <form
-          className="email-strip__form"
-          onSubmit={(e) => {e.preventDefault();if (email) setDone(true);}}>
-          <input
-            type="email"
-            required
-            placeholder="your@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="email-strip__input"
-            aria-label="Email address" />
-          <button type="submit" className="email-strip__cta">
-            {done ? "Welcome in ·" : "Sign me up"}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </button>
-        </form>
+        <EmailOctopusEmbed className="email-strip__form-mount" />
         <p className="email-strip__privacy">We don't spam, we're here to lower stress, not add to it.</p>
       </div>
     </section>);
