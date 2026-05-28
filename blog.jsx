@@ -169,29 +169,24 @@ function Sidebar({ posts, onPickCategory }) {
     return Object.entries(map);
   }, [posts]);
 
-  const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
+  const eoMountRef = React.useRef(null);
+  React.useEffect(() => {
+    const EO_FORM_ID = "73949358-5a28-11f1-8422-e13077f50aaa";
+    if (!eoMountRef.current) return;
+    if (eoMountRef.current.querySelector(`script[data-form="${EO_FORM_ID}"]`)) return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://eomail5.com/form/${EO_FORM_ID}.js`;
+    s.setAttribute("data-form", EO_FORM_ID);
+    eoMountRef.current.appendChild(s);
+  }, []);
 
   return (
     <aside className="blog-side" aria-label="Blog sidebar">
       <div className="blog-side__cta">
         <p className="blog-side__cta-title">Stillness, in your inbox.</p>
         <p className="blog-side__cta-sub">A quiet monthly note &mdash; new posts, member-only events, and the occasional ritual worth trying.</p>
-        <form
-          className="blog-side__cta-form"
-          onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }}
-        >
-          <input
-            type="email"
-            required
-            placeholder="your@email.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="blog-side__cta-input"
-            aria-label="Email address"
-          />
-          <button type="submit" className="blog-side__cta-btn">{done ? "In ✓" : "Subscribe"}</button>
-        </form>
+        <div ref={eoMountRef} className="blog-side__cta-form-mount" />
       </div>
 
       <div className="blog-side__block">
