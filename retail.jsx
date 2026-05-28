@@ -1,5 +1,5 @@
 /* global React */
-const { useState, useEffect, useRef } = React;
+const { useState, useEffect } = React;
 
 // ---------- Icons ----------
 const IconMenu = ({ size = 20 }) =>
@@ -10,11 +10,6 @@ const IconMenu = ({ size = 20 }) =>
 const IconArrow = ({ size = 14 }) =>
 <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2">
     <path d="M1 7h12M8 2l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>;
-
-const IconArrowL = ({ size = 14 }) =>
-<svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <path d="M13 7H1M6 2L1 7l5 5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>;
 
 const IconStar = ({ size = 10 }) =>
@@ -97,11 +92,11 @@ function Hero({ mobile }) {
           A small shop tucked inside Areté with home goods, apothecary, skincare, books, cards, and gifts. We try to bring in things that feel a little less everywhere, though sometimes a good find is simply a good find.
         </p>
         <div className="hero__cta-row">
-          <a href="#carousel" className="btn btn--primary">
-            <span>SEE WHAT'S IN</span>
+          <a href="#visit" className="btn btn--primary">
+            <span>PLAN A VISIT</span>
             <IconArrow />
           </a>
-          <a href="#visit" className="btn btn--ghost">Plan a visit</a>
+          <a href="#categories" className="btn btn--ghost">What you'll find</a>
         </div>
         <div className="hero__meta">
           <span><IconStar /> Generally Tue-Sun · Check ahead for retail browsing</span>
@@ -136,82 +131,6 @@ function Curator({ mobile }) {
 
 }
 
-// ---------- Carousel ----------
-//
-// HOW TO UPDATE THE CAROUSEL
-// --------------------------
-// The carousel reads its items from the JSON block in retail.html
-// (look for <script type="application/json" id="retail-items">).
-// Edit that JSON to swap, add, or remove products, no JSX changes needed.
-//
-// Each entry has: { name, category, description, meta, image }
-// `image` is optional, leave it blank ("") for a placeholder card.
-//
-function readItems() {
-  try {
-    const el = document.getElementById("retail-items");
-    if (!el) return [];
-    return JSON.parse(el.textContent || "[]");
-  } catch (e) {
-    console.warn("Could not parse retail-items JSON", e);
-    return [];
-  }
-}
-
-function Carousel({ mobile }) {
-  const items = readItems();
-  const railRef = useRef(null);
-
-  const scrollBy = (dir) => {
-    const el = railRef.current;
-    if (!el) return;
-    const card = el.querySelector(".carousel-card");
-    const step = card ? card.getBoundingClientRect().width + 24 : 300;
-    el.scrollBy({ left: dir * step * (mobile ? 1 : 2), behavior: "smooth" });
-  };
-
-  return (
-    <section className={`carousel ${mobile ? "carousel--mobile" : ""}`} id="carousel">
-      <div className="carousel__head">
-        <div className="carousel__title-wrap">
-          <span className="carousel__kicker">In the shop this week</span>
-          <h2 className="carousel__title">A few <em>recent finds.</em></h2>
-        </div>
-        <p className="carousel__lede">
-          The selection changes often. Here are a few things we have liked lately, pop in to see what is actually on the shelf.
-        </p>
-      </div>
-
-      <div className="carousel__viewport" ref={railRef}>
-        <div className="carousel__track">
-          {items.map((it, i) =>
-          <article key={i} className="carousel-card">
-              <div className="carousel-card__img">
-                {it.image ?
-              <img src={it.image} alt={it.name} /> :
-              <div className="carousel-card__placeholder">{it.name}<br />image · 4:5</div>
-              }
-                {it.category && <span className="carousel-card__cat">{it.category}</span>}
-              </div>
-              <h3 className="carousel-card__name">{it.name}</h3>
-              <p className="carousel-card__desc">{it.description}</p>
-              {it.meta && <div className="carousel-card__meta">{it.meta}</div>}
-            </article>
-          )}
-        </div>
-      </div>
-
-      <div className="carousel__controls">
-        <span className="carousel__hint">Drag, swipe, or use arrows. Inventory rotates often.</span>
-        <div className="carousel__btns">
-          <button className="carousel__btn" onClick={() => scrollBy(-1)} aria-label="Previous"><IconArrowL /></button>
-          <button className="carousel__btn" onClick={() => scrollBy(1)} aria-label="Next"><IconArrow /></button>
-        </div>
-      </div>
-    </section>);
-
-}
-
 // ---------- Categories ----------
 function Categories({ mobile }) {
   const cats = [
@@ -221,7 +140,7 @@ function Categories({ mobile }) {
   { t: "Curiosities", d: "Books, cards, jewelry, paper goods, and the odds and ends that make retail fun." }];
 
   return (
-    <section className={`cats ${mobile ? "cats--mobile" : ""}`}>
+    <section className={`cats ${mobile ? "cats--mobile" : ""}`} id="categories">
       <div className="cats__head">
         <span className="cats__kicker">What you'll find</span>
         <h2>A little bit of <em>this and that.</em></h2>
@@ -266,8 +185,8 @@ function StickyBar() {
         <span className="stickybar__from">picked by</span>
         <span className="stickybar__price" style={{ fontSize: 18 }}>Jen</span>
       </div>
-      <a href="#carousel" className="btn btn--primary btn--sm">
-        See finds <IconArrow size={12} />
+      <a href="#categories" className="btn btn--primary btn--sm">
+        What you'll find <IconArrow size={12} />
       </a>
     </div>);
 }
@@ -280,7 +199,6 @@ function ServicePage({ mobile }) {
       <TopNav mobile={mobile} />
       <Hero mobile={mobile} />
       <Curator mobile={mobile} />
-      <Carousel mobile={mobile} />
       <Categories mobile={mobile} />
       <FinalCTA mobile={mobile} />
       {mobile && <StickyBar />}

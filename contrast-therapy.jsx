@@ -4,6 +4,7 @@ const { useState, useEffect, useRef } = React;
 // ---------- Booking links (FloatHelm direct service links) ----------
 const BOOK = {
   general: "https://aretefloattank.floathelm.com/booking",
+  session: "https://aretefloattank.floathelm.com/booking/2026/5/27",
   newGuest: "https://aretefloattank.floathelm.com/store/services/1245698",
   single: "https://aretefloattank.floathelm.com/store/services/1221833",
   twoPerson: "https://aretefloattank.floathelm.com/store/services/1232408"
@@ -192,7 +193,7 @@ function Hero({ mobile, copy }) {
         <p className="hero__lede">{copy.heroLede}</p>
 
         <div className="hero__cta-row">
-          <a href={BOOK.newGuest} target="_blank" rel="noopener" className="btn btn--primary">
+          <a href={BOOK.session} target="_blank" rel="noopener" className="btn btn--primary">
             <span>BOOK A SESSION</span>
             <IconArrow />
           </a>
