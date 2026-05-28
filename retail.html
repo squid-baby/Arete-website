@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=1" />
+  <link rel="apple-touch-icon" href="assets/favicon.png?v=1" />
   <!-- ===== SEO: Primary tags ===== -->
   <title>The Retail Room | Areté Float + Wellness</title>
   <meta name="description" content="A small retail room inside Areté Float + Wellness in Carrboro, NC, with body care, candles, books, cards, home goods, and gifts chosen by Jen." />
@@ -85,92 +87,12 @@
   <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="retail.css?v=4" />
+  <link rel="stylesheet" href="retail.css?v=5" />
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <!--
-    =====================================================================
-    HOW TO UPDATE THE CAROUSEL
-    =====================================================================
-    Edit the JSON below to swap, add, or remove the items shown in the
-    "In the shop this week" carousel. No code changes needed, just keep
-    the JSON valid (double-quoted keys & strings, commas between objects).
-
-    Each item supports:
-      name        , product name (required)
-      category    , small label tag, e.g. "Apothecary"
-      description , one-sentence description
-      meta        , short note shown below (e.g. "Made in Portugal · $48")
-      image       , optional path or URL to a product photo.
-                     Leave "" to render a styled placeholder card.
-
-    Tip: you can paste this JSON straight into a CMS or Google Sheet
-    export later if you want non-developers to update it.
-    =====================================================================
-  -->
-  <script type="application/json" id="retail-items">
-  [
-    {
-      "name": "The retail room",
-      "category": "Home",
-      "description": "A rotating mix of home goods, cards, books, candles, skincare, and little things that caught Jen's eye.",
-      "meta": "Changes often",
-      "image": "assets/retail/lounge-shop-good.jpg?v=2"
-    },
-    {
-      "name": "Plant corner finds",
-      "category": "Home",
-      "description": "Plants, pots, incense, body care, and whatever small thing makes the table feel good that week.",
-      "meta": "Good little gifts",
-      "image": "assets/retail/plants-display.jpg?v=2"
-    },
-    {
-      "name": "Apothecary shelf",
-      "category": "Apothecary",
-      "description": "Soaps, palo santo, incense, balms, and easy add-ons for home or post-session unwinding.",
-      "meta": "Rotates often",
-      "image": "assets/retail/apothecary-shelf.jpg?v=2"
-    },
-    {
-      "name": "Body oils",
-      "category": "Body care",
-      "description": "A few body oils and feel-good formulas Jen has been liking lately.",
-      "meta": "Ask what is in",
-      "image": "assets/retail/body-oils.jpg?v=2"
-    },
-    {
-      "name": "Candles",
-      "category": "Home",
-      "description": "Candles that smell good, look good on a shelf, and make an easy gift.",
-      "meta": "Seasonal picks",
-      "image": "assets/retail/candles-display.jpg?v=2"
-    },
-    {
-      "name": "Bath soak, magnesium & rose",
-      "category": "Apothecary",
-      "description": "A mineral bath soak for tired bodies, long days, and nights when you want to wind down.",
-      "meta": "House blend · $22",
-      "image": ""
-    },
-    {
-      "name": "Pocket field notebook",
-      "category": "Curiosities",
-      "description": "A small notebook for lists, thoughts, reminders, or the thing you meant to text yourself.",
-      "meta": "Pocket size · $18",
-      "image": ""
-    },
-    {
-      "name": "Resurfacing toner",
-      "category": "Skincare",
-      "description": "A current skincare shelf pick. Ask Jen what she likes about it.",
-      "meta": "New this week · $54",
-      "image": ""
-    }
-  ]
-  </script>
 </head>
 <body>
   <div class="star-field" id="starField"></div>
@@ -198,6 +120,6 @@
     })();
   </script>
   <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="retail.jsx?v=5"></script>
+  <script type="text/babel" src="retail.jsx?v=6"></script>
 </body>
 </html>
