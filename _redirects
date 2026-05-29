@@ -18,6 +18,7 @@
 /faq                                         /faq.html                     301
 /blog-1                                      /blog.html                    301
 /shop                                        /retail.html                  301
+/product-page/*                              /retail.html                  301
 /forum                                       /                             301
 
 
