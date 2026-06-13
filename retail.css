@@ -18,6 +18,15 @@
   margin-left: auto;
   margin-right: auto;
 }
+.retail-hero--no-image .hero__eyebrow {
+  color: var(--ink);
+  font-weight: 700;
+}
+.retail-hero--no-image .btn--ghost,
+.retail-hero--no-image .hero__meta {
+  color: var(--ink);
+  font-weight: 700;
+}
 
 /* ---------- Curator note ---------- */
 .curator {
@@ -79,10 +88,11 @@
 }
 .curator__kicker {
   display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.3em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--ink-55);
+  color: var(--ink);
   margin-bottom: 16px;
 }
 .curator h2 {
@@ -116,10 +126,11 @@
 .cats--mobile { padding: 56px 24px; }
 .cats__head { text-align: center; margin-bottom: 40px; }
 .cats__kicker {
-  font-size: 11px;
-  letter-spacing: 0.3em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--ink-55);
+  color: var(--ink);
 }
 .cats__head h2 {
   font-family: var(--display-font);
@@ -154,8 +165,9 @@
 .cat__num {
   font-family: var(--display-font);
   font-style: italic;
-  font-size: 14px;
-  color: var(--candle);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
   letter-spacing: 0.04em;
 }
 .cat h4 {

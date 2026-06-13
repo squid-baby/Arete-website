@@ -119,8 +119,6 @@ function Hero({ mobile }) {
           <span><IconSpark /> 60-day expiration</span>
           <span className="hero__meta-dot">·</span>
           <span>Single-person · non-refundable</span>
-          <span className="hero__meta-dot">·</span>
-          <span>Carrboro, NC</span>
         </div>
       </div>
     </section>

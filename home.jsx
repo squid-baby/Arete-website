@@ -319,13 +319,16 @@ function EmailStrip() {
     <section className="email-strip reveal" aria-label="Newsletter signup">
       <div className="email-strip__inner">
         <div className="email-strip__copy">
-          <p className="email-strip__eyebrow">Stillness, in your inbox</p>
+          <p className="email-strip__eyebrow">Arete insider list</p>
           <h3 className="email-strip__title">
-            Notes on rest, ritual, and <em>returning to yourself</em>.
+            Get the <em>good stuff</em> first.
           </h3>
+          <p className="email-strip__text">
+            Seasonal specials, last-minute openings, new services, and simple ways to feel better between visits.
+          </p>
         </div>
         <EmailOctopusEmbed className="email-strip__form-mount" />
-        <p className="email-strip__privacy">We don't spam, we're here to lower stress, not add to it.</p>
+        <p className="email-strip__privacy">No spam. Just calm, useful notes from your wellness people.</p>
       </div>
     </section>);
 }

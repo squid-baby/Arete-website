@@ -130,10 +130,11 @@
     }
     .mb-why__kicker {
       display: block;
-      font-size: 10px;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--ink-55);
+      color: var(--ink);
       margin-bottom: 8px;
     }
     .mb-why__title {
@@ -679,27 +680,29 @@
     }
     .pkg-compare--mobile .pkg-compare__key {
       font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--ink-70);
+      color: var(--ink);
       font-family: inherit;
       margin-bottom: 2px;
     }
     .pkg-compare__val {
-      font-size: 13.5px;
+      font-size: 14.5px;
+      font-weight: 600;
       line-height: 1.5;
-      color: var(--ink-70);
+      color: var(--ink);
     }
-    .pkg-compare__val--alt { color: var(--ink-70); opacity: 0.78; }
+    .pkg-compare__val--alt { color: var(--ink); opacity: 1; }
     .pkg-compare--mobile .pkg-compare__val::before {
       content: "Packages, ";
-      color: var(--candle);
-      font-weight: 600;
+      color: var(--ink);
+      font-weight: 700;
     }
     .pkg-compare--mobile .pkg-compare__val--alt::before {
       content: "Memberships, ";
-      color: var(--ink-70);
-      font-weight: 600;
+      color: var(--ink);
+      font-weight: 700;
     }
     .pkg-compare__foot {
       margin-top: 22px;
@@ -949,6 +952,6 @@
       }    })();
   </script>
   <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="packages.jsx"></script>
+  <script type="text/babel" src="packages.jsx?v=2"></script>
 </body>
 </html>
