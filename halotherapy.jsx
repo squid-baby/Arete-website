@@ -62,9 +62,9 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html">Memberships</a>
             <a href="packages.html">Packages</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
-            <a href={BOOK.general} target="_blank" rel="noopener" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
+            <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
         }
       </div>
@@ -80,9 +80,9 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href={BOOK.general} target="_blank" rel="noopener" className="nav__mobile-cta">Book Now</a>
+          <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>
       )}
     </header>);
@@ -258,7 +258,7 @@ function Hero({ mobile, copy, intensity }) {
         <p className="hero__lede">{copy.heroLede}</p>
 
         <div className="hero__cta-row">
-          <a href={BOOK.halotherapy} target="_blank" rel="noopener" className="btn btn--primary">
+          <a href={BOOK.halotherapy} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             <span>BOOK HALOTHERAPY</span>
             <IconArrow />
           </a>
@@ -613,7 +613,7 @@ function Pricing({ mobile }) {
             </div>
           </div>
           <div className="ht-pricing__foot">
-            <a href={BOOK.halotherapy} target="_blank" rel="noopener" className="plan__link">Book halotherapy <IconArrow size={12} /></a>
+            <a href={BOOK.halotherapy} target="_blank" rel="noopener noreferrer" className="plan__link">Book halotherapy <IconArrow size={12} /></a>
             <span className="ht-pricing__sep">·</span>
             <span className="ht-pricing__small">Mention halotherapy at the front desk to add it.</span>
           </div>
@@ -655,7 +655,7 @@ function FinalCTA({ mobile }) {
     <section className={`final ${mobile ? "final--mobile" : ""}`}>
       <div className="final__orb" />
       <h2>Salt is medicine.<br /><em>Add it to the sauna you're already taking.</em></h2>
-      <a href={BOOK.halotherapy} target="_blank" rel="noopener" className="btn btn--primary btn--lg">
+      <a href={BOOK.halotherapy} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
         <span>Reserve halotherapy</span>
         <IconArrow />
       </a>
@@ -673,7 +673,7 @@ function StickyBar() {
         <span className="stickybar__from">add-on</span>
         <span className="stickybar__price">+$10</span>
       </div>
-      <a href={BOOK.halotherapy} target="_blank" rel="noopener" className="btn btn--primary btn--sm">
+      <a href={BOOK.halotherapy} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
         Book <IconArrow size={12} />
       </a>
     </div>);

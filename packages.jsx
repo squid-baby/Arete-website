@@ -63,9 +63,9 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html">Memberships</a>
             <a href="packages.html" style={{ color: "rgb(13, 27, 62)" }}>Packages</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
-            <a href={BOOK.general} target="_blank" rel="noopener" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
+            <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
         }
       </div>
@@ -81,9 +81,9 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href={BOOK.general} target="_blank" rel="noopener" className="nav__mobile-cta">Book Now</a>
+          <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>
       )}
     </header>
@@ -253,7 +253,7 @@ function PackCard({ pack }) {
       }
 
       <div className="mp__cta">
-        <a href={pack.buy || BOOK.store} className="mp__signup" target="_blank" rel="noopener">
+        <a href={pack.buy || BOOK.store} className="mp__signup" target="_blank" rel="noopener noreferrer">
           <span>{pack.buyLabel || "Buy package"}</span>
           <IconArrow size={11} />
         </a>
@@ -286,7 +286,7 @@ function SignatureCard({ pack }) {
           </div>
         </div>
         <div className="mp__cta" style={{ borderTop: "none", paddingTop: 0, justifyContent: "flex-start" }}>
-          <a href={pack.buy} className="mp__signup" target="_blank" rel="noopener">
+          <a href={pack.buy} className="mp__signup" target="_blank" rel="noopener noreferrer">
             <span>Buy online</span>
             <IconArrow size={11} />
           </a>
@@ -490,7 +490,7 @@ function Rules({ mobile }) {
         ))}
       </dl>
       <div className="mb-rules__foot">
-        <a href={BOOK.store} target="_blank" rel="noopener" className="mb-rules__link">Buy on FloatHelm <IconArrow size={11} /></a>
+        <a href={BOOK.store} target="_blank" rel="noopener noreferrer" className="mb-rules__link">Buy on FloatHelm <IconArrow size={11} /></a>
         <span>·</span>
         <span>theteam@floatarete.com · 919-636-9899</span>
       </div>
@@ -569,7 +569,7 @@ function GiftCards({ mobile }) {
             <span className="pkg-gift__chip">$250</span>
             <span className="pkg-gift__chip pkg-gift__chip--ghost">Custom</span>
           </div>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener" className="btn btn--primary">
+          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             <span>Buy a gift card</span>
             <IconArrow />
           </a>

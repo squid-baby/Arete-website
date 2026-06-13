@@ -68,7 +68,7 @@ function TopNav() {
           </div>
           <a href="memberships.html">Memberships</a>
           <a href="blog.html">Blog</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
+          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
         </nav>
@@ -95,7 +95,7 @@ function Footer() {
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>

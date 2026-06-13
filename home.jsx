@@ -181,12 +181,12 @@ function Nav({ mobile }) {
               </div>
               <a href="memberships.html">Memberships</a>
               <a href="packages.html">Packages</a>
-              <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
+              <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
               <a href="about.html">About</a>
             </nav>
 
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-              <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__cta">Book</a>
+              <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta">Book</a>
             </div>
           </>
         }
@@ -204,9 +204,9 @@ function Nav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
+          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__mobile-cta">Book</a>
+          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book</a>
         </div>
       }
     </nav>);
@@ -241,7 +241,7 @@ function Hero() {
           A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage, designed to help you let go and light up.
         </p>
         <div className="home-hero__ctas">
-          <a href="https://aretefloattank.floathelm.com/store" target="_blank" rel="noopener" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
+          <a href="https://aretefloattank.floathelm.com/store" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
           <a href="#services" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Explore Services</a>
         </div>
       </div>
@@ -379,7 +379,7 @@ function BookingStrip() {
   return (
     <div className="booking-strip reveal" id="visit">
       <h2>Ready to <em>let go</em>?<br />Book your session.</h2>
-      <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="btn-book-large" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Reserve Your Time →</a>
+      <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="btn-book-large" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Reserve Your Time →</a>
     </div>);
 
 }
@@ -399,9 +399,9 @@ function Footer() {
           <li><a href="packages.html">Packages</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
           <li><a href="terms.html">Terms &amp; Conditions</a></li>
-          <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
         <div className="home-footer__address">
           213 E. Braxton Foushee St<br />

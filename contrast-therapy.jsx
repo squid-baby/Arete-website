@@ -64,9 +64,9 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html">Memberships</a>
             <a href="packages.html">Packages</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
-            <a href={BOOK.general} target="_blank" rel="noopener" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
+            <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
         }
       </div>
@@ -82,9 +82,9 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href={BOOK.general} target="_blank" rel="noopener" className="nav__mobile-cta">Book Now</a>
+          <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>
       )}
     </header>);
@@ -193,7 +193,7 @@ function Hero({ mobile, copy }) {
         <p className="hero__lede">{copy.heroLede}</p>
 
         <div className="hero__cta-row">
-          <a href={BOOK.session} target="_blank" rel="noopener" className="btn btn--primary">
+          <a href={BOOK.session} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             <span>BOOK A SESSION</span>
             <IconArrow />
           </a>
@@ -387,7 +387,7 @@ function FinalCTA({ mobile }) {
     <section className={`final ${mobile ? "final--mobile" : ""}`}>
       <div className="final__orb" />
       <h2>Sharp is a practice.<br /><em>Begin tomorrow morning.</em></h2>
-      <a href={BOOK.newGuest} target="_blank" rel="noopener" className="btn btn--primary btn--lg">
+      <a href={BOOK.newGuest} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
         <span>Reserve your session</span>
         <IconArrow />
       </a>
@@ -405,7 +405,7 @@ function StickyBar() {
         <span className="stickybar__from">from</span>
         <span className="stickybar__price">$50</span>
       </div>
-      <a href={BOOK.newGuest} target="_blank" rel="noopener" className="btn btn--primary btn--sm">
+      <a href={BOOK.newGuest} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
         Reserve <IconArrow size={12} />
       </a>
     </div>);

@@ -65,9 +65,9 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html">Memberships</a>
             <a href="packages.html">Packages</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
-            <a href={BOOK.general} target="_blank" rel="noopener" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
+            <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
         }
       </div>
@@ -83,9 +83,9 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href={BOOK.general} target="_blank" rel="noopener" className="nav__mobile-cta">Book Now</a>
+          <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>
       )}
     </header>);
@@ -108,7 +108,7 @@ function Hero({ mobile, copy }) {
         <p className="hero__lede">{copy.heroLede}</p>
 
         <div className="hero__cta-row">
-          <a href={BOOK.sauna30} target="_blank" rel="noopener" className="btn btn--primary">
+          <a href={BOOK.sauna30} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
             <span>BOOK A SESSION</span>
             <IconArrow />
           </a>
@@ -312,7 +312,7 @@ function Pricing({ mobile }) {
             </span> : <><span style={{ fontSize: "0.55em", verticalAlign: "0.6em", marginRight: 4, opacity: 0.7 }}>$</span>{p.price}</>}
             </div>
             <p style={{ height: "auto", padding: "0", margin: "16px 0 28px" }}>{p.note}</p>
-            <a href={p.link || BOOK.general} target="_blank" rel="noopener" className="plan__link">Reserve <IconArrow size={12} /></a>
+            <a href={p.link || BOOK.general} target="_blank" rel="noopener noreferrer" className="plan__link">Reserve <IconArrow size={12} /></a>
           </div>)}
       </div>
     </section>);
@@ -334,7 +334,7 @@ function FinalCTA({ mobile }) {
     <section className={`final ${mobile ? "final--mobile" : ""}`}>
       <div className="final__orb" />
       <h2>Heat is medicine.<br /><em>Thirty minutes is enough.</em></h2>
-      <a href={BOOK.sauna30} target="_blank" rel="noopener" className="btn btn--primary btn--lg">
+      <a href={BOOK.sauna30} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
         <span>Reserve your session</span>
         <IconArrow />
       </a>
@@ -352,7 +352,7 @@ function StickyBar() {
         <span className="stickybar__from">from</span>
         <span className="stickybar__price">$30</span>
       </div>
-      <a href={BOOK.sauna30} target="_blank" rel="noopener" className="btn btn--primary btn--sm">
+      <a href={BOOK.sauna30} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
         Reserve <IconArrow size={12} />
       </a>
     </div>);

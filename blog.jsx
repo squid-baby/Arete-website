@@ -52,7 +52,7 @@ function TopNav() {
           </div>
           <a href="memberships.html">Memberships</a>
           <a href="blog.html" aria-current="page" style={{ color: "var(--ink)", fontWeight: 500 }}>Blog</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a>
+          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="#">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
         </nav>
@@ -243,9 +243,9 @@ function Footer() {
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener">Gift Cards</a></li>
+          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
           <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="http://www.facebook.com/floatarete" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.facebook.com/floatarete" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         </ul>
         <div className="blog-footer__address">
           <strong style={{ color: "#fff", display: "block", marginBottom: 6 }}>Areté Float + Wellness</strong>

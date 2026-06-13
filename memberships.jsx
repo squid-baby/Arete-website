@@ -49,9 +49,9 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html" style={{ color: "rgb(13, 27, 62)" }}>Memberships</a>
             <a href="packages.html">Packages</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
-            <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
+            <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
         }
       </div>
@@ -67,9 +67,9 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener">Gift Cards</a>
+          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
-          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener" className="nav__mobile-cta">Book Now</a>
+          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>
       )}
     </header>
@@ -496,7 +496,7 @@ function Rules({ mobile }) {
         ))}
       </dl>
       <div className="mb-rules__foot">
-        <a href="https://waiver.smartwaiver.com/w/9qytrehuxfwdun6a5ze6ms/web/" target="_blank" rel="noopener" className="mb-rules__link">Member agreement form <IconArrow size={11} /></a>
+        <a href="https://waiver.smartwaiver.com/w/9qytrehuxfwdun6a5ze6ms/web/" target="_blank" rel="noopener noreferrer" className="mb-rules__link">Member agreement form <IconArrow size={11} /></a>
         <span>·</span>
         <span>theteam@floatarete.com · 919-636-9899</span>
       </div>
