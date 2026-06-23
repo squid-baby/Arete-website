@@ -149,6 +149,8 @@ function Footer() {
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>
           <li><a href="blog.html">Blog</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>

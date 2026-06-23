@@ -244,6 +244,8 @@ function Footer() {
           <li><a href="memberships.html">Memberships</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="https://www.facebook.com/floatarete" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         </ul>
