@@ -249,13 +249,28 @@ function Benefits({ mobile, copy }) {
     </section>);
 }
 
+// ---------- Local SEO intro ----------
+function LocalRecoveryLinks({ mobile }) {
+  return (
+    <section className={`local-seo ${mobile ? "local-seo--mobile" : ""}`}>
+      <span className="local-seo__kicker">Cold plunge near Chapel Hill</span>
+      <h2>Recovery services for Carrboro, Chapel Hill, and Durham.</h2>
+      <p>
+        Areté offers cold plunge therapy and contrast therapy in Carrboro, minutes from Chapel Hill and a short drive from Durham. Guests cycle between our <a href="sauna.html">infrared sauna</a> and cold plunge for a simple sauna and cold plunge ritual that supports athletic recovery, wellness recovery, circulation, resilience, and stress reduction.
+      </p>
+      <p>
+        Contrast therapy pairs well with our broader <a href="/">recovery services</a>, including <a href="float.html">float therapy</a>. If you plan to make cold plunge or ice bath sessions part of your routine, explore our <a href="memberships.html">wellness memberships</a>.
+      </p>
+    </section>);
+}
+
 // ---------- Protocol (hot/cold timeline) ----------
 function Protocol({ mobile }) {
   const steps = [
   { t: "Warm", d: "15 min in the full-spectrum infrared sauna. Heart rate climbs; vessels open.", min: "175° F" },
-  { t: "Plunge", d: "2–3 min in the cold tub. Sharp inhale, then a slow exhale.", min: "39° F" },
-  { t: "Repeat", d: "Three full rounds. Each one easier, each one deeper.", min: "×3" },
-  { t: "Settle", d: "Towel off, hydrate, return to the world re-tuned.", min: "60 min" }];
+  { t: "Plunge", d: "2–3 min in the cold plunge. The ice bath effect is clean, focused, and fully controlled.", min: "39° F" },
+  { t: "Repeat", d: "Three full sauna and cold plunge rounds. Each one easier, each one deeper.", min: "×3" },
+  { t: "Settle", d: "Towel off, hydrate, and return to Carrboro, Chapel Hill, or Durham re-tuned.", min: "60 min" }];
 
   return (
     <section className={`timeline ${mobile ? "timeline--mobile" : ""}`} id="learn">
@@ -302,22 +317,25 @@ function Deepen({ mobile }) {
   const [tab, setTab] = useState(1);
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
-  "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 39°F plunge for two to three minutes. Repeat for three rounds. The contrast does the work.",
-  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F sauna and 39°F plunge, trains your vascular system like a workout, releases norepinephrine and dopamine in measurable surges, reduces inflammatory markers, and shifts your nervous system into a sharper, calmer state. Studies show contrast bathing speeds muscle recovery, deepens sleep onset, and improves mood for hours after. Three rounds is the sweet spot most research converges on.",
+  "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 39°F cold plunge for two to three minutes. Repeat for three rounds. The contrast therapy does the work.",
+  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F infrared sauna and 39°F cold plunge, trains your vascular system like a workout and supports athletic recovery, wellness recovery, resilience, and a sharper, calmer state.",
   "The first plunge is loud, your body protests, your breath quickens, and you'll want to leave. Stay 90 seconds. By round two it gets quieter; by round three many guests linger past three minutes. You'll leave alert, light, and unmistakably awake, a clean kind of energy that holds for hours."];
 
   const faqs = [
-  { q: "Do I need to be in shape?", a: "No. The protocol is self-paced, you set your own time in the cold and the sauna. Most beginners start with shorter plunges and work up." },
-  { q: "How cold is the plunge, really?", a: "We hold it at 38–40°F. It's a single-person tub, fully filtered and treated between every session." },
-  { q: "Why infrared instead of a traditional sauna?", a: "Full-spectrum infrared heats your body directly rather than the air around you. The session feels gentler at the lungs but penetrates deeper into muscle, joints, and connective tissue." },
-  { q: "Is contrast therapy safe?", a: "For most healthy adults, yes, but if you're pregnant or have heart conditions, uncontrolled blood pressure, or are on certain medications, please check with your doctor first." },
-  { q: "How often should I come?", a: "Two to three times a week is where most regulars land. The benefits compound: better sleep, faster recovery, steadier mood, sharper mornings." }];
+  { q: "What is a cold plunge?", a: "A cold plunge is a tub of cold water used for short, intentional cold-water immersion. It is sometimes called an ice bath, though a cold plunge is usually cleaner, more controlled, and easier to repeat as a wellness ritual." },
+  { q: "What are the benefits of cold plunge therapy?", a: "Cold plunge therapy may support recovery, circulation, resilience, stress management, alertness, and post-exercise soreness. It is commonly used for athletic recovery and wellness recovery routines." },
+  { q: "How long should I stay in a cold plunge?", a: "Many beginners start with 30 to 90 seconds and build slowly. Experienced guests may work toward two to three minutes. The right amount depends on your body, health history, and comfort level." },
+  { q: "What is contrast therapy?", a: "Contrast therapy alternates heat and cold, such as infrared sauna and cold plunge, to create a controlled hot-cold cycle that supports circulation, recovery, and nervous system resilience." },
+  { q: "Why combine sauna and cold plunge?", a: "Combining sauna and cold plunge gives the body a clear contrast between heat and cold. The infrared sauna warms the body and encourages circulation; the cold plunge brings a focused cooling response." },
+  { q: "Is cold plunge therapy safe?", a: "Cold plunge therapy is well tolerated by many healthy adults, but it is not right for everyone. People who are pregnant, have heart conditions, blood pressure concerns, or other medical conditions should check with a clinician first." },
+  { q: "Is cold plunge therapy good after exercise?", a: "Cold plunge therapy is often used after exercise to support athletic recovery, soreness management, and a calmer post-workout state. Some athletes prefer it after hard training days rather than immediately before strength sessions." },
+  { q: "How often should I do cold plunge therapy?", a: "Many people start once a week and build from there. Regular guests often use cold plunge or contrast therapy one to three times weekly, depending on recovery needs, training load, and how their body responds." }];
 
   return (
     <section className={`deepen ${mobile ? "deepen--mobile" : ""}`}>
       <div className="deepen__head">
         <span className="deepen__kicker">Go as deep as you like</span>
-        <h2>LeaRN more, when you're ready</h2>
+        <h2>Learn more, when you're ready</h2>
       </div>
 
       <div className="tabs">
@@ -334,7 +352,7 @@ function Deepen({ mobile }) {
 
       <div className="deepen__faqs">
         <div className="deepen__faqs-head">
-          <span className="deepen__faqs-kicker">Questions we hear often</span>
+          <span className="deepen__faqs-kicker">Cold plunge FAQ</span>
         </div>
         <Accordion items={faqs} />
       </div>
@@ -386,9 +404,9 @@ function FinalCTA({ mobile }) {
   return (
     <section className={`final ${mobile ? "final--mobile" : ""}`}>
       <div className="final__orb" />
-      <h2>Sharp is a practice.<br /><em>Begin tomorrow morning.</em></h2>
+      <h2>Cold plunge is a practice.<br /><em>Begin in Carrboro.</em></h2>
       <a href={BOOK.newGuest} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
-        <span>Reserve your session</span>
+        <span>Reserve cold plunge</span>
         <IconArrow />
       </a>
       <div className="final__meta">
@@ -419,6 +437,7 @@ function ServicePage({ mobile, copy }) {
       <TopNav mobile={mobile} />
       <Hero mobile={mobile} copy={copy} />
       <Benefits mobile={mobile} copy={copy} />
+      <LocalRecoveryLinks mobile={mobile} />
       <Protocol mobile={mobile} />
       <Deepen mobile={mobile} />
       <Pricing mobile={mobile} />
@@ -438,28 +457,28 @@ const CONTRAST_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 const CONTRAST_TONES = {
   poetic: {
-    heroTitle: "Heat then\nhush.",
-    heroLede: "A full-spectrum infrared sauna and a single-person plunge, cycled three times. The body learns the rhythm; the mind goes quiet.",
+    heroTitle: "Cold Plunge & \nContrast Therapy",
+    heroLede: "Areté offers cold plunge therapy and contrast therapy in Carrboro, serving Chapel Hill, Durham, and the surrounding area. Alternate between our infrared sauna and cold plunge to support recovery, circulation, stress management, resilience, and overall wellness.",
     benefits: [
-    { t: "Sharpen the body", d: "Vessels open and close, circulation trained like a workout." },
-    { t: "Steady the mind", d: "A measured release of dopamine that holds for hours." },
-    { t: "Recover faster", d: "Inflammation drops; sleep deepens; mornings arrive lighter." }]
+    { t: "Cold plunge therapy", d: "A controlled ice bath-style plunge for recovery, resilience, and nervous system training." },
+    { t: "Sauna and cold plunge", d: "Infrared sauna heat and cold plunge contrast support circulation and stress reduction." },
+    { t: "Athletic recovery", d: "A practical wellness recovery ritual for Carrboro, Chapel Hill, and Durham bodies in motion." }]
   },
   practical: {
-    heroTitle: "60 minutes.\n3 rounds.",
-    heroLede: "175°F infrared sauna · 39°F cold plunge. Cycle three times. Most guests leave with steadier mood and deeper sleep that same night.",
+    heroTitle: "Cold Plunge & \nContrast Therapy",
+    heroLede: "Cold plunge therapy in Carrboro near Chapel Hill and Durham. Cycle between a 175°F infrared sauna and 39°F cold plunge for athletic recovery, circulation, resilience, stress relief, and wellness support.",
     benefits: [
-    { t: "Reduce inflammation", d: "Cold immersion lowers measured inflammatory markers fast." },
-    { t: "Boost dopamine", d: "Cold exposure raises baseline dopamine for up to three hours." },
-    { t: "Recover faster", d: "Contrast bathing accelerates muscle recovery between training days." }]
+    { t: "Cold plunge therapy", d: "A controlled ice bath-style plunge for recovery, resilience, and nervous system training." },
+    { t: "Sauna and cold plunge", d: "Infrared sauna heat and cold plunge contrast support circulation and stress reduction." },
+    { t: "Athletic recovery", d: "A practical wellness recovery ritual for Carrboro, Chapel Hill, and Durham bodies in motion." }]
   },
   warm: {
-    heroTitle: "Hot.\nThen cold.",
-    heroLede: "It's simpler than it sounds, and friendlier than it looks. Go at your pace. Stay as long as feels right. We'll be here when you're done.",
+    heroTitle: "Cold Plunge & \nContrast Therapy",
+    heroLede: "Areté offers cold plunge and contrast therapy in Carrboro for Chapel Hill, Durham, and nearby communities. Pair infrared sauna with cold plunge to support recovery, circulation, resilience, stress reduction, and wellness.",
     benefits: [
-    { t: "Find your rhythm", d: "You set the time in each room. We just hold the temperatures." },
-    { t: "Wake up clearer", d: "Most folks leave brighter than they came in." },
-    { t: "Build a habit", d: "Two or three visits a week, and the calm starts to follow you home." }]
+    { t: "Cold plunge therapy", d: "A controlled ice bath-style plunge for recovery, resilience, and nervous system training." },
+    { t: "Sauna and cold plunge", d: "Infrared sauna heat and cold plunge contrast support circulation and stress reduction." },
+    { t: "Athletic recovery", d: "A practical wellness recovery ritual for Carrboro, Chapel Hill, and Durham bodies in motion." }]
   }
 };
 

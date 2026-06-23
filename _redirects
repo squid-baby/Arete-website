@@ -28,7 +28,7 @@
 /before-you-float                            /float.html                   301
 /before-you-sauna                            /sauna.html                   301
 /new-why-sauna                               /sauna.html                   301
-/coldplunge                                  /Contrast-Therapy.html        301
+/coldplunge                                  /contrast-therapy             301
 /massage                                     /Massage.html                 301
 /meetourtherapists                           /about.html                   301
 
@@ -88,8 +88,9 @@
 /halotherapy                                 /halotherapy.html             301
 /red-light                                   /red_light.html               301
 /red_light                                   /red_light.html               301
-/contrast-therapy                            /Contrast-Therapy.html        301
-/Contrast-Therapy                            /Contrast-Therapy.html        301
+/Contrast-Therapy.html                       /contrast-therapy             301
+/contrast-therapy                            /Contrast-Therapy.html        200
+/Contrast-Therapy                            /contrast-therapy             301
 /massage-therapy                             /Massage.html                 301
 /Massage                                     /Massage.html                 301
 /retail                                      /retail.html                  301
