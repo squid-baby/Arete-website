@@ -104,6 +104,9 @@ function Hero({ mobile }) {
           <span>213 E Braxton Foushee St</span>
         </div>
       </div>
+      <figure className="retail-hero__photo">
+        <img src="assets/retail/retail-room-wide.jpg" alt="The Areté retail room with product shelves, plants, a front counter, and warm wood floors" />
+      </figure>
     </section>);
 }
 
@@ -112,9 +115,6 @@ function Curator({ mobile }) {
   return (
     <section className={`curator ${mobile ? "curator--mobile" : ""}`}>
       <div className="curator__inner">
-        <div className="curator__portrait">
-          <img src="assets/retail/lounge-shop-good.jpg?v=2" alt="The Areté retail room with a couch, shelves, plants, and wood floors" />
-        </div>
         <div>
           <span className="curator__kicker">A note from Jen</span>
           <h2>A small shop with <em>a point of view.</em></h2>
