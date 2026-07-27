@@ -268,7 +268,7 @@ function LocalRecoveryLinks({ mobile }) {
 function Protocol({ mobile }) {
   const steps = [
   { t: "Warm", d: "15 min in the full-spectrum infrared sauna. Heart rate climbs; vessels open.", min: "175° F" },
-  { t: "Plunge", d: "2–3 min in the cold plunge. The ice bath effect is clean, focused, and fully controlled.", min: "39° F" },
+  { t: "Plunge", d: "2–3 min in the cold plunge. The ice bath effect is clean, focused, and fully controlled.", min: "51° F" },
   { t: "Repeat", d: "Three full sauna and cold plunge rounds. Each one easier, each one deeper.", min: "×3" },
   { t: "Settle", d: "Towel off, hydrate, and return to Carrboro, Chapel Hill, or Durham re-tuned.", min: "60 min" }];
 
@@ -317,8 +317,8 @@ function Deepen({ mobile }) {
   const [tab, setTab] = useState(1);
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
-  "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 39°F cold plunge for two to three minutes. Repeat for three rounds. The contrast therapy does the work.",
-  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F infrared sauna and 39°F cold plunge, trains your vascular system like a workout and supports athletic recovery, wellness recovery, resilience, and a sharper, calmer state.",
+  "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 51°F cold plunge for two to three minutes. Repeat for three rounds. The contrast therapy does the work.",
+  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F infrared sauna and 51°F cold plunge, trains your vascular system like a workout and supports athletic recovery, wellness recovery, resilience, and a sharper, calmer state.",
   "The first plunge is loud, your body protests, your breath quickens, and you'll want to leave. Stay 90 seconds. By round two it gets quieter; by round three many guests linger past three minutes. You'll leave alert, light, and unmistakably awake, a clean kind of energy that holds for hours."];
 
   const faqs = [
@@ -466,7 +466,7 @@ const CONTRAST_TONES = {
   },
   practical: {
     heroTitle: "Cold Plunge & \nContrast Therapy",
-    heroLede: "Cold plunge therapy in Carrboro near Chapel Hill and Durham. Cycle between a 175°F infrared sauna and 39°F cold plunge for athletic recovery, circulation, resilience, stress relief, and wellness support.",
+    heroLede: "Cold plunge therapy in Carrboro near Chapel Hill and Durham. Cycle between a 175°F infrared sauna and 51°F cold plunge for athletic recovery, circulation, resilience, stress relief, and wellness support.",
     benefits: [
     { t: "Cold plunge therapy", d: "A controlled ice bath-style plunge for recovery, resilience, and nervous system training." },
     { t: "Sauna and cold plunge", d: "Infrared sauna heat and cold plunge contrast support circulation and stress reduction." },
