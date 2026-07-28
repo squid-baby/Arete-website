@@ -215,7 +215,7 @@ function Nav({ mobile }) {
 
 function Hero() {
   return (
-    <section className="home-hero" style={{ gap: "40px", padding: "40px 24px 50px" }}>
+    <section className="home-hero home-hero--with-house">
       <div className="particle-field" aria-hidden="true">
         {Array.from({ length: 14 }).map((_, i) => {
           const symbols = ["✦", "✧", "⋆", "·", "∘"];
@@ -244,6 +244,10 @@ function Hero() {
           <a href="https://aretefloattank.floathelm.com/store" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>
           <a href="#services" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Explore Services</a>
         </div>
+      </div>
+
+      <div className="home-hero__visual home-hero__visual--house" aria-hidden="true">
+        <img src="assets/home-hero-house-cutaway.png" alt="" className="home-hero__house-image" />
       </div>
 
     </section>);
