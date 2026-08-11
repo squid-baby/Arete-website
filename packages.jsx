@@ -151,10 +151,10 @@ function WhyPackages({ mobile }) {
         <span className="mb-why__kicker">60-day window</span>
         <h3 className="mb-why__title">A nudge, not a cage.</h3>
         <p className="mb-why__body">
-          Most packages expire 60 days after your first session. Long enough to fit a real practice into your
-          calendar, short enough to keep things from gathering dust.
+          Most packages have a 60-day use window. Long enough to fit a real practice into your calendar,
+          short enough to keep things from gathering dust. Check each Boulevard listing for its start date.
         </p>
-        <span className="mb-why__cite">90 days for the Signature Collection</span>
+        <span className="mb-why__cite">90 days for the Studio Collection</span>
       </div>
     </section>
   );
@@ -167,8 +167,8 @@ function Compare({ mobile }) {
     ["Commitment", "One-time purchase", "3-month minimum, then month-to-month"],
     ["Recurring charge", "No", "Yes, auto-renews monthly"],
     ["Best fit", "Prepaid sessions for a short season", "Monthly rhythm with member benefits"],
-    ["Expiration", "60 days after first use (90 for Signature)", "Membership credits roll over for 30 days"],
-    ["Sharing", "Single person unless noted", "Bundled tiers shareable with one other person"]
+    ["Expiration", "60 days after first use (90 for Studio Collection)", "Most credits remain available for 60 days while active"],
+    ["Sharing", "Single person unless noted", "Essential and Signature can share with one person"]
   ];
   return (
     <section className={`pkg-compare ${mobile ? "pkg-compare--mobile" : ""}`}>
@@ -201,7 +201,7 @@ function Compare({ mobile }) {
 function JumpNav({ mobile }) {
   const links = [
     { href: "#sampler", label: "Sampler & Intros", n: "01" },
-    { href: "#fire", label: "Fire Credits", n: "02" },
+    { href: "#fire", label: "Sauna Packs", n: "02" },
     { href: "#rlt", label: "Red Light", n: "03" },
     { href: "#addons", label: "Add-ons", n: "04" }
   ];
@@ -221,8 +221,18 @@ function JumpNav({ mobile }) {
 // ---------- Package card ----------
 function PackCard({ pack }) {
   const color = pack.color || "var(--candle)";
+  const unavailable = pack.available === false;
   return (
-    <article className="mp" style={{ "--mp-color": color }}>
+    <article className={`mp ${unavailable ? "mp--unavailable" : ""}`} style={{ "--mp-color": color }}>
+      {unavailable &&
+        <div className="mp__availability" aria-label="Currently unavailable in Boulevard">
+          <span className="mp__availability-dot" />
+          <span>
+            <strong>Currently unavailable</strong>
+            <small>Not offered in Boulevard right now</small>
+          </span>
+        </div>
+      }
       <div className="mp__top">
         <div>
           <span className="mp__cadence">{pack.cadence}</span>
@@ -251,10 +261,13 @@ function PackCard({ pack }) {
       }
 
       <div className="mp__cta">
-        <a href={pack.buy || BOOK.store} className="mp__signup" target="_blank" rel="noopener noreferrer">
-          <span>{pack.buyLabel || "Buy package"}</span>
-          <IconArrow size={11} />
-        </a>
+        {unavailable ?
+          <span className="mp__signup mp__signup--disabled" aria-disabled="true">Unavailable</span> :
+          <a href={pack.buy || BOOK.store} className="mp__signup" target="_blank" rel="noopener noreferrer">
+            <span>{pack.buyLabel || "Buy package"}</span>
+            <IconArrow size={11} />
+          </a>
+        }
         {pack.fine && <span className="mp__fine">{pack.fine}</span>}
       </div>
     </article>
@@ -315,7 +328,7 @@ function Section({ mobile, id, index, title, em, lede, children }) {
 
 // ---------- Pack data ----------
 const SIGNATURE = {
-  name: "Areté Signature Collection",
+  name: "Areté Studio Collection",
   price: 245,
   buy: BOOK.signature,
   includes: [
@@ -332,7 +345,7 @@ const SIGNATURE = {
 };
 
 const INTRO_FLOAT = {
-  name: "Intro to Floating",
+  name: "Intro To Floating Package",
   price: 150,
   cadence: "First-time floaters · per person",
   color: "rgb(124, 107, 138)",
@@ -355,6 +368,7 @@ const FIRE_PACKS = [
     color: "rgb(232, 155, 142)",
     savings: 14,
     hideSavings: true,
+    available: false,
     buy: BOOK.fire6,
     includes: [
       "6× 30-min sauna or 20-min RLT",
@@ -364,33 +378,34 @@ const FIRE_PACKS = [
     chips: [{ label: "Mix & match" }, { label: "Per person" }]
   },
   {
-    name: "8 Fire Credits",
+    name: "8 Sauna Sessions Pack",
     price: 228,
-    cadence: "Sauna or RLT · per person",
+    cadence: "8 sauna sessions · per person",
     color: "rgb(232, 155, 142)",
     savings: 4,
     hideSavings: true,
     buy: BOOK.fire8,
     includes: [
-      "8× 30-min sauna or 20-min RLT",
-      "Mix and match across modalities",
-      "Bring a friend +$15/session"
+      "8× 30-minute full-spectrum infrared sauna sessions",
+      "Credits expire 60 days after purchase",
+      "Individual use only · cannot be shared or exchanged"
     ],
-    chips: [{ label: "Mix & match" }, { label: "Per person" }]
+    chips: [{ label: "Sauna only" }, { label: "60-day window" }]
   },
   {
-    name: "12 Fire Credits",
+    name: "12 Sauna Sessions Pack",
     price: 324,
-    cadence: "Sauna or RLT · per person",
+    cadence: "12 sauna sessions · per person",
     color: "rgb(199, 112, 103)",
     savings: 24,
     hideSavings: true,
     buy: BOOK.fire12,
     includes: [
-      "12× 30-min sauna or 20-min RLT",
-      "Bring a friend +$15/session"
+      "12× 30-minute full-spectrum infrared sauna sessions",
+      "Credits expire 60 days after purchase",
+      "Individual use only · cannot be shared or exchanged"
     ],
-    chips: [{ label: "Best per-credit value" }]
+    chips: [{ label: "Sauna only" }, { label: "Best per-session value" }]
   }
 ];
 
@@ -400,6 +415,7 @@ const RLT_PACK = {
   cadence: "Red light only · per person",
   color: "rgb(218, 99, 99)",
   savings: 76,
+  available: false,
   buy: BOOK.rlt8,
   includes: [
     "8× individual 20-min red light therapy sessions",
@@ -440,15 +456,15 @@ function Packs({ mobile }) {
         <PackCard pack={INTRO_FLOAT} />
       </Section>
 
-      <Section mobile={mobile} id="fire" index="02 · Fire Credits"
-        title="Sauna" em="& red light, batched"
-        lede="One credit = one sauna or one RLT session. Mix and match across the heat-and-light week, credits are interchangeable, reservations required.">
+      <Section mobile={mobile} id="fire" index="02 · Sauna Packages"
+        title="Sauna" em="sessions, ready when you are"
+        lede="Choose eight or twelve prepaid sauna sessions for a consistent full-spectrum infrared practice without a recurring membership.">
         {FIRE_PACKS.map(p => <PackCard key={p.name} pack={p} />)}
       </Section>
 
       <Section mobile={mobile} id="rlt" index="03 · Red Light Only"
         title="Red light" em="therapy pack"
-        lede="If sauna isn't your thing but daily red light is, eight sessions to commit to a real protocol, no fire credit needed.">
+        lede="This former red-light-only option is easy to spot below, but it cannot be purchased unless it returns to Boulevard.">
         <PackCard pack={RLT_PACK} />
       </Section>
 
@@ -465,11 +481,11 @@ function Packs({ mobile }) {
 function Rules({ mobile }) {
   const rules = [
     ["Single person, single account", "Packages are for one person unless explicitly noted. Sessions can't be split between accounts or shared with a friend (the Bring-a-Friend add-on is the exception)."],
-    ["60-day expiration after first use", "Credits expire 60 days from the date of your first session, long enough for a real cadence, short enough to keep packages from sitting forever. The Signature Collection runs 90 days."],
+    ["Clear expiration windows", "The Intro package expires 60 days after first use, sauna packs expire 60 days after purchase, and the Studio Collection runs 90 days after first use."],
     ["Non-refundable, non-swappable", "Once purchased, packages can't be refunded, exchanged, or converted into different services. Credits cannot be redeemed for cash, retail, or other modalities."],
-    ["Reservations required", "Book online through FloatHelm or by phone. Same-day slots happen, but they aren't guaranteed."],
-    ["Limit one Signature & Intro per customer", "The Signature Collection and Intro to Floating are once-per-person. Fire and RLT packages can be re-purchased anytime."],
-    ["Tip not included", "Massage gratuity isn't bundled into the Signature price, handled at the appointment, like any other massage."]
+    ["Reservations required", "Book online through Boulevard or by phone. Same-day slots happen, but they aren't guaranteed."],
+    ["Limit one Studio Collection & Intro per customer", "The Studio Collection and Intro to Floating are once-per-person. Sauna packages can be re-purchased anytime."],
+    ["Tip not included", "Massage gratuity isn't bundled into the Studio Collection price, handled at the appointment, like any other massage."]
   ];
   return (
     <section id="rules" className={`mb-rules ${mobile ? "mb-rules--mobile" : ""}`}>
@@ -488,7 +504,7 @@ function Rules({ mobile }) {
         ))}
       </dl>
       <div className="mb-rules__foot">
-        <a href={BOOK.store} target="_blank" rel="noopener noreferrer" className="mb-rules__link">Buy on FloatHelm <IconArrow size={11} /></a>
+        <a href={BOOK.store} target="_blank" rel="noopener noreferrer" className="mb-rules__link">Buy on Boulevard <IconArrow size={11} /></a>
         <span>·</span>
         <span>theteam@floatarete.com · 919-636-9899</span>
       </div>
@@ -514,13 +530,13 @@ function BestFor({ mobile }) {
     {
       kicker: "Get a membership if",
       heading: "You want a monthly promise to yourself.",
-      body: "If you're already coming 4+ times a month, the membership math wins by a wide margin and you get rollover, member rates, and the option to share. Memberships are the rhythm-keepers.",
+      body: "If you're already coming 4+ times a month, the membership math wins by a wide margin and you get member rates, monthly credits, and sharing options on select plans. Memberships are the rhythm-keepers.",
       examples: [
         "Weekly float habit",
         "Daily-ish sauna or RLT",
-        "Couples sharing a Bundled tier",
+        "Couples sharing Essential or Signature",
         "Recovery built into training week",
-        "All-in on the Ultimate"
+        "All-in on Unlimited Wellness"
       ],
       alt: true
     }
@@ -592,7 +608,7 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I bought the Signature Collection because I did not know which service would be the right fit. Trying everything once made the choice easy. Red light surprised me, and by the time I finished the collection, I knew exactly what I wanted to keep in my routine.</p>
+      <p>I bought the Studio Collection because I did not know which service would be the right fit. Trying everything once made the choice easy. Red light surprised me, and by the time I finished the collection, I knew exactly what I wanted to keep in my routine.</p>
       <div className="quote__who">Marlee K. · Areté guest, 2025</div>
     </section>
   );
@@ -602,12 +618,12 @@ function Quote() {
 function FAQ({ mobile }) {
   const [open, setOpen] = useState(0);
   const items = [
-    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna credits to bring a guest. If you're both regulars, a Bundled Wellness membership lets you share with one other person."],
-    ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (Signature Collection runs 90 days instead of 60). Set a cadence that gets you in once a week and you'll have plenty of headroom, most people finish a Fire 8 in about 4–6 weeks."],
+    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna sessions to bring a guest. If you're both regulars, an Essential or Signature Wellness membership can be shared with one other person."],
+    ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (the Studio Collection runs 90 days instead of 60). Set a cadence that helps you use the sessions comfortably within that window."],
     ["Do package credits stack with member discounts?", "No. Package pricing is its own lane. Once you're a member, member rates on additional sessions usually make more sense than buying extra packages, so most members don't double-up."],
     ["Can I gift a package?", "Yes. All packages can be gifted except Intro to Floating, which is reserved for first-time customers only."],
     ["Are packages refundable if I have to move or get injured?", "No. Packages are non-refundable and non-transferable. If something serious comes up, email theteam@floatarete.com, we handle hardship cases on a case-by-case basis but it's never automatic."],
-    ["What's a Fire credit, exactly?", "One credit = one 30-minute infrared sauna or one 20-minute red light therapy session. You decide which when you book, no need to declare upfront. Credits don't combine into longer sessions."]
+    ["Which packages can I buy online?", "The Studio Collection, Intro to Floating, and the 8- and 12-session sauna packs are available in Boulevard right now. Anything else is clearly marked unavailable on this page."]
   ];
   return (
     <section className={`pkg-faq ${mobile ? "pkg-faq--mobile" : ""}`} id="faq">

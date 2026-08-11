@@ -1,7 +1,7 @@
 /* global React */
 const { useState, useEffect, useRef } = React;
 
-// ---------- Booking links (FloatHelm direct service links) ----------
+// ---------- Booking links (Boulevard routes are upgraded site-wide) ----------
 const BOOK = {
   general: "https://aretefloattank.floathelm.com/booking",
   session: "https://aretefloattank.floathelm.com/booking/2026/5/27",
