@@ -82,13 +82,10 @@
     "url": "https://floatarete.com/packages.html",
     "provider": { "@id": "https://floatarete.com/#business" },
     "itemListElement": [
-      { "@type": "Offer", "name": "Areté Signature Collection", "description": "Sampler: 1× float (60 min), 1× sauna (30 min), 1× RLT (20 min), 1× massage (60 min), 1× contrast therapy.", "priceCurrency": "USD", "price": "245", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "Areté Signature Collection" } },
-      { "@type": "Offer", "name": "Intro to Floating", "description": "Three 60-minute float sessions. First-time customers only. Credits expire 60 days after first use.", "priceCurrency": "USD", "price": "150", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "Intro to Floating" } },
-      { "@type": "Offer", "name": "12 Fire Credits", "description": "12 sauna or RLT credits, mix and match. Credits expire 60 days after first use.", "priceCurrency": "USD", "price": "324", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "12 Fire Credits Package" } },
-      { "@type": "Offer", "name": "8 Fire Credits", "description": "8 sauna or RLT credits, mix and match. Credits expire 60 days after first use.", "priceCurrency": "USD", "price": "228", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "8 Fire Credits Package" } },
-      { "@type": "Offer", "name": "6 Fire Credits", "description": "6 sauna or RLT credits, mix and match. Credits expire 60 days after first use.", "priceCurrency": "USD", "price": "160", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "6 Fire Credits Package" } },
-      { "@type": "Offer", "name": "8 Red Light Therapy Sessions", "description": "8 individual 20-minute red light therapy sessions. Valid for 60 days from first use.", "priceCurrency": "USD", "price": "189", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "8 Red Light Therapy Sessions" } },
-      { "@type": "Offer", "name": "Bring a Friend to Sauna", "description": "1× 30-minute sauna add-on for a guest.", "priceCurrency": "USD", "price": "15", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "Bring a Friend to Sauna" } }
+      { "@type": "Offer", "name": "Areté Studio Collection", "description": "Sampler: 1× float (60 min), 1× sauna (30 min), 1× RLT (20 min), 1× massage (60 min), 1× contrast therapy.", "priceCurrency": "USD", "price": "245", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "Areté Studio Collection" } },
+      { "@type": "Offer", "name": "Intro To Floating Package", "description": "Three 60-minute float sessions. First-time customers only. Credits expire 60 days after first use.", "priceCurrency": "USD", "price": "150", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "Intro To Floating Package" } },
+      { "@type": "Offer", "name": "8 Sauna Sessions Pack", "description": "Eight 30-minute full-spectrum infrared sauna sessions. Credits expire 60 days after purchase.", "priceCurrency": "USD", "price": "228", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "8 Sauna Sessions Pack" } },
+      { "@type": "Offer", "name": "12 Sauna Sessions Pack", "description": "Twelve 30-minute full-spectrum infrared sauna sessions. Credits expire 60 days after purchase.", "priceCurrency": "USD", "price": "324", "url": "https://floatarete.com/packages.html", "itemOffered": { "@type": "Service", "name": "12 Sauna Sessions Pack" } }
     ]
   }
   </script>
@@ -298,6 +295,53 @@
       box-shadow: 0 18px 40px -22px rgba(13,27,62,0.22);
       border-color: color-mix(in srgb, var(--mp-color) 40%, var(--ink-14));
     }
+    .mp--unavailable {
+      background: color-mix(in srgb, var(--paper) 88%, var(--ink-06));
+      border-style: dashed;
+    }
+    .mp--unavailable:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--ink-14);
+    }
+    .mp--unavailable .mp__top,
+    .mp--unavailable .mp__list,
+    .mp--unavailable .mp__chips {
+      opacity: 0.48;
+    }
+    .mp__availability {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: -4px 0 22px;
+      padding: 11px 13px;
+      border: 1px solid color-mix(in srgb, var(--mp-color) 28%, var(--ink-14));
+      border-radius: 7px;
+      background: color-mix(in srgb, var(--mp-color) 9%, var(--paper));
+      color: var(--ink);
+    }
+    .mp__availability-dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--mp-color);
+    }
+    .mp__availability strong,
+    .mp__availability small {
+      display: block;
+    }
+    .mp__availability strong {
+      font-size: 11px;
+      line-height: 1.25;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .mp__availability small {
+      margin-top: 3px;
+      font-size: 11px;
+      color: var(--ink-70);
+    }
     .mp__top {
       display: flex;
       justify-content: space-between;
@@ -453,6 +497,14 @@
     .mp__signup:hover {
       background: transparent;
       color: var(--ink);
+    }
+    .mp__signup--disabled,
+    .mp__signup--disabled:hover {
+      cursor: not-allowed;
+      background: transparent;
+      border-color: var(--ink-14);
+      color: var(--ink-55);
+      transform: none;
     }
     .mp__signup svg { transition: transform .3s; }
     .mp__signup:hover svg { transform: translateX(4px); }

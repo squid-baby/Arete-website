@@ -115,7 +115,7 @@ function WhyMembership({ mobile }) {
         <h3 className="mb-why__title">Always less than the door.</h3>
         <p className="mb-why__body">
           Every tier is priced under its drop-in equivalent. The deeper you go, the more it saves,
-          12 saunas a month at member rate is $54 less than walking in.
+          the 12-session Sauna Ritual works out to $24 per visit before add-ons.
         </p>
       </div>
       <div className="mb-why__cell">
@@ -145,7 +145,7 @@ function WhyMembership({ mobile }) {
 function JumpNav({ mobile }) {
   const links = [
     { href: "#float", label: "Float", n: "01" },
-    { href: "#sauna", label: "Sauna & Fire", n: "02" },
+    { href: "#sauna", label: "Sauna", n: "02" },
     { href: "#rlt", label: "Red Light", n: "03" },
     { href: "#contrast", label: "Contrast", n: "04" },
     { href: "#bundles", label: "Bundled Wellness", n: "05" }
@@ -203,7 +203,7 @@ function PlanCard({ plan }) {
       }
 
       <div className="mp__cta">
-        <a href={plan.signup || "#"} className="mp__signup" {...(plan.signup ? { target: "_blank", rel: "noopener" } : {})}>
+        <a href={plan.signup || "#"} className="mp__signup">
           <span>Sign up</span>
           <IconArrow size={11} />
         </a>
@@ -237,11 +237,11 @@ function FeatureCard({ plan }) {
           </div>
           <div className="mp__save" style={{ marginTop: 18 }}>
             <IconSpark size={9} />
-            <span>Breaks even at <b>~6 visits/mo</b></span>
+            <span>Up to <b>one included visit per service, per day</b></span>
           </div>
         </div>
         <div className="mp__cta" style={{ borderTop: "none", paddingTop: 0, justifyContent: "flex-start" }}>
-          <a href={plan.signup || "#"} className="mp__signup" {...(plan.signup ? { target: "_blank", rel: "noopener" } : {})}>
+          <a href={plan.signup || "#"} className="mp__signup">
             <span>Sign up online</span>
             <IconArrow size={11} />
           </a>
@@ -271,163 +271,214 @@ function Modality({ mobile, id, index, title, em, lede, children }) {
 }
 
 // ---------- Plan data ----------
+const BOULEVARD_WIDGET = "https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget";
+const boulevardLink = (path) => `${BOULEVARD_WIDGET}?path=${encodeURIComponent(path)}`;
+
 const FLOAT_PLANS = [{
-  name: "Just Float",
+  name: "Float Ritual",
   price: 79,
   cadence: "Monthly · float",
   color: "rgb(124, 107, 138)",
-  savings: 10,
-  signup: "https://aretefloattank.floathelm.com/store/memberships/1215257",
+  savingsNote: "One float each month",
+  signup: boulevardLink("/cart/menu/Float/p_403e6458-73d2-43cd-ba97-1d7a8886af12"),
   includes: [
-    "1× 90-minute float session each month",
-    "Additional floats at $55 (vs $89 drop-in)"
+    "1× 60- or 90-minute float session each month",
+    "Additional floats for $55",
+    "10% off eligible services and retail",
+    "Monthly float credit does not roll over"
   ],
-  chips: [],
-  fine: "$55 add'l floats"
+  chips: [{ label: "60 or 90 minutes" }, { label: "Personal membership" }],
+  fine: "$55 additional floats"
 }];
 
 const SAUNA_PLANS = [
   {
-    name: "6 Fire Credits",
-    price: 170, cadence: "Monthly · sauna or RLT",
-    color: "rgb(232, 155, 142)", savings: 10,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1220706",
+    name: "The Ember Ritual",
+    price: 112, cadence: "Monthly · 4 sauna sessions",
+    color: "rgb(232, 155, 142)", savingsNote: "4 sauna sessions each month",
+    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_3748dc13-33dd-4550-8b9c-61126931bf54"),
     includes: [
-      "6× 30-min sauna or 20-min RLT (mix & match)"
+      "4× sauna sessions of up to 30 minutes",
+      "Bring a guest for $15",
+      "Add red light therapy for $10",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "30-day rollover" }, { label: "Mix & match" }, { label: "Per person" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
-    name: "8 Fire Credits",
-    price: 215, cadence: "Monthly · sauna or RLT",
-    color: "rgb(232, 155, 142)", savings: 25,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1203178",
+    name: "The Restorative Ritual",
+    price: 162, cadence: "Monthly · 6 sauna sessions",
+    color: "rgb(232, 155, 142)", savingsNote: "6 sauna sessions each month",
+    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_3b990437-0c05-41eb-99be-246fd0b4c25b"),
     includes: [
-      "8× 30-min sauna or 20-min RLT",
-      "10% off other services & retail"
+      "6× sauna sessions of up to 30 minutes",
+      "Bring a guest for $15",
+      "Add red light therapy for $10 or halotherapy for $5",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "30-day rollover" }, { label: "10% off retail" }, { label: "Mix & match" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
-    name: "12 Fire Credits",
-    price: 306, cadence: "Monthly · sauna or RLT",
-    color: "rgb(232, 155, 142)", savings: 54,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1203177",
+    name: "The Radiant Ritual",
+    price: 204, cadence: "Monthly · 8 sauna sessions",
+    color: "rgb(232, 155, 142)", savingsNote: "8 sauna sessions each month",
+    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_82886a87-db7b-42d2-a098-fdee5cf8adf9"),
     includes: [
-      "12× 30-min sauna or 20-min RLT",
-      "10% off other services"
+      "8× sauna sessions of up to 30 minutes",
+      "Bring a guest for $15",
+      "Add red light therapy for $10 or halotherapy for $5",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "30-day rollover" }, { label: "Best per-credit value" }, { label: "10% off services" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
-    name: "Unlimited Sauna & RLT",
-    price: 400, cadence: "Monthly · unlimited",
+    name: "The Immersive Ritual",
+    price: 288, cadence: "Monthly · 12 sauna sessions",
+    color: "rgb(216, 132, 121)", savingsNote: "12 sauna sessions each month",
+    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_a3e4d5ca-e6c9-430e-9db1-eb72873e2fbe"),
+    includes: [
+      "12× sauna sessions of up to 30 minutes",
+      "Bring a guest for $15",
+      "Add red light therapy for $10",
+      "10% off eligible services and retail"
+    ],
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
+  },
+  {
+    name: "The Unlimited Sauna Ritual",
+    price: 325, cadence: "Monthly · unlimited sauna",
     color: "rgb(199, 112, 103)",
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1203175",
-    savingsNote: "Pays off at ~13 saunas/mo",
+    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_d51f048f-51fe-4e79-9ccf-436b1f545b15"),
+    savingsNote: "One sauna session per day",
     includes: [
-      "Unlimited 30-min sauna sessions",
-      "Unlimited 20-min red-light sessions",
-      "15% off select retail",
-      "$55 floats (vs $89 drop-in)"
+      "Unlimited sauna sessions of up to 30 minutes",
+      "Bring a guest for $15",
+      "Add red light therapy for $10 or halotherapy for $5",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "Unlimited" }, { label: "15% off retail" }]
+    chips: [{ label: "Unlimited" }, { label: "Personal membership" }]
   }
 ];
 
-const RLT_PLANS = [{
-  name: "RLT Monthly",
-  price: 199, cadence: "Monthly · red light",
-  color: "rgb(218, 99, 99)",
-  signup: "https://aretefloattank.floathelm.com/store/memberships/1205640",
-  savingsNote: "Pays off at 10 sessions/mo",
-  includes: [
-    "Unlimited 20-min red light therapy",
-    "1 session per calendar day",
-    "10% off other services & retail"
-  ],
-  chips: [{ label: "Unlimited" }, { label: "10% off" }]
-}];
+const RLT_PLANS = [
+  {
+    name: "The Glow Ritual",
+    price: 72, cadence: "Monthly · 4 red light sessions",
+    color: "rgb(218, 99, 99)", savingsNote: "4 red light sessions each month",
+    signup: boulevardLink("/cart/menu/Red Light Therapy /p_9bf67784-a29e-430a-bb95-c552de748593"),
+    includes: [
+      "4× red light therapy sessions",
+      "Add a 30-minute sauna for $25",
+      "10% off eligible services and retail"
+    ],
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
+  },
+  {
+    name: "The Illuminating Ritual",
+    price: 136, cadence: "Monthly · 8 red light sessions",
+    color: "rgb(208, 83, 83)", savingsNote: "8 red light sessions each month",
+    signup: boulevardLink("/cart/menu/Red Light Therapy /p_ebbf7f57-6a65-4613-889b-c6bbeeed010e"),
+    includes: [
+      "8× red light therapy sessions",
+      "Add a 30-minute sauna for $25",
+      "10% off eligible services and retail"
+    ],
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
+  },
+  {
+    name: "The Luminous Ritual",
+    price: 169, cadence: "Monthly · unlimited red light",
+    color: "rgb(194, 67, 67)", savingsNote: "Unlimited red light visits",
+    signup: boulevardLink("/cart/menu/Red Light Therapy /p_9cc9d494-526a-4015-92c7-174c8bbdc01c"),
+    includes: [
+      "Unlimited red light therapy visits",
+      "Add a 30-minute sauna for $25",
+      "10% off eligible services and retail"
+    ],
+    chips: [{ label: "Unlimited" }, { label: "Personal membership" }]
+  }
+];
 
 const CONTRAST_PLANS = [
   {
-    name: "Contrast · 2/mo",
-    price: 99, cadence: "Monthly · cold + heat",
-    color: "rgb(126, 167, 207)", savings: 21,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1215279",
+    name: "Thermal Reset",
+    price: 99, cadence: "Monthly · 2 contrast sessions",
+    color: "rgb(126, 167, 207)", savingsNote: "2 contrast sessions each month",
+    signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_400a8fd5-b757-47e4-b6c6-3ee72c3403c9"),
     includes: [
       "2× 60-min contrast sessions",
-      "10% off other services & retail",
-      "+$20 to bring a guest"
+      "Bring one guest for $20",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
-    name: "Contrast · 3/mo",
-    price: 140, cadence: "Monthly · cold + heat",
-    color: "rgb(102, 148, 192)", savings: 40,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1215254",
+    name: "Fire & Ice Rhythm",
+    price: 140, cadence: "Monthly · 3 contrast sessions",
+    color: "rgb(102, 148, 192)", savingsNote: "3 contrast sessions each month",
+    signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_e2eb0c04-d5d8-4fc0-860a-a01ebc461841"),
     includes: [
       "3× 60-min contrast sessions",
-      "10% off other services & retail",
-      "+$20 to bring a guest"
+      "Bring one guest for $20",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
-    name: "Contrast · 4/mo",
-    price: 176, cadence: "Monthly · cold + heat",
-    color: "rgb(78, 130, 178)", savings: 64,
-    signup: "https://aretefloattank.floathelm.com/store/memberships/1214567",
+    name: "The Contrast Practice",
+    price: 176, cadence: "Monthly · 4 contrast sessions",
+    color: "rgb(78, 130, 178)", savingsNote: "4 contrast sessions each month",
+    signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_1b5fa7ca-66f2-4bbf-84d3-65919819d902"),
     includes: [
       "4× 60-min contrast sessions",
-      "10% off other services & retail",
-      "+$20 to bring a guest"
+      "Bring one guest for $20",
+      "10% off eligible services and retail"
     ],
-    chips: [{ label: "Best for 4×/mo" }, { label: "10% off" }, { label: "30-day rollover" }, { label: "+$20 guest" }]
+    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   }
 ];
 
-const BASIC_BUNDLE = {
-  name: "Basic Wellness", price: 120,
-  cadence: "Monthly · float + fire",
-  color: "rgb(180, 128, 148)", savings: 29,
-  signup: "https://aretefloattank.floathelm.com/store/memberships/1215280",
+const ESSENTIAL_BUNDLE = {
+  name: "Essential Wellness", price: 120,
+  cadence: "Monthly · float + wellness credits",
+  color: "rgb(180, 128, 148)", savingsNote: "A balanced monthly ritual",
+  signup: boulevardLink("/cart/menu/Float | Sauna | RLT | Contrast/p_02cdb7ed-36c5-48aa-b5c6-347cb22b40ab"),
   includes: [
-    "1× 90-min float each month",
-    "2× Fire & Ice credits (sauna/RLT = 1 each, contrast = 2)",
-    "10% off retail, gift certs & services",
-    "Additional floats at $55"
+    "1× 60- or 90-minute float each month",
+    "2 wellness credits: sauna/RLT = 1, contrast = 2",
+    "Additional floats for $55",
+    "10% off eligible services and retail"
   ],
-  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }]
+  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one person" }]
 };
 
-const TOTAL_BUNDLE = {
-  name: "Total Wellness", price: 165,
-  cadence: "Monthly · float + fire",
-  color: "rgb(160, 110, 138)", savings: 44,
-  signup: "https://aretefloattank.floathelm.com/store/memberships/1203325",
+const SIGNATURE_BUNDLE = {
+  name: "Signature Wellness", price: 165,
+  cadence: "Monthly · float + wellness credits",
+  color: "rgb(160, 110, 138)", savingsNote: "A complete monthly ritual",
+  signup: boulevardLink("/cart/menu/Float | Sauna | RLT | Contrast/p_992ea038-e48d-4510-82e9-c26f089da83f"),
   includes: [
-    "1× 90-min float each month",
-    "4× Fire & Ice credits (sauna/RLT = 1 each, contrast = 2)",
-    "10% off retail, gift certs & services",
-    "Additional floats at $55"
+    "1× 60- or 90-minute float each month",
+    "4 wellness credits: sauna/RLT = 1, contrast = 2",
+    "Additional floats for $55",
+    "10% off eligible services and retail"
   ],
-  chips: [{ label: "30-day rollover" }, { label: "Shareable w/ 1" }, { label: "10% off" }]
+  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one person" }]
 };
 
 const ULTIMATE = {
-  name: "Ultimate Wellness", price: 599,
-  signup: "https://aretefloattank.floathelm.com/store/memberships/1215255",
+  name: "Unlimited Wellness", price: 599,
+  signup: boulevardLink("/cart/menu/All Services /p_e5c7c8b8-bdef-485c-bd85-3734d31ae226"),
   includes: [
-    "Unlimited float, sauna, RLT, and contrast therapy",
+    "Unlimited float, sauna, red light, and contrast therapy",
     "1× 60-minute massage each month (giftable)",
-    "15% off retail, gift certs & all other services"
+    "Up to one session of each included service per day",
+    "15% off eligible retail"
   ],
   chips: [
     { label: "All four modalities" },
     { label: "Massage included" },
-    { label: "15% off everything" }
+    { label: "Personal membership" }
   ]
 };
 
@@ -442,14 +493,14 @@ function Tiers({ mobile }) {
       </Modality>
 
       <Modality mobile={mobile} id="sauna" index="02 · Sauna & Fire Credits"
-        title="Sauna" em="& fire credits"
-        lede="Full-spectrum infrared. Fire credits are interchangeable between sauna and red light, so you can build a heat-and-light week however you like. All sauna memberships can bring a friend for $15.">
+        title="Sauna" em="rituals"
+        lede="Full-spectrum infrared with a rhythm for every schedule, from one session a week to unlimited visits. Add a guest, red light, or halotherapy where listed.">
         {SAUNA_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
       <Modality mobile={mobile} id="rlt" index="03 · Red Light Therapy"
         title="Red Light" em="therapy"
-        lede="Mitochondrial support, recovery, skin. The dose-response is daily, this tier is built around making that practical.">
+        lede="Choose four, eight, or unlimited monthly visits. Each plan can pair a red light visit with a 30-minute sauna for $25.">
         {RLT_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
@@ -461,8 +512,8 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="bundles" index="05 · Bundled Wellness"
         title="Bundled" em="wellness"
-        lede="Float plus Fire & Ice credits in one membership. Basic and Total are shareable with one other person, Ultimate is the all-in for daily users.">
-        {[BASIC_BUNDLE, TOTAL_BUNDLE].map(p => <PlanCard key={p.name} plan={p} />)}
+        lede="Float plus flexible wellness credits in one membership. Essential and Signature are shareable with one other person; Unlimited Wellness is the all-in plan for frequent visitors.">
+        {[ESSENTIAL_BUNDLE, SIGNATURE_BUNDLE].map(p => <PlanCard key={p.name} plan={p} />)}
         <FeatureCard plan={ULTIMATE} />
       </Modality>
     </div>
@@ -474,10 +525,10 @@ function Rules({ mobile }) {
   const rules = [
     ["Three-month minimum", "Every membership runs for at least three months before you can cancel or pause. The science (and the budget) shows up over weeks, not days."],
     ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months after the three-month minimum. While paused, you do not have access to discounted member rates or benefits. Your membership must renew once after a pause before you can cancel."],
-    ["30-day rollover", "All membership credits except Just Float roll over for 30 days. If you cancel, any remaining credits expire 30 days after the membership ends."],
-    ["Sharing depends on the tier", "Bundled Wellness (Basic & Total) is shareable with one other person for the duration of your membership. Most single-modality memberships are personal, guest add-ons are $15–$20/session."],
-    ["Member rates on top", "All members get $55 floats. 8+ Fire, RLT, and Contrast 3+ memberships add 10% off retail and other services. Ultimate adds 15% off everything."],
-    ["Cancel or pause in writing", "We must be informed in writing at theteam@floatarete.com at least 14 days before your renewal date to pause or cancel. Any remaining credits expire 30 days after the membership ends."]
+    ["60-day credit validity", "Sauna, red light, contrast, Essential, and Signature credits remain valid for 60 days while the membership is active. Float Ritual credits do not roll over."],
+    ["Sharing depends on the tier", "Essential and Signature Wellness are shareable with one designated person. Single-modality and Unlimited Wellness memberships are personal; the monthly Unlimited Wellness massage may be gifted."],
+    ["Member perks", "Memberships include 10% off eligible non-practitioner services and retail. Unlimited Wellness includes 15% off eligible retail. Add-on and guest rates vary by plan."],
+    ["Cancel or pause in writing", "Let us know in writing at theteam@floatarete.com at least 14 days before your renewal date if you need to pause or cancel. Your member agreement contains the complete terms."]
   ];
   return (
     <section id="rules" className={`mb-rules ${mobile ? "mb-rules--mobile" : ""}`}>
@@ -509,7 +560,7 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I joined Total Wellness during a stretch where I'd stopped sleeping. Two saunas and a float a week later, the wheel started turning again. The membership is what keeps me going, without it, I'd skip the week I most need it.</p>
+      <p>I joined Signature Wellness during a stretch where I'd stopped sleeping. Two saunas and a float a week later, the wheel started turning again. The membership is what keeps me going, without it, I'd skip the week I most need it.</p>
       <div className="quote__who">Reese P. · Member since 2024</div>
     </section>
   );

@@ -55,11 +55,14 @@ const EXPERIENCE_STATS = [
   }
 ];
 
+const BOULEVARD_WIDGET = "https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget";
+const bookingLink = (path) => `${BOULEVARD_WIDGET}?path=${encodeURIComponent(path)}&visitType=SELF_VISIT`;
 
 const SERVICES = [
 {
   id: "float",
   href: "float.html",
+  bookHref: bookingLink("/cart/menu/Float Tank?type=SERVICE"),
   name: "Float Tank",
   desc: "1,000 lbs of Epsom salt, 10 inches of water, zero gravity, total sensory silence. An experience unlike any other.",
   price: "From $65 · 60 or 90 min",
@@ -70,6 +73,7 @@ const SERVICES = [
 {
   id: "sauna",
   href: "#sauna",
+  bookHref: bookingLink("/cart/menu/Sauna | RLT | Halotherapy"),
   name: "Infrared Sauna",
   desc: "Deep heat that works from the inside out. Detox, muscle relief, and the kind of warmth that stays with you.",
   price: "From $25 · 15 or 30 min",
@@ -79,6 +83,7 @@ const SERVICES = [
 {
   id: "cold",
   href: "Contrast-Therapy.html",
+  bookHref: bookingLink("/cart/menu/Contrast Therapy (Cold Plunge/ Sauna)"),
   name: "Contrast Therapy",
   desc: "The reset button. Cold immersion for inflammation, clarity, and that electric aliveness that lasts all day.",
   price: "From $50 · 60 min Solo or with a friend.",
@@ -88,6 +93,7 @@ const SERVICES = [
 {
   id: "massage",
   href: "#massage",
+  bookHref: bookingLink("/cart/menu/Massage"),
   name: "Massage",
   desc: "Therapeutic bodywork tailored to you. Curated rest and recovery designed around your unique needs.",
   price: "From $110 · 60, 75, or 90 min",
@@ -97,6 +103,7 @@ const SERVICES = [
 {
   id: "redlight",
   href: "#redlight",
+  bookHref: bookingLink("/cart/menu/Sauna | RLT | Halotherapy/s_0d2a9897-5a34-4693-9a94-a38682332343"),
   name: "Red Light Therapy",
   desc: "Full-spectrum red and near-infrared light. Accelerates healing, supports collagen and cellular energy, without heat or UV.",
   price: "From $20 · 20 min",
@@ -106,6 +113,7 @@ const SERVICES = [
 {
   id: "halo",
   href: "#halo",
+  bookHref: bookingLink("/cart/menu/Sauna | RLT | Halotherapy/s_92588d14-a197-45de-a8cd-68b4c6a1038f"),
   name: "Halotherapy",
   desc: "Dry salt air micronized into a therapeutic mist. Supports respiratory health, soothes skin, and quiets breath.",
   price: "From $10 · 30 min - add on to any sauna session",
