@@ -168,7 +168,7 @@ function Compare({ mobile }) {
     ["Recurring charge", "No", "Yes, auto-renews monthly"],
     ["Best fit", "Prepaid sessions for a short season", "Monthly rhythm with member benefits"],
     ["Expiration", "60 days after first use (90 for Studio Collection)", "Most credits remain available for 60 days while active"],
-    ["Sharing", "Single person unless noted", "Essential and Signature can share with one person"]
+    ["Sharing", "Single person unless noted", "Signature can share with one designated person"]
   ];
   return (
     <section className={`pkg-compare ${mobile ? "pkg-compare--mobile" : ""}`}>
@@ -534,7 +534,7 @@ function BestFor({ mobile }) {
       examples: [
         "Weekly float habit",
         "Daily-ish sauna or RLT",
-        "Couples sharing Essential or Signature",
+        "Couples sharing Signature Wellness",
         "Recovery built into training week",
         "All-in on Unlimited Wellness"
       ],
@@ -618,7 +618,7 @@ function Quote() {
 function FAQ({ mobile }) {
   const [open, setOpen] = useState(0);
   const items = [
-    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna sessions to bring a guest. If you're both regulars, an Essential or Signature Wellness membership can be shared with one other person."],
+    ["Can I share a package with my partner?", "Most packages are single-person. The Bring a Friend to Sauna add-on is the only built-in way to share, pair it with one of your sauna sessions to bring a guest. If you're both regulars, Signature Wellness can be shared with one designated person."],
     ["What happens after 60 days?", "Any unused credits expire. We don't refund or roll them over (the Studio Collection runs 90 days instead of 60). Set a cadence that helps you use the sessions comfortably within that window."],
     ["Do package credits stack with member discounts?", "No. Package pricing is its own lane. Once you're a member, member rates on additional sessions usually make more sense than buying extra packages, so most members don't double-up."],
     ["Can I gift a package?", "Yes. All packages can be gifted except Intro to Floating, which is reserved for first-time customers only."],

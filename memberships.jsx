@@ -237,7 +237,7 @@ function FeatureCard({ plan }) {
           </div>
           <div className="mp__save" style={{ marginTop: 18 }}>
             <IconSpark size={9} />
-            <span>Up to <b>one included visit per service, per day</b></span>
+            <span><b>Unlimited access</b> to all four modalities</span>
           </div>
         </div>
         <div className="mp__cta" style={{ borderTop: "none", paddingTop: 0, justifyContent: "flex-start" }}>
@@ -325,7 +325,7 @@ const SAUNA_PLANS = [
     includes: [
       "12× sauna sessions of up to 30 minutes",
       "Bring a guest for $15",
-      "Add red light therapy for $10",
+      "Add red light therapy for $10 or halotherapy for $5",
       "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
@@ -335,9 +335,9 @@ const SAUNA_PLANS = [
     price: 275, cadence: "Monthly · unlimited sauna",
     color: "rgb(199, 112, 103)",
     signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_d51f048f-51fe-4e79-9ccf-436b1f545b15"),
-    savingsNote: "One sauna session per day",
+    savingsNote: "Unlimited sauna sessions",
     includes: [
-      "Unlimited sauna sessions of up to 30 minutes, maximum one per day",
+      "Unlimited sauna sessions of up to 30 minutes",
       "Bring a guest for $15",
       "Add red light therapy for $10 or halotherapy for $5",
       "15% off non-practitioner services and retail"
@@ -354,7 +354,7 @@ const RLT_PLANS = [
     signup: boulevardLink("/cart/menu/Red Light Therapy /p_ebbf7f57-6a65-4613-889b-c6bbeeed010e"),
     includes: [
       "8× red light therapy sessions",
-      "Add a 30-minute sauna for $25",
+      "Add a 30-minute sauna for $20",
       "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
@@ -406,7 +406,7 @@ const CONTRAST_PLANS = [
     includes: [
       "4× 60-min contrast sessions",
       "Bring a guest for $20",
-      "15% off non-practitioner services and retail"
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   }
@@ -423,7 +423,7 @@ const ESSENTIAL_BUNDLE = {
     "Additional floats for $57; upgrade to a 90-minute float for $10",
     "10% off non-practitioner services and retail; early access to select offers"
   ],
-  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one designated person" }]
+  chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
 };
 
 const SIGNATURE_BUNDLE = {
@@ -435,7 +435,7 @@ const SIGNATURE_BUNDLE = {
     "1× 90-minute float each month",
     "4 wellness credits: sauna/RLT = 1, contrast = 2",
     "Additional floats for $57",
-    "15% off non-practitioner services and retail"
+    "10% off non-practitioner services and retail; early access to select offers"
   ],
   chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one designated person" }]
 };
@@ -445,8 +445,7 @@ const ULTIMATE = {
   signup: boulevardLink("/cart/menu/All Services /p_e5c7c8b8-bdef-485c-bd85-3734d31ae226"),
   includes: [
     "Unlimited float, sauna, red light, and contrast therapy",
-    "Up to one session of each included service per day",
-    "15% off retail",
+    "15% off non-practitioner services and retail",
     "Early access to select offers"
   ],
   chips: [
@@ -473,7 +472,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="rlt" index="03 · Red Light Therapy"
         title="Red Light" em="therapy"
-        lede="Choose eight or unlimited monthly visits. Add a 30-minute sauna for $25 on Illuminating or $20 on Luminous.">
+        lede="Choose eight or unlimited monthly visits. Both plans can pair a red light visit with a 30-minute sauna for $20.">
         {RLT_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
@@ -485,7 +484,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="bundles" index="05 · Bundled Wellness"
         title="Bundled" em="wellness"
-        lede="Float plus flexible wellness credits in one membership. Essential and Signature are shareable with one other person; Unlimited Wellness is the all-in plan for frequent visitors.">
+        lede="Float plus flexible wellness credits in one membership. Signature is shareable with one designated person; Essential and Unlimited Wellness are personal memberships.">
         {[ESSENTIAL_BUNDLE, SIGNATURE_BUNDLE].map(p => <PlanCard key={p.name} plan={p} />)}
         <FeatureCard plan={ULTIMATE} />
       </Modality>
@@ -499,8 +498,8 @@ function Rules({ mobile }) {
     ["Three-month minimum", "Every membership runs for at least three months before you can cancel or pause. The science (and the budget) shows up over weeks, not days."],
     ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months after the three-month minimum. While paused, you do not have access to discounted member rates or benefits. Your membership must renew once after a pause before you can cancel."],
     ["60-day credit validity", "Sauna, red light, contrast, Essential, and Signature credits remain valid for 60 days while the membership is active. Float Ritual credits do not roll over."],
-    ["Sharing depends on the tier", "Essential and Signature Wellness are shareable with one designated person. Single-modality and Unlimited Wellness memberships are personal."],
-    ["Member perks", "Most memberships include 10% off non-practitioner services and retail. The Contrast Practice, Signature Wellness, and Unlimited Sauna Ritual include 15% off non-practitioner services and retail; Unlimited Wellness includes 15% off retail. Add-on and guest rates vary by plan."],
+    ["Sharing depends on the tier", "Signature Wellness is shareable with one designated person. Essential Wellness, single-modality, and Unlimited Wellness memberships are personal."],
+    ["Member perks", "Unlimited Sauna Ritual and Unlimited Wellness members receive 15% off non-practitioner services and retail. All other memberships receive 10%. Add-on and guest rates vary by plan."],
     ["Cancel or pause in writing", "Let us know in writing at theteam@floatarete.com at least 14 days before your renewal date if you need to pause or cancel. Your member agreement contains the complete terms."]
   ];
   return (
