@@ -115,7 +115,7 @@ function WhyMembership({ mobile }) {
         <h3 className="mb-why__title">Always less than the door.</h3>
         <p className="mb-why__body">
           Every tier is priced under its drop-in equivalent. The deeper you go, the more it saves,
-          the 12-session Sauna Ritual works out to $24 per visit before add-ons.
+          the 12-session Sauna Ritual works out to about $19 per visit before add-ons.
         </p>
       </div>
       <div className="mb-why__cell">
@@ -219,9 +219,9 @@ function FeatureCard({ plan }) {
     <article className="mp mp--feature" style={{ "--mp-color": "var(--candle)" }}>
       <div className="mp__feature-body">
         <span className="mp__feature-flag"><IconSpark size={9} /> Flagship</span>
-        <span className="mp__cadence">Monthly · all four modalities + massage</span>
+        <span className="mp__cadence">Monthly · all four modalities</span>
         <h3 className="mp__name">{plan.name}</h3>
-        <p className="mp__feature-tag">Everything Areté offers, on tap. The membership for the person who's already here weekly.</p>
+        <p className="mp__feature-tag">Float, sauna, red light, and contrast therapy, on tap. The membership for the person who's already here weekly.</p>
         <ul className="mp__list" style={{ marginTop: 22 }}>
           {plan.includes.map((l, i) => <li key={i}>{l}</li>)}
         </ul>
@@ -246,7 +246,7 @@ function FeatureCard({ plan }) {
             <IconArrow size={11} />
           </a>
         </div>
-        <span className="mp__fine" style={{ textAlign: "left" }}>Massage giftable to one other person</span>
+        <span className="mp__fine" style={{ textAlign: "left" }}>Personal membership · not shareable</span>
       </div>
     </article>
   );
@@ -276,103 +276,77 @@ const boulevardLink = (path) => `${BOULEVARD_WIDGET}?path=${encodeURIComponent(p
 
 const FLOAT_PLANS = [{
   name: "Float Ritual",
-  price: 79,
+  price: 69,
   cadence: "Monthly · float",
   color: "rgb(124, 107, 138)",
   savingsNote: "One float each month",
   signup: boulevardLink("/cart/menu/Float/p_403e6458-73d2-43cd-ba97-1d7a8886af12"),
   includes: [
     "1× 60- or 90-minute float session each month",
-    "Additional floats for $55",
-    "10% off eligible services and retail",
-    "Monthly float credit does not roll over"
+    "Additional floats for $57",
+    "10% off non-practitioner services and retail"
   ],
   chips: [{ label: "60 or 90 minutes" }, { label: "Personal membership" }],
-  fine: "$55 additional floats"
+  fine: "$57 additional floats"
 }];
 
 const SAUNA_PLANS = [
   {
-    name: "The Ember Ritual",
-    price: 112, cadence: "Monthly · 4 sauna sessions",
-    color: "rgb(232, 155, 142)", savingsNote: "4 sauna sessions each month",
-    signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_3748dc13-33dd-4550-8b9c-61126931bf54"),
-    includes: [
-      "4× sauna sessions of up to 30 minutes",
-      "Bring a guest for $15",
-      "Add red light therapy for $10",
-      "10% off eligible services and retail"
-    ],
-    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
-  },
-  {
     name: "The Restorative Ritual",
-    price: 162, cadence: "Monthly · 6 sauna sessions",
+    price: 149, cadence: "Monthly · 6 sauna sessions",
     color: "rgb(232, 155, 142)", savingsNote: "6 sauna sessions each month",
     signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_3b990437-0c05-41eb-99be-246fd0b4c25b"),
     includes: [
       "6× sauna sessions of up to 30 minutes",
       "Bring a guest for $15",
       "Add red light therapy for $10 or halotherapy for $5",
-      "10% off eligible services and retail"
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
     name: "The Radiant Ritual",
-    price: 204, cadence: "Monthly · 8 sauna sessions",
+    price: 179, cadence: "Monthly · 8 sauna sessions",
     color: "rgb(232, 155, 142)", savingsNote: "8 sauna sessions each month",
     signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_82886a87-db7b-42d2-a098-fdee5cf8adf9"),
     includes: [
       "8× sauna sessions of up to 30 minutes",
       "Bring a guest for $15",
       "Add red light therapy for $10 or halotherapy for $5",
-      "10% off eligible services and retail"
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
     name: "The Immersive Ritual",
-    price: 288, cadence: "Monthly · 12 sauna sessions",
+    price: 229, cadence: "Monthly · 12 sauna sessions",
     color: "rgb(216, 132, 121)", savingsNote: "12 sauna sessions each month",
     signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_a3e4d5ca-e6c9-430e-9db1-eb72873e2fbe"),
     includes: [
       "12× sauna sessions of up to 30 minutes",
       "Bring a guest for $15",
       "Add red light therapy for $10",
-      "10% off eligible services and retail"
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
     name: "The Unlimited Sauna Ritual",
-    price: 325, cadence: "Monthly · unlimited sauna",
+    price: 275, cadence: "Monthly · unlimited sauna",
     color: "rgb(199, 112, 103)",
     signup: boulevardLink("/cart/menu/Fire (Sauna | RLT)/p_d51f048f-51fe-4e79-9ccf-436b1f545b15"),
     savingsNote: "One sauna session per day",
     includes: [
-      "Unlimited sauna sessions of up to 30 minutes",
+      "Unlimited sauna sessions of up to 30 minutes, maximum one per day",
       "Bring a guest for $15",
       "Add red light therapy for $10 or halotherapy for $5",
-      "10% off eligible services and retail"
+      "15% off non-practitioner services and retail"
     ],
     chips: [{ label: "Unlimited" }, { label: "Personal membership" }]
   }
 ];
 
 const RLT_PLANS = [
-  {
-    name: "The Glow Ritual",
-    price: 72, cadence: "Monthly · 4 red light sessions",
-    color: "rgb(218, 99, 99)", savingsNote: "4 red light sessions each month",
-    signup: boulevardLink("/cart/menu/Red Light Therapy /p_9bf67784-a29e-430a-bb95-c552de748593"),
-    includes: [
-      "4× red light therapy sessions",
-      "Add a 30-minute sauna for $25",
-      "10% off eligible services and retail"
-    ],
-    chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
-  },
   {
     name: "The Illuminating Ritual",
     price: 136, cadence: "Monthly · 8 red light sessions",
@@ -381,19 +355,19 @@ const RLT_PLANS = [
     includes: [
       "8× red light therapy sessions",
       "Add a 30-minute sauna for $25",
-      "10% off eligible services and retail"
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
   {
     name: "The Luminous Ritual",
     price: 169, cadence: "Monthly · unlimited red light",
-    color: "rgb(194, 67, 67)", savingsNote: "Unlimited red light visits",
+    color: "rgb(194, 67, 67)", savingsNote: "Unlimited red light sessions",
     signup: boulevardLink("/cart/menu/Red Light Therapy /p_9cc9d494-526a-4015-92c7-174c8bbdc01c"),
     includes: [
-      "Unlimited red light therapy visits",
-      "Add a 30-minute sauna for $25",
-      "10% off eligible services and retail"
+      "Unlimited red light therapy sessions",
+      "Add a 30-minute sauna for $20",
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Unlimited" }, { label: "Personal membership" }]
   }
@@ -407,8 +381,8 @@ const CONTRAST_PLANS = [
     signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_400a8fd5-b757-47e4-b6c6-3ee72c3403c9"),
     includes: [
       "2× 60-min contrast sessions",
-      "Bring one guest for $20",
-      "10% off eligible services and retail"
+      "Bring a guest for $20",
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
@@ -419,8 +393,8 @@ const CONTRAST_PLANS = [
     signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_e2eb0c04-d5d8-4fc0-860a-a01ebc461841"),
     includes: [
       "3× 60-min contrast sessions",
-      "Bring one guest for $20",
-      "10% off eligible services and retail"
+      "Bring a guest for $20",
+      "10% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   },
@@ -431,53 +405,52 @@ const CONTRAST_PLANS = [
     signup: boulevardLink("/cart/menu/Contrast Therapy (Cold Plunge & Sauna)/p_1b5fa7ca-66f2-4bbf-84d3-65919819d902"),
     includes: [
       "4× 60-min contrast sessions",
-      "Bring one guest for $20",
-      "10% off eligible services and retail"
+      "Bring a guest for $20",
+      "15% off non-practitioner services and retail"
     ],
     chips: [{ label: "Credits valid 60 days" }, { label: "Personal membership" }]
   }
 ];
 
 const ESSENTIAL_BUNDLE = {
-  name: "Essential Wellness", price: 120,
+  name: "Essential Wellness", price: 109,
   cadence: "Monthly · float + wellness credits",
   color: "rgb(180, 128, 148)", savingsNote: "A balanced monthly ritual",
   signup: boulevardLink("/cart/menu/Float | Sauna | RLT | Contrast/p_02cdb7ed-36c5-48aa-b5c6-347cb22b40ab"),
   includes: [
-    "1× 60- or 90-minute float each month",
+    "1× 60-minute float each month",
     "2 wellness credits: sauna/RLT = 1, contrast = 2",
-    "Additional floats for $55",
-    "10% off eligible services and retail"
+    "Additional floats for $57; upgrade to a 90-minute float for $10",
+    "10% off non-practitioner services and retail; early access to select offers"
   ],
-  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one person" }]
+  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one designated person" }]
 };
 
 const SIGNATURE_BUNDLE = {
-  name: "Signature Wellness", price: 165,
+  name: "Signature Wellness", price: 159,
   cadence: "Monthly · float + wellness credits",
   color: "rgb(160, 110, 138)", savingsNote: "A complete monthly ritual",
   signup: boulevardLink("/cart/menu/Float | Sauna | RLT | Contrast/p_992ea038-e48d-4510-82e9-c26f089da83f"),
   includes: [
-    "1× 60- or 90-minute float each month",
+    "1× 90-minute float each month",
     "4 wellness credits: sauna/RLT = 1, contrast = 2",
-    "Additional floats for $55",
-    "10% off eligible services and retail"
+    "Additional floats for $57",
+    "15% off non-practitioner services and retail"
   ],
-  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one person" }]
+  chips: [{ label: "Credits valid 60 days" }, { label: "Shareable with one designated person" }]
 };
 
 const ULTIMATE = {
-  name: "Unlimited Wellness", price: 599,
+  name: "Unlimited Wellness", price: 499,
   signup: boulevardLink("/cart/menu/All Services /p_e5c7c8b8-bdef-485c-bd85-3734d31ae226"),
   includes: [
     "Unlimited float, sauna, red light, and contrast therapy",
-    "1× 60-minute massage each month (giftable)",
     "Up to one session of each included service per day",
-    "15% off eligible retail"
+    "15% off retail",
+    "Early access to select offers"
   ],
   chips: [
     { label: "All four modalities" },
-    { label: "Massage included" },
     { label: "Personal membership" }
   ]
 };
@@ -500,7 +473,7 @@ function Tiers({ mobile }) {
 
       <Modality mobile={mobile} id="rlt" index="03 · Red Light Therapy"
         title="Red Light" em="therapy"
-        lede="Choose four, eight, or unlimited monthly visits. Each plan can pair a red light visit with a 30-minute sauna for $25.">
+        lede="Choose eight or unlimited monthly visits. Add a 30-minute sauna for $25 on Illuminating or $20 on Luminous.">
         {RLT_PLANS.map(p => <PlanCard key={p.name} plan={p} />)}
       </Modality>
 
@@ -526,8 +499,8 @@ function Rules({ mobile }) {
     ["Three-month minimum", "Every membership runs for at least three months before you can cancel or pause. The science (and the budget) shows up over weeks, not days."],
     ["Pause once, up to two months", "Travel, surgery, a busy season, pause your membership for up to two months after the three-month minimum. While paused, you do not have access to discounted member rates or benefits. Your membership must renew once after a pause before you can cancel."],
     ["60-day credit validity", "Sauna, red light, contrast, Essential, and Signature credits remain valid for 60 days while the membership is active. Float Ritual credits do not roll over."],
-    ["Sharing depends on the tier", "Essential and Signature Wellness are shareable with one designated person. Single-modality and Unlimited Wellness memberships are personal; the monthly Unlimited Wellness massage may be gifted."],
-    ["Member perks", "Memberships include 10% off eligible non-practitioner services and retail. Unlimited Wellness includes 15% off eligible retail. Add-on and guest rates vary by plan."],
+    ["Sharing depends on the tier", "Essential and Signature Wellness are shareable with one designated person. Single-modality and Unlimited Wellness memberships are personal."],
+    ["Member perks", "Most memberships include 10% off non-practitioner services and retail. The Contrast Practice, Signature Wellness, and Unlimited Sauna Ritual include 15% off non-practitioner services and retail; Unlimited Wellness includes 15% off retail. Add-on and guest rates vary by plan."],
     ["Cancel or pause in writing", "Let us know in writing at theteam@floatarete.com at least 14 days before your renewal date if you need to pause or cancel. Your member agreement contains the complete terms."]
   ];
   return (
