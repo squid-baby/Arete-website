@@ -41,14 +41,47 @@ function injectFaqSchema(groups) {
 }
 
 // ---------- Shared TopNav ----------
-function TopNav() {
+const IconMenu = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M3 6h14M3 10h14M3 14h14" strokeLinecap="round" />
+  </svg>
+);
+
+const IconClose = ({ size = 22 }) => (
+  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" />
+  </svg>
+);
+
+function TopNav({ mobile }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => { if (!mobile) setMenuOpen(false); }, [mobile]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [menuOpen]);
+
   return (
-    <header className="nav">
+    <header className={`nav ${mobile ? "nav--mobile" : ""}`}>
       <div className="nav__inner">
         <a className="nav__brand" href="/" aria-label="Areté Float + Wellness, home">
-          <img src="assets/arete-logo.png?v=2" alt="Areté Float + Wellness" style={{ width: "120px" }} />
+          <img src="assets/arete-logo.png?v=2" alt="Areté Float + Wellness" style={{ width: mobile ? "88px" : "120px" }} />
         </a>
-        <nav className="nav__links" aria-label="Primary">
+
+        {mobile ? (
+          <button
+            className="nav__menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}>
+            {menuOpen ? <IconClose /> : <IconMenu />}
+          </button>
+        ) : (
+          <nav className="nav__links" aria-label="Primary">
           <div className="nav__dropdown">
             <a href="#" className="nav__dropdown-trigger">
               Services
@@ -68,11 +101,32 @@ function TopNav() {
           </div>
           <a href="memberships.html">Memberships</a>
           <a href="blog.html">Blog</a>
+          <a href="faq.html" aria-current="page" style={{ color: "var(--ink)", fontWeight: 500 }}>FAQ</a>
           <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
-        </nav>
+          </nav>
+        )}
       </div>
+
+      {mobile && (
+        <div className={`nav__mobile-drawer ${menuOpen ? "is-open" : ""}`}>
+          <span className="nav__mobile-group-label">Services</span>
+          <a className="nav__mobile-sub" href="float.html">Float</a>
+          <a className="nav__mobile-sub" href="sauna.html">Sauna</a>
+          <a className="nav__mobile-sub" href="red_light.html">Red Light Therapy</a>
+          <a className="nav__mobile-sub" href="halotherapy.html">Halotherapy</a>
+          <a className="nav__mobile-sub" href="Contrast-Therapy.html">Contrast Therapy</a>
+          <a className="nav__mobile-sub" href="Massage.html">Massage</a>
+          <a className="nav__mobile-sub" href="retail.html">Retail</a>
+          <a href="memberships.html">Memberships</a>
+          <a href="blog.html">Blog</a>
+          <a href="faq.html" aria-current="page">FAQ</a>
+          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="about.html">About</a>
+          <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
+        </div>
+      )}
     </header>
   );
 }
@@ -162,6 +216,18 @@ function Toc({ groups, active, onJump }) {
 function App() {
   const groups = useMemo(readFaq, []);
   const [active, setActive] = useState(groups[0]?.id || "");
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener ? mq.addEventListener("change", onChange) : mq.addListener(onChange);
+    return () => {
+      mq.removeEventListener ? mq.removeEventListener("change", onChange) : mq.removeListener(onChange);
+    };
+  }, []);
 
   // Inject schema once
   useEffect(() => {
@@ -197,7 +263,7 @@ function App() {
 
   return (
     <div className="info-page">
-      <TopNav />
+      <TopNav mobile={isMobile} />
       <main>
         <section className="info-hero">
           <div className="info-hero__eyebrow"><span>Frequently Asked</span></div>

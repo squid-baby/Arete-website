@@ -62,6 +62,7 @@ function TopNav({ mobile }) {
             </div>
             <a href="memberships.html">Memberships</a>
             <a href="packages.html">Packages</a>
+            <a href="faq.html">FAQ</a>
             <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="about.html">About</a>
             <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
@@ -80,6 +81,7 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
+          <a href="faq.html">FAQ</a>
           <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
           <a href="about.html">About</a>
           <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
