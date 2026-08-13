@@ -79,6 +79,41 @@
 
     anchor.removeAttribute("target");
     anchor.removeAttribute("rel");
+
+    // Boulevard keeps an in-progress cart when the overlay is reopened, but
+    // its standard widget does not share the cart count with the surrounding
+    // website. Use the desktop navigation action as a direct cart shortcut.
+    if (anchor.classList.contains("nav__cta")) {
+      anchor.textContent = "Cart";
+      anchor.href = boulevardUrl("/cart", "SELF_VISIT");
+      anchor.dataset.blvdPath = "/cart";
+      anchor.dataset.blvdVisitType = "SELF_VISIT";
+      anchor.setAttribute("aria-label", "View your Boulevard cart");
+    }
+
+    // On mobile, keep the cart visible beside the menu icon instead of hiding
+    // the only shortcut inside the slide-down navigation drawer.
+    if (anchor.classList.contains("nav__mobile-cta")) {
+      var mobileNav = anchor.closest(".nav");
+      var menuButton = mobileNav && mobileNav.querySelector(".nav__menu");
+
+      if (menuButton && !mobileNav.querySelector(".nav__mobile-cart")) {
+        var mobileCart = document.createElement("a");
+        mobileCart.className = "nav__mobile-cart";
+        mobileCart.href = boulevardUrl("/cart", "SELF_VISIT");
+        mobileCart.dataset.blvdPath = "/cart";
+        mobileCart.dataset.blvdVisitType = "SELF_VISIT";
+        mobileCart.dataset.areteBookingReady = "true";
+        mobileCart.setAttribute("aria-label", "View your Boulevard cart");
+        mobileCart.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5h11l1 11h-13l1-11Z"></path><path d="M9 9V7a3 3 0 0 1 6 0v2"></path></svg>';
+        menuButton.insertAdjacentElement("beforebegin", mobileCart);
+      }
+
+      anchor.classList.add("nav__mobile-cta--hidden");
+      anchor.setAttribute("aria-hidden", "true");
+      anchor.tabIndex = -1;
+    }
+
     anchor.dataset.areteBookingReady = "true";
   }
 
