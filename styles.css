@@ -301,6 +301,29 @@ body.whimsy .stage {
   border: 0;
   cursor: pointer;
 }
+.nav--mobile .nav__inner { justify-content: flex-start; gap: 6px; }
+.nav--mobile .nav__brand { margin-right: auto; }
+.nav__mobile-cart {
+  width: 38px;
+  height: 38px;
+  margin-right: 0;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink-15, rgba(13,27,62,0.15));
+  border-radius: 999px;
+}
+.nav__mobile-cart svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---- Mobile drawer ---- */
 .nav__mobile-drawer {
@@ -350,6 +373,7 @@ body.whimsy .stage {
   text-transform: uppercase;
   border: 0;
 }
+.nav__mobile-drawer .nav__mobile-cta--hidden { display: none; }
 .nav--mobile { position: relative; }
 
 /* ---------- BUTTONS ---------- */
