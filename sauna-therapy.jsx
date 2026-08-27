@@ -157,9 +157,9 @@ function Timeline({ mobile }) {
   const steps = [
   { t: "Arrive", d: "Settle in. Change into the provided robe and slippers in your private suite.", min: "0 min" },
   { t: "Hydrate", d: "Cool electrolyte water before you step in, heat works better when you're topped off.", min: "5 min" },
-  { t: "Heat", d: "Full-spectrum infrared. Phone away, breath slow. Sweat builds around minute fifteen.", min: "5–35 min" },
-  { t: "Cool", d: "Step out, towel down, optional rinse. Heart rate eases as core temperature unwinds.", min: "35–40 min" },
-  { t: "Return", d: "Lounge a beat. Re-hydrate. Walk back into the day a measurable degree calmer.", min: "40+ min" }];
+  { t: "Heat", d: "Full-spectrum infrared. Phone away, breath slow. Sweat builds around minute fifteen.", min: "5–30 min" },
+  { t: "Cool", d: "Step out, towel down, and use the provided amenities to freshen up. Heart rate eases as core temperature unwinds.", min: "30–35 min" },
+  { t: "Return", d: "Lounge a beat. Re-hydrate. Walk back into the day a measurable degree calmer.", min: "35+ min" }];
 
   return (
     <section className={`timeline ${mobile ? "timeline--mobile" : ""}`} id="learn">
