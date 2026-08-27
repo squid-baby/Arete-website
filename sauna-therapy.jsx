@@ -118,7 +118,7 @@ function Hero({ mobile, copy }) {
         </div>
 
         <div className="hero__meta hero__meta--sauna">
-          <span className="chip"><strong>140–150°F</strong> cabin</span>
+          <span className="chip"><strong>140–155°F</strong> cabin</span>
           <span className="chip"><strong>7×</strong> the detox of traditional</span>
           <span className="chip"><strong>~600</strong> cal / session</span>
         </div>
@@ -246,7 +246,7 @@ function Deepen({ mobile }) {
   const tabs = ["The science", "What to expect", "Pairs with"];
 
   const faqs = [
-  { q: "Is infrared different from a traditional sauna?", a: "Yes, meaningfully. Traditional saunas heat the air around you (often 180–200°F) and you sweat from external convection. Infrared cabins run cooler (140–150°F) but the wavelengths penetrate one to two inches into tissue, so the heat builds from the inside out. Most people report a deeper, more comfortable sweat at lower air temperature." },
+  { q: "Is infrared different from a traditional sauna?", a: "Yes, meaningfully. Traditional saunas heat the air around you (often 180–200°F) and you sweat from external convection. Infrared cabins run cooler (140–155°F) but the wavelengths penetrate one to two inches into tissue, so the heat builds from the inside out. Most people report a deeper, more comfortable sweat at lower air temperature." },
   { q: "What do I wear, and what should I bring?", a: "Whatever feels right, swimsuit, shorts, or nothing at all (your suite is private). We provide robes, towels, slippers, cool electrolyte water, and a quiet rinse area afterward. Just leave the phone in the locker." },
   { q: "Can I sauna on the same day as a float?", a: "Absolutely, and many members do. We recommend sauna first (sweat out tension), then float (let the magnesium and weightlessness reset the nervous system). Cold plunge between the two is the full reset stack." },
   { q: "Who shouldn't use the sauna?", a: "If you're pregnant, have uncontrolled blood pressure, recent surgery, a fever, or are on medications that affect heat regulation, please check with your physician first. Our front-desk team will walk you through the intake form on your first visit." },
