@@ -269,7 +269,7 @@ function LocalRecoveryLinks({ mobile }) {
 // ---------- Protocol (hot/cold timeline) ----------
 function Protocol({ mobile }) {
   const steps = [
-  { t: "Warm", d: "15 min in the full-spectrum infrared sauna. Heart rate climbs; vessels open.", min: "175° F" },
+  { t: "Warm", d: "15 min in the full-spectrum infrared sauna. Heart rate climbs; vessels open.", min: "155° F" },
   { t: "Plunge", d: "2–3 min in the cold plunge. The ice bath effect is clean, focused, and fully controlled.", min: "51° F" },
   { t: "Repeat", d: "Three full sauna and cold plunge rounds. Each one easier, each one deeper.", min: "×3" },
   { t: "Settle", d: "Towel off, hydrate, and return to Carrboro, Chapel Hill, or Durham re-tuned.", min: "60 min" }];
@@ -320,7 +320,7 @@ function Deepen({ mobile }) {
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
   "A full-spectrum dry infrared sauna paired with a single-person cold plunge tub. Warm yourself for 10–15 minutes until you've broken a deep sweat, then step into the 51°F cold plunge for two to three minutes. Repeat for three rounds. The contrast therapy does the work.",
-  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 175°F infrared sauna and 51°F cold plunge, trains your vascular system like a workout and supports athletic recovery, wellness recovery, resilience, and a sharper, calmer state.",
+  "Heat dilates blood vessels and ramps circulation; cold constricts them and clears the system. Cycling between the two, at roughly 155°F infrared sauna and 51°F cold plunge, trains your vascular system like a workout and supports athletic recovery, wellness recovery, resilience, and a sharper, calmer state.",
   "The first plunge is loud, your body protests, your breath quickens, and you'll want to leave. Stay 90 seconds. By round two it gets quieter; by round three many guests linger past three minutes. You'll leave alert, light, and unmistakably awake, a clean kind of energy that holds for hours."];
 
   const faqs = [
@@ -331,7 +331,7 @@ function Deepen({ mobile }) {
   { q: "Why combine sauna and cold plunge?", a: "Combining sauna and cold plunge gives the body a clear contrast between heat and cold. The infrared sauna warms the body and encourages circulation; the cold plunge brings a focused cooling response." },
   { q: "Is cold plunge therapy safe?", a: "Cold plunge therapy is well tolerated by many healthy adults, but it is not right for everyone. People who are pregnant, have heart conditions, blood pressure concerns, or other medical conditions should check with a clinician first." },
   { q: "Is cold plunge therapy good after exercise?", a: "Cold plunge therapy is often used after exercise to support athletic recovery, soreness management, and a calmer post-workout state. Some athletes prefer it after hard training days rather than immediately before strength sessions." },
-  { q: "How often should I do cold plunge therapy?", a: "Many people start once a week and build from there. Regular guests often use cold plunge or contrast therapy one to three times weekly, depending on recovery needs, training load, and how their body responds." }];
+  { q: "How often should I do Contrast Therapy?", a: "Many people start once a week and build from there. Regular guests often use cold plunge or contrast therapy one to three times weekly, depending on recovery needs, training load, and how their body responds." }];
 
   return (
     <section className={`deepen ${mobile ? "deepen--mobile" : ""}`}>
@@ -468,7 +468,7 @@ const CONTRAST_TONES = {
   },
   practical: {
     heroTitle: "Cold Plunge & \nContrast Therapy",
-    heroLede: "Cold plunge therapy in Carrboro near Chapel Hill and Durham. Cycle between a 175°F infrared sauna and 51°F cold plunge for athletic recovery, circulation, resilience, stress relief, and wellness support.",
+    heroLede: "Cold plunge therapy in Carrboro near Chapel Hill and Durham. Cycle between a 155°F infrared sauna and 51°F cold plunge for athletic recovery, circulation, resilience, stress relief, and wellness support.",
     benefits: [
     { t: "Cold plunge therapy", d: "A controlled ice bath-style plunge for recovery, resilience, and nervous system training." },
     { t: "Sauna and cold plunge", d: "Infrared sauna heat and cold plunge contrast support circulation and stress reduction." },
