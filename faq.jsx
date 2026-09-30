@@ -103,6 +103,7 @@ function TopNav({ mobile }) {
           <a href="blog.html">Blog</a>
           <a href="faq.html" aria-current="page" style={{ color: "var(--ink)", fontWeight: 500 }}>FAQ</a>
           <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
@@ -123,6 +124,7 @@ function TopNav({ mobile }) {
           <a href="blog.html">Blog</a>
           <a href="faq.html" aria-current="page">FAQ</a>
           <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>

@@ -41,6 +41,7 @@ const IconHands = ({ size = 28 }) =>
 
 // ---------- Top nav ----------
 const GIFTCARDS_URL = "https://aretefloattank.floathelm.com/store/giftcards";
+const DECOR_URL = "https://decorbyarete.com";
 function TopNav({ mobile }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return (
@@ -73,6 +74,7 @@ function TopNav({ mobile }) {
             <a href="packages.html">Packages</a>
             <a href="faq.html">FAQ</a>
             <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
+            <a href={DECOR_URL} target="_blank" rel="noopener noreferrer">Decor</a>
             <a href="about.html">About</a>
             <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
           </nav>
@@ -92,6 +94,7 @@ function TopNav({ mobile }) {
           <a href="packages.html">Packages</a>
           <a href="faq.html">FAQ</a>
           <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href={DECOR_URL} target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
         </div>

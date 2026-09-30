@@ -17,6 +17,14 @@ Rebuild of the Areté Float + Wellness website, migrating off Wix onto a flat HT
 - Netlify hosting with `_redirects` for URL management
 - One file trio per page: `*.html` + `*.jsx` + `*.css`
 
+## Checks
+
+There is no build step. A small test confirms every page's menu still carries the same links (for example the Decor link to decorbyarete.com). Run it with Node 22 or newer:
+
+```
+node --test
+```
+
 ## Key files
 
 ```
