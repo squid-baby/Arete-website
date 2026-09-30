@@ -337,6 +337,14 @@ body.whimsy .stage {
   padding: 8px 0;
   z-index: 70;
   display: none;
+  /* Keep the drawer inside the screen and let it scroll on its own; the page
+     behind it is locked while the menu is open, so a taller drawer would hide
+     its last links on short phone screens. 100% here is the nav's own height. */
+  max-height: calc(100vh - 100%);
+  max-height: calc(100dvh - 100%);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .nav__mobile-drawer.is-open { display: block; }
 .nav__mobile-drawer a {
