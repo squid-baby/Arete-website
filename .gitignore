@@ -24,3 +24,6 @@ node_modules/
 # Backups
 *.bak
 *.orig
+
+# Build output (made by npm run build, Netlify publishes it)
+dist/

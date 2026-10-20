@@ -5,22 +5,22 @@ const { useState, useEffect, useRef } = React;
 
 /* ---------- Service Icons ---------- */
 const IconFloat = () =>
-<img src="assets/icons/float.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/float.png?v=3" alt="Float tank icon" className="service-icon-img" />;
 
 const IconSauna = () =>
-<img src="assets/icons/sauna.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/sauna.png?v=3" alt="Infrared sauna icon" className="service-icon-img" />;
 
 const IconCold = () =>
-<img src="assets/icons/cold.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/cold.png?v=3" alt="Cold plunge icon" className="service-icon-img" />;
 
 const IconMassage = () =>
-<img src="assets/icons/massage.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/massage.png?v=3" alt="Massage icon" className="service-icon-img" />;
 
 const IconRedLight = () =>
-<img src="assets/icons/redlight.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/redlight.png?v=3" alt="Red light therapy icon" className="service-icon-img" />;
 
 const IconHalo = () =>
-<img src="assets/icons/halo.png?v=2" alt="" className="service-icon-img" />;
+<img src="assets/icons/halo.png?v=3" alt="Halotherapy salt icon" className="service-icon-img" />;
 
 const EXPERIENCE_STATS = [
   {
@@ -82,7 +82,7 @@ const SERVICES = [
 },
 {
   id: "cold",
-  href: "Contrast-Therapy.html",
+  href: "/contrast-therapy",
   bookHref: bookingLink("/cart/menu/Contrast Therapy (Cold Plunge/ Sauna)"),
   name: "Contrast Therapy",
   desc: "The reset button. Cold immersion for inflammation, clarity, and that electric aliveness that lasts all day.",
@@ -124,7 +124,7 @@ const SERVICES = [
 
 /* ---------- Hero image ---------- */
 const HeroPod = () =>
-<img src="assets/hero-image.png" alt="Floating in the tank, Areté" className="home-hero__image" style={{ width: "120px", opacity: "3", height: "200px" }} />;
+<img src="assets/hero-image.webp" alt="Floating in the tank, Areté" className="home-hero__image" style={{ width: "120px", opacity: "3", height: "200px" }} />;
 
 
 /* ---------- Components ---------- */
@@ -182,8 +182,8 @@ function Nav({ mobile }) {
                   <a href="sauna.html" role="menuitem">Sauna</a>
                   <a href="red_light.html" role="menuitem">Red Light Therapy</a>
                   <a href="halotherapy.html" role="menuitem">Halotherapy</a>
-                  <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
-                  <a href="Massage.html" role="menuitem">Massage</a>
+                  <a href="/contrast-therapy" role="menuitem">Contrast Therapy</a>
+                  <a href="/massage" role="menuitem">Massage</a>
                   <a href="retail.html" role="menuitem">Retail</a>
                 </div>
               </div>
@@ -209,8 +209,8 @@ function Nav({ mobile }) {
           <a className="nav__mobile-sub" href="sauna.html">Sauna</a>
           <a className="nav__mobile-sub" href="red_light.html">Red Light Therapy</a>
           <a className="nav__mobile-sub" href="halotherapy.html">Halotherapy</a>
-          <a className="nav__mobile-sub" href="Contrast-Therapy.html">Contrast Therapy</a>
-          <a className="nav__mobile-sub" href="Massage.html">Massage</a>
+          <a className="nav__mobile-sub" href="/contrast-therapy">Contrast Therapy</a>
+          <a className="nav__mobile-sub" href="/massage">Massage</a>
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
@@ -259,7 +259,7 @@ function Hero() {
       </div>
 
       <div className="home-hero__visual home-hero__visual--house" aria-hidden="true">
-        <img src="assets/home-hero-house-cutaway.png" alt="" className="home-hero__house-image" />
+        <img src="assets/home-hero-house-cutaway.webp" alt="Illustrated cutaway of the Areté house in Carrboro at night, showing the float room, sauna, cold plunge, massage room and retail room" width="1400" height="788" className="home-hero__house-image" />
       </div>
 
     </section>);
