@@ -37,9 +37,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
+    "@type": ["HealthAndBeautyBusiness", "DaySpa"],
     "@id": "https://floatarete.com/#business",
     "name": "Areté Float + Wellness",
+    "alternateName": ["Areté", "Arete Float + Wellness", "Areté Float Tank", "Areté Float Tank & Personal Optimization Studio"],
+    "description": "Wellness studio in downtown Carrboro, NC, next to Chapel Hill, offering float tank sessions, infrared sauna, contrast therapy with cold plunge, massage, red light therapy and halotherapy.",
+    "foundingDate": "2018-02",
+    "areaServed": ["Carrboro, NC", "Chapel Hill, NC", "Durham, NC", "Hillsborough, NC"],
+    "potentialAction": { "@type": "ReserveAction", "target": "https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget" },
     "url": "https://floatarete.com",
     "logo": "https://floatarete.com/assets/arete-logo.png",
     "telephone": "+19196369899",
@@ -59,9 +64,8 @@
       "longitude": -79.07104206138438
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:30" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:30", "closes": "17:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "16:00" }
     ],
     "sameAs": [
       "https://www.instagram.com/floatarete/",
@@ -96,6 +100,32 @@
   -->
   <script type="application/json" id="faq-data">
   [
+    {
+      "id": "hours",
+      "title": "Hours, Prices & Gifts",
+      "items": [
+        {
+          "q": "What are your hours? Are you open on Mondays?",
+          "a": "Areté is open Tuesday to Friday from 10 AM to 6:30 PM, and Saturday and Sunday from 10 AM to 4 PM. We are closed on Mondays. Book online any time, or call 919-636-9899 during open hours."
+        },
+        {
+          "q": "How much does a float tank or sauna session cost?",
+          "a": "As of October 2026: a first 60-minute float is $65, a 60-minute float is $69, and a 90-minute float is $89. A 30-minute infrared sauna is $30. Contrast therapy (sauna and cold plunge) is $50 for a first visit, $60 after that, or $90 for two people. Massage is $125 for 60 minutes and $150 for 90 minutes. Red light therapy is $35 for a first visit and $45 after that. Halotherapy is a $10 add-on to a sauna session. Packages and memberships lower the price per visit."
+        },
+        {
+          "q": "Can two people come together? Is Areté good for a date?",
+          "a": "Yes. Contrast therapy can be booked for two people ($90 as of October 2026), a guest can join your sauna session for $15, and couples massage puts two therapists side by side in one room. Many guests pair a session with dinner in downtown Carrboro. See <a href=\"visit-carrboro.html\">things to do in Carrboro</a>."
+        },
+        {
+          "q": "Do gift cards expire? Can I send one today?",
+          "a": "Gift cards bought online are sent by email right away. You can also buy a printed card in an envelope at the studio. Gift cards are good for one year from the date of purchase. See our <a href=\"gift-cards.html\">gift cards page</a>."
+        },
+        {
+          "q": "Is there a float tank near Chapel Hill, Durham, or UNC?",
+          "a": "Yes. Areté is at 213 E. Braxton Foushee St in downtown Carrboro, about a mile from UNC's campus and a short drive from Durham. Areté opened in February 2018 as the first float studio in the Triangle."
+        }
+      ]
+    },
     {
       "id": "floating",
       "title": "Floating",
@@ -190,7 +220,7 @@
         },
         {
           "q": "Do you offer memberships, packages, or gift cards?",
-          "a": "Yes to all three. Memberships include monthly sessions plus member-only pricing on add-ons; packages bundle 5 or 10 visits at a discount. Gift cards in any amount are available at the front desk or online. Visit our memberships page for current pricing."
+          "a": "Yes to all three. Memberships include monthly sessions plus member-only pricing on add-ons; packages bundle 5 or 10 visits at a discount. Gift cards are sent by email right away, or you can pick up a printed card at the front desk. See our <a href=\"gift-cards.html\">gift cards page</a> and our memberships page for current pricing."
         },
         {
           "q": "Where are you, and where do I park?",

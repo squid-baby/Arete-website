@@ -58,8 +58,8 @@ function TopNav({ mobile }) {
                 <a href="sauna.html" role="menuitem">Sauna</a>
                 <a href="red_light.html" role="menuitem">Red Light Therapy</a>
                 <a href="halotherapy.html" role="menuitem">Halotherapy</a>
-                <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
-                <a href="Massage.html" role="menuitem">Massage</a>
+                <a href="/contrast-therapy" role="menuitem">Contrast Therapy</a>
+                <a href="/massage" role="menuitem">Massage</a>
                 <a href="retail.html" role="menuitem">Retail</a>
               </div>
             </div>
@@ -80,8 +80,8 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="sauna.html">Sauna</a>
           <a className="nav__mobile-sub" href="red_light.html">Red Light Therapy</a>
           <a className="nav__mobile-sub" href="halotherapy.html">Halotherapy</a>
-          <a className="nav__mobile-sub" href="Contrast-Therapy.html">Contrast Therapy</a>
-          <a className="nav__mobile-sub" href="Massage.html">Massage</a>
+          <a className="nav__mobile-sub" href="/contrast-therapy">Contrast Therapy</a>
+          <a className="nav__mobile-sub" href="/massage">Massage</a>
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>

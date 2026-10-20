@@ -1,9 +1,13 @@
 # Areté Float + Wellness, Netlify config
-# Static publish: project root.
+# Netlify runs scripts/build.mjs, which copies the site into dist/ and puts each
+# page's text into its HTML file (so search engines and AI tools can read it).
+# Edit the source files in the project root as before; never edit dist/.
 [build]
-  publish = "."
-  # No build step, pages ship as plain HTML/CSS/JSX-via-Babel.
-  command = ""
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 # ---- Security & SEO headers -----------------------------------------------
 # Address gaps flagged in the floatarete.com SEO audit

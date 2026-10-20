@@ -45,8 +45,8 @@ function TopNav() {
               <a href="sauna.html" role="menuitem">Sauna</a>
               <a href="red_light.html" role="menuitem">Red Light Therapy</a>
               <a href="halotherapy.html" role="menuitem">Halotherapy</a>
-              <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
-              <a href="Massage.html" role="menuitem">Massage</a>
+              <a href="/contrast-therapy" role="menuitem">Contrast Therapy</a>
+              <a href="/massage" role="menuitem">Massage</a>
               <a href="retail.html" role="menuitem">Retail</a>
             </div>
           </div>
@@ -239,8 +239,8 @@ function Footer() {
         <ul className="blog-footer__links">
           <li><a href="float.html">Float</a></li>
           <li><a href="sauna.html">Sauna</a></li>
-          <li><a href="Contrast-Therapy.html">Contrast Therapy</a></li>
-          <li><a href="Massage.html">Massage</a></li>
+          <li><a href="/contrast-therapy">Contrast Therapy</a></li>
+          <li><a href="/massage">Massage</a></li>
           <li><a href="halotherapy.html">Halotherapy</a></li>
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>

@@ -97,8 +97,8 @@ function TopNav({ mobile }) {
                 <a href="sauna.html" role="menuitem">Sauna</a>
                 <a href="red_light.html" role="menuitem">Red Light Therapy</a>
                 <a href="halotherapy.html" role="menuitem">Halotherapy</a>
-                <a href="Contrast-Therapy.html" role="menuitem">Contrast Therapy</a>
-                <a href="Massage.html" role="menuitem">Massage</a>
+                <a href="/contrast-therapy" role="menuitem">Contrast Therapy</a>
+                <a href="/massage" role="menuitem">Massage</a>
                 <a href="retail.html" role="menuitem">Retail</a>
               </div>
             </div>
@@ -120,8 +120,8 @@ function TopNav({ mobile }) {
           <a className="nav__mobile-sub" href="sauna.html">Sauna</a>
           <a className="nav__mobile-sub" href="red_light.html">Red Light Therapy</a>
           <a className="nav__mobile-sub" href="halotherapy.html">Halotherapy</a>
-          <a className="nav__mobile-sub" href="Contrast-Therapy.html">Contrast Therapy</a>
-          <a className="nav__mobile-sub" href="Massage.html">Massage</a>
+          <a className="nav__mobile-sub" href="/contrast-therapy">Contrast Therapy</a>
+          <a className="nav__mobile-sub" href="/massage">Massage</a>
           <a className="nav__mobile-sub" href="retail.html">Retail</a>
           <a href="memberships.html">Memberships</a>
           <a href="blog.html">Blog</a>
@@ -147,8 +147,8 @@ function Footer() {
         <ul className="blog-footer__links">
           <li><a href="float.html">Float</a></li>
           <li><a href="sauna.html">Sauna</a></li>
-          <li><a href="Contrast-Therapy.html">Contrast Therapy</a></li>
-          <li><a href="Massage.html">Massage</a></li>
+          <li><a href="/contrast-therapy">Contrast Therapy</a></li>
+          <li><a href="/massage">Massage</a></li>
           <li><a href="halotherapy.html">Halotherapy</a></li>
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>
@@ -295,9 +295,10 @@ function Visit() {
   return (
     <section className="info-visit">
       <h2>Come <em>visit Areté.</em></h2>
-      <p>Our doors follow the day's appointment rhythm, so hours can shift with what is on the books. In general, Areté is available Tuesday through Sunday and closed on Mondays. If you would like a tour, send us a quick note before stopping by, or book online for the smoothest visit.</p>
+      <p>Areté is open Tuesday through Friday from 10 AM to 6:30 PM, and Saturday and Sunday from 10 AM to 4 PM. We are closed on Mondays. If you would like a tour, send us a quick note before stopping by, or book online for the smoothest visit.</p>
       <div className="info-visit__hours">
-        <div className="info-visit__hours-cell"><h4>Tue-Sun</h4><p>By appointment</p></div>
+        <div className="info-visit__hours-cell"><h4>Tue–Fri</h4><p>10 AM – 6:30 PM</p></div>
+        <div className="info-visit__hours-cell"><h4>Sat–Sun</h4><p>10 AM – 4 PM</p></div>
         <div className="info-visit__hours-cell"><h4>Monday</h4><p>Closed</p></div>
       </div>
       <a className="info-visit__cta" href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer">Book a session →</a>

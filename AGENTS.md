@@ -1,7 +1,9 @@
 # AGENTS.md, FloatArete Website
 
 ## Live site URL
-The current live site is **https://arete-float-wellness.netlify.app**, this is where changes will appear after merging. floatarete.com is the old Wix site and is not connected to this codebase yet.
+The live site is **https://floatarete.com** (also at https://arete-float-wellness.netlify.app). Changes appear there after merging.
+
+Netlify runs `npm run build` on every update. It copies the site into `dist/` and writes each page's text into the HTML, so AI assistants can read it. Edit the source files in the project root, never `dist/`. Run `npm install` once, then `node --test` before you submit.
 
 ## Who you're working with
 Jen is the site owner and is not technical. Use plain, friendly language. No jargon.

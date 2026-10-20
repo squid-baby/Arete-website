@@ -1,7 +1,30 @@
 # Areté Float + Wellness, robots.txt
 # https://floatarete.com/robots.txt
 
+# Everyone, including search engines and AI assistants, may read the site.
+# AI crawlers are named one by one so it is clear they are welcome. A crawler
+# that finds its own name here follows only this group, so the group repeats
+# the same rules as the "*" group.
 User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: meta-externalagent
+User-agent: meta-webindexer
+User-agent: facebookexternalhit
+User-agent: xAI-Bot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
 Allow: /
 
 # Block lightbox / query-string parameters that create duplicate URLs
@@ -11,9 +34,5 @@ Disallow: /*?image=
 
 # Don't index Wix artifacts even if they're somehow still live
 Disallow: /copy-of-*
-
-# AI crawlers, explicitly allowed (uncomment to block any specific one)
-# User-agent: GPTBot
-# Disallow: /
 
 Sitemap: https://floatarete.com/sitemap.xml

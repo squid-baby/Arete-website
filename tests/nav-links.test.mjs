@@ -17,6 +17,8 @@ const pages = [
   ...readdirSync(root).filter((f) => f.endsWith(".jsx") && f !== "tweaks-panel.jsx"),
   "privacy.html",
   "terms.html",
+  "gift-cards.html",
+  "visit-carrboro.html",
   ...readdirSync(join(root, "blog"))
     .filter((f) => f.endsWith(".html"))
     .map((f) => join("blog", f)),

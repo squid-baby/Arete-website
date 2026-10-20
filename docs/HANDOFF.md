@@ -20,7 +20,7 @@ female-operated.
 - TheTeam@FloatArete.com
 - Geo: lat **35.90975173817612**, lng **-79.07104206138438**
 
-**Hours:** Mon–Thu 9am–8pm · Fri–Sat 9am–9pm · Sun 10am–6pm
+**Hours (confirmed Oct 2026):** Tue–Fri 10am–6:30pm · Sat–Sun 10am–4pm · Closed Monday
 **Booking system:** Boulevard self-booking overlay, business ID `52268a33-85eb-4646-b0f0-8a61f9510654`
 **Socials:** instagram.com/floatarete · facebook.com/floatarete · linkedin.com/company/106779704
 
