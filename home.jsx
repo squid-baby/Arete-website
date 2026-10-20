@@ -190,7 +190,7 @@ function Nav({ mobile }) {
               <a href="memberships.html">Memberships</a>
               <a href="packages.html">Packages</a>
               <a href="faq.html">FAQ</a>
-              <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+              <a href="/gift-cards.html">Gift Cards</a>
               <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
               <a href="about.html">About</a>
             </nav>
@@ -215,7 +215,7 @@ function Nav({ mobile }) {
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
           <a href="faq.html">FAQ</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="/gift-cards.html">Gift Cards</a>
           <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book</a>
@@ -394,6 +394,38 @@ function Experience() {
 
 }
 
+/* ---------- Guest reviews ----------
+   Real Google reviews, quoted word for word with permission. To add one,
+   copy a review into this list. Update the rating line when the count changes. */
+const GOOGLE_RATING = "Rated 4.9 from 77 Google reviews (October 2026)";
+const GUEST_REVIEWS = [
+{
+  text: "Perfect experience. The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to. The management is so kind and patient. I will continue to rave about this place and floating in general!",
+  who: "Batsheva G. · Google review"
+}];
+
+
+function Reviews() {
+  return (
+    <section className="section" id="reviews">
+      <div className="section__header reveal">
+        <p className="section__eyebrow">What guests say</p>
+        <h2 className="section__title">
+          Is Areté worth it?<br /><em>Ask our guests.</em>
+        </h2>
+        <p>{GOOGLE_RATING}</p>
+      </div>
+      {GUEST_REVIEWS.map((r, i) =>
+      <figure className="quote reveal" key={i}>
+          <div className="quote__mark">"</div>
+          <blockquote><p>{r.text}</p></blockquote>
+          <figcaption className="quote__who">{r.who}</figcaption>
+        </figure>
+      )}
+    </section>);
+
+}
+
 function BookingStrip() {
   return (
     <div className="booking-strip reveal" id="visit">
@@ -418,7 +450,7 @@ function Footer() {
           <li><a href="packages.html">Packages</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
+          <li><a href="/gift-cards.html">Gift Cards</a></li>
           <li><a href="terms.html">Terms &amp; Conditions</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="https://www.instagram.com/floatarete/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -564,6 +596,7 @@ function App() {
         <Services />
         <EmailStrip />
         <Experience />
+        <Reviews />
         <BookingStrip />
       </main>
       <Footer />

@@ -102,7 +102,7 @@ function TopNav({ mobile }) {
           <a href="memberships.html">Memberships</a>
           <a href="blog.html">Blog</a>
           <a href="faq.html" aria-current="page" style={{ color: "var(--ink)", fontWeight: 500 }}>FAQ</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="/gift-cards.html">Gift Cards</a>
           <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
@@ -123,7 +123,7 @@ function TopNav({ mobile }) {
           <a href="memberships.html">Memberships</a>
           <a href="blog.html">Blog</a>
           <a href="faq.html" aria-current="page">FAQ</a>
-          <a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="/gift-cards.html">Gift Cards</a>
           <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
@@ -151,7 +151,7 @@ function Footer() {
           <li><a href="retail.html">Retail</a></li>
           <li><a href="memberships.html">Memberships</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="https://aretefloattank.floathelm.com/store/giftcards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
+          <li><a href="/gift-cards.html">Gift Cards</a></li>
           <li><a href="terms.html">Terms &amp; Conditions</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="about.html">About</a></li>

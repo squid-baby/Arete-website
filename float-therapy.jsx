@@ -69,7 +69,7 @@ function TopNav({ mobile }) {
             <a href="memberships.html">Memberships</a>
             <a href="packages.html">Packages</a>
             <a href="faq.html">FAQ</a>
-            <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
+            <a href="/gift-cards.html">Gift Cards</a>
             <a href={DECOR_URL} target="_blank" rel="noopener noreferrer">Decor</a>
             <a href="about.html">About</a>
             <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__cta" style={{ backgroundColor: "rgb(13, 27, 62)" }}>Book Now</a>
@@ -89,7 +89,7 @@ function TopNav({ mobile }) {
           <a href="memberships.html">Memberships</a>
           <a href="packages.html">Packages</a>
           <a href="faq.html">FAQ</a>
-          <a href={GIFTCARDS_URL} target="_blank" rel="noopener noreferrer">Gift Cards</a>
+          <a href="/gift-cards.html">Gift Cards</a>
           <a href={DECOR_URL} target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
           <a href={BOOK.general} target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book Now</a>
@@ -303,7 +303,7 @@ function Deepen({ mobile }) {
   const tabs = ["How it works", "The science", "What to expect"];
   const bodies = [
   "Ten inches of water. A thousand pounds of Epsom salt. Skin-temperature. Your body becomes buoyant the moment you let go, no effort required. Light and sound fade to a chosen hush.",
-  "Twelve hundred pounds of magnesium sulfate hold you weightless while sensory input drops to near-zero, no light, no sound, no gravity to push back against. With nothing to defend against, your nervous system shifts out of fight-or-flight and into the parasympathetic state: heart rate slows, cortisol drops, breath deepens. EEG studies show floaters move from active beta brainwaves into slower alpha and theta, the same territory your brain visits in deep meditation and the moments just before sleep. Meanwhile, magnesium absorbs transdermally through the skin, easing muscle tension and supporting the very neurotransmitters (GABA, serotonin) that keep the calm response humming. Sixty to ninety minutes in; a quieter operating system out.",
+  "A thousand pounds of magnesium sulfate hold you weightless while sensory input drops to near-zero, no light, no sound, no gravity to push back against. With nothing to defend against, your nervous system shifts out of fight-or-flight and into the parasympathetic state: heart rate slows, cortisol drops, breath deepens. EEG studies show floaters move from active beta brainwaves into slower alpha and theta, the same territory your brain visits in deep meditation and the moments just before sleep. Meanwhile, magnesium absorbs transdermally through the skin, easing muscle tension and supporting the very neurotransmitters (GABA, serotonin) that keep the calm response humming. Sixty to ninety minutes in; a quieter operating system out.",
   "You are in full control of your experience the entire time: the door, the light, the music, and the pace are yours. The first few floats are often about your mind and body getting used to this new environment. Like many things, floating is a practice; it might not fully click the first time or two, and that is completely normal."];
 
   const faqs = [
