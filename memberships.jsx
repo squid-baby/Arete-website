@@ -536,9 +536,8 @@ function Rules({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>I joined Signature Wellness during a stretch where I'd stopped sleeping. Two saunas and a float a week later, the wheel started turning again. The membership is what keeps me going, without it, I'd skip the week I most need it.</p>
-      <div className="quote__who">Reese P. · Member since 2024</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>
   );
 }

@@ -327,9 +327,8 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>I started with one session a week for the back pain. Three months in I'm sleeping deeper than I have in a decade.</p>
-      <div className="quote__who">Daniel K. · Member since 2024</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>);
 }
 

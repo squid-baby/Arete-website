@@ -495,9 +495,8 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>I came in carrying a year of desk hours and left feeling like someone had quietly put my shoulders back where they belong. I'm rebooking before I leave, every time.</p>
-      <div className="quote__who">Priya S. · Member since 2023</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>);
 }
 

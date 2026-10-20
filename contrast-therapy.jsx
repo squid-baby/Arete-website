@@ -398,9 +398,8 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>Three rounds and I walked out feeling like I'd slept for nine hours and run a 5k. I'm not the same person I was an hour ago.</p>
-      <div className="quote__who">Daniel K. · Member since 2024</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>);
 }
 

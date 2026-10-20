@@ -612,9 +612,8 @@ function GiftCards({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>I bought the Studio Collection because I did not know which service would be the right fit. Trying everything once made the choice easy. Red light surprised me, and by the time I finished the collection, I knew exactly what I wanted to keep in my routine.</p>
-      <div className="quote__who">Marlee K. · Areté guest, 2025</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>
   );
 }
