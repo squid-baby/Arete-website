@@ -398,8 +398,9 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
-      <div className="quote__who">Google · October 2026</div>
+      <div className="quote__mark">"</div>
+      <p>The contrast room is my favorite, designed like a fantastical underwater submarine adventure and with cool music to help you power through the experience.</p>
+      <div className="quote__who">Graceann B. · Google review</div>
     </section>);
 }
 

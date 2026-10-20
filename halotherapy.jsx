@@ -648,7 +648,7 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
+      <p>Rated 4.9 from 74 Google reviews.</p>
       <div className="quote__who">Google · October 2026</div>
     </section>);
 }
