@@ -118,3 +118,14 @@ test("the float page gives one salt amount", () => {
   const src = read("float-therapy.jsx") + read("float.html");
   assert.doesNotMatch(src, /twelve hundred|1,200/i);
 });
+
+test("guest quotes are real Google reviews or the Google rating, not sample text", () => {
+  const samples = /Maya R\.|Daniel K\.|Mara K\.|Priya S\.|Reese P\.|Marlee K\.|Lena P\./;
+  for (const f of readdirSync(root).filter((f) => f.endsWith(".jsx"))) {
+    const src = read(f);
+    assert.doesNotMatch(src, samples, f);
+    for (const [, who] of src.matchAll(/className="quote__who">([^<{]+)</g)) {
+      assert.match(who, /Google/, `${f}: "${who}" is not marked as a Google review`);
+    }
+  }
+});

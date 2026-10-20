@@ -692,8 +692,8 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I came in for my shoulder. Six weeks later the shoulder's quiet, my skin looks better than it has in a decade, and I sleep through the night. I keep recommending it and people keep thanking me.</p>
-      <div className="quote__who">Lena P. · Member since 2024</div>
+      <p>Purchasing my first float and red-light, I knew I had to let go to find peace. … After a few minutes in the float tub, it was like a light was lit.</p>
+      <div className="quote__who">Anthony A. · Google review</div>
     </section>);
 }
 

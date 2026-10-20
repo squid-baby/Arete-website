@@ -648,9 +648,8 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <div className="quote__mark">"</div>
-      <p>I started adding the salt to my sauna during allergy season and never stopped. My sinuses are clearer than they've been in a decade, my eczema quieted down, and the ten dollars is the easiest yes on the menu.</p>
-      <div className="quote__who">Mara K. · Member since 2023</div>
+      <p>Rated 4.9 from 77 Google reviews.</p>
+      <div className="quote__who">Google · October 2026</div>
     </section>);
 }
 

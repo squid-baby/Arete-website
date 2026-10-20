@@ -378,8 +378,8 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>I arrived wound tight and left unreadable by my own stress. I've been back four times since.</p>
-      <div className="quote__who">Maya R. · Floater since 2024</div>
+      <p>The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to.</p>
+      <div className="quote__who">Batsheva G. · Google review</div>
     </section>);
 
 }

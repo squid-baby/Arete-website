@@ -402,6 +402,10 @@ const GUEST_REVIEWS = [
 {
   text: "Perfect experience. The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to. The management is so kind and patient. I will continue to rave about this place and floating in general!",
   who: "Batsheva G. · Google review"
+},
+{
+  text: "Purchasing my first float and red-light, I knew I had to let go to find peace. … After a few minutes in the float tub, it was like a light was lit.",
+  who: "Anthony A. · Google review"
 }];
 
 
