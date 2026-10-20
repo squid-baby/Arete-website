@@ -94,3 +94,27 @@ test("gift card page states the gift card terms and links to Boulevard", () => {
   const product = jsonLd(html).find((d) => d["@type"] === "Product");
   assert.equal(product.offers.seller["@id"], "https://floatarete.com/#business");
 });
+
+test("every menu's Gift Cards link opens the gift card page", () => {
+  const files = [
+    ...readdirSync(root).filter((f) => f.endsWith(".jsx") || f.endsWith(".html")),
+    ...readdirSync(join(root, "blog")).map((f) => join("blog", f)),
+  ];
+  for (const f of files) {
+    for (const [line] of read(f).matchAll(/<a [^>]*>Gift Cards<\/a>/g)) {
+      assert.match(line, /href="\/gift-cards\.html"/, `${f}: ${line}`);
+    }
+  }
+});
+
+test("home page shows real guest reviews and the Google rating", () => {
+  const home = read("home.jsx");
+  assert.match(home, /<Reviews \/>/);
+  assert.match(home, /const GOOGLE_RATING = "Rated [\d.]+ from \d+ Google reviews \([A-Z][a-z]+ \d{4}\)";/);
+  assert.match(home, /const GUEST_REVIEWS = \[\s*\{/);
+});
+
+test("the float page gives one salt amount", () => {
+  const src = read("float-therapy.jsx") + read("float.html");
+  assert.doesNotMatch(src, /twelve hundred|1,200/i);
+});
