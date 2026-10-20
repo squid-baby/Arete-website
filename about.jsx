@@ -295,9 +295,10 @@ function Visit() {
   return (
     <section className="info-visit">
       <h2>Come <em>visit Areté.</em></h2>
-      <p>Our doors follow the day's appointment rhythm, so hours can shift with what is on the books. In general, Areté is available Tuesday through Sunday and closed on Mondays. If you would like a tour, send us a quick note before stopping by, or book online for the smoothest visit.</p>
+      <p>Areté is open Tuesday through Friday from 10 AM to 6:30 PM, and Saturday and Sunday from 10 AM to 4 PM. We are closed on Mondays. If you would like a tour, send us a quick note before stopping by, or book online for the smoothest visit.</p>
       <div className="info-visit__hours">
-        <div className="info-visit__hours-cell"><h4>Tue-Sun</h4><p>By appointment</p></div>
+        <div className="info-visit__hours-cell"><h4>Tue–Fri</h4><p>10 AM – 6:30 PM</p></div>
+        <div className="info-visit__hours-cell"><h4>Sat–Sun</h4><p>10 AM – 4 PM</p></div>
         <div className="info-visit__hours-cell"><h4>Monday</h4><p>Closed</p></div>
       </div>
       <a className="info-visit__cta" href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer">Book a session →</a>

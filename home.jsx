@@ -250,7 +250,7 @@ function Hero() {
           <em>Come back to you.</em>
         </h1>
         <p className="home-hero__sub">
-          A sanctuary for body, mind &amp; restoration. Float tanks, sauna, contrast therapy, and massage, designed to help you let go and light up.
+          A wellness sanctuary in downtown Carrboro, NC, next to Chapel Hill. Float tanks, infrared sauna, contrast therapy, and massage, designed to help you let go and light up.
         </p>
         <div className="home-hero__ctas">
           <a href="https://aretefloattank.floathelm.com/store" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Book a Session</a>

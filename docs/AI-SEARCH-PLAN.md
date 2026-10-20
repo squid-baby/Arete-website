@@ -20,52 +20,40 @@ or "float tank near Durham", the answer names Areté.
 | Large images: icons 4 MB each, logo 1.2 MB on every page | Icons now about 30 KB, logo 80 KB, home house picture 137 KB (WebP) |
 | No checks | 93 automated checks (`node --test`) |
 
-## Phase 2: facts and new pages (needs answers from Jen)
+## Phase 2: facts and new pages (done October 20, 2026, with Jen's answers)
 
-The site gives different hours and prices in different places. AI assistants avoid facts that
-disagree, or repeat the wrong one. Each answer below goes into the page text, the schema,
-llms.txt and the FAQ at the same time, with "as of" dates.
+Confirmed by Jen: hours are Tuesday–Friday 10 AM – 6:30 PM, Saturday–Sunday 10 AM – 4 PM, closed
+Monday. Website prices are correct. Gift cards expire one year after purchase, are emailed right
+away, and can be bought in person as a printed card in an envelope. Two people can book together.
 
-### Questions for Jen
+| Item | What changed |
+|---|---|
+| Hours | Same hours in the schema on every page, the FAQ page, the About page and llms.txt |
+| Prices | Schema and llms.txt now use the prices on the service pages (they were older, different numbers) |
+| Gift card page | New `/gift-cards.html`: "What's a unique gift for someone near Chapel Hill?", gift card FAQs, Product and FAQPage schema |
+| Visit Carrboro page | New `/visit-carrboro.html`: a slow Saturday in Carrboro, date and rainy-day ideas, FAQPage schema |
+| FAQ | New group "Hours, Prices & Gifts": hours, cost (with "as of October 2026"), two people, gift cards, float tank near Chapel Hill / Durham / UNC |
+| Home page | Hero sentence now says where Areté is: "downtown Carrboro, NC, next to Chapel Hill" |
+| Schema | `DaySpa` type, old business names, area served, opening year, booking link |
+| Phone layout | Blog posts, Terms, Privacy and the new pages no longer scroll sideways on phones |
 
-1. **Hours.** Which is correct?
-   - Schema on every page: Tue–Fri 10–6, Sat 10–5:30, Sun 10:30–5, closed Monday
-   - About page: Tue–Sun by appointment, closed Monday
-   - FAQ page and llms.txt: Mon–Thu 9–8, Fri–Sat 9–9, Sun 10–6
-2. **Starting prices.** The home cards, the service pages and the schema disagree:
+### Still open (needs Jen)
 
-   | Service | Home card | Service page | Schema / llms.txt |
-   |---|---|---|---|
-   | Float | from $65 | New guest $65, 60 min $69, 90 min $89, top of page says "$69 intro" | $89 |
-   | Infrared sauna | from $25, 15 or 30 min | from $30 | $45, 30 or 45 min |
-   | Contrast therapy | from $50 | $50 intro, $60 single, $90 two-person | $25 |
-   | Massage | from $110 | from $125 | $95 |
-   | Red light | from $20 | $38 per session | $35 |
-   | Halotherapy | $10 add-on | $10 add-on | $30 |
-3. **Gift cards.** Do they expire? Any amount, or set amounts? Delivered by email right away?
-   Can they pay for massage and retail?
-4. **Couples and friends.** Can two people book contrast therapy or the sauna together? Price?
-5. **Discounts.** Any student, first-time, military or teacher discount?
-6. **Reviews.** May we quote 5–8 Google reviews on the site, with first name and last initial?
-7. **Salt amount.** The float page says both "a thousand pounds" and "twelve hundred pounds" of Epsom salt.
-8. **Google Business Profile.** Is the address 213 E. Braxton Foushee St, and are the hours current?
-
-### Pages to build after the answers
-
-- **Gift cards page** (`/gift-cards.html`). First question: "What's a unique gift for someone who
-  lives near Chapel Hill?" Short answer by person (stressed, athlete, couple, first-timer).
-  Gift card FAQs. Product schema. Nav "Gift Cards" links point here.
-- **Visit Carrboro / date night page** (`/visit-carrboro.html`). Questions: "What is there to do
-  in Carrboro?", "What's a good date idea in Carrboro or Chapel Hill?", "What's something unique to
-  do near UNC?", "What to do in Chapel Hill on a rainy day?". Real walking distances to Weaver
-  Street Market, Cat's Cradle and Franklin Street.
-- **Home page.** One plain sentence under the H1 that says what Areté is and where it is.
-  A "Float, sauna or contrast: which should I book?" section.
-- **Reviews section** with real quotes (only with Jen's permission).
-- **More FAQs:** couples, rainy day, closest float tank to Chapel Hill / Durham / UNC, cost with an
-  "as of" date, hours, discounts, sending a gift card right away, how Areté differs from a gym recovery studio.
-- **Schema:** correct hours, prices, `DaySpa` type, alternate names, `ReserveAction`, Google Maps link.
-- **llms.txt:** new version with the confirmed facts.
+1. **Three prices disagree on the visible site.** Which is right?
+   - Float intro: the price table says $65 for a first float, but the top of the float page and the
+     sticky bar say "$69 intro".
+   - Massage: the home card says "from $110 · 60, 75, or 90 min". The massage page says $125 (60 min) and $150 (90 min), with no 75-minute option.
+   - Red light: the home card says "from $20". The red light page starts at $35.
+   - Sauna: the home card says "from $25 · 15 or 30 min". The sauna page starts at $30 for 30 min.
+     (If a 15-minute session is $25, this one is fine.)
+2. **Discounts.** Which discounts are there (student, first-time, military, teacher), and how much?
+3. **Reviews.** May we quote 5–8 Google reviews on the site, with first name and last initial?
+4. **Salt.** The float page says both "a thousand pounds" and "twelve hundred pounds".
+5. **Gift card use.** Can a gift card pay for retail items too?
+6. **Walking times.** Check the Visit Carrboro page: Weaver Street Market "a few minutes' walk",
+   UNC "about a mile".
+7. **Menu.** Should the "Gift Cards" menu link open the new gift card page (better for search),
+   or keep opening the Boulevard checkout directly (one click less for buyers)?
 
 ## Phase 3: off-site work (Jen or a helper, not code)
 
