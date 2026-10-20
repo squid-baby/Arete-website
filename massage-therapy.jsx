@@ -495,8 +495,9 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
-      <div className="quote__who">Google · October 2026</div>
+      <div className="quote__mark">"</div>
+      <p>I've experienced a float tank session, massage, and sauna + red light therapy sessions so far and it's all been pure bliss.</p>
+      <div className="quote__who">Lauren S. · Google review</div>
     </section>);
 }
 

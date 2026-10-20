@@ -397,15 +397,23 @@ function Experience() {
 /* ---------- Guest reviews ----------
    Real Google reviews, quoted word for word with permission. To add one,
    copy a review into this list. Update the rating line when the count changes. */
-const GOOGLE_RATING = "Rated 4.9 from 77 Google reviews (October 2026)";
+const GOOGLE_RATING = "Rated 4.9 from 74 Google reviews (October 2026)";
 const GUEST_REVIEWS = [
 {
-  text: "Perfect experience. The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to. The management is so kind and patient. I will continue to rave about this place and floating in general!",
+  text: "Perfect experience. The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to.",
   who: "Batsheva G. · Google review"
 },
 {
-  text: "Purchasing my first float and red-light, I knew I had to let go to find peace. … After a few minutes in the float tub, it was like a light was lit.",
+  text: "My wife and I both tried it and were very pleased, as the space is thoughtfully designed and tranquil, with a friendly staff and a selection of well-curated products.",
+  who: "Manley W. · Google review"
+},
+{
+  text: "For my birthday this year I choose to do something different. … After a few minutes in the float tub, it was like a light was lit.",
   who: "Anthony A. · Google review"
+},
+{
+  text: "Arete is a game-changer. Highly recommend for anyone curious about float therapy or looking for a high-quality self-care experience.",
+  who: "Graceann B. · Google review"
 }];
 
 

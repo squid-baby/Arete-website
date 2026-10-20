@@ -327,8 +327,9 @@ function Pricing({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
-      <div className="quote__who">Google · October 2026</div>
+      <div className="quote__mark">"</div>
+      <p>The sauna and the float tank are both excellent ways to recenter and work on focus and calm.</p>
+      <div className="quote__who">Erin W. · Google review</div>
     </section>);
 }
 

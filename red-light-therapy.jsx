@@ -692,8 +692,8 @@ function Quote() {
   return (
     <section className="quote">
       <div className="quote__mark">"</div>
-      <p>Purchasing my first float and red-light, I knew I had to let go to find peace. … After a few minutes in the float tub, it was like a light was lit.</p>
-      <div className="quote__who">Anthony A. · Google review</div>
+      <p>If floating or massage are not in your budget, try the very affordable red light therapy, which will leave you relaxed and smiling.</p>
+      <div className="quote__who">Manley W. · Google review</div>
     </section>);
 }
 

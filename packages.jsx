@@ -612,8 +612,9 @@ function GiftCards({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
-      <div className="quote__who">Google · October 2026</div>
+      <div className="quote__mark">"</div>
+      <p>I recommend Arete often to friends and clients as a haven for self care and restorative experiences.</p>
+      <div className="quote__who">Lauren S. · Google review</div>
     </section>
   );
 }

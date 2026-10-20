@@ -536,8 +536,9 @@ function Rules({ mobile }) {
 function Quote() {
   return (
     <section className="quote">
-      <p>Rated 4.9 from 77 Google reviews.</p>
-      <div className="quote__who">Google · October 2026</div>
+      <div className="quote__mark">"</div>
+      <p>After a few months, I never wanted to go through another month without it. … I ended up expanding my package to include monthly red light therapy/sauna and contrast therapy.</p>
+      <div className="quote__who">Graceann B. · Google review</div>
     </section>
   );
 }
