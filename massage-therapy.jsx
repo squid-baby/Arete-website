@@ -466,8 +466,9 @@ function Deepen({ mobile }) {
 // ---------- Pricing ----------
 function Pricing({ mobile }) {
   const plans = [
-  { name: "60 Min\n\n", price: "125", note: "Targeted reset · Most asked-for", highlight: true, link: BOOK.massage60 },
-  { name: "90 Min\n\n", price: "150", note: "Full body, unhurried", link: BOOK.massage90 },
+  { name: "60 Min\n\n", price: "110", note: "Targeted reset · Most asked-for", highlight: true, link: BOOK.massage60 },
+  { name: "75 Min\n\n", price: "135", note: "More time to unwind", link: BOOK.massage75 },
+  { name: "90 Min\n\n", price: "160", note: "Full body, unhurried", link: BOOK.massage90 },
   { name: "Couples\n", price: ",", note: "Two tables, two therapists, one room", link: BOOK.general },
   { name: "Packages\n", price: "\n", note: "\n\n\n\n\nMonthly memberships & multi-session packs", link: BOOK.general }];
 
@@ -523,7 +524,7 @@ function StickyBar() {
     <div className="stickybar">
       <div>
         <span className="stickybar__from">from</span>
-        <span className="stickybar__price">$125</span>
+        <span className="stickybar__price">$110</span>
       </div>
       <a href={BOOK.massage60} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
         Reserve <IconArrow size={12} />

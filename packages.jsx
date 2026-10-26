@@ -367,22 +367,6 @@ const INTRO_FLOAT = {
 
 const FIRE_PACKS = [
   {
-    name: "6 Fire Credits",
-    price: 160,
-    cadence: "Sauna or RLT · per person",
-    color: "rgb(232, 155, 142)",
-    savings: 14,
-    hideSavings: true,
-    available: false,
-    buy: BOOK.fire6,
-    includes: [
-      "6× 30-min sauna or 20-min RLT",
-      "Mix and match across modalities",
-      "Bring a friend +$15/session"
-    ],
-    chips: [{ label: "Mix & match" }, { label: "Per person" }]
-  },
-  {
     name: "8 Sauna Sessions Pack",
     price: 228,
     cadence: "8 sauna sessions · per person",
@@ -419,8 +403,8 @@ const RLT_PACK = {
   price: 144,
   cadence: "Red light only · per person",
   color: "rgb(218, 99, 99)",
-  savings: 76,
-  available: false,
+  savings: 16,
+  available: true,
   buy: BOOK.rlt8,
   includes: [
     "8× individual 20-min red light therapy sessions",
@@ -469,7 +453,7 @@ function Packs({ mobile }) {
 
       <Section mobile={mobile} id="rlt" index="03 · Red Light Only"
         title="Red light" em="therapy pack"
-        lede="This former red-light-only option is easy to spot below, but it cannot be purchased unless it returns to Boulevard.">
+        lede="Eight prepaid 20-minute red light sessions for $144, just $18 per session.">
         <PackCard pack={RLT_PACK} />
       </Section>
 
@@ -628,7 +612,7 @@ function FAQ({ mobile }) {
     ["Do package credits stack with member discounts?", "No. Package pricing is its own lane. Once you're a member, member rates on additional sessions usually make more sense than buying extra packages, so most members don't double-up."],
     ["Can I gift a package?", "Yes. All packages can be gifted except Intro to Floating, which is reserved for first-time customers only."],
     ["Are packages refundable if I have to move or get injured?", "No. Packages are non-refundable and non-transferable. If something serious comes up, email theteam@floatarete.com, we handle hardship cases on a case-by-case basis but it's never automatic."],
-    ["Which packages can I buy online?", "The Studio Collection, Intro to Floating, and the 8- and 12-session sauna packs are available in Boulevard right now. Anything else is clearly marked unavailable on this page."]
+    ["Which packages can I buy online?", "The Studio Collection, Intro to Floating, the 8- and 12-session sauna packs, and the 8-session red light pack are available in Boulevard right now. Anything else is clearly marked unavailable on this page."]
   ];
   return (
     <section className={`pkg-faq ${mobile ? "pkg-faq--mobile" : ""}`} id="faq">
