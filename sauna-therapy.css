@@ -210,7 +210,7 @@ body.whimsy .stage {
 
 /* ─────────────────────────── Pricing, single hero plan + supporting cards */
 .pricing--sauna .pricing__grid {
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .pricing--sauna.pricing--mobile .pricing__grid {
   grid-template-columns: 1fr;

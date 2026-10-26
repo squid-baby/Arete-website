@@ -297,15 +297,16 @@ function Deepen({ mobile }) {
 // ---------- Pricing ----------
 function Pricing({ mobile }) {
   const plans = [
-  { name: "Single\nSession", price: "30", note: "30 minutes · drop in any time", highlight: true, feature: true, link: BOOK.sauna30 },
-  { name: "6-Session\nPack", price: "160", note: "Save with a multi-pack · ask the front desk", link: "https://aretefloattank.floathelm.com/store/memberships/1220706" },
-  { name: "12-Session\nPack", price: "324", note: "Monthly access · multiple tiers available", link: "https://aretefloattank.floathelm.com/store/memberships/1203177" }];
+  { name: "15 Min\nSession", price: "25", note: "15 minutes · drop in any time", link: BOOK.sauna15 },
+  { name: "30 Min\nSession", price: "30", note: "30 minutes · drop in any time", highlight: true, feature: true, link: BOOK.sauna30 },
+  { name: "8-Session\nPack", price: "228", note: "8 prepaid 30-minute sauna sessions", link: "https://aretefloattank.floathelm.com/store/packages/1205385" },
+  { name: "12-Session\nPack", price: "324", note: "12 prepaid 30-minute sauna sessions", link: "https://aretefloattank.floathelm.com/store/packages/1205386" }];
 
   return (
     <section className={`pricing pricing--sauna ${mobile ? "pricing--mobile" : ""}`}>
       <div className="pricing__head">
         <span className="pricing__kicker">Simple pricing</span>
-        <h2>One length. Thirty minutes.</h2>
+        <h2>Choose fifteen or thirty minutes.</h2>
       </div>
       <div className="pricing__grid">
         {plans.map((p, i) =>

@@ -126,7 +126,7 @@ function Hero({ mobile, copy }) {
         </div>
 
         <div className="hero__meta">
-          <span><IconStar /> First float · $69 intro</span>
+          <span><IconStar /> First float · $65 intro</span>
           <span className="hero__meta-dot">·</span>
           <span>Carrboro, NC</span>
         </div>
@@ -407,7 +407,7 @@ function StickyBar() {
     <div className="stickybar">
       <div>
         <span className="stickybar__from">from</span>
-        <span className="stickybar__price">$69</span>
+        <span className="stickybar__price">$65</span>
       </div>
       <a href={BOOK.newGuest} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--sm">
         Reserve <IconArrow size={12} />

@@ -622,8 +622,8 @@ function Pricing({ mobile }) {
   { name: "Sauna + RL · 5-Pack\n\n", price: "265", note: "$53 / visit · best value", link: BOOK.general }];
 
   const soloPlans = [
-  { name: "First Light\n\n", price: "35", note: "Red light intro · 20 min · first visit", link: BOOK.redLight },
-  { name: "Single Red Light\n\n", price: "45", note: "À la carte · 20 min, just the panel", link: BOOK.redLight },
+  { name: "First Light\n\n", price: "20", note: "Red light intro · 20 min · first visit", link: BOOK.redLight },
+  { name: "Single Red Light\n\n", price: "20", note: "À la carte · 20 min, just the panel", link: BOOK.redLight },
   { name: "Red Light · 5-Pack\n\n", price: "189", note: "$38 / session · solo red light", link: BOOK.general },
   { name: "Memberships\n", price: "\n", note: "\n\n\n\n\nMany Packages Available", link: "https://aretefloattank.floathelm.com/store/memberships/1205640" }];
 
