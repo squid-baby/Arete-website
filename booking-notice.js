@@ -131,12 +131,14 @@
 
       var path = anchor.dataset.blvdPath;
       var visitType = anchor.dataset.blvdVisitType || "";
+      var locationId = "";
       if (!path) {
         try {
           var destination = new URL(anchor.href, window.location.href);
           if (destination.hostname === "www.joinblvd.com" && destination.searchParams.get("path")) {
             path = destination.searchParams.get("path");
             visitType = destination.searchParams.get("visitType") || "";
+            locationId = destination.searchParams.get("locationId") || "";
           }
         } catch (error) {
           return;
@@ -148,6 +150,7 @@
       event.preventDefault();
       var urlParams = { path: path };
       if (visitType) urlParams.visitType = visitType;
+      if (locationId) urlParams.locationId = locationId;
       window.blvd.openBookingWidget({ urlParams: urlParams });
     },
     true

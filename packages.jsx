@@ -10,7 +10,7 @@ const BOOK = {
   fire6: "https://aretefloattank.floathelm.com/store/packages/1242824",
   fire8: "https://aretefloattank.floathelm.com/store/packages/1205385",
   fire12: "https://aretefloattank.floathelm.com/store/packages/1205386",
-  rlt8: "https://aretefloattank.floathelm.com/store/packages/1247402",
+  rlt8: "https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?locationId=666a709e-59f7-4141-9090-49402a367bae&path=%2Fcart%2Fmenu%2FSauna%2Fp_77544ba1-5dfb-49b2-a5fa-f4059a6afa11&visitType=PACKAGE",
   friend: "https://aretefloattank.floathelm.com/booking"
 };
 
