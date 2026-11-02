@@ -105,6 +105,9 @@ function Hero({ mobile }) {
           </a>
           <a href="#rules" className="btn btn--ghost">How memberships work</a>
         </div>
+        <p className="hero__meta" style={{ justifyContent: mobile ? "flex-start" : "center", marginTop: 4 }}>
+          <span>Tip: after you buy, pick your day and time in the same booking window. If you close it, you will need to sign in again.</span>
+        </p>
       </div>
     </section>
   );
@@ -505,6 +508,7 @@ function Rules({ mobile }) {
     ["60-day credit validity", "Sauna, red light, contrast, Essential, and Signature credits remain valid for 60 days while the membership is active. Float Ritual credits do not roll over."],
     ["Sharing depends on the tier", "Signature Wellness is shareable with one designated person. Essential Wellness, single-modality, and Unlimited Wellness memberships are personal."],
     ["Member perks", "Unlimited Sauna Ritual and Unlimited Wellness members receive 15% off non-practitioner services and retail. All other memberships receive 10%. Add-on and guest rates vary by plan."],
+    ["Book right after you join", "When checkout is done, stay in the same booking window and pick your day and time. If you close the window first, Boulevard asks you to sign in again."],
     ["Cancel or pause in writing", "Let us know in writing at theteam@floatarete.com at least 14 days before your renewal date if you need to pause or cancel. Your member agreement contains the complete terms."]
   ];
   return (

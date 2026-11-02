@@ -125,6 +125,9 @@ function Hero({ mobile }) {
           <span className="hero__meta-dot">·</span>
           <span>Single-person · non-refundable</span>
         </div>
+        <p className="hero__meta" style={{ justifyContent: mobile ? "flex-start" : "center", marginTop: 12 }}>
+          <span>Tip: after you buy, pick your day and time in the same booking window. If you close it, you will need to sign in again.</span>
+        </p>
       </div>
     </section>
   );
@@ -473,6 +476,7 @@ function Rules({ mobile }) {
     ["Clear expiration windows", "The Intro package expires 60 days after first use, sauna packs expire 60 days after purchase, and the Studio Collection runs 90 days after first use."],
     ["Non-refundable, non-swappable", "Once purchased, packages can't be refunded, exchanged, or converted into different services. Credits cannot be redeemed for cash, retail, or other modalities."],
     ["Reservations required", "Book online through Boulevard or by phone. Same-day slots happen, but they aren't guaranteed."],
+    ["Book right after you buy", "When checkout is done, stay in the same booking window and pick your day and time. If you close the window first, Boulevard asks you to sign in again."],
     ["Limit one Studio Collection & Intro per customer", "The Studio Collection and Intro to Floating are once-per-person. Sauna packages can be re-purchased anytime."],
     ["Tip not included", "Massage gratuity isn't bundled into the Studio Collection price, handled at the appointment, like any other massage."]
   ];
