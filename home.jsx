@@ -75,7 +75,7 @@ const SERVICES = [
   href: "#sauna",
   bookHref: bookingLink("/cart/menu/Sauna | RLT | Halotherapy"),
   name: "Infrared Sauna",
-  desc: "Deep heat that works from the inside out. Detox, muscle relief, and the kind of warmth that stays with you.",
+  desc: "A private infrared sauna, a little quiet, and nowhere else you need to be for 15 or 30 minutes.",
   price: "From $25 · 15 or 30 min",
   glow: "glow-amber",
   Icon: IconSauna

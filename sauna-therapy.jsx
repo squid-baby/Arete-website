@@ -103,7 +103,7 @@ function Hero({ mobile, copy }) {
       <div className="hero__text">
         <div className="hero__eyebrow">
           <span className="hero__eyebrow-line" />
-          <span>Full-Spectrum Infrared · 30 min</span>
+          <span>Full-Spectrum Infrared · 15 or 30 min</span>
         </div>
         <h1 className="hero__title">
           {copy.heroTitle.split("\n").map((line, i) =>
@@ -121,9 +121,9 @@ function Hero({ mobile, copy }) {
         </div>
 
         <div className="hero__meta hero__meta--sauna">
-          <span className="chip"><strong>140–155°F</strong> cabin</span>
-          <span className="chip"><strong>7×</strong> the detox of traditional</span>
-          <span className="chip"><strong>~600</strong> cal / session</span>
+          <span className="chip"><strong>Full-spectrum infrared</strong></span>
+          <span className="chip"><strong>Private suite</strong></span>
+          <span className="chip"><strong>15 or 30 minutes</strong></span>
         </div>
       </div>
 
@@ -249,15 +249,15 @@ function Deepen({ mobile }) {
   const tabs = ["The science", "What to expect", "Pairs with"];
 
   const faqs = [
-  { q: "Is infrared different from a traditional sauna?", a: "Yes, meaningfully. Traditional saunas heat the air around you (often 180–200°F) and you sweat from external convection. Infrared cabins run cooler (140–155°F) but the wavelengths penetrate one to two inches into tissue, so the heat builds from the inside out. Most people report a deeper, more comfortable sweat at lower air temperature." },
+  { q: "Is infrared different from a traditional sauna?", a: "Yes. Infrared saunas usually run at a lower air temperature than traditional saunas, so the heat can feel different. At Areté, you can try a 15-minute session to see how it feels." },
   { q: "What do I wear, and what should I bring?", a: "Whatever feels right, swimsuit, shorts, or nothing at all (your suite is private). We provide robes, towels, slippers, cool electrolyte water, and amenities to help you freshen up afterward. Just leave the phone in the locker." },
   { q: "Can I sauna on the same day as a float?", a: "Absolutely, and many members do. We recommend sauna first (sweat out tension), then float (let the magnesium and weightlessness reset the nervous system). Cold plunge between the two is the full reset stack." },
   { q: "Who shouldn't use the sauna?", a: "If you're pregnant, have uncontrolled blood pressure, recent surgery, a fever, or are on medications that affect heat regulation, please check with your physician first. Our front-desk team will walk you through the intake form on your first visit." },
-  { q: "How often should I go?", a: "Most members aim for 2–4 sessions per week to compound the cardiovascular and detox benefits. Even one weekly session moves the needle on sleep and stress markers, start where you can sustain." }];
+  { q: "How often should I go?", a: "If you’re new to infrared sauna, start with 15 minutes and see how you feel. There’s no set schedule you need to follow. Come back when it feels right for you." }];
 
   const bodies = [
   // The science
-  "Full-spectrum infrared raises core temperature without overheating the air. Inside fifteen minutes, your body responds as if you'd run a few miles: heart rate climbs, blood vessels dilate, and a flood of heat-shock proteins (HSPs) hits the bloodstream. HSPs scavenge free radicals, repair damaged proteins, and protect against the oxidative stress that drives muscle breakdown and aging. Cortisol drops; serotonin and norepinephrine rise. Cellular metabolism accelerates, breaking liquid molecules apart and pulling stored toxins through the skin, which is why infrared sweat measures roughly seven times more dense in heavy metals and chemical residue than a traditional sauna's. Thirty minutes in; an immune system, cardiovascular network, and nervous system that all just got a workout you didn't have to do.",
+  "Infrared panels warm your body directly, while a traditional sauna primarily heats the air around you. Sweating helps your body cool itself. How much you sweat isn’t a measure of how much you’ve detoxed.",
 
   // What to expect
   "First-timers usually feel the heat settle in around minute ten. The sweat is slow at first, then sudden, an honest, drenching sweat that keeps coming for several minutes after you step out. Your heart rate will climb the way it does on a brisk walk; that's normal and the point. Breathe slow, sip water, and don't push past comfortable. Most people leave noticeably looser in the shoulders and lower back, mentally clearer, and sleep an hour deeper that night. Plan a relaxed exit, this isn't a workout you want to rush back into traffic from.",
@@ -339,7 +339,7 @@ function FinalCTA({ mobile }) {
   return (
     <section className={`final ${mobile ? "final--mobile" : ""}`}>
       <div className="final__orb" />
-      <h2>Heat is medicine.<br /><em>Thirty minutes is enough.</em></h2>
+      <h2>A little time in the warmth.</h2>
       <a href={BOOK.sauna30} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--lg">
         <span>Reserve your session</span>
         <IconArrow />
@@ -395,9 +395,8 @@ const SIX_BENEFITS = [
   metric: "1–2 in. tissue penetration"
 },
 {
-  t: "Detoxification",
-  d: "Cellular metabolism accelerates and pushes stored toxins out through the skin, denser sweat than any traditional sauna can produce.",
-  metric: "7× detox vs. traditional"
+  t: "A good sweat",
+  d: "The warmth builds gradually, and how much you sweat can vary from visit to visit. There’s no need to chase a bigger sweat. Settle in and enjoy the heat."
 },
 {
   t: "Cardiovascular",
@@ -422,8 +421,8 @@ const SIX_BENEFITS = [
 
 const TONES = {
   practical: {
-    heroTitle: "Heat that\nworks deep.",
-    heroLede: "Full-spectrum infrared penetrates one to two inches into tissue, easing pain at the source while cortisol drops, white blood cells climb, and the cardiovascular system gets a workout you don't have to earn.",
+    heroTitle: "Warm up.\nSlow down.",
+    heroLede: "Step into your own private infrared sauna and let the warmth build while the day goes quiet. Come for 15 minutes when you need a pause, or stay for 30 when you have a little more time.",
     benefits: SIX_BENEFITS
   },
   poetic: {
@@ -432,8 +431,8 @@ const TONES = {
     benefits: SIX_BENEFITS
   },
   bold: {
-    heroTitle: "Burn it\noff. Reset.",
-    heroLede: "600 calories. Seven times the detox of a traditional cabin. Heat-shock proteins, cardiovascular tone, and a nervous system that finally exhales, in thirty minutes flat.",
+    heroTitle: "Warm up.\nSlow down.",
+    heroLede: "Step into your own private infrared sauna and let the warmth build while the day goes quiet. Come for 15 minutes when you need a pause, or stay for 30 when you have a little more time.",
     benefits: SIX_BENEFITS
   }
 };
