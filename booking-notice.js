@@ -123,35 +123,103 @@
     Array.prototype.forEach.call(root.querySelectorAll("a[href]"), enhanceLink);
   }
 
+  var bookingNotice;
+  var pendingBooking;
+
+  function showBookingNotice(proceed) {
+    pendingBooking = proceed;
+    if (!bookingNotice) {
+      var style = document.createElement("style");
+      style.textContent = `
+        .arete-booking-note{box-sizing:border-box;width:calc(100% - 32px);max-width:470px;max-height:calc(100dvh - 32px);overflow:auto;margin:auto;padding:26px 30px;border:1px solid #ddd6cd;border-radius:12px;background:#faf9f6;color:#111d3d;font-family:var(--sans,Arial,sans-serif);box-shadow:0 16px 48px #111d3d26}
+        .arete-booking-note::backdrop{background:rgba(13,27,62,.55)}
+        .arete-booking-note *{box-sizing:border-box}
+        .arete-booking-note__top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+        .arete-booking-note__brand{font-size:11px;letter-spacing:1.5px;line-height:1.7;color:#62616b}
+        .arete-booking-note__close{border:0;background:transparent;color:#62616b;min-width:44px;min-height:44px;font:26px Arial,sans-serif;margin:-12px -14px -12px 0;cursor:pointer}
+        .arete-booking-note h2{font:400 30px/1.2 Georgia,serif;letter-spacing:-.5px;margin:0 0 18px;text-transform:none;color:inherit}
+        .arete-booking-note p{font-size:16px;line-height:1.65;margin:0;color:inherit}
+        .arete-booking-note__gift{background:#f0ece8;padding:17px 18px;margin:20px 0;border-radius:6px}
+        .arete-booking-note h3{font:400 22px/1.3 Georgia,serif;margin:0 0 8px;color:inherit;text-transform:none}
+        .arete-booking-note .arete-booking-note__policy{font-size:14px;color:#62616b}
+        .arete-booking-note__continue{display:block;width:100%;background:#111d3d;color:#faf9f6;border:0;border-radius:4px;padding:17px 18px;margin-top:22px;font:16px var(--sans,Arial,sans-serif);cursor:pointer;min-height:48px}
+        .arete-booking-note button:focus-visible{outline:3px solid #7c6b8a;outline-offset:3px}
+        @media(max-width:400px){.arete-booking-note{padding:22px}.arete-booking-note h2{font-size:27px}}
+      `;
+      document.head.appendChild(style);
+      bookingNotice = document.createElement("dialog");
+      bookingNotice.className = "arete-booking-note";
+      bookingNotice.setAttribute("aria-labelledby", "arete-booking-note-title");
+      bookingNotice.innerHTML = `
+        <div class="arete-booking-note__top"><span class="arete-booking-note__brand">Areté · ELEMENTAL WELLNESS</span><button type="button" class="arete-booking-note__close" aria-label="Close booking note">×</button></div>
+        <h2 id="arete-booking-note-title">A quick note before you book</h2>
+        <p>Boulevard requires a valid credit or debit card to reserve your appointment, <strong>even if you’re using an Areté gift card.</strong> Your card won’t be charged upfront for booking an appointment.</p>
+        <div class="arete-booking-note__gift"><h3>Using a gift card?</h3><p>Bring your gift card, email, or code to your visit—we’ll apply it at checkout.</p></div>
+        <p class="arete-booking-note__policy">Gift-card, package, and membership purchases are charged separately. Our late-cancellation and no-show policy still applies.</p>
+        <button type="button" class="arete-booking-note__continue">Continue to booking</button>
+      `;
+      document.body.appendChild(bookingNotice);
+      bookingNotice.querySelector(".arete-booking-note__close").addEventListener("click", function () {
+        pendingBooking = null;
+        bookingNotice.close();
+      });
+      bookingNotice.addEventListener("cancel", function () { pendingBooking = null; });
+      bookingNotice.addEventListener("click", function (event) {
+        if (event.target !== bookingNotice) return;
+        var rect = bookingNotice.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) {
+          pendingBooking = null;
+          bookingNotice.close();
+        }
+      });
+      bookingNotice.querySelector(".arete-booking-note__continue").addEventListener("click", function () {
+        var next = pendingBooking;
+        pendingBooking = null;
+        bookingNotice.close();
+        if (next) next();
+      });
+    }
+    if (!bookingNotice.open) bookingNotice.showModal();
+  }
+
   document.addEventListener(
     "click",
     function (event) {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       var anchor = event.target.closest ? event.target.closest("a") : null;
       if (!anchor) return;
 
-      var path = anchor.dataset.blvdPath;
-      var visitType = anchor.dataset.blvdVisitType || "";
-      var locationId = "";
-      if (!path) {
-        try {
-          var destination = new URL(anchor.href, window.location.href);
-          if (destination.hostname === "www.joinblvd.com" && destination.searchParams.get("path")) {
-            path = destination.searchParams.get("path");
-            visitType = destination.searchParams.get("visitType") || "";
-            locationId = destination.searchParams.get("locationId") || "";
-          }
-        } catch (error) {
-          return;
+      var destination;
+      try { destination = new URL(anchor.href, window.location.href); } catch (error) { return; }
+      var isLocalBooking = destination.origin === window.location.origin &&
+        destination.pathname === window.location.pathname && destination.hash === BOOKING_HASH;
+      var isBoulevard = (destination.hostname === "www.joinblvd.com" || destination.hostname === "joinblvd.com") &&
+        destination.pathname === "/b/" + BUSINESS_ID + "/widget";
+      var path = anchor.dataset.blvdPath || destination.searchParams.get("path") || "";
+      if (!isLocalBooking && !isBoulevard && !anchor.dataset.blvdPath) return;
+
+      var visitType = anchor.dataset.blvdVisitType || destination.searchParams.get("visitType") || "";
+      var locationId = destination.searchParams.get("locationId") || "";
+      var urlParams = {};
+      if (path) urlParams.path = path;
+      if (visitType) urlParams.visitType = visitType;
+      if (locationId) urlParams.locationId = locationId;
+      var fallback = isLocalBooking ? BOULEVARD_WIDGET : destination.href;
+      function openBooking() {
+        if (window.blvd && typeof window.blvd.openBookingWidget === "function") {
+          window.blvd.openBookingWidget({ urlParams: urlParams });
+        } else {
+          window.location.assign(fallback);
         }
       }
 
-      if (!path || !window.blvd || typeof window.blvd.openBookingWidget !== "function") return;
-
+      // Purchases and the existing cart keep their current, direct experience.
+      var isPurchase = path === "/cart" || /\/p_|GIFT_CARD/.test(path) ||
+        /^(PACKAGE|MEMBERSHIP|GIFT_CARD|PRODUCT)$/.test(visitType);
       event.preventDefault();
-      var urlParams = { path: path };
-      if (visitType) urlParams.visitType = visitType;
-      if (locationId) urlParams.locationId = locationId;
-      window.blvd.openBookingWidget({ urlParams: urlParams });
+      event.stopImmediatePropagation();
+      if (isPurchase) openBooking();
+      else showBookingNotice(openBooking);
     },
     true
   );
