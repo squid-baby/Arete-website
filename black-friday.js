@@ -31,19 +31,36 @@
   var previousOverflow;
   var previousFocus;
   var expiryTimer;
-  function dismiss() { popup.close(); }
+  var cleanedUp = false;
+  function cleanup() {
+    if (cleanedUp) return;
+    cleanedUp = true;
+    clearTimeout(expiryTimer);
+    document.body.style.overflow = previousOverflow;
+    try { sessionStorage.setItem(dismissalKey, "1"); } catch (_) {}
+    if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+    window.removeEventListener("click", closeBeforeCheckout, true);
+    popup.remove();
+  }
+  function dismiss() {
+    popup.close();
+    // Finish cleanup before Boulevard opens; the native close event is queued.
+    cleanup();
+  }
+  function closeBeforeCheckout(event) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var anchor = event.target.closest ? event.target.closest(".bf-popup__cta") : null;
+    if (anchor && popup.contains(anchor)) dismiss();
+  }
+  // Boulevard intercepts clicks at document capture and stops propagation.
+  // Window capture runs first, so checkout is never trapped behind our dialog.
+  window.addEventListener("click", closeBeforeCheckout, true);
   popup.querySelector(".bf-popup__close").addEventListener("click", dismiss);
   popup.addEventListener("click", function (event) {
     var bounds = popup.getBoundingClientRect();
     if (event.target === popup && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dismiss();
   });
-  popup.addEventListener("close", function () {
-    clearTimeout(expiryTimer);
-    document.body.style.overflow = previousOverflow;
-    try { sessionStorage.setItem(dismissalKey, "1"); } catch (_) {}
-    if (previousFocus && previousFocus.isConnected) previousFocus.focus();
-    popup.remove();
-  });
+  popup.addEventListener("close", cleanup);
   // Recheck immediately before opening, including a tab left open at midnight.
   setTimeout(function () {
     if (Date.now() >= endsAt) { popup.remove(); return; }
