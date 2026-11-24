@@ -74,14 +74,15 @@
   }
 
   // ---------- Dates ----------
-  // `?campaign_now=<date>` lets us preview the page at another time.
+  // `?campaign_now=<date>` previews the page at a LATER time (for example,
+  // after the offer ends). It can never move time back, so an old link
+  // cannot bring back an offer that has ended.
   function currentTime(search) {
-    var match = /[?&]campaign_now=([^&]+)/.exec(search || "");
-    if (match) {
-      var t = Date.parse(decodeURIComponent(match[1]));
-      if (!isNaN(t)) return t;
-    }
-    return Date.now();
+    var now = Date.now();
+    var value = null;
+    try { value = new URLSearchParams(search || "").get("campaign_now"); } catch (_) { value = null; }
+    var t = value ? Date.parse(value) : NaN;
+    return isNaN(t) ? now : Math.max(now, t);
   }
 
   function isOfferActive(now, campaign) {
@@ -121,16 +122,19 @@
     return {
       source: params.utm_source || "(direct)",
       medium: params.utm_medium || "(none)",
+      campaign: params.utm_campaign || "(not set)",
       content: params.utm_content || "(not set)"
     };
   }
 
   // ---------- Analytics ----------
   // Sends a GA4 event through the gtag already on every page. No names,
-  // emails or addresses are ever sent.
+  // emails or addresses are ever sent. Parameter names avoid GA4's own
+  // traffic-source names (campaign_id, source, medium, content), which GA4
+  // can use to re-credit the visit.
   function track(name, params) {
     if (typeof global.gtag !== "function") return false;
-    var payload = { campaign_id: CAMPAIGN.campaignId };
+    var payload = { promo_campaign: CAMPAIGN.campaignId };
     for (var k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
     global.gtag("event", name, payload);
     return true;

@@ -15,7 +15,7 @@
    Le Jour Serif has capital letters only, so it stays for short titles. */
 @font-face {
   font-family: 'Cormorant';
-  src: url('assets/fonts/CormorantGaramond-MediumItalic.woff2') format('woff2');
+  src: url('assets/fonts/CormorantGaramond-MediumItalic.woff2?v=1') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -181,13 +181,12 @@ body.rs-page {
 .rs-code__btn:hover { background: rgba(53, 69, 53, .08); }
 .rs-code__btn.is-done { background: var(--rs-olive); color: var(--rs-cream); }
 .rs-code__status { grid-column: 1 / -1; min-height: 0; font-size: 14px; color: var(--rs-olive); }
-.rs-code__status:empty { display: none; }
 
 /* Watercolor hills: the band from the front of the door hanger. */
 .rs-hills {
   width: 100%; height: min(32.75vw, 420px);
   margin-top: clamp(-40px, -2vw, -8px);
-  background: url("assets/reset/hills.webp") center bottom / 100% auto no-repeat;
+  background: url("assets/reset/hills.webp?v=2") center bottom / 100% auto no-repeat;
   -webkit-mask-image: linear-gradient(#000 72%, transparent);
   mask-image: linear-gradient(#000 72%, transparent);
 }
@@ -353,3 +352,7 @@ body.rs-page {
   .rs-eyebrow { letter-spacing: .2em; }
   .rs-title { font-size: 44px; }
 }
+
+/* Built before the offer ended but opened after: hide the old offer for the
+   moment until the page script shows the "ended" version (see reset.html). */
+.rs-ended-pending #root { visibility: hidden; }

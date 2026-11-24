@@ -36,7 +36,9 @@ function membershipsPlan(name) {
   const src = read("memberships.jsx");
   const at = src.indexOf(`name: "${name}"`);
   assert.ok(at > -1, `${name} not found in memberships.jsx`);
-  const block = src.slice(at, at + 700);
+  // The plan's own block: from its name to the next plan's name.
+  const next = src.indexOf("name:", at + 6);
+  const block = src.slice(at, next === -1 ? undefined : next);
   return {
     price: Number(block.match(/price: (\d+)/)[1]),
     path: block.match(/boulevardLink\("([^"]+)"\)/)[1],
@@ -73,10 +75,12 @@ test("offer ends at midnight Eastern, start of February 1, 2027", () => {
   assert.equal(rc.isOfferActive(Date.parse("2027-02-01T04:59:59Z")), true, "still Jan 31 in Carrboro");
 });
 
-test("?campaign_now= previews another time; bad values are ignored", () => {
-  assert.equal(rc.currentTime("?campaign_now=2027-02-01T00:00:00-05:00"), Date.parse("2027-02-01T05:00:00Z"));
+test("?campaign_now= previews a later time; bad or earlier values are ignored", () => {
+  assert.equal(rc.currentTime("?campaign_now=2099-02-01T00:00:00-05:00"), Date.parse("2099-02-01T05:00:00Z"));
   const before = Date.now();
   assert.ok(rc.currentTime("?campaign_now=not-a-date") >= before);
+  assert.ok(rc.currentTime("?campaign_now=%E0%A4%A") >= before, "a broken address does not crash the page");
+  assert.ok(rc.currentTime("?campaign_now=2020-01-01") >= before, "cannot bring back an ended offer");
   assert.ok(rc.currentTime("") >= before);
 });
 
@@ -84,7 +88,7 @@ test("visit tags: kept when clean, rejected when odd, never guessed", () => {
   const store = new Map();
   const storage = { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, v) };
   const tagged = rc.readAttribution("?utm_source=doorhanger&utm_medium=print&utm_content=WinMore", storage);
-  assert.deepEqual({ ...tagged }, { source: "doorhanger", medium: "print", content: "winmore" });
+  assert.deepEqual({ ...tagged }, { source: "doorhanger", medium: "print", campaign: "(not set)", content: "winmore" });
   // A later page view in the same visit, without tags, keeps them.
   assert.deepEqual({ ...rc.readAttribution("", storage) }, { ...tagged });
   // No tags and nothing saved: not given a neighborhood.
@@ -97,10 +101,18 @@ test("visit tags: kept when clean, rejected when odd, never guessed", () => {
   assert.equal(rc.readAttribution("?utm_content=winmore", blocked).content, "winmore");
 });
 
+test("event parameters never use GA4's own traffic-source names", () => {
+  const reserved = /[{,]\s*(campaign_id|campaign|source|medium|content|term)\s*:/;
+  for (const [, params] of read("reset.jsx").matchAll(/track(?:ThenContinue)?\("[a-z_]+",\s*(\{[^}]*\})/g)) {
+    assert.doesNotMatch(params, reserved, params);
+  }
+  assert.doesNotMatch(read("reset.jsx"), /const params = \{[^}]*\b(content|source|medium):/);
+});
+
 test("events go to GA4 with the campaign id, and are skipped without GA", () => {
   rc.events.length = 0;
-  assert.equal(rc.track("campaign_code_copy", { content: "winmore" }), true);
-  assert.deepEqual(JSON.parse(JSON.stringify(rc.events[0])), ["event", "campaign_code_copy", { campaign_id: "reset2027", content: "winmore" }]);
+  assert.equal(rc.track("campaign_code_copy", { visit_zone: "winmore" }), true);
+  assert.deepEqual(JSON.parse(JSON.stringify(rc.events[0])), ["event", "campaign_code_copy", { promo_campaign: "reset2027", visit_zone: "winmore" }]);
   delete rc.window.gtag;
   assert.equal(rc.track("campaign_code_copy", {}), false);
 });
@@ -172,9 +184,14 @@ test("page head: noindex, clean canonical, title, social image", () => {
   assert.match(html, /<meta name="robots" content="noindex,follow" \/>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/floatarete.com\/reset" \/>/);
   assert.match(html, /<title>A Year of Possibility \| ARETÉ Float \+ Wellness<\/title>/);
-  assert.match(html, /og:image" content="https:\/\/floatarete.com\/assets\/reset\/og-reset.jpg"/);
+  assert.match(html, /og:image" content="https:\/\/floatarete.com\/assets\/reset\/og-reset.jpg\?v=\d+"/);
   assert.match(html, /booking-notice\.js/, "Boulevard checkout overlay is loaded");
   assert.doesNotMatch(read("sitemap.xml"), /floatarete.com\/reset/);
+});
+
+test("the early 'offer ended' guard in reset.html uses the same end time", () => {
+  const html = read("reset.html");
+  assert.ok(html.includes(`var ENDS_AT = "${rc.CAMPAIGN.endsAt}";`));
 });
 
 test("/reset shows reset.html and keeps the address (200 rewrite)", () => {

@@ -28,16 +28,16 @@
   <meta property="og:title" content="A Year of Possibility | ARETÉ Float + Wellness" />
   <meta property="og:description" content="$25 off your first month of a membership with code RESET. Valid through January 31, 2027." />
   <meta property="og:url" content="https://floatarete.com/reset" />
-  <meta property="og:image" content="https://floatarete.com/assets/reset/og-reset.jpg" />
+  <meta property="og:image" content="https://floatarete.com/assets/reset/og-reset.jpg?v=1" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="A Year of Possibility. Areté. Watercolor terracotta hills, a golden sun and three birds." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="A Year of Possibility | ARETÉ Float + Wellness" />
   <meta name="twitter:description" content="$25 off your first month of a membership with code RESET. Valid through January 31, 2027." />
-  <meta name="twitter:image" content="https://floatarete.com/assets/reset/og-reset.jpg" />
+  <meta name="twitter:image" content="https://floatarete.com/assets/reset/og-reset.jpg?v=1" />
 
-  <link rel="preload" href="assets/fonts/CormorantGaramond-MediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/CormorantGaramond-MediumItalic.woff2?v=1" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
   <link rel="stylesheet" href="reset.css?v=1" />
 
@@ -47,6 +47,19 @@
 </head>
 <body class="rs-page">
   <div id="root"></div>
+  <script>
+    // If this page was built while the offer was on, but the offer has now
+    // ended, hide the old offer until reset.jsx shows the "ended" version.
+    // Keep this date equal to endsAt in reset-campaign.jsx (a test checks).
+    (function () {
+      var ENDS_AT = "2027-02-01T00:00:00-05:00";
+      if (Date.now() < Date.parse(ENDS_AT)) return;
+      if (!document.querySelector("#root .rs-ticket:not(.rs-ticket--ended)")) return;
+      var html = document.documentElement;
+      html.classList.add("rs-ended-pending");
+      setTimeout(function () { html.classList.remove("rs-ended-pending"); }, 3000);
+    })();
+  </script>
   <script type="text/babel" src="reset-campaign.jsx"></script>
   <script type="text/babel" src="reset.jsx"></script>
   <script src="/booking-notice.js?v=6"></script>

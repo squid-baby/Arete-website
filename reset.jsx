@@ -61,7 +61,7 @@ function CopyCode({ attribution, place }) {
     clearTimeout(timer.current);
     if (ok) {
       setState("copied");
-      track("campaign_code_copy", { content: attribution.content, placement: place });
+      track("campaign_code_copy", { visit_zone: attribution.content, placement: place });
       timer.current = setTimeout(() => setState("idle"), 4000);
     } else {
       setState("failed");
@@ -187,7 +187,7 @@ function PlanCard({ plan, active }) {
 
 function Plans({ active, attribution }) {
   return (
-    <section className="rs-plans" id="plans" aria-labelledby="rs-plans-title">
+    <section className="rs-plans" id="plans" tabIndex={-1} aria-labelledby="rs-plans-title">
       <div className="rs-wrap">
         <header className="rs-section-head">
           <h2 id="rs-plans-title" className="rs-h2">What would you like more of this year?</h2>
@@ -221,19 +221,19 @@ function Plans({ active, attribution }) {
 const SERVICES = [
   {
     name: "Float",
-    img: "assets/reset/studio-float.webp", w: 760, h: 426,
+    img: "assets/reset/studio-float.webp?v=2", w: 760, h: 426,
     alt: "Watercolor of the float room at Areté: an open float pod glowing blue in a warm, candlelit room.",
     text: "Weightless rest in warm water with over 1,000 pounds of Epsom salt. Quiet, dark, and entirely yours."
   },
   {
     name: "Contrast therapy",
-    img: "assets/reset/studio-contrast.webp", w: 760, h: 424,
+    img: "assets/reset/studio-contrast.webp?v=2", w: 760, h: 424,
     alt: "Watercolor of the private contrast therapy room: a cold plunge tub beside an infrared sauna.",
     text: "A private hour that moves between infrared sauna and cold plunge, at your own pace."
   },
   {
     name: "Infrared sauna",
-    img: "assets/reset/studio-sauna.webp", w: 560, h: 700,
+    img: "assets/reset/studio-sauna.webp?v=2", w: 560, h: 700,
     alt: "Watercolor of the infrared sauna at Areté, its wood bench lit warm amber.",
     text: "Full-spectrum infrared heat. Warm up, slow down, and breathe."
   }
@@ -372,7 +372,7 @@ function StickyBar({ show }) {
 let landingTracked = false;
 
 function App() {
-  const now = currentTime(typeof location !== "undefined" ? location.search : "");
+  const [now, setNow] = useState(() => currentTime(typeof location !== "undefined" ? location.search : ""));
   const active = isOfferActive(now);
   const [attribution] = useState(() => {
     let storage = null;
@@ -382,9 +382,16 @@ function App() {
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
+    // The page may have been built before the offer ended (see reset.html).
+    document.documentElement.classList.remove("rs-ended-pending");
+
+    // A tab left open switches off at the end of the offer.
+    const untilEnd = Date.parse(CAMPAIGN.endsAt) - Date.now();
+    const endTimer = untilEnd > 0 && untilEnd < 864e5 ? setTimeout(() => setNow(Date.now()), untilEnd + 1000) : 0;
+
     if (!landingTracked) {
       landingTracked = true;
-      track("campaign_landing_view", { ...attribution, offer_active: active });
+      track("campaign_landing_view", { visit_source: attribution.source, visit_medium: attribution.medium, visit_campaign: attribution.campaign, visit_zone: attribution.content, offer_active: active });
     }
 
     // Plan buttons open Boulevard checkout. booking-notice.js handles the
@@ -396,7 +403,7 @@ function App() {
       if (!link) return;
       if (link.dataset.tracked === "1") { delete link.dataset.tracked; return; }
       if (active) copyText(CAMPAIGN.code);
-      const params = { plan_id: link.dataset.planId, content: attribution.content, offer_active: active };
+      const params = { plan_id: link.dataset.planId, visit_zone: attribution.content, offer_active: active };
       const plainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
       if (!plainClick || typeof window.gtag !== "function") { track("membership_checkout_click", params); return; }
       event.preventDefault();
@@ -413,6 +420,7 @@ function App() {
     const offer = document.getElementById("offer");
     const plans = document.getElementById("plans");
     const closing = document.getElementById("closing");
+    const firstPlan = document.querySelector(".rs-plan");
     let offerVisible = true;
     let closingVisible = false;
     let plansSeen = false;
@@ -423,21 +431,23 @@ function App() {
         entries.forEach((e) => {
           if (e.target === offer) offerVisible = e.isIntersecting;
           if (e.target === closing) closingVisible = e.isIntersecting;
-          if (e.target === plans) {
-            plansVisible = e.isIntersecting;
-            if (e.isIntersecting && !plansSeen) {
+          if (e.target === plans) plansVisible = e.isIntersecting;
+          if (e.target === firstPlan) {
+            if (e.intersectionRatio >= 0.5 && !plansSeen) {
               plansSeen = true;
-              track("campaign_plans_view", { content: attribution.content });
+              track("campaign_plans_view", { visit_zone: attribution.content });
             }
           }
         });
         setShowSticky(active && !offerVisible && !plansVisible && !closingVisible);
-      }, { threshold: 0 });
+      }, { threshold: [0, 0.5] });
       io.observe(offer);
       io.observe(plans);
       if (closing) io.observe(closing);
+      if (firstPlan) io.observe(firstPlan);
     }
     return () => {
+      clearTimeout(endTimer);
       window.removeEventListener("click", onClick, true);
       if (io) io.disconnect();
     };
@@ -447,8 +457,8 @@ function App() {
     <>
       <a className="rs-skip" href="#plans">Skip to memberships</a>
       <div className="rs-decor" aria-hidden="true">
-        <img className="rs-art rs-art--sprig" src="assets/reset/sprig.webp" alt="" width="263" height="508" />
-        <img className="rs-art rs-art--sun" src="assets/reset/sun-birds.webp" alt="" width="347" height="218" />
+        <img className="rs-art rs-art--sprig" src="assets/reset/sprig.webp?v=2" alt="" width="263" height="508" />
+        <img className="rs-art rs-art--sun" src="assets/reset/sun-birds.webp?v=2" alt="" width="347" height="218" />
       </div>
       <Header />
       <main>

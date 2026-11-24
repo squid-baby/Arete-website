@@ -24,7 +24,8 @@ Run `node --test` after every change. It fails when numbers disagree.
 - **End date:** change `endsAt` (the first moment the offer is over, with the Eastern offset `-05:00`) and `lastDayLabel` (the words people read).
 - **A plan price:** change it in `memberships.jsx` first, then `regularPrice` in `reset-campaign.jsx`. The test fails until both agree.
 - **Which plans show:** edit the `plans` list. Copy `checkoutPath` exactly from the matching plan in `memberships.jsx`.
-- **Preview after the end date:** open `/reset?campaign_now=2027-02-01T00:00:00-05:00`.
+- **Preview after the end date:** open `/reset?campaign_now=2027-02-01T00:00:00-05:00`. This can only move time forward, so an old link can never bring back the offer.
+- **New art or images:** files in `assets/` are cached by browsers for a year. When you replace one, raise its `?v=` number where the page uses it (`reset.jsx`, `reset.css`, `reset.html`).
 
 After the end date the page stays live. It says the offer ended, shows regular prices, and links to all memberships. Do not delete the page: the hangers stay on doors.
 
@@ -53,10 +54,20 @@ around the code clear of the pocket and the art.
 
 | Event | When | Data |
 |---|---|---|
-| `campaign_landing_view` | Once per page load | campaign_id, source, medium, content, offer_active |
-| `campaign_plans_view` | The plans first come on screen | campaign_id, content |
-| `campaign_code_copy` | The code was really copied | campaign_id, content, placement |
-| `membership_checkout_click` | A "Choose …" button was clicked (Boulevard checkout opens) | campaign_id, plan_id, content, offer_active |
+| `campaign_landing_view` | Once per page load | promo_campaign, visit_source, visit_medium, visit_campaign, visit_zone, offer_active |
+| `campaign_plans_view` | Half of the first plan card comes on screen | promo_campaign, visit_zone |
+| `campaign_code_copy` | The code was really copied | promo_campaign, visit_zone, placement |
+| `membership_checkout_click` | A "Choose …" button was clicked (Boulevard checkout opens) | promo_campaign, plan_id, visit_zone, offer_active |
+
+`visit_zone` is the `utm_content` tag (the neighborhood). The names avoid GA4's own
+traffic-source names (`campaign_id`, `source`, `medium`, `content`), which GA4 can use
+to re-credit a visit. On phones Boulevard checkout leaves the page, so the click waits
+up to 0.8 seconds for GA4 to confirm the event. The tap also copies RESET.
+
+**GA4 settings to add (no code):** register `plan_id`, `visit_zone`, `placement`,
+`offer_active` and `promo_campaign` as event-scoped custom dimensions; add
+`joinblvd.com` as an unwanted referral; mark staff traffic as internal. Mark only a
+verified purchase as a key event.
 
 `campaign_plan_select` from the brief is the same click as `membership_checkout_click`
 on this page, so only one event is sent. A click is not a purchase. No names, emails or
@@ -64,7 +75,9 @@ addresses are sent. Visits without tags are recorded as `(not set)`, never as a
 neighborhood. Tags are not added to links to other pages, because that would start a
 new GA session and break the attribution.
 
-**Purchases:** this page cannot see a Boulevard purchase. Count sales from Boulevard's
+**Purchases:** this page cannot see a Boulevard purchase. Boulevard can send its own
+conversion events to GA4 if "Conversion Analytics" is set up in Boulevard Admin with our
+Measurement ID (not confirmed; check it during the test purchase). Count sales from Boulevard's
 report of RESET redemptions. Neighborhood numbers are visits and checkout clicks only,
 unless each zone gets its own code.
 
@@ -84,3 +97,11 @@ Keep a delivery log (zone, date, number of hangers delivered).
 2. Which memberships RESET works on, and whether it is for new members only and one use per person. The page says nothing about these until confirmed.
 3. A real test purchase with RESET shows the right total, and month two is full price.
 4. Final zones for the QR codes.
+5. Whether a RESET field exists in Boulevard's online membership checkout. If not, the page must not say "paste it at checkout"; choose another way to redeem.
+6. The main memberships page says Float Ritual credits do not roll over; Boulevard's plan text says float credits expire after 60 days. One of them needs a fix.
+
+## Tests that can only run on the live site
+
+- Real GA4 events in DebugView from an iPhone and an Android phone.
+- A real RESET purchase (staff card, then refund): code field, first-month total, month two at full price.
+- Printed QR codes at actual size on two phones.
