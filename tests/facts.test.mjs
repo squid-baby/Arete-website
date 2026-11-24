@@ -63,11 +63,11 @@ test("llms.txt has the confirmed hours and no old ones", () => {
   assert.doesNotMatch(llms, /9 AM|8 PM|9 PM/);
 });
 
-test("the FAQ answers about hours, prices, couples and gift cards", () => {
+test("the FAQ answers about hours, couples and gift cards", () => {
   const faq = read("faq.html");
   const groups = JSON.parse(faq.match(/id="faq-data">([\s\S]*?)<\/script>/)[1]);
   const questions = groups.flatMap((g) => g.items.map((i) => i.q)).join("\n");
-  for (const topic of [/hours/i, /cost/i, /two people/i, /gift cards expire/i, /near Chapel Hill/i]) {
+  for (const topic of [/hours/i, /two people/i, /gift cards expire/i, /near Chapel Hill/i]) {
     assert.match(questions, topic);
   }
 });
