@@ -199,12 +199,18 @@
       if (!isLocalBooking && !isBoulevard && !anchor.dataset.blvdPath) return;
 
       var visitType = anchor.dataset.blvdVisitType || destination.searchParams.get("visitType") || "";
+      // Boulevard remembers the last visit type and route between openings.
+      // Always send a destination so a gift-card visit cannot become the
+      // default for ordinary appointment buttons (including on other pages).
+      if (!visitType) visitType = /GIFT_CARD/.test(path) ? "GIFT_CARD" : "SELF_VISIT";
+      if (!path) path = "/cart/menu";
       var locationId = destination.searchParams.get("locationId") || "";
       var urlParams = {};
       if (path) urlParams.path = path;
       if (visitType) urlParams.visitType = visitType;
       if (locationId) urlParams.locationId = locationId;
-      var fallback = isLocalBooking ? BOULEVARD_WIDGET : destination.href;
+      var fallback = boulevardUrl(path, visitType);
+      if (locationId) fallback += "&locationId=" + encodeURIComponent(locationId);
       function openBooking() {
         if (window.blvd && typeof window.blvd.openBookingWidget === "function") {
           window.blvd.openBookingWidget({ urlParams: urlParams });
