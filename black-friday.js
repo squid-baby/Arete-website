@@ -21,7 +21,7 @@
         <h2 id="bf-title">Give $150.<br>Enjoy a session on us.</h2>
         <p>Purchase a <strong>$150 Areté gift card</strong> and receive a bonus voucher for <strong>one full 60-minute float or contrast session.</strong></p>
         <p class="bf-popup__code">Use code <strong>BlackFriday</strong> at checkout.</p>
-        <a class="bf-popup__cta" href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD">Get a $150 gift card →</a>
+        <a class="bf-popup__cta" href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&visitType=GIFT_CARD">Get a $150 gift card →</a>
         <p class="bf-popup__terms">Create an Areté account or sign in when purchasing. We’ll manually add your bonus voucher to your purchaser account within 24 hours. Keep it or share it. Voucher expires 356 days after purchase.</p>
         <p class="bf-popup__terms">Offer ends November 30, 2026, at 11:59 p.m. Eastern.</p>
       </div>
