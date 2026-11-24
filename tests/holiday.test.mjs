@@ -173,7 +173,7 @@ test("analytics: each tracked link sends its event, before the booking script ca
   ];
   for (const [attrs, name] of cases) {
     const link = el(attrs);
-    listeners.click.fn({ target: { closest: () => link } });
+    listeners.click.fn({ target: { closest: (sel) => (sel === "a[data-track]" ? link : null) } });
     const last = sent.at(-1);
     assert.equal(last.name, name);
     assert.equal(last.props.campaign_id, "holiday2026");
@@ -189,13 +189,31 @@ test("analytics: each tracked link sends its event, before the booking script ca
   }
 });
 
+test("analytics: confirming the booking note is counted separately from the first booking click", () => {
+  const { sent, listeners } = load("?utm_content=winmore");
+  const button = { closest: (sel) => (sel === ".arete-booking-note__continue" ? button : null) };
+  listeners.click.fn({ target: button });
+  assert.deepEqual({ name: sent.at(-1).name, props: { ...sent.at(-1).props } },
+    { name: "holiday_booking_continue", props: { campaign_id: "holiday2026", content: "winmore" } });
+});
+
+test("the offer card and gift card are never left hidden when the script cannot run", () => {
+  assert.match(html, /if \(!window\.AreteHoliday\)[^<]*classList\.add\('is-in'\)[^<]*classList\.add\('is-seen'\)/);
+  assert.match(script, /IntersectionObserver" in root\)\) \{[\s\S]*?is-in[\s\S]*?is-seen[\s\S]*?return;/);
+  assert.match(read("holiday.css"), /@media print \{[\s\S]*?transform: none !important/);
+});
+
+test("the gift-card picture carries the real wordmark as page text, not baked into the image", () => {
+  assert.match(html, /class="hol-giftcard__text">\s*<span class="hol-giftcard__name">ARETÉ<\/span>/);
+});
+
 test("holiday.js runs before booking-notice.js, so its click listener is registered first", () => {
   assert.ok(html.indexOf('src="/holiday.js') < html.indexOf('src="/booking-notice.js'));
 });
 
 test("motion respects reduced-motion settings", () => {
   const css = read("holiday.css");
-  const animations = css.match(/animation:/g).length;
-  const guarded = css.match(/@media \(prefers-reduced-motion: no-preference\) \{([\s\S]*?)\n\}/)[1].match(/animation:/g).length;
+  const animations = css.match(/animation: hol-/g).length;
+  const guarded = css.match(/@media \(prefers-reduced-motion: no-preference\) \{([\s\S]*?)\n\}/)[1].match(/animation: hol-/g).length;
   assert.equal(guarded, animations, "every animation sits inside the no-preference block");
 });

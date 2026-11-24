@@ -83,9 +83,21 @@
     var link = event.target && event.target.closest ? event.target.closest("a[data-track]") : null;
     var ev = eventFor(link, params);
     if (ev) send(ev.name, ev.props);
+    // The booking note (booking-notice.js) asks people to confirm before
+    // Boulevard opens. Count the confirmations, so closed notes are not
+    // mistaken for bookings started.
+    var go = event.target && event.target.closest ? event.target.closest(".arete-booking-note__continue") : null;
+    if (go) send("holiday_booking_continue", { campaign_id: CONFIG.campaign_id, content: params.content });
   }, true);
 
-  if (!("IntersectionObserver" in root)) return;
+  if (!("IntersectionObserver" in root)) {
+    // No observer: show the animated pieces at rest.
+    var still = doc.querySelector(".hol-offer");
+    if (still) still.classList.add("is-in");
+    var gift = doc.querySelector(".hol-giftcard");
+    if (gift) gift.classList.add("is-seen");
+    return;
+  }
 
   // ---- Sticky gift-card bar (phones only; CSS hides it on wider screens) ----
   var bar = doc.querySelector(".hol-sticky");
@@ -100,13 +112,24 @@
         if (show) a.removeAttribute("tabindex"); else a.setAttribute("tabindex", "-1");
       });
     };
+    // A button counts as "on screen" only when most of it shows; a sliver at
+    // the bottom edge of a short phone screen does not hide the bar.
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+      entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6) visible.add(e.target); else visible.delete(e.target); });
       // Shown whenever no gift-card button is on screen, including on short
       // phones where the hero button starts just below the fold.
       setBar(visible.size === 0);
-    });
+    }, { threshold: [0, 0.6, 1] });
     Array.prototype.forEach.call(blockers, function (el) { io.observe(el); });
+  }
+
+  // ---- The offer card rises from its pocket when it scrolls into view ----
+  var offer = doc.querySelector(".hol-offer");
+  if (offer) {
+    var rise = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { offer.classList.add("is-in"); rise.disconnect(); }
+    }, { threshold: 0.35 });
+    rise.observe(offer);
   }
 
   // ---- A soft sheen crosses the gift card the first time it comes into view ----
@@ -114,7 +137,7 @@
   if (card) {
     var seen = new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting) { card.classList.add("is-seen"); seen.disconnect(); }
-    }, { threshold: 0.6 });
+    }, { threshold: 0.3 });
     seen.observe(card);
   }
 })(typeof window !== "undefined" ? window : this);

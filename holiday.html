@@ -37,21 +37,25 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&amp;display=swap" />
   <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
   <link rel="stylesheet" href="holiday.css?v=1" />
-  <!-- Lets the opening animation start from its first frame. Without JavaScript the page shows everything at rest. -->
-  <script>document.documentElement.classList.add('hol-js')</script>
+  <!-- Lets the animations start from their first frame. Without JavaScript the page shows everything at rest. -->
+  <script>
+    document.documentElement.classList.add('hol-js');
+    // Safety net: if holiday.js never runs, show the offer card at rest after 4 s.
+    setTimeout(function () { if (!window.AreteHoliday) { var o = document.querySelector('.hol-offer'), g = document.querySelector('.hol-giftcard'); if (o) o.classList.add('is-in'); if (g) g.classList.add('is-seen'); } }, 4000);
+  </script>
 </head>
 <body class="hol">
   <a class="hol-skip" href="#main">Skip to content</a>
 
   <!-- ============ A. HERO ============ -->
   <header class="hol-hero">
-    <img class="hol-hero__garland" src="assets/holiday/sprig-garland.webp" alt="" width="796" height="488" fetchpriority="high" />
-    <img class="hol-sprig hol-sprig--hero-l" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" />
-    <img class="hol-sprig hol-sprig--hero-r" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" />
+    <img class="hol-hero__garland" src="assets/holiday/art-garland-800.webp" srcset="assets/holiday/art-garland-800.webp 800w, assets/holiday/art-garland-1300.webp 1300w" sizes="(min-width: 760px) 680px, 116vw" alt="" width="1300" height="797" fetchpriority="high" />
+    <img class="hol-sprig hol-sprig--hero-l" src="assets/holiday/art-sprig.webp" alt="" width="640" height="385" loading="lazy" />
+    <img class="hol-sprig hol-sprig--hero-r" src="assets/holiday/art-sprig.webp" alt="" width="640" height="385" loading="lazy" />
 
     <a class="hol-wordmark" href="/" aria-label="Areté Float + Wellness home page">
       <span class="hol-wordmark__name">ARETÉ</span>
@@ -80,6 +84,8 @@
          href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&amp;visitType=GIFT_CARD">Give the gift of wellness</a>
       <a class="hol-btn hol-btn--ghost" href="#find">Find what’s right for you</a>
     </div>
+    <p class="hol-hero__note">Gift cards arrive by email right away <i aria-hidden="true">·</i> <span class="hol-nowrap">Rated 4.9 from 74 Google reviews</span></p>
+    <p class="hol-hero__book"><a class="hol-link" href="#book-now" data-track="booking" data-placement="hero">Or book a visit for yourself <span aria-hidden="true">→</span></a></p>
   </header>
 
   <main id="main">
@@ -87,12 +93,12 @@
     <section class="hol-offer" aria-labelledby="offer-title">
       <div class="hol-pocket">
         <div class="hol-insert">
-          <img class="hol-insert__sprig" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" />
-          <img class="hol-insert__sprig hol-insert__sprig--r" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" />
+          <img class="hol-insert__sprig" src="assets/holiday/art-corner.webp" alt="" width="640" height="482" />
+          <img class="hol-insert__sprig hol-insert__sprig--r" src="assets/holiday/art-corner.webp" alt="" width="640" height="482" />
           <p class="hol-insert__kicker" id="offer-title">A little gift for you.</p>
           <p class="hol-ribbon"><span>Bring this in for <strong>25% off retail.</strong></span></p>
           <p class="hol-insert__how">Bring your holiday offer card to the studio when you shop.</p>
-          <a class="hol-link" href="#retail">Explore the retail room <span aria-hidden="true">↓</span></a>
+          <a class="hol-link" href="#retail">How to use it <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hol-pocket__front" aria-hidden="true">
           <svg class="hol-burst" viewBox="0 0 240 112">
@@ -100,34 +106,8 @@
           </svg>
           <svg class="hol-star" viewBox="-12 -12 24 24"><path d="M0-11c.9 7 4 10.1 11 11-7 .9-10.1 4-11 11-.9-7-4-10.1-11-11 7-.9 10.1-4 11-11Z" /></svg>
         </div>
-          <!-- The brass key from the hanger, hanging from its twine. -->
-          <svg class="hol-key" viewBox="0 0 60 170" aria-hidden="true">
-            <defs>
-              <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#E2C27E" />
-                <stop offset=".45" stop-color="#AA8249" />
-                <stop offset="1" stop-color="#7A5A2C" />
-              </linearGradient>
-              <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#fff" stop-opacity="0" />
-                <stop offset=".5" stop-color="#FFF6DC" stop-opacity=".9" />
-                <stop offset="1" stop-color="#fff" stop-opacity="0" />
-              </linearGradient>
-              <clipPath id="keyshape">
-                <path d="M30 22a9 9 0 1 1 0 .1ZM18 34a9 9 0 1 1 0 .1ZM42 34a9 9 0 1 1 0 .1ZM30 46a9 9 0 1 1 0 .1ZM27 52h6v98h-6ZM33 128h12v7H33ZM33 140h9v7h-9Z" />
-              </clipPath>
-            </defs>
-            <path class="hol-key__twine" d="M30 0C24 4 34 8 28 13" />
-            <g class="hol-key__body">
-              <g fill="none" stroke="url(#brass)" stroke-width="5.5">
-                <circle cx="30" cy="22" r="8" /><circle cx="18" cy="34" r="8" /><circle cx="42" cy="34" r="8" /><circle cx="30" cy="46" r="8" />
-              </g>
-              <rect x="27" y="53" width="6" height="97" rx="2" fill="url(#brass)" />
-              <rect x="24" y="56" width="12" height="5" rx="2" fill="url(#brass)" />
-              <path d="M33 128h12v7h-5v5h4v7H33Z" fill="url(#brass)" />
-              <g clip-path="url(#keyshape)"><rect class="hol-key__glint" x="-40" y="0" width="26" height="170" fill="url(#glint)" /></g>
-            </g>
-          </svg>
+        <!-- The brass key from the hanger, on its jute twine. -->
+        <img class="hol-key" src="assets/holiday/art-key.webp" alt="" width="86" height="440" />
       </div>
     </section>
 
@@ -176,10 +156,10 @@
     <section class="hol-gift" id="gift" aria-labelledby="gift-title">
       <div class="hol-wrap hol-gift__grid">
         <div class="hol-giftcard" aria-hidden="true">
-          <div class="hol-giftcard__inner">
+          <img class="hol-giftcard__art" src="assets/holiday/art-envelope.webp" alt="" width="880" height="831" loading="lazy" />
+          <div class="hol-giftcard__text">
             <span class="hol-giftcard__name">ARETÉ</span>
             <span class="hol-giftcard__tag">Float + Wellness</span>
-            <svg class="hol-giftcard__burst" viewBox="0 0 240 112"><path d="M90.0 96.0L24.0 96.0M90.5 90.8L58.9 85.2M91.8 85.7L41.1 67.3M94.0 81.0L66.3 65.0M97.0 76.7L55.7 42.0M100.7 73.0L80.1 48.5M105.0 70.0L78.0 23.3M109.7 67.8L98.8 37.7M114.8 66.5L105.4 13.3M120.0 66.0L120.0 34.0M125.2 66.5L134.6 13.3M130.3 67.8L141.2 37.7M135.0 70.0L162.0 23.3M139.3 73.0L159.9 48.5M143.0 76.7L184.3 42.0M146.0 81.0L173.7 65.0M148.2 85.7L198.9 67.3M149.5 90.8L181.1 85.2M150.0 96.0L216.0 96.0" /></svg>
             <span class="hol-giftcard__label">Gift card</span>
           </div>
         </div>
@@ -198,7 +178,7 @@
              href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&amp;visitType=GIFT_CARD">Buy a gift card</a>
 
           <ul class="hol-gift__facts">
-            <li>Sent by email right away, so it works for a last-minute gift.</li>
+            <li>Sent by email right away, so it works for a last&#8209;minute gift.</li>
             <li>Good for one year, for any service at Areté.</li>
             <li>Want something to hold? Stop by the studio for a printed gift card in an envelope, ready to hand over.</li>
           </ul>
@@ -211,18 +191,19 @@
     <section class="hol-section hol-retail" id="retail" aria-labelledby="retail-title">
       <div class="hol-wrap hol-retail__grid">
         <div class="hol-retail__photos">
-          <img class="hol-photo hol-photo--a" src="assets/holiday/retail-room-wide.webp" width="720" height="960" loading="lazy"
+          <img class="hol-photo hol-photo--a" src="assets/holiday/retail-room-wide.webp" width="768" height="1024" loading="lazy"
                alt="The Areté retail room: wood floors, shelves of home goods and plants, and a counter by the window." />
-          <img class="hol-photo hol-photo--b" src="assets/holiday/candles-display.webp" width="520" height="616" loading="lazy"
+          <img class="hol-photo hol-photo--b" src="assets/holiday/candles-display.webp" width="814" height="964" loading="lazy"
                alt="Candles in amber and cream jars on a green velvet cloth." />
-          <img class="hol-photo hol-photo--c" src="assets/holiday/body-oils.webp" width="520" height="693" loading="lazy"
+          <img class="hol-photo hol-photo--c" src="assets/holiday/body-oils.webp" width="768" height="1024" loading="lazy"
                alt="Three bottles of golden body oil on a wooden tray." />
         </div>
 
         <div class="hol-retail__copy">
           <p class="hol-eyebrow">Your holiday gift</p>
           <h2 class="hol-h2" id="retail-title">Good things to take home.</h2>
-          <p class="hol-ribbon hol-ribbon--left"><span><strong>25% off retail</strong> when you bring in your holiday offer card.</span></p>
+          <p class="hol-ribbon hol-ribbon--left"><span><strong>25% off retail</strong></span></p>
+          <p class="hol-retail__when">when you bring in your holiday offer card.</p>
           <p>Explore a small shop inside ARETÉ with thoughtfully chosen home goods, skincare, apothecary, books, cards and gifts. Find something for someone you love—or a little something for yourself.</p>
 
           <div class="hol-terms" role="note" aria-label="How the retail offer works">
@@ -242,7 +223,7 @@
 
     <!-- ============ E. Local trust ============ -->
     <section class="hol-section hol-local" aria-labelledby="local-title">
-      <img class="hol-sprig hol-sprig--local" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" loading="lazy" />
+      <img class="hol-sprig hol-sprig--local" src="assets/holiday/art-corner.webp" alt="" width="640" height="482" loading="lazy" />
       <div class="hol-wrap hol-local__grid">
         <div class="hol-local__copy">
           <div class="hol-rule" aria-hidden="true"><span></span><svg viewBox="-12 -12 24 24"><path d="M0-11c.9 7 4 10.1 11 11-7 .9-10.1 4-11 11-.9-7-4-10.1-11-11 7-.9 10.1-4 11-11Z" /></svg><span></span></div>
@@ -256,7 +237,7 @@
         </div>
 
         <div class="hol-visit">
-          <img class="hol-visit__photo" src="assets/holiday/lounge-shop-good.webp" width="640" height="853" loading="lazy"
+          <img class="hol-visit__photo" src="assets/holiday/lounge-shop-good.webp" width="768" height="1024" loading="lazy"
                alt="The Areté lounge: a grey sofa, a rug and shelves of gifts in a bright room with wood floors." />
           <div class="hol-visit__card">
             <h3>Visit us</h3>
@@ -303,8 +284,8 @@
 
     <!-- ============ Close ============ -->
     <section class="hol-close" aria-labelledby="close-title">
-      <img class="hol-sprig hol-sprig--close-l" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" loading="lazy" />
-      <img class="hol-sprig hol-sprig--close-r" src="assets/holiday/sprig-corner.webp" alt="" width="712" height="440" loading="lazy" />
+      <img class="hol-sprig hol-sprig--close-l" src="assets/holiday/art-corner.webp" alt="" width="640" height="482" loading="lazy" />
+      <img class="hol-sprig hol-sprig--close-r" src="assets/holiday/art-corner.webp" alt="" width="640" height="482" loading="lazy" />
       <div class="hol-wrap hol-wrap--narrow">
         <h2 class="hol-close__title" id="close-title">A little more room for yourself, and the people you love.</h2>
         <div class="hol-actions hol-actions--center" data-sticky-hide>
@@ -322,7 +303,7 @@
         <span class="hol-wordmark__name">ARETÉ</span>
         <span class="hol-wordmark__tag">Float + Wellness</span>
       </a>
-      <address>213 E. Braxton Foushee St, Carrboro, NC 27510 · <a href="tel:+19196369899" data-track="phone" data-placement="footer">919-636-9899</a></address>
+      <address><span>213 E. Braxton Foushee St,</span> <span>Carrboro, NC 27510</span> <span><a href="tel:+19196369899" data-track="phone" data-placement="footer">919-636-9899</a></span></address>
       <ul class="hol-footer__links">
         <li><a href="/">Home</a></li>
         <li><a href="/gift-cards.html">Gift cards</a></li>
@@ -338,7 +319,7 @@
   <div class="hol-sticky" aria-hidden="true">
     <a class="hol-btn hol-btn--primary" tabindex="-1" data-track="gift_card" data-placement="sticky"
        href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&amp;visitType=GIFT_CARD">Buy a gift card</a>
-    <a class="hol-btn hol-btn--ghost-light" tabindex="-1" href="#retail">25% off retail</a>
+    <a class="hol-btn hol-btn--ghost-light" tabindex="-1" data-track="booking" data-placement="sticky" href="#book-now">Book a visit</a>
   </div>
 
   <script src="/holiday.js?v=1"></script>
