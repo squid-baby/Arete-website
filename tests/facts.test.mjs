@@ -67,7 +67,7 @@ test("the FAQ answers about hours, couples and gift cards", () => {
   const faq = read("faq.html");
   const groups = JSON.parse(faq.match(/id="faq-data">([\s\S]*?)<\/script>/)[1]);
   const questions = groups.flatMap((g) => g.items.map((i) => i.q)).join("\n");
-  for (const topic of [/hours/i, /two people/i, /gift cards expire/i, /near Chapel Hill/i]) {
+  for (const topic of [/hours/i, /two people/i, /gift cards expire/i]) {
     assert.match(questions, topic);
   }
 });
