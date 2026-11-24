@@ -2,7 +2,7 @@
 // "A Year of Possibility" door-hanger landing page (floatarete.com/reset).
 // Offer settings, prices and plan links live in reset-campaign.jsx.
 const { useState, useEffect, useRef } = React;
-const { CAMPAIGN, planPricing, checkoutUrl, currentTime, isOfferActive, readAttribution, track } = ResetCampaign;
+const { CAMPAIGN, planPricing, checkoutUrl, currentTime, isOfferActive, readAttribution, track, trackThenContinue } = ResetCampaign;
 
 const PHONE = "919-636-9899";
 const PHONE_HREF = "tel:+19196369899";
@@ -112,16 +112,16 @@ function Hero({ active, attribution }) {
   return (
     <section className="rs-hero" aria-labelledby="rs-title">
       <div className="rs-hero__inner">
-        <p className="rs-eyebrow">A gift for our neighbors</p>
+        <p className="rs-eyebrow">{active ? "A gift for our neighbors" : "Elemental wellness in Carrboro"}</p>
         <h1 id="rs-title" className="rs-title">A Year of <span>Possibility</span></h1>
         <span className="rs-rule" aria-hidden="true" />
-        <p className="rs-lede">Your best you is on the other side of a good&nbsp;reset.</p>
+        <p className="rs-lede">Your best you is on the other side <br className="rs-br" />of a good&nbsp;reset.</p>
 
         {active ?
           <div className="rs-ticket" id="offer">
             <p className="rs-ticket__head"><IconKey /> Your gift</p>
             <p className="rs-ticket__offer">
-              <strong>${CAMPAIGN.discount} off</strong> your first month of a membership.
+              <strong>${CAMPAIGN.discount} off</strong> your first month of a&nbsp;membership.
             </p>
             <CopyCode attribution={attribution} place="hero" />
             <p className="rs-ticket__expiry">Valid through {CAMPAIGN.lastDayLabel}.</p>
@@ -179,7 +179,7 @@ function PlanCard({ plan, active }) {
         <a className="rs-btn rs-btn--plan" href={checkoutUrl(plan)} data-plan-id={plan.id}>
           <span>Choose {plan.name}</span><IconArrow />
         </a>
-        {active && <p className="rs-plan__code">Enter code <b>{CAMPAIGN.code}</b> at checkout.</p>}
+        {active && <p className="rs-plan__code">We copy code <b>{CAMPAIGN.code}</b> when you tap. Paste it at checkout.</p>}
       </div>
     </article>
   );
@@ -199,8 +199,8 @@ function Plans({ active, attribution }) {
 
         {active &&
           <ol className="rs-steps" aria-label="How to use your gift">
-            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens right here, through Boulevard, our booking system.</span></li>
-            <li><span className="rs-steps__n">2</span><span><b>Enter {CAMPAIGN.code} at checkout.</b> ${CAMPAIGN.discount} comes off your first month.</span></li>
+            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens in Boulevard, our booking system. We copy your code for you.</span></li>
+            <li><span className="rs-steps__n">2</span><span><b>Paste {CAMPAIGN.code} at checkout.</b> ${CAMPAIGN.discount} comes off your first month.</span></li>
             <li><span className="rs-steps__n">3</span><span><b>Book your first visit.</b> Stay in the same window after you pay to pick a day and time.</span></li>
           </ol>
         }
@@ -262,7 +262,7 @@ function Studio() {
           <blockquote>
             <p>“Perfect experience. The float tank is so unbelievably relaxing--an experience of true rest--and every detail had been carefully attended to.”</p>
           </blockquote>
-          <figcaption>Batsheva G. · Google review <span>· Rated 4.9 from 74 Google reviews (October 2026)</span></figcaption>
+          <figcaption>Batsheva G. · Google review <span>Rated 4.9 from 74 Google reviews (October 2026)</span></figcaption>
         </figure>
       </div>
     </section>
@@ -282,7 +282,7 @@ function Faq({ active }) {
     },
     {
       q: "Can I pause or cancel?",
-      a: <>After the three-month minimum, yes. Write to <a href={`mailto:${EMAIL}`}>{EMAIL}</a> at least 14 days before your renewal date. You can pause once, for up to two months. Your member agreement has the complete terms.</>
+      a: <>After the three-month minimum, yes. Write to <a href={`mailto:${EMAIL}`}>{EMAIL}</a> at least 14 days before your renewal date. You can pause once, for up to two months. While paused, member rates and benefits stop, and your membership must renew once after a pause before you can cancel. Your member agreement has the complete terms.</>
     },
     {
       q: "When do I book my first visit?",
@@ -315,7 +315,7 @@ function Faq({ active }) {
 // ---------- Closing ----------
 function Closing({ active }) {
   return (
-    <section className="rs-close" aria-labelledby="rs-close-title">
+    <section className="rs-close" id="closing" aria-labelledby="rs-close-title">
       <div className="rs-close__band">
         <h2 id="rs-close-title" className="rs-close__title">It’s finally time.</h2>
         {active ?
@@ -362,7 +362,7 @@ function Footer() {
 function StickyBar({ show }) {
   return (
     <div className={`rs-sticky ${show ? "is-shown" : ""}`} aria-hidden={!show}>
-      <p><b>{CAMPAIGN.code}</b> · ${CAMPAIGN.discount} off your first month</p>
+      <p><b>{CAMPAIGN.code}</b> · ${CAMPAIGN.discount} off month one</p>
       <a className="rs-btn rs-btn--primary rs-btn--small" href="#plans" tabIndex={show ? 0 : -1} data-scroll-cta="sticky">Find your ritual</a>
     </div>
   );
@@ -390,9 +390,21 @@ function App() {
     // Plan buttons open Boulevard checkout. booking-notice.js handles the
     // click at the document level and stops it there, so listen on the
     // window first to record it.
+    // The tap also copies the code, so it is ready to paste in checkout.
     function onClick(event) {
       const link = event.target.closest && event.target.closest("a[data-plan-id]");
-      if (link) track("membership_checkout_click", { plan_id: link.dataset.planId, content: attribution.content, offer_active: active });
+      if (!link) return;
+      if (link.dataset.tracked === "1") { delete link.dataset.tracked; return; }
+      if (active) copyText(CAMPAIGN.code);
+      const params = { plan_id: link.dataset.planId, content: attribution.content, offer_active: active };
+      const plainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+      if (!plainClick || typeof window.gtag !== "function") { track("membership_checkout_click", params); return; }
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      trackThenContinue("membership_checkout_click", params, () => {
+        link.dataset.tracked = "1";
+        link.click();
+      });
     }
     window.addEventListener("click", onClick, true);
 
@@ -400,7 +412,9 @@ function App() {
     // except while the plans are on screen.
     const offer = document.getElementById("offer");
     const plans = document.getElementById("plans");
+    const closing = document.getElementById("closing");
     let offerVisible = true;
+    let closingVisible = false;
     let plansSeen = false;
     let plansVisible = false;
     let io;
@@ -408,6 +422,7 @@ function App() {
       io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
           if (e.target === offer) offerVisible = e.isIntersecting;
+          if (e.target === closing) closingVisible = e.isIntersecting;
           if (e.target === plans) {
             plansVisible = e.isIntersecting;
             if (e.isIntersecting && !plansSeen) {
@@ -416,10 +431,11 @@ function App() {
             }
           }
         });
-        setShowSticky(active && !offerVisible && !plansVisible);
+        setShowSticky(active && !offerVisible && !plansVisible && !closingVisible);
       }, { threshold: 0 });
       io.observe(offer);
       io.observe(plans);
+      if (closing) io.observe(closing);
     }
     return () => {
       window.removeEventListener("click", onClick, true);
@@ -431,8 +447,8 @@ function App() {
     <>
       <a className="rs-skip" href="#plans">Skip to memberships</a>
       <div className="rs-decor" aria-hidden="true">
-        <img className="rs-art rs-art--sprig" src="assets/reset/sprig.webp" alt="" width="235" height="480" />
-        <img className="rs-art rs-art--sun" src="assets/reset/sun-birds.webp" alt="" width="300" height="180" />
+        <img className="rs-art rs-art--sprig" src="assets/reset/sprig.webp" alt="" width="263" height="508" />
+        <img className="rs-art rs-art--sun" src="assets/reset/sun-birds.webp" alt="" width="347" height="218" />
       </div>
       <Header />
       <main>

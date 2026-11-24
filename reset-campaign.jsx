@@ -23,7 +23,7 @@
     discount: 25,
     // The first moment the offer is over: midnight Eastern, start of Feb 1.
     endsAt: "2027-02-01T00:00:00-05:00",
-    lastDayLabel: "January 31, 2027",
+    lastDayLabel: "January\u00a031,\u00a02027",
     minimumMonths: 3,
     plans: [
       {
@@ -136,6 +136,21 @@
     return true;
   }
 
+  // Send an event, then continue (for example, open checkout). On phones
+  // Boulevard checkout leaves this page, and GA4 can lose an event that has
+  // not been sent yet. Continue when GA4 confirms, or after `waitMs` at most.
+  function trackThenContinue(name, params, proceed, waitMs) {
+    var wait = waitMs || 800;
+    var done = false;
+    function go() { if (!done) { done = true; proceed(); } }
+    var payload = {};
+    for (var k in params) if (Object.prototype.hasOwnProperty.call(params, k)) payload[k] = params[k];
+    payload.event_callback = go;
+    payload.event_timeout = wait;
+    if (!track(name, payload)) { go(); return; }
+    global.setTimeout(go, wait);
+  }
+
   global.ResetCampaign = {
     CAMPAIGN: CAMPAIGN,
     planPricing: planPricing,
@@ -143,6 +158,7 @@
     currentTime: currentTime,
     isOfferActive: isOfferActive,
     readAttribution: readAttribution,
-    track: track
+    track: track,
+    trackThenContinue: trackThenContinue
   };
 })(typeof window !== "undefined" ? window : globalThis);

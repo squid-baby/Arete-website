@@ -105,12 +105,33 @@ test("events go to GA4 with the campaign id, and are skipped without GA", () => 
   assert.equal(rc.track("campaign_code_copy", {}), false);
 });
 
+test("checkout waits for GA4 to confirm the event, but never longer than the limit", () => {
+  const timers = [];
+  const events = [];
+  const window = { gtag: (...args) => events.push(args), setTimeout: (fn, ms) => timers.push({ fn, ms }) };
+  vm.runInNewContext(compileJsx(read("reset-campaign.jsx"), "reset-campaign.jsx"), { window, URLSearchParams, JSON, Date, Math });
+  const { trackThenContinue } = window.ResetCampaign;
+  let opened = 0;
+  trackThenContinue("membership_checkout_click", { plan_id: "float_ritual" }, () => opened++);
+  assert.equal(opened, 0, "waits for GA4");
+  events[0][2].event_callback();          // GA4 confirms
+  timers[0].fn();                          // the limit also passes
+  assert.equal(opened, 1, "opens checkout exactly once");
+  assert.equal(timers[0].ms, 800);
+  assert.equal(events[0][2].plan_id, "float_ritual");
+  // Without GA (blocked or not loaded), checkout opens at once.
+  delete window.gtag;
+  trackThenContinue("membership_checkout_click", {}, () => opened++);
+  assert.equal(opened, 2);
+});
+
 test("built page: offer, prices, terms and real checkout links", () => {
   const html = renderReset();
   assert.match(html, /<h1[^>]*>A Year of <span>Possibility<\/span><\/h1>/);
   assert.match(html, /A gift for our neighbors/);
-  assert.match(html, /Your best you is on the other side of a good/);
-  assert.match(html, /Valid through January 31, 2027/);
+  assert.match(html, /Your best you is on the other side <br class="rs-br"\/>of a good/);
+  assert.ok(html.includes(`Valid through ${rc.CAMPAIGN.lastDayLabel}`));
+  assert.equal(rc.CAMPAIGN.lastDayLabel.replace(/\u00a0/g, " "), "January 31, 2027");
   assert.match(html, /Copy code/);
   assert.match(html, /Find your ritual/);
   for (const plan of rc.CAMPAIGN.plans) {
