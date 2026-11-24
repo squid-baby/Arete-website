@@ -98,6 +98,12 @@
 /retail                                      /retail.html                  301
 
 
+# ---------- Campaign pages (printed QR codes point here; keep them alive) ----------
+# 200 = the address bar keeps the short printed address. Query strings
+# (utm_source etc.) pass through unchanged.
+/holiday                                     /holiday.html                 200
+
+
 # =============================================================================
 # Optional safety net:
 # Catch any remaining Wix URLs we missed and send to homepage rather than 404.

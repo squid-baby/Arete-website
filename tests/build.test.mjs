@@ -116,9 +116,13 @@ test("sitemap, llms.txt and canonicals use the final URLs, not ones that redirec
   }
 });
 
-test("every canonical page is in the sitemap", () => {
+test("every canonical page is in the sitemap (except pages kept out of search)", () => {
   const sitemap = read(root, "sitemap.xml");
   for (const f of readdirSync(root).filter((f) => f.endsWith(".html"))) {
+    if (/<meta name="robots" content="noindex/.test(read(root, f))) {
+      assert.ok(!sitemap.includes(`/${f.replace(/\.html$/, "")}<`), `${f} is noindex but in the sitemap`);
+      continue;
+    }
     const canonical = read(root, f).match(/rel="canonical" href="([^"]+)"/);
     if (canonical) assert.ok(sitemap.includes(`<loc>${canonical[1]}</loc>`), `${canonical[1]} (${f}) missing`);
   }

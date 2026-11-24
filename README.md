@@ -38,6 +38,8 @@ styles.css                         , global tokens, nav, fonts
 _redirects                         , Netlify 301 redirects
 docs/HANDOFF.md                    , full project context and what's left to build
 docs/SEO-PLAN.md                   , SEO checklist and schema boilerplates
+holiday.html / .css / .js          , Holiday 2026 door-hanger page at /holiday
+docs/HOLIDAY-CAMPAIGN.md           , QR codes, analytics, offer rules for /holiday
 docs/AI-SEARCH-PLAN.md             , plan to get Areté into AI assistant answers
 scripts/build.mjs                  , build step Netlify runs (see above)
 AGENTS.md                          , instructions for AI coding assistants (Codex, Claude)
