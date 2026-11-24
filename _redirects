@@ -98,6 +98,13 @@
 /retail                                      /retail.html                  301
 
 
+# ---------- Campaign pages ----------
+# Door-hanger QR codes print floatarete.com/reset. Keep this rule after the
+# offer ends: the page then shows a "this offer has ended" message.
+# A 200 rule shows reset.html at /reset and keeps ?utm_... tags in the address.
+/reset                                       /reset.html                   200
+
+
 # =============================================================================
 # Optional safety net:
 # Catch any remaining Wix URLs we missed and send to homepage rather than 404.

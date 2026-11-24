@@ -62,7 +62,7 @@ function fakeElement(tag, textContent = "") {
   };
 }
 
-function fakeBrowser(html) {
+function fakeBrowser(html, search = "") {
   // Inline <script id="..."> blocks hold page data (FAQ, team, blog posts).
   const dataBlocks = {};
   for (const m of html.matchAll(/<script[^>]*\bid="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)) {
@@ -87,7 +87,7 @@ function fakeBrowser(html) {
     document, React,
     ReactDOM: { createRoot: () => ({ render: (el) => { rendered = el; } }) },
     matchMedia: () => ({ matches: false, addEventListener: noop, removeEventListener: noop, addListener: noop, removeListener: noop }),
-    location: { href: "https://floatarete.com/", pathname: "/", search: "", hash: "" },
+    location: { href: "https://floatarete.com/" + search, pathname: "/", search, hash: "" },
     localStorage: { getItem: () => null, setItem: noop, removeItem: noop },
     addEventListener: noop, removeEventListener: noop, postMessage: noop,
     setTimeout: () => 0, clearTimeout: noop, setInterval: () => 0, clearInterval: noop,
@@ -112,8 +112,9 @@ export function compileJsx(src, filename) {
 }
 
 // Render one page: run its compiled scripts against the fake browser.
-export function renderPage(html, compiled) {
-  const { window, headTags, getRendered } = fakeBrowser(html);
+// `search` sets the page address query (tests use it, e.g. ?campaign_now=...).
+export function renderPage(html, compiled, { search = "" } = {}) {
+  const { window, headTags, getRendered } = fakeBrowser(html, search);
   const context = vm.createContext(window);
   for (const [name, code] of compiled) vm.runInContext(code, context, { filename: name });
   const app = getRendered();
