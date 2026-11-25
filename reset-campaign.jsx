@@ -58,14 +58,12 @@
   };
 
   // ---------- Prices ----------
-  // First month, monthly price after that, and the total for the minimum term.
+  // First month and the monthly price after that.
   function planPricing(plan, campaign) {
     var c = campaign || CAMPAIGN;
-    var first = Math.max(0, plan.regularPrice - c.discount);
     return {
-      first: first,
-      recurring: plan.regularPrice,
-      minimumTotal: first + plan.regularPrice * (c.minimumMonths - 1)
+      first: Math.max(0, plan.regularPrice - c.discount),
+      recurring: plan.regularPrice
     };
   }
 

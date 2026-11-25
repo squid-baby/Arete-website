@@ -165,7 +165,7 @@ function PlanCard({ plan, active }) {
               <span className="rs-price__unit">first month</span>
             </p>
             <p className="rs-price__then">
-              Then ${p.recurring}/month. {CAMPAIGN.minimumMonths}-month minimum: <strong>${p.minimumTotal}</strong> for your first {CAMPAIGN.minimumMonths} months, plus any tax.
+              Then ${p.recurring}/month. {CAMPAIGN.minimumMonths}-month minimum.
             </p>
           </> :
           <>
@@ -199,7 +199,7 @@ function Plans({ active, attribution }) {
 
         {active &&
           <ol className="rs-steps" aria-label="How to use your gift">
-            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens in Boulevard, our booking system. We copy your code for you.</span></li>
+            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens in Boulevard, our booking system.</span></li>
             <li><span className="rs-steps__n">2</span><span><b>Paste {CAMPAIGN.code} at checkout.</b> ${CAMPAIGN.discount} comes off your first month.</span></li>
             <li><span className="rs-steps__n">3</span><span><b>Book your first visit.</b> Stay in the same window after you pay to pick a day and time.</span></li>
           </ol>
