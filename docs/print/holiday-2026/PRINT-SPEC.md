@@ -24,7 +24,7 @@ shop converts to CMYK, so ask for a printed proof.
 
 | Part | Size |
 |---|---|
-| Front panel | 3.10 W × 2.35 H in, straight top edge with a 1.00 × 0.30 in thumb notch |
+| Front panel | 3.10 W × 2.35 H in, straight top edge with a 1.00 × 0.36 in thumb notch (it frames the card's wreath) |
 | Side tabs | 0.25 in, fold back behind the panel |
 | Bottom tab | 0.20 in, folds back inside; the card stands on it |
 | Inside width | 2.60 in (card 2.50 + 0.05 each side) |
@@ -39,12 +39,16 @@ centered (0.20 in from each side). The card top is then 4.85 in below the top tr
 
 ## Card (2.5 × 2.5)
 
-- In the pocket only the top 0.35 in shows (0.65 in at the notch): sprigs and the hole.
-  All words start below 0.70 in, so the pocket never cuts a line in half.
-- Punch a 1/4 in hole at the top center, 0.25 in from the top edge. Tie the key with jute
-  twine so the key lies on the pocket front over the sunburst, as in the art.
-- QR code: `https://floatarete.com/key` (version 2, 25 × 25 modules, 0.92 in with its white
-  border). `/key` forwards to `/holiday` with the door-hanger tags. It decodes from the card
+- Top of the card: a garland that joins a small wreath at the center. In the pocket the
+  top 0.35 in shows, and the notch shows the whole wreath (down to 0.71 in).
+  All words start below 0.75 in, so the pocket never cuts a line in half.
+- Punch a 1/4 in hole in the **center of the wreath: centered left to right, 0.38 in below
+  the card's top edge**. The printed opening is 0.31 in across, so the punch has a little
+  room. A card-sized template with the hole marked makes this fast and keeps it centered.
+- Tie the key with jute twine through that hole so the key lies on the pocket front over
+  the sunburst.
+- QR code: `https://floatarete.com/key` (version 2, 25 × 25 modules, 0.76 in including its
+  quiet zone, printed on the cream card). `/key` forwards to `/holiday` with the door-hanger tags. It decodes from the card
   file at 600, 300 and 150 ppi. **The website change must be live before printing.**
 
 ## Print shop
