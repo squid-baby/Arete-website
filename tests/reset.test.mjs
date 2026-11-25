@@ -194,6 +194,20 @@ test("the early 'offer ended' guard in reset.html uses the same end time", () =>
   assert.ok(html.includes(`var ENDS_AT = "${rc.CAMPAIGN.endsAt}";`));
 });
 
+test("/holiday-door (printed QR code) goes to /reset with the door-hanger tags", () => {
+  const rule = read("_redirects").match(/^\/holiday-door\s+(\S+)\s+(\d+)$/m);
+  assert.ok(rule, "no /holiday-door rule");
+  assert.equal(rule[2], "302");
+  const target = new URL(rule[1], "https://floatarete.com");
+  assert.equal(target.pathname, "/reset");
+  assert.deepEqual(Object.fromEntries(target.searchParams), {
+    utm_source: "doorhanger", utm_medium: "print", utm_campaign: "reset2027", utm_content: "all_doors",
+  });
+  // The /reset page reads these tags and accepts them.
+  assert.deepEqual({ ...rc.readAttribution(target.search, null) },
+    { source: "doorhanger", medium: "print", campaign: "reset2027", content: "all_doors" });
+});
+
 test("/reset shows reset.html and keeps the address (200 rewrite)", () => {
   assert.match(read("_redirects"), /^\/reset\s+\/reset\.html\s+200$/m);
 });
