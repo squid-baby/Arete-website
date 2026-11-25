@@ -39,12 +39,12 @@ centered (0.20 in from each side). The card top is then 4.85 in below the top tr
 
 ## Card (2.5 × 2.5)
 
-- Top of the card: a garland that joins a small wreath at the center. In the pocket the
-  top 0.35 in shows, and the notch shows the whole wreath (down to 0.71 in).
+- Top of the card: a small evergreen wreath (the same sprig art and colours as the corner
+  sprigs). In the pocket the top 0.35 in shows, and the notch shows the whole wreath.
   All words start below 0.75 in, so the pocket never cuts a line in half.
-- Punch a 1/4 in hole in the **center of the wreath: centered left to right, 0.38 in below
-  the card's top edge**. The printed opening is 0.31 in across, so the punch has a little
-  room. A card-sized template with the hole marked makes this fast and keeps it centered.
+- Punch a 1/4 in hole in the **centre of the wreath: centred left to right, 0.39 in below
+  the card's top edge**. The printed opening is 0.35 in across, so the punch has about
+  0.05 in of room on every side. A card-sized template with the hole marked keeps it centred.
 - Tie the key with jute twine through that hole so the key lies on the pocket front over
   the sunburst.
 - QR code: `https://floatarete.com/key` (version 2, 25 × 25 modules, 0.76 in including its
