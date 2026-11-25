@@ -35,7 +35,7 @@ body{color:${C.ink};-webkit-font-smoothing:antialiased}
 img{display:block}
 `;
 const doc = (w, h, body, extra = "") => `<!doctype html><html><head><meta charset="utf-8"><style>@page{size:${w}in ${h}in;margin:0}${CSS}${extra}</style></head><body style="width:${w}in;height:${h}in">${body}</body></html>`;
-const dots = (items) => items.join('<i class="dot"></i>');
+const dots = (items, gap) => items.join('<i class="dot"></i>');
 const mark = (pt, style = "") => `<div class="abs c mark" style="font-size:${pt}pt;letter-spacing:.46em;padding-left:.46em;${style}">${COPY.wordmark}</div>`;
 
 // ---------- Hanger front (printed layer; the pocket and card sit on top) ----------
@@ -88,9 +88,10 @@ export function cardArt() {
 <div class="abs c caps" style="top:2.73in;font-size:${T.offerValid}pt;letter-spacing:.14em">${k.valid}</div>`;
 }
 
-// ---------- Pocket front panel (3.1 × 3.1): plain terracotta with the wordmark ----------
+// ---------- Pocket front panel (3.1 × 3.1): terracotta with the wordmark and the service line ----------
 export function pocketArt() {
-  return mark(T.pocketWordmark, `top:${POCKET.mark.y}in;color:${C.cream}`);
+  return mark(T.pocketWordmark, `top:${POCKET.mark.y}in;color:${C.cream}`) +
+    `<div class="abs c caps" style="top:${POCKET.mark.servicesY}in;font-size:${T.pocketServices}pt;letter-spacing:.15em;color:${C.cream}">${dots(COPY.back.services)}</div>`;
 }
 
 // ---------- Print pages ----------
@@ -152,7 +153,7 @@ export function heroPage() {
 ${at(0.95, 0.55, assembledFront())}${cap(0.95, 9.28, "Front, assembled", "pocket, card and key in place")}
 ${at(5.05, 0.55, assembledBack())}${cap(5.05, 9.28, "Back", "the story")}
 ${at(9.75, 0.95, cardMock(true), "transform:rotate(3deg);transform-origin:50% 0")}${cap(9.55, 4.35, "The card, 3 × 3 in", "the offer and the QR code")}
-${at(9.75, 5.45, pocketMock())}${cap(9.55, 8.8, "The pocket, 3.1 × 3.1 in", "plain, with a curved top")}
+${at(9.75, 5.45, pocketMock())}${cap(9.55, 8.8, "The pocket, 3.1 × 3.1 in", "wordmark, services, curved top")}
 </div>`);
 }
 

@@ -32,7 +32,7 @@ export const QR = { target: "https://floatarete.com/reset", file: "qr-reset.svg"
 // Type sizes in points. The handoff minimum is 6 pt, and 6.5 pt for must-read text.
 export const TYPE = {
   frontHeadline: 44, wordmark: 15, backHeadline: 30, aside: 11.5, frontLine: 13.5, services: 7, footer: 7,
-  offerLabel: 7, offerAmount: 32, offerTerms: 11, offerCode: 8, offerUrl: 6.6, offerValid: 6.5, pocketWordmark: 11,
+  offerLabel: 7, offerAmount: 32, offerTerms: 11, offerCode: 8, offerUrl: 6.6, offerValid: 6.5, pocketWordmark: 12, pocketServices: 7,
   cardMessage: 17,
 };
 export const MIN_TYPE = 6, MIN_READING_TYPE = 6.5;
@@ -60,7 +60,7 @@ export const POCKET = {
   // Top edge: high at both sides, a soft slope to a shoulder, then a thumb scoop.
   top: { shoulderX: 1.05, shoulderY: 0.2, scoopDepth: 0.55 },
   margin: 0.15, // keep-out from every cut and score line
-  mark: { y: 2.5 }, // the small wordmark printed on the pocket, below the key
+  mark: { y: 2.4, servicesY: 2.72 }, // wordmark and service line on the pocket, below the key
   onHanger: { x: 0.2, bottomFoldAboveTrim: 0.2 },
 };
 POCKET.onHanger.y = HANGER.h - POCKET.onHanger.bottomFoldAboveTrim - POCKET.h;                         // 5.2

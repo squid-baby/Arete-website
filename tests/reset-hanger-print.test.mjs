@@ -35,6 +35,9 @@ test("offer matches the live /reset page settings", () => {
 test("the offer and the QR code are on the card only, never on the pocket", () => {
   const pocket = pages.pocketArt();
   for (const word of ["RESET", "$25", "floatarete", "<svg", "Valid"]) assert.ok(!pocket.includes(word), `pocket must not contain ${word}`);
+  for (const service of COPY.back.services) assert.ok(pocket.includes(service), `pocket shows ${service}`);
+  assert.ok(pocket.includes("ARETÉ"));
+  assert.ok(POCKET.mark.servicesY + 0.1 <= POCKET.h - POCKET.margin, "service line clears the bottom fold");
   const card = pages.cardArt();
   for (const word of ["$25 off", "RESET", "floatarete.com/reset", "Valid through January 31, 2027", "<svg"]) assert.ok(card.includes(word), `card needs ${word}`);
   for (const side of [pages.frontArt(), pages.backArt()]) assert.ok(!side.includes("$25") && !side.includes("<svg"));
@@ -42,7 +45,7 @@ test("the offer and the QR code are on the card only, never on the pocket", () =
 
 test("type sizes meet the print minimum", () => {
   for (const [name, pt] of Object.entries(TYPE)) assert.ok(pt >= spec.MIN_TYPE, `${name} is ${pt} pt`);
-  for (const name of ["offerUrl", "offerValid", "services", "footer"]) assert.ok(TYPE[name] >= spec.MIN_READING_TYPE, `${name} is ${TYPE[name]} pt`);
+  for (const name of ["offerUrl", "offerValid", "services", "footer", "pocketServices"]) assert.ok(TYPE[name] >= spec.MIN_READING_TYPE, `${name} is ${TYPE[name]} pt`);
 });
 
 test("card: size, QR code and room for the hole punch", () => {

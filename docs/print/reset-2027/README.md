@@ -11,7 +11,7 @@ Look at `out/mockup-hero.jpg` first.
 |---|---|---|
 | Hanger front | 3.5 × 8.5 in | "A Year of Possibility", ARETÉ, "Your best you is on the other side of a good reset.", hills. The pocket is glued here. |
 | Hanger back | 3.5 × 8.5 in | "Only you can hit the reset button.", the two "Perhaps…" lines, hills and sun, ARETÉ, service line, footer. |
-| Pocket | 3.1 × 3.1 in front panel | Plain terracotta with a small ARETÉ. Curved top edge with a thumb scoop. **No offer and no QR code.** |
+| Pocket | 3.1 × 3.1 in front panel | Terracotta with ARETÉ and the service line (FLOAT · SAUNA · COLD PLUNGE · MASSAGE). Curved top edge with a thumb scoop. **No offer and no QR code.** |
 | Card | 3 × 3 in | "A little more room for yourself.", NEW YEAR OFFER, $25 off your first month of a membership, Use code RESET, QR code, floatarete.com/reset, Valid through January 31, 2027. |
 
 The card stands inside the pocket. Its top shows in the curved opening, with the
