@@ -28,8 +28,8 @@ test("offer matches the live /reset page settings", () => {
   assert.match(campaign, /discount: 25/);
   assert.match(campaign, /endsAt: "2027-02-01T00:00:00-05:00"/);
   const redirects = fs.readFileSync(new URL("../_redirects", import.meta.url), "utf8");
-  assert.match(redirects, /^\/holiday-door\s/m, "the QR address must exist on the site");
-  assert.equal(QR.target, "https://floatarete.com/holiday-door");
+  assert.match(redirects, /^\/reset\s/m, "the QR address must exist on the site");
+  assert.equal(QR.target, "https://floatarete.com/reset");
 });
 
 test("the offer and the QR code are on the card only, never on the pocket", () => {

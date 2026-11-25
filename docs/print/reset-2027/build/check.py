@@ -5,7 +5,7 @@ from pathlib import Path
 import cv2
 
 OUT = Path(__file__).resolve().parent.parent / "out"
-TARGET = "https://floatarete.com/holiday-door"
+TARGET = "https://floatarete.com/reset"
 ALLOWED = ("CormorantGaramond-MediumItalic", "LeJour-Serif", "GlacialIndifference-Regular")
 SIZES = {"1-hanger-front.pdf": (270, 630), "2-hanger-back.pdf": (270, 630), "3-pocket-sheet.pdf": (612, 792), "4-gift-card.pdf": (225, 225)}
 fails = []

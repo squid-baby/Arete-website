@@ -61,7 +61,7 @@ Needs Playwright with Chromium, and Python with `pillow`, `numpy`, `opencv-pytho
 - **The die line is not in the PDFs.** It is only in the proof picture.
 - **Colours are RGB.** No CMYK conversion or soft proof was made (no colour
   profile and no Ghostscript in the build machine). Ask the shop for a printed proof.
-- **The `/holiday-door` address** must be live on floatarete.com before printing.
+- The QR code opens `https://floatarete.com/reset` directly (owner's decision). It carries no door-hanger tracking tags, so Google Analytics cannot separate hanger scans from other visits to that page.
 - A design review by a second person was not done.
 
 ## Pocket on the Cricut

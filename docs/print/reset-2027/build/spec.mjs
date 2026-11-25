@@ -27,7 +27,7 @@ export const COPY = {
   card: { message: ["A little more room", "for yourself."] }, // the card also carries COPY.offer
 };
 
-export const QR = { target: "https://floatarete.com/holiday-door", file: "qr-holiday-door.svg", modules: 37, size: 0.96 };
+export const QR = { target: "https://floatarete.com/reset", file: "qr-reset.svg", modules: 37, size: 0.96 };
 
 // Type sizes in points. The handoff minimum is 6 pt, and 6.5 pt for must-read text.
 export const TYPE = {
