@@ -202,6 +202,7 @@ function PlanCard({ plan }) {
             {line.replace(/^~/, "")}
           </li>
         ))}
+        <li>15% off all products through our Thorne dispensary</li>
       </ul>
 
       {plan.chips && plan.chips.length > 0 &&
@@ -234,6 +235,7 @@ function FeatureCard({ plan }) {
         <p className="mp__feature-tag">Float, sauna, red light, and contrast therapy, on tap. The membership for the person who's already here weekly.</p>
         <ul className="mp__list" style={{ marginTop: 22 }}>
           {plan.includes.map((l, i) => <li key={i}>{l}</li>)}
+          <li>15% off all products through our Thorne dispensary</li>
         </ul>
         <div className="mp__chips">
           {plan.chips.map((c, i) => <span key={i} className="mp__chip">{c.label}</span>)}
