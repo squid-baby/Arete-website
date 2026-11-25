@@ -102,6 +102,9 @@
 # 200 = the address bar keeps the short printed address. Query strings
 # (utm_source etc.) pass through unchanged.
 /holiday                                     /holiday.html                 200
+# Short address for the QR code on the holiday card: a simpler, easier-to-scan
+# code. 302 so the target can change later. It lands on /holiday with the tags.
+/key                                         /holiday?utm_source=doorhanger&utm_medium=print&utm_campaign=holiday2026&utm_content=all_doors   302
 
 
 # =============================================================================

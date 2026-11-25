@@ -43,6 +43,17 @@ test("the printed address /holiday has its rewrite rule, canonical and noindex",
   assert.equal(CONFIG.campaign_id, "holiday2026");
 });
 
+test("the short QR address /key lands on /holiday with the door-hanger tags", () => {
+  const rule = read("_redirects").match(/^\/key\s+(\S+)\s+(\d+)$/m);
+  assert.ok(rule, "no /key rule");
+  const target = new URL(rule[1], "https://floatarete.com");
+  assert.equal(target.pathname, "/holiday");
+  assert.equal(rule[2], "302");
+  assert.deepEqual(Object.fromEntries(target.searchParams), {
+    utm_source: "doorhanger", utm_medium: "print", utm_campaign: "holiday2026", utm_content: "all_doors",
+  });
+});
+
 test("approved copy is on the page, word for word", () => {
   for (const line of [
     "A little something for our neighbors",
