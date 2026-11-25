@@ -194,12 +194,12 @@ body.whimsy .stage {
   text-transform: uppercase;
 }
 .nav__links {
-  display: flex; align-items: center; gap: 28px;
+  display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 14px 28px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
-.nav__links a { color: var(--ink); transition: color .3s; }
+.nav__links a { color: var(--ink); transition: color .3s; white-space: nowrap; }
 /* Static pages (blog posts, terms, privacy, gift cards, visit Carrboro) use a
    plain <header class="nav"> with no phone menu. On phones, wrap the links
    onto more lines so the page does not scroll sideways. */
