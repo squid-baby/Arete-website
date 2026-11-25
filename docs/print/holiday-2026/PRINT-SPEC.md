@@ -16,8 +16,9 @@ The pocket is on the hanger **front**, as in the art.
 | `pocket-single-cut.svg` | Cricut, test cut | 3.70 × 2.68 in | | One pocket |
 
 Each PDF also has a `.png` at 600 ppi, the same size, for upload tools that want images.
-The PDFs carry a TrimBox at the trim size. Colours are RGB; the shop converts to CMYK,
-so ask for a printed proof. Fonts are embedded.
+The PDFs carry a TrimBox at the trim size. All text is converted to outlines, so the
+PDFs contain no fonts (nothing to embed, nothing to substitute). Colours are RGB; the
+shop converts to CMYK, so ask for a printed proof.
 
 ## The pocket (cut from the pocket sheet)
 
