@@ -123,7 +123,11 @@ test("every canonical page is in the sitemap, and noindex pages are not", () => 
     const canonical = html.match(/rel="canonical" href="([^"]+)"/);
     if (!canonical) continue;
     const listed = sitemap.includes(`<loc>${canonical[1]}</loc>`);
-    if (/<meta name="robots" content="[^"]*noindex/.test(html)) assert.ok(!listed, `${f} is noindex but in the sitemap`);
+    const slug = f.replace(/\.html$/, "");
+    if (/<meta(?=[^>]*name="robots")(?=[^>]*content="[^"]*noindex)[^>]*>/.test(html)) {
+      assert.ok(!listed, `${f} is noindex but in the sitemap`);
+      for (const loc of [`/${slug}<`, `/${slug}.html<`]) assert.ok(!sitemap.includes(loc), `${f} is noindex but in the sitemap`);
+    }
     else assert.ok(listed, `${canonical[1]} (${f}) missing`);
   }
 });
