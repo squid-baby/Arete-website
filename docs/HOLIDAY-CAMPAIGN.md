@@ -43,6 +43,14 @@ Fonts: Le Jour Serif has capital letters only. It sets the ARETÉ wordmark.
 Sentence-case headlines use Cormorant Garamond from Google Fonts (already the
 site's fallback for Le Jour), because it has a true italic like the hanger.
 
+## Print files
+
+The print-ready hanger front, hanger back, card, pocket sheet and Cricut cut files are
+in `docs/print/holiday-2026/`, with `PRINT-SPEC.md` (sizes, shop and assembly steps).
+The card's QR code is the short address `https://floatarete.com/key`, which forwards
+(302) to `/holiday` with the door-hanger tags. It makes a much simpler code (25 × 25
+modules) that fits the 2.5 in card. The longer codes below are kept as a fallback.
+
 ## QR codes
 
 | Batch | URL encoded | Files |

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3.7in" height="2.68in" viewBox="0 0 370 268"><title>One Arete holiday pocket. Black = cut, pink dashed = score.</title>
+<g id="Cut" fill="none" stroke="#000000" stroke-width="0.5">
+<path d="M30.00,8.00 L135.00,8.00 C145.00,8.00 149.00,38.00 185.00,38.00 C221.00,38.00 225.00,8.00 235.00,8.00 L340.00,8.00 L340.00,18.00 L365.00,43.00 L365.00,215.00 L340.00,240.00 L340.00,243.00 L337.00,243.00 L317.00,263.00 L53.00,263.00 L33.00,243.00 L30.00,243.00 L30.00,240.00 L5.00,215.00 L5.00,43.00 L30.00,18.00 Z"/>
+</g><g id="Score" fill="none" stroke="#E0007A" stroke-width="0.5" stroke-dasharray="4 3">
+<path d="M30.00,18.00 L30.00,240.00"/>
+<path d="M340.00,18.00 L340.00,240.00"/>
+<path d="M33.00,243.00 L337.00,243.00"/>
+</g>
+</svg>
