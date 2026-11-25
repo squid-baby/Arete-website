@@ -32,7 +32,7 @@ export const QR = { target: "https://floatarete.com/reset", file: "qr-reset.svg"
 // Type sizes in points. The handoff minimum is 6 pt, and 6.5 pt for must-read text.
 export const TYPE = {
   frontHeadline: 44, wordmark: 15, backHeadline: 30, aside: 11.5, frontLine: 13.5, services: 7, footer: 7,
-  offerLabel: 7, offerAmount: 32, offerTerms: 11, offerCode: 8, offerUrl: 6.6, offerValid: 6.5, pocketWordmark: 12, pocketServices: 7,
+  offerLabel: 7, offerAmount: 32, offerTerms: 11, offerCode: 8, offerUrl: 6.6, offerValid: 6.5, pocketWordmark: 12, pocketServices: 8,
   cardMessage: 17,
 };
 export const MIN_TYPE = 6, MIN_READING_TYPE = 6.5;

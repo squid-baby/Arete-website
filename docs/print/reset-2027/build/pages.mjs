@@ -35,7 +35,7 @@ body{color:${C.ink};-webkit-font-smoothing:antialiased}
 img{display:block}
 `;
 const doc = (w, h, body, extra = "") => `<!doctype html><html><head><meta charset="utf-8"><style>@page{size:${w}in ${h}in;margin:0}${CSS}${extra}</style></head><body style="width:${w}in;height:${h}in">${body}</body></html>`;
-const dots = (items, gap) => items.join('<i class="dot"></i>');
+const dots = (items, gap) => items.join(`<i class="dot"${gap ? ` style="margin:0 ${gap}in"` : ""}></i>`);
 const mark = (pt, style = "") => `<div class="abs c mark" style="font-size:${pt}pt;letter-spacing:.46em;padding-left:.46em;${style}">${COPY.wordmark}</div>`;
 
 // ---------- Hanger front (printed layer; the pocket and card sit on top) ----------
@@ -91,7 +91,7 @@ export function cardArt() {
 // ---------- Pocket front panel (3.1 × 3.1): terracotta with the wordmark and the service line ----------
 export function pocketArt() {
   return mark(T.pocketWordmark, `top:${POCKET.mark.y}in;color:${C.cream}`) +
-    `<div class="abs c caps" style="top:${POCKET.mark.servicesY}in;font-size:${T.pocketServices}pt;letter-spacing:.15em;color:${C.cream}">${dots(COPY.back.services)}</div>`;
+    `<div class="abs c caps" style="top:${POCKET.mark.servicesY}in;font-size:${T.pocketServices}pt;letter-spacing:.1em;color:${C.cream}">${dots(COPY.back.services, 0.07)}</div>`;
 }
 
 // ---------- Print pages ----------
