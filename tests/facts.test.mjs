@@ -24,8 +24,8 @@ const HOURS = [
 
 // Lowest price on each service page (the "from" price), as shown to visitors.
 const FROM_PRICES = {
-  "Float Therapy": "65", "Infrared Sauna": "30", "Contrast Therapy": "50",
-  "Massage": "125", "Red Light Therapy": "35", "Halotherapy": "10",
+  "Float Therapy": "65", "Infrared Sauna": "25", "Contrast Therapy": "50",
+  "Massage": "110", "Red Light Therapy": "20", "Halotherapy": "10",
 };
 
 for (const page of htmlPages) {
