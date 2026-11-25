@@ -55,9 +55,9 @@ test("each campaign plan matches memberships.jsx (price and checkout)", () => {
 
 test("offer prices: $25 off month one, then the regular price, 3-month minimum", () => {
   const expected = {
-    float_ritual: { first: 44, recurring: 69, minimumTotal: 182 },
-    thermal_reset: { first: 74, recurring: 99, minimumTotal: 272 },
-    essential_wellness: { first: 84, recurring: 109, minimumTotal: 302 },
+    float_ritual: { first: 44, recurring: 69 },
+    thermal_reset: { first: 74, recurring: 99 },
+    essential_wellness: { first: 84, recurring: 109 },
   };
   for (const plan of rc.CAMPAIGN.plans) {
     assert.deepEqual({ ...rc.planPricing(plan) }, expected[plan.id], plan.name);
@@ -153,8 +153,9 @@ test("built page: offer, prices, terms and real checkout links", () => {
     assert.ok(html.includes(`Choose ${plan.name}`), `${plan.name} button`);
     assert.ok(html.includes(`>$${p.first}<`), `${plan.name} first month`);
     assert.ok(html.includes(`Then $${p.recurring}/month`), `${plan.name} recurring price next to the button`);
-    assert.ok(html.includes(`$${p.minimumTotal}`), `${plan.name} 3-month total`);
+    assert.ok(html.includes(`Then $${p.recurring}/month. 3-month minimum.`), `${plan.name} minimum term next to the button`);
   }
+  assert.doesNotMatch(html, /for your first 3 months/, "no 3-month dollar total");
   assert.match(html, /href="memberships.html"/);
   assert.match(html, /href="memberships.html#rules"/);
   assert.match(html, /href="privacy.html"/);

@@ -165,7 +165,7 @@ function PlanCard({ plan, active }) {
               <span className="rs-price__unit">first month</span>
             </p>
             <p className="rs-price__then">
-              Then ${p.recurring}/month. {CAMPAIGN.minimumMonths}-month minimum: <strong>${p.minimumTotal}</strong> for your first {CAMPAIGN.minimumMonths} months, plus any tax.
+              Then ${p.recurring}/month. {CAMPAIGN.minimumMonths}-month minimum.
             </p>
           </> :
           <>
