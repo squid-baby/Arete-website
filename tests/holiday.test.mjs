@@ -35,7 +35,7 @@ function load(search = "", withDocument = true) {
 const el = (attrs) => ({ getAttribute: (k) => (k in attrs ? attrs[k] : null) });
 const { CONFIG } = load("", false).api;
 
-test("the printed address /holiday serves the page and keeps the UTM values", () => {
+test("the printed address /holiday has its rewrite rule, canonical and noindex", () => {
   assert.match(read("_redirects"), /^\/holiday\s+\/holiday\.html\s+200$/m);
   assert.match(html, /<link rel="canonical" href="https:\/\/floatarete\.com\/holiday" \/>/);
   assert.match(html, /<meta name="robots" content="noindex,follow" \/>/);
@@ -140,14 +140,14 @@ test("analytics: landing view carries the campaign and UTM values", () => {
   const { sent } = load("?utm_source=doorhanger&utm_medium=print&utm_campaign=holiday2026&utm_content=winmore");
   assert.deepEqual(JSON.parse(JSON.stringify(sent)), [{
     kind: "event", name: "campaign_landing_view",
-    props: { campaign_id: "holiday2026", source: "doorhanger", medium: "print", content: "winmore" },
+    props: { holiday_campaign: "holiday2026", source: "doorhanger", medium: "print", content: "winmore" },
   }]);
 });
 
 test("analytics: a direct visit is labelled direct", () => {
   const { sent } = load("");
   assert.equal(sent.length, 1);
-  assert.deepEqual({ ...sent[0].props }, { campaign_id: "holiday2026", source: "(direct)", medium: "(none)", content: "(none)" });
+  assert.deepEqual({ ...sent[0].props }, { holiday_campaign: "holiday2026", source: "(direct)", medium: "(none)", content: "(none)" });
 });
 
 test("analytics: personal data or odd values in the URL are never sent", () => {
@@ -162,8 +162,8 @@ test("analytics: each tracked link sends its event, before the booking script ca
   const { api, sent, listeners } = load("?utm_content=winmore");
   assert.equal(listeners.click.capture, true, "must listen at window capture");
   const params = api.campaignParams("?utm_content=winmore");
-  assert.deepEqual({ ...api.eventFor(el({ "data-track": "gift_card", "data-placement": "hero" }), params) },
-    { name: "holiday_gift_card_click", props: api.eventFor(el({ "data-track": "gift_card", "data-placement": "hero" }), params).props });
+  assert.deepEqual(JSON.parse(JSON.stringify(api.eventFor(el({ "data-track": "gift_card", "data-placement": "hero" }), params))),
+    { name: "holiday_gift_card_click", props: { holiday_campaign: "holiday2026", content: "winmore", placement: "hero" } });
   const cases = [
     [{ "data-track": "gift_card", "data-placement": "hero" }, "holiday_gift_card_click"],
     [{ "data-track": "service", "data-service": "float" }, "holiday_service_select"],
@@ -176,7 +176,7 @@ test("analytics: each tracked link sends its event, before the booking script ca
     listeners.click.fn({ target: { closest: (sel) => (sel === "a[data-track]" ? link : null) } });
     const last = sent.at(-1);
     assert.equal(last.name, name);
-    assert.equal(last.props.campaign_id, "holiday2026");
+    assert.equal(last.props.holiday_campaign, "holiday2026");
     assert.equal(last.props.content, "winmore");
   }
   assert.equal(sent.at(-4).props.service_id, "float");
@@ -194,7 +194,7 @@ test("analytics: confirming the booking note is counted separately from the firs
   const button = { closest: (sel) => (sel === ".arete-booking-note__continue" ? button : null) };
   listeners.click.fn({ target: button });
   assert.deepEqual({ name: sent.at(-1).name, props: { ...sent.at(-1).props } },
-    { name: "holiday_booking_continue", props: { campaign_id: "holiday2026", content: "winmore" } });
+    { name: "holiday_booking_continue", props: { holiday_campaign: "holiday2026", content: "winmore" } });
 });
 
 test("the offer card and gift card are never left hidden when the script cannot run", () => {
@@ -207,8 +207,21 @@ test("the gift-card picture carries the real wordmark as page text, not baked in
   assert.match(html, /class="hol-giftcard__text">\s*<span class="hol-giftcard__name">ARETÉ<\/span>/);
 });
 
-test("holiday.js runs before booking-notice.js, so its click listener is registered first", () => {
-  assert.ok(html.indexOf('src="/holiday.js') < html.indexOf('src="/booking-notice.js'));
+test("analytics: no event uses a name GA4 reserves for itself", () => {
+  assert.doesNotMatch(script, /\bcampaign_id:\s*CONFIG/, "GA4 reserves campaign_id");
+  for (const key of ["campaign_id", "page_location", "page_referrer", "user_id"]) {
+    assert.ok(!load("?utm_source=a").sent.some((e) => key in e.props), key);
+  }
+});
+
+test("analytics: the page address sent to GA keeps only clean UTM values", () => {
+  const fn = html.match(/function holidayPageLocation\(href\) \{[\s\S]*?\n    \}/)[0];
+  const clean = vm.runInNewContext(`${fn}; holidayPageLocation`, { URL });
+  assert.equal(clean("https://floatarete.com/holiday?utm_source=doorhanger&utm_medium=print&utm_campaign=holiday2026&utm_content=all_doors"),
+    "https://floatarete.com/holiday?utm_source=doorhanger&utm_medium=print&utm_campaign=holiday2026&utm_content=all_doors");
+  assert.equal(clean("https://floatarete.com/holiday?utm_source=jane%40example.com&email=jane%40example.com&utm_content=winmore#x"),
+    "https://floatarete.com/holiday?utm_content=winmore");
+  assert.match(html, /gtag\('config', 'G-E4KK9FDJ4T', \{ page_location: holidayPageLocation\(location\.href\) \}\)/);
 });
 
 test("motion respects reduced-motion settings", () => {

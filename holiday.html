@@ -10,7 +10,17 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-E4KK9FDJ4T');
+    // Send GA a clean page address: only known UTM values that pass a strict
+    // check. Anything else in the URL (an email someone typed) is dropped.
+    function holidayPageLocation(href) {
+      var u = new URL(href), keep = new URL(u.origin + u.pathname);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        var v = (u.searchParams.get(k) || '').trim().toLowerCase();
+        if (/^[a-z0-9][a-z0-9._-]{0,59}$/.test(v)) keep.searchParams.set(k, v);
+      });
+      return keep.href;
+    }
+    gtag('config', 'G-E4KK9FDJ4T', { page_location: holidayPageLocation(location.href) });
   </script>
   <link rel="icon" type="image/png" href="assets/favicon.png?v=1" />
   <link rel="apple-touch-icon" href="assets/favicon.png?v=1" />
@@ -29,18 +39,18 @@
   <meta property="og:title" content="Give the gift of the perfect shift. | ARETÉ Float + Wellness" />
   <meta property="og:description" content="Give yourself (or someone you love) space to slow down, reset, and return to what feels good." />
   <meta property="og:url" content="https://floatarete.com/holiday" />
-  <meta property="og:image" content="https://floatarete.com/assets/holiday/og-holiday.jpg" />
+  <meta property="og:image" content="https://floatarete.com/assets/holiday/og-holiday.jpg?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://floatarete.com/assets/holiday/og-holiday.jpg" />
+  <meta name="twitter:image" content="https://floatarete.com/assets/holiday/og-holiday.jpg?v=2" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&amp;display=swap" />
   <link rel="preload" href="assets/fonts/LeJourSerif.otf?v=2" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="assets/fonts/GlacialIndifference-Regular.otf" as="font" type="font/otf" crossorigin />
-  <link rel="stylesheet" href="holiday.css?v=1" />
+  <link rel="stylesheet" href="holiday.css?v=2" />
   <!-- Lets the animations start from their first frame. Without JavaScript the page shows everything at rest. -->
   <script>
     document.documentElement.classList.add('hol-js');
@@ -53,7 +63,7 @@
 
   <!-- ============ A. HERO ============ -->
   <header class="hol-hero">
-    <img class="hol-hero__garland" src="assets/holiday/art-garland-800.webp" srcset="assets/holiday/art-garland-800.webp 800w, assets/holiday/art-garland-1300.webp 1300w" sizes="(min-width: 760px) 680px, 116vw" alt="" width="1300" height="797" fetchpriority="high" />
+    <img class="hol-hero__garland" src="assets/holiday/art-garland-800.webp" srcset="assets/holiday/art-garland-800.webp 800w, assets/holiday/art-garland-1100.webp 1100w, assets/holiday/art-garland-1300.webp 1300w" sizes="(min-width: 1100px) 680px, (min-width: 760px) 640px, (min-width: 560px) 116vw, 100vw" alt="" width="1300" height="797" fetchpriority="high" />
     <img class="hol-sprig hol-sprig--hero-l" src="assets/holiday/art-sprig.webp" alt="" width="640" height="385" loading="lazy" />
     <img class="hol-sprig hol-sprig--hero-r" src="assets/holiday/art-sprig.webp" alt="" width="640" height="385" loading="lazy" />
 
@@ -191,11 +201,11 @@
     <section class="hol-section hol-retail" id="retail" aria-labelledby="retail-title">
       <div class="hol-wrap hol-retail__grid">
         <div class="hol-retail__photos">
-          <img class="hol-photo hol-photo--a" src="assets/holiday/retail-room-wide.webp" width="768" height="1024" loading="lazy"
+          <img class="hol-photo hol-photo--a" src="assets/holiday/retail-room-wide.webp?v=2" width="768" height="1024" loading="lazy"
                alt="The Areté retail room: wood floors, shelves of home goods and plants, and a counter by the window." />
-          <img class="hol-photo hol-photo--b" src="assets/holiday/candles-display.webp" width="814" height="964" loading="lazy"
+          <img class="hol-photo hol-photo--b" src="assets/holiday/candles-display.webp?v=2" width="814" height="964" loading="lazy"
                alt="Candles in amber and cream jars on a green velvet cloth." />
-          <img class="hol-photo hol-photo--c" src="assets/holiday/body-oils.webp" width="768" height="1024" loading="lazy"
+          <img class="hol-photo hol-photo--c" src="assets/holiday/body-oils.webp?v=2" width="768" height="1024" loading="lazy"
                alt="Three bottles of golden body oil on a wooden tray." />
         </div>
 
@@ -237,7 +247,7 @@
         </div>
 
         <div class="hol-visit">
-          <img class="hol-visit__photo" src="assets/holiday/lounge-shop-good.webp" width="768" height="1024" loading="lazy"
+          <img class="hol-visit__photo" src="assets/holiday/lounge-shop-good.webp?v=2" width="768" height="1024" loading="lazy"
                alt="The Areté lounge: a grey sofa, a rug and shelves of gifts in a bright room with wood floors." />
           <div class="hol-visit__card">
             <h3>Visit us</h3>
@@ -322,7 +332,7 @@
     <a class="hol-btn hol-btn--ghost-light" tabindex="-1" data-track="booking" data-placement="sticky" href="#book-now">Book a visit</a>
   </div>
 
-  <script src="/holiday.js?v=1"></script>
+  <script src="/holiday.js?v=2"></script>
   <script src="/booking-notice.js?v=6"></script>
 </body>
 </html>

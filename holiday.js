@@ -3,9 +3,11 @@
 // 1. Campaign settings in one place (CONFIG). The /reset campaign, if built,
 //    gets its own file; nothing here is shared with it.
 // 2. Google Analytics events for the campaign. They record click intent only.
-//    A click on "Buy a gift card" is not a purchase. No names, emails, phone
-//    numbers or card data are ever sent: only fixed labels and UTM values that
-//    pass a strict letters/numbers check.
+//    A click on "Buy a gift card" is not a purchase. Event values are fixed
+//    labels and UTM values that pass a strict letters/numbers check. (The page
+//    address that GA records is cleaned the same way in holiday.html.)
+//    Clicks that leave the page in the same tab may be lost before GA sends
+//    them; see docs/HOLIDAY-CAMPAIGN.md.
 // 3. A small "Buy a gift card" bar on phones once the hero buttons scroll away.
 (function (root) {
   "use strict";
@@ -27,6 +29,9 @@
     }
   };
 
+  // The event value is named holiday_campaign, not campaign_id: GA4 reserves
+  // campaign_id for its own campaign attribution and does not report it.
+
   // data-track value on a link -> GA4 event name.
   var EVENT_FOR = {
     gift_card: "holiday_gift_card_click",
@@ -46,7 +51,7 @@
   function campaignParams(search) {
     var p = new URLSearchParams(search || "");
     return {
-      campaign_id: CONFIG.campaign_id,
+      holiday_campaign: CONFIG.campaign_id,
       source: clean(p.get("utm_source")) || "(direct)",
       medium: clean(p.get("utm_medium")) || "(none)",
       content: clean(p.get("utm_content")) || "(none)"
@@ -57,7 +62,7 @@
     if (!el || !el.getAttribute) return null;
     var name = EVENT_FOR[el.getAttribute("data-track")];
     if (!name) return null;
-    var props = { campaign_id: CONFIG.campaign_id, content: params.content };
+    var props = { holiday_campaign: CONFIG.campaign_id, content: params.content };
     var placement = clean(el.getAttribute("data-placement"));
     if (placement) props.placement = placement;
     var service = clean(el.getAttribute("data-service"));
@@ -87,7 +92,7 @@
     // Boulevard opens. Count the confirmations, so closed notes are not
     // mistaken for bookings started.
     var go = event.target && event.target.closest ? event.target.closest(".arete-booking-note__continue") : null;
-    if (go) send("holiday_booking_continue", { campaign_id: CONFIG.campaign_id, content: params.content });
+    if (go) send("holiday_booking_continue", { holiday_campaign: CONFIG.campaign_id, content: params.content });
   }, true);
 
   if (!("IntersectionObserver" in root)) {
@@ -105,8 +110,12 @@
   var blockers = doc.querySelectorAll("[data-sticky-hide], .hol-footer");
   if (bar && heroActions) {
     var visible = new Set();
+    var phone = root.matchMedia ? root.matchMedia("(max-width: 759px)") : { matches: true };
     var setBar = function (show) {
+      show = show && phone.matches;
       bar.classList.toggle("is-shown", show);
+      // Keeps keyboard focus from scrolling under the bar.
+      doc.documentElement.classList.toggle("hol-bar-on", show);
       bar.setAttribute("aria-hidden", show ? "false" : "true");
       Array.prototype.forEach.call(bar.querySelectorAll("a"), function (a) {
         if (show) a.removeAttribute("tabindex"); else a.setAttribute("tabindex", "-1");

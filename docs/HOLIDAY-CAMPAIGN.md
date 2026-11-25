@@ -33,6 +33,10 @@ reference. They are original images made for this page, with transparent backgro
 
 The envelope is an illustration, not a photo of the studio's printed gift card. If
 the studio's card looks different, replace it with a photo of the real card.
+
+Files under `/assets/` are cached by browsers for a year. When you replace an
+image, give the new file a new name (or add `?v=3` where the page links it), or
+returning visitors keep seeing the old one.
 Retail photos are the studio's own, re-exported with a light warm color correction.
 
 Fonts: Le Jour Serif has capital letters only. It sets the ARETÉ wordmark.
@@ -50,7 +54,9 @@ Both have a 4-module quiet zone, error correction level M, and decode to the exa
 URL with two independent decoders (OpenCV standard and ArUco) at full and reduced size.
 
 Before printing:
-1. Print an actual-size proof. Keep the code at least 2 cm (0.8 in) wide.
+1. Print an actual-size proof. Keep the code at least 2.5 cm (1 in) wide: these are
+   version 7 codes (45 x 45 modules), so smaller prints have very fine dots. The SVG
+   files carry their own white background and quiet zone and scale cleanly.
 2. Scan it with two different phones (one iPhone, one Android).
 3. Confirm the phone opens floatarete.com/holiday and the page loads.
 4. Do not use the QR drawn in the mockup art. It is not a real code.
@@ -62,13 +68,27 @@ For a new tracked batch, change only `utm_content` (lowercase letters, numbers,
 
 | Event | When | Values |
 |---|---|---|
-| `campaign_landing_view` | Page load | campaign_id, source, medium, content |
-| `holiday_gift_card_click` | Any gift-card button click | campaign_id, content, placement |
+| `campaign_landing_view` | Page load | holiday_campaign, source, medium, content |
+| `holiday_gift_card_click` | Any gift-card button click | holiday_campaign, content, placement |
 | `holiday_service_select` | Float, sauna, contrast, massage, red light, halotherapy links | + service_id |
-| `holiday_booking_click` | "Book a visit" / "Book an experience" | campaign_id, content, placement |
-| `holiday_booking_continue` | "Continue to booking" in the booking note | campaign_id, content |
-| `holiday_retail_directions_click` | "Get directions" | campaign_id, content, placement |
-| `holiday_phone_click` | Any phone link | campaign_id, content, placement |
+| `holiday_booking_click` | "Book a visit" / "Book an experience" | holiday_campaign, content, placement |
+| `holiday_booking_continue` | "Continue to booking" in the booking note | holiday_campaign, content |
+| `holiday_retail_directions_click` | "Get directions" | holiday_campaign, content, placement |
+| `holiday_phone_click` | Any phone link | holiday_campaign, content, placement |
+
+The campaign value is called `holiday_campaign`, not `campaign_id`, because GA4
+reserves `campaign_id` for its own attribution and does not report it as a value.
+
+**Launch check (needs a real phone):** clicks that leave the page in the same tab
+(service pages, and the gift-card and booking buttons on phones, where Boulevard
+opens as a full page) may be lost, because GA4 sends events in batches. A headless
+browser test lost them; a real phone may not. Before launch, open GA4 Admin →
+DebugView, scan the QR code with an iPhone and an Android phone, tap each button,
+and see which events arrive. If they do not arrive, measure those steps with
+signals that survive the page change instead: the next page's `page_view`
+(with `page_referrer` = /holiday) for service pages, and Boulevard's own GA events
+(for example `opened_booking_widget`) for checkout. Phone-only counts from the
+`holiday_*_click` events would then be too low.
 
 What these numbers mean:
 - They are **clicks** (intent), not purchases. A gift-card click does not prove a sale.
@@ -79,10 +99,13 @@ What these numbers mean:
   sales as campaign sales.
 - Retail redemptions happen at the register, so the website cannot see them.
   Count them in the POS (next section).
-- No names, emails, phone numbers or card data are sent.
+- The page sends GA a cleaned page address: only `utm_*` values that pass a
+  strict letters/numbers check. Anything else in the URL (for example an email
+  address someone typed) is dropped before it reaches GA. Event values are fixed
+  labels. No names, emails, phone numbers or card data are sent by this page.
 
 To see the events in GA4: Reports → Engagement → Events. Register `content`,
-`placement`, `service_id` and `campaign_id` as event-scoped custom dimensions
+`placement`, `service_id` and `holiday_campaign` as event-scoped custom dimensions
 (Admin → Custom definitions), or those values cannot be used in reports.
 
 Count **users**, not events. A reload or the Back button sends a new

@@ -533,3 +533,6 @@ body.hol * { font-variant-numeric: lining-nums; }
   .hol-js .hol-offer .hol-insert, .hol-js .hol-giftcard { transform: none !important; opacity: 1 !important; animation: none !important; }
   .hol-sticky { display: none; }
 }
+
+/* While the phone bar shows, focused items scroll clear of it. */
+html.hol-bar-on { scroll-padding-bottom: 92px; }
