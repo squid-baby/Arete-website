@@ -95,12 +95,20 @@ export function pocketArt() {
 }
 
 // ---------- Print pages ----------
-const hangerPage = (inner) => {
-  const { w, h, bleed: b } = HANGER;
-  return doc(w + 2 * b, h + 2 * b, `<div class="piece paper" style="width:${w + 2 * b}in;height:${h + 2 * b}in"><div class="trim" style="left:${b}in;top:${b}in;width:${w}in;height:${h}in">${inner}</div></div>`);
+// The hanger PDFs are made in two passes, so no transparency effects reach the
+// print file (some viewers and print systems draw them wrong):
+//   "art"  = pictures only; build.mjs saves this as one flat 400 ppi image.
+//   "text" = that flat image as the background, with the words on top as sharp type.
+const PASS_CSS = {
+  art: ".it,.caps,.mark,.rule{visibility:hidden}",
+  text: ".trim img,.abs.terra{display:none}",
 };
-export const frontPage = () => hangerPage(frontArt());
-export const backPage = () => hangerPage(backArt());
+const hangerPage = (inner, pass, flat) => {
+  const { w, h, bleed: b } = HANGER, bg = pass === "text" ? ` style="width:${w + 2 * b}in;height:${h + 2 * b}in;background:url('${flat}') 0 0/100% 100%"` : ` style="width:${w + 2 * b}in;height:${h + 2 * b}in"`;
+  return doc(w + 2 * b, h + 2 * b, `<div class="piece ${pass === "text" ? "" : "paper"}"${bg}><div class="trim" style="left:${b}in;top:${b}in;width:${w}in;height:${h}in">${inner}</div></div>`, PASS_CSS[pass] || "");
+};
+export const frontPage = (pass, flat) => hangerPage(frontArt(), pass, flat);
+export const backPage = (pass, flat) => hangerPage(backArt(), pass, flat);
 export function cardPage() {
   const { w, h, bleed: b } = CARD;
   return doc(w + 2 * b, h + 2 * b, `<div class="piece cream" style="width:${w + 2 * b}in;height:${h + 2 * b}in"><div class="trim" style="left:${b}in;top:${b}in;width:${w}in;height:${h}in">${cardArt()}</div></div>`);

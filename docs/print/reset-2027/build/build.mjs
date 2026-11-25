@@ -29,6 +29,7 @@ const PICTURES = [
 fs.mkdirSync(out, { recursive: true });
 const tmp = path.join(out, ".page.html");
 const browser = await chromium.launch();
+const flats = [];
 async function open(html, w, h, scale = 1) {
   fs.writeFileSync(tmp, html);
   const page = await browser.newPage({ viewport: { width: Math.round(w * 96), height: Math.round(h * 96) }, deviceScaleFactor: scale });
@@ -36,8 +37,19 @@ async function open(html, w, h, scale = 1) {
   await page.evaluate(() => document.fonts.ready);
   return page;
 }
+const FLAT_PPI = 400;
 for (const [name, make, w, h] of PDFS) if (want(name)) {
-  const page = await open(make(), w, h);
+  let html = make();
+  if (name.includes("hanger")) {
+    // Pass 1: all pictures merged into one flat image. Pass 2: words on top.
+    const flat = path.join(out, `.flat-${name}.jpg`);
+    const artPage = await open(make("art"), w, h, FLAT_PPI / 96);
+    await artPage.screenshot({ path: flat, type: "jpeg", quality: 95 });
+    await artPage.close();
+    html = make("text", "file://" + flat);
+    flats.push(flat);
+  }
+  const page = await open(html, w, h);
   await page.pdf({ path: path.join(out, name), width: `${w}in`, height: `${h}in`, printBackground: true, preferCSSPageSize: true });
   await page.close(); console.log("wrote", name);
 }
@@ -49,3 +61,4 @@ for (const [name, make, w, h, scale] of PICTURES) if (want(name)) {
 if (want("cricut")) { fs.writeFileSync(path.join(out, "3-pocket-cricut-cut-score.svg"), cutSvg()); console.log("wrote 3-pocket-cricut-cut-score.svg"); }
 await browser.close();
 fs.rmSync(tmp, { force: true });
+for (const f of flats) fs.rmSync(f, { force: true });

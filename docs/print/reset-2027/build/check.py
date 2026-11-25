@@ -18,7 +18,11 @@ for name, (w, h) in SIZES.items():
     size_ok = abs(float(m[1]) - w) < 0.2 and abs(float(m[2]) - h) < 0.2
     fonts = [l.split()[0].split("+")[-1] for l in run("pdffonts", f).splitlines()[2:]]
     font_ok = all(x in ALLOWED for x in fonts)
-    ppis = [min(float(l.split()[12]), float(l.split()[13])) for l in run("pdfimages", "-list", f).splitlines()[2:]]
+    rows = [l.split() for l in run("pdfimages", "-list", f).splitlines()[2:]]
+    ppis = [min(float(r[12]), float(r[13])) for r in rows]
+    # Transparency (soft masks) draws wrong in some viewers and print systems.
+    flat_ok = not any(r[2] == "smask" for r in rows)
+    if not flat_ok: print(f"{name}: CONTAINS TRANSPARENCY MASKS"); fails.append(name + "-smask")
     ppi_ok = min(ppis) >= 300
     print(f"{name}: size {m[1]}x{m[2]} pt {'ok' if size_ok else 'WRONG'}; fonts {sorted(set(fonts))} {'ok' if font_ok else 'UNEXPECTED FONT'}; lowest image {min(ppis):.0f} ppi {'ok' if ppi_ok else 'TOO LOW'}")
     if not (size_ok and font_ok and ppi_ok): fails.append(name)
