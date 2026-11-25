@@ -191,8 +191,9 @@ function Nav({ mobile }) {
               <a href="packages.html">Packages</a>
               <a href="faq.html">FAQ</a>
               <a href="/gift-cards.html">Gift Cards</a>
-              <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
               <a href="about.html">About</a>
+              <a href="/thorne-supplements.html">Thorne Supplements</a>
+              <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
             </nav>
 
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
@@ -216,8 +217,9 @@ function Nav({ mobile }) {
           <a href="packages.html">Packages</a>
           <a href="faq.html">FAQ</a>
           <a href="/gift-cards.html">Gift Cards</a>
-          <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="about.html">About</a>
+          <a href="/thorne-supplements.html">Thorne Supplements</a>
+          <a href="https://decorbyarete.com" target="_blank" rel="noopener noreferrer">Decor</a>
           <a href="https://aretefloattank.floathelm.com/booking" target="_blank" rel="noopener noreferrer" className="nav__mobile-cta">Book</a>
         </div>
       }
