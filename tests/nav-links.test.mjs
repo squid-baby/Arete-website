@@ -13,8 +13,11 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DECOR_URL = "https://decorbyarete.com";
 
 // Every file that renders the site menu. tweaks-panel.jsx is a design tool, not a page.
+// The /reset campaign page has a short header on purpose (one offer, one path
+// to checkout), so its files are left out.
+const NO_SITE_MENU = new Set(["tweaks-panel.jsx", "reset.jsx", "reset-campaign.jsx"]);
 const pages = [
-  ...readdirSync(root).filter((f) => f.endsWith(".jsx") && f !== "tweaks-panel.jsx"),
+  ...readdirSync(root).filter((f) => f.endsWith(".jsx") && !NO_SITE_MENU.has(f)),
   "privacy.html",
   "terms.html",
   "gift-cards.html",

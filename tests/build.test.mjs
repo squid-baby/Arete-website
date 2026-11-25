@@ -116,16 +116,19 @@ test("sitemap, llms.txt and canonicals use the final URLs, not ones that redirec
   }
 });
 
-test("every canonical page is in the sitemap (except pages kept out of search)", () => {
+test("every canonical page is in the sitemap, and noindex pages are not", () => {
   const sitemap = read(root, "sitemap.xml");
   for (const f of readdirSync(root).filter((f) => f.endsWith(".html"))) {
-    if (/<meta(?=[^>]*name="robots")(?=[^>]*content="noindex)[^>]*>/.test(read(root, f))) {
-      const slug = f.replace(/\.html$/, "");
+    const html = read(root, f);
+    const canonical = html.match(/rel="canonical" href="([^"]+)"/);
+    if (!canonical) continue;
+    const listed = sitemap.includes(`<loc>${canonical[1]}</loc>`);
+    const slug = f.replace(/\.html$/, "");
+    if (/<meta(?=[^>]*name="robots")(?=[^>]*content="[^"]*noindex)[^>]*>/.test(html)) {
+      assert.ok(!listed, `${f} is noindex but in the sitemap`);
       for (const loc of [`/${slug}<`, `/${slug}.html<`]) assert.ok(!sitemap.includes(loc), `${f} is noindex but in the sitemap`);
-      continue;
     }
-    const canonical = read(root, f).match(/rel="canonical" href="([^"]+)"/);
-    if (canonical) assert.ok(sitemap.includes(`<loc>${canonical[1]}</loc>`), `${canonical[1]} (${f}) missing`);
+    else assert.ok(listed, `${canonical[1]} (${f}) missing`);
   }
 });
 

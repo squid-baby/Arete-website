@@ -98,7 +98,18 @@
 /retail                                      /retail.html                  301
 
 
-# ---------- Campaign pages (printed QR codes point here; keep them alive) ----------
+# ---------- Campaign pages ----------
+# Door-hanger QR codes print floatarete.com/reset. Keep this rule after the
+# offer ends: the page then shows a "this offer has ended" message.
+# A 200 rule shows reset.html at /reset and keeps ?utm_... tags in the address.
+/reset                                       /reset.html                   200
+
+# Short address printed in the door-hanger QR code (a short URL makes a
+# smaller, easier-to-scan code). It adds the tracking tags and goes to /reset.
+# 302 (temporary), so browsers do not cache it and it can be changed later.
+/holiday-door    /reset?utm_source=doorhanger&utm_medium=print&utm_campaign=reset2027&utm_content=all_doors    302
+
+# Holiday 2026 door hanger (printed QR codes point here; keep them alive).
 # 200 = the address bar keeps the short printed address. Query strings
 # (utm_source etc.) pass through unchanged.
 /holiday                                     /holiday.html                 200
