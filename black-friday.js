@@ -15,13 +15,14 @@
   popup.innerHTML = `
     <button type="button" class="bf-popup__close" aria-label="Close Black Friday offer" autofocus>×</button>
     <div class="bf-popup__layout">
-      <img class="bf-popup__art" src="assets/black-friday-2026.png" alt="Areté Black Friday starts early: our blue-lit float pod and contrast therapy room, with a gold gift card." width="1122" height="1402">
+      <img class="bf-popup__art" src="assets/black-friday-2026-gift-cards.png" alt="Areté Black Friday: buy $150 in gift cards and get one full 60-minute float or contrast session. Our blue-lit float pod and contrast therapy room, with a gold gift card." width="1122" height="1402">
       <div class="bf-popup__copy">
         <p class="bf-popup__eyebrow">Black Friday · Through November 30</p>
         <h2 id="bf-title">Give $150.<br>Enjoy a session on us.</h2>
-        <p>Purchase a <strong>$150 Areté gift card</strong> and receive a bonus voucher for <strong>one full 60-minute float or contrast session.</strong></p>
+        <p>Buy <strong>$150 in Areté gift cards</strong> and receive a bonus voucher for <strong>one full 60-minute float or contrast session.</strong></p>
+        <p>One $150 gift card or three $50 gift cards—either qualifies for your bonus voucher.</p>
         <p class="bf-popup__code">Use code <strong>BlackFriday</strong> at checkout.</p>
-        <a class="bf-popup__cta" href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&visitType=GIFT_CARD">Get a $150 gift card →</a>
+        <a class="bf-popup__cta" href="https://www.joinblvd.com/b/52268a33-85eb-4646-b0f0-8a61f9510654/widget?path=%2Fcart%2Fmenu%2FGift%20Cards%2FGIFT_CARD&visitType=GIFT_CARD">Shop gift cards →</a>
         <p class="bf-popup__terms">Create an Areté account or sign in when purchasing. We’ll manually add your bonus voucher to your purchaser account within 24 hours. Keep it or share it. Voucher expires 356 days after purchase.</p>
         <p class="bf-popup__terms">Offer ends November 30, 2026, at 11:59 p.m. Eastern.</p>
       </div>
