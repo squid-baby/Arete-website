@@ -510,6 +510,7 @@ function Rules({ mobile }) {
     ["60-day credit validity", "Sauna, red light, contrast, Essential, and Signature credits remain valid for 60 days while the membership is active. Float Ritual credits do not roll over."],
     ["Sharing depends on the tier", "Signature Wellness is shareable with one designated person. Essential Wellness, single-modality, and Unlimited Wellness memberships are personal."],
     ["Member perks", "Unlimited Sauna Ritual and Unlimited Wellness members receive 15% off non-practitioner services and retail. All other memberships receive 10%. Add-on and guest rates vary by plan."],
+    ["15% off Thorne supplements", <>All active members get 15% off all products purchased through <a href="/thorne-supplements.html" style={{ textDecoration: "underline" }}>our Thorne dispensary</a>. Email <a href="mailto:theteam@floatarete.com" style={{ textDecoration: "underline" }}>theteam@floatarete.com</a> for your exclusive invitation.</>],
     ["Book right after you join", "When checkout is done, stay in the same booking window and pick your day and time. If you close the window first, Boulevard asks you to sign in again."],
     ["Cancel or pause in writing", "Let us know in writing at theteam@floatarete.com at least 14 days before your renewal date if you need to pause or cancel. Your member agreement contains the complete terms."]
   ];
