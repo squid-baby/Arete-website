@@ -38,6 +38,11 @@ this one, and click **Publish deploy**.
 
 ## QR codes
 
+The printed QR code opens **`https://floatarete.com/holiday-door`**. That short address
+is a rule in `_redirects`: it adds the tracking tags below and goes to `/reset`. A short
+address makes a smaller, easier-to-scan code. Do not delete this rule while hangers are
+on doors.
+
 Print only after the page is live at `https://floatarete.com/reset` and a test purchase
 with RESET worked. Destination pattern:
 
