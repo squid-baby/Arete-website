@@ -156,6 +156,7 @@ test("built page: offer, prices, terms and real checkout links", () => {
     assert.ok(html.includes(`Then $${p.recurring}/month. 3-month minimum.`), `${plan.name} minimum term next to the button`);
   }
   assert.doesNotMatch(html, /for your first 3 months/, "no 3-month dollar total");
+  assert.match(html, /<b>Choose a membership\.<\/b> Checkout opens in Boulevard, our booking system\.<\/span>/, "step 1 text");
   assert.match(html, /href="memberships.html"/);
   assert.match(html, /href="memberships.html#rules"/);
   assert.match(html, /href="privacy.html"/);

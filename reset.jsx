@@ -199,7 +199,7 @@ function Plans({ active, attribution }) {
 
         {active &&
           <ol className="rs-steps" aria-label="How to use your gift">
-            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens in Boulevard, our booking system. We copy your code for you.</span></li>
+            <li><span className="rs-steps__n">1</span><span><b>Choose a membership.</b> Checkout opens in Boulevard, our booking system.</span></li>
             <li><span className="rs-steps__n">2</span><span><b>Paste {CAMPAIGN.code} at checkout.</b> ${CAMPAIGN.discount} comes off your first month.</span></li>
             <li><span className="rs-steps__n">3</span><span><b>Book your first visit.</b> Stay in the same window after you pay to pick a day and time.</span></li>
           </ol>
