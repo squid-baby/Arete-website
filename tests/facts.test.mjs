@@ -63,6 +63,30 @@ test("llms.txt has the confirmed hours and no old ones", () => {
   assert.doesNotMatch(llms, /9 AM|8 PM|9 PM/);
 });
 
+test("llms.txt prices match the service pages", () => {
+  const llms = read("llms.txt");
+  // The price a service page shows on the pricing card whose name starts with `card`.
+  const cardPrice = (file, card) => {
+    const m = read(file).match(new RegExp(`name: "${card}[^"]*", price: "(\\d+)"`));
+    assert.ok(m, `${file}: no pricing card named "${card}"`);
+    return m[1];
+  };
+  const expected = [
+    ["sauna-therapy.jsx", "15 Min", (p) => `15 min $${p}`],
+    ["sauna-therapy.jsx", "30 Min", (p) => `30 min $${p}`],
+    ["massage-therapy.jsx", "60 Min", (p) => `60 min $${p}`],
+    ["massage-therapy.jsx", "75 Min", (p) => `75 min $${p}`],
+    ["massage-therapy.jsx", "90 Min", (p) => `90 min $${p}`],
+    ["red-light-therapy.jsx", "First Light", (p) => `first visit $${p}; single`],
+    ["red-light-therapy.jsx", "Single Red Light", (p) => `single $${p}`],
+    ["red-light-therapy.jsx", "Sauna \\+ Red Light", (p) => `sauna + red light $${p}`],
+  ];
+  for (const [file, card, text] of expected) {
+    const line = text(cardPrice(file, card));
+    assert.ok(llms.includes(line), `llms.txt should say "${line}" (from ${file})`);
+  }
+});
+
 test("the FAQ answers about hours, couples and gift cards", () => {
   const faq = read("faq.html");
   const groups = JSON.parse(faq.match(/id="faq-data">([\s\S]*?)<\/script>/)[1]);
