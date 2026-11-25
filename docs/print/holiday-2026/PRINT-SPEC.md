@@ -16,14 +16,15 @@ The pocket is on the hanger **front**, as in the art.
 | `pocket-single-cut.svg` | Cricut, test cut | 3.70 × 2.68 in | | One pocket |
 
 Each PDF also has a `.png` at 600 ppi, the same size, for upload tools that want images.
-The PDFs carry a TrimBox at the trim size. Colours are RGB; the shop converts to CMYK,
-so ask for a printed proof. Fonts are embedded.
+The PDFs carry a TrimBox at the trim size. All text is converted to outlines, so the
+PDFs contain no fonts (nothing to embed, nothing to substitute). Colours are RGB; the
+shop converts to CMYK, so ask for a printed proof.
 
 ## The pocket (cut from the pocket sheet)
 
 | Part | Size |
 |---|---|
-| Front panel | 3.10 W × 2.35 H in, straight top edge with a 1.00 × 0.30 in thumb notch |
+| Front panel | 3.10 W × 2.35 H in, straight top edge with a 1.00 × 0.36 in thumb notch (it frames the card's wreath) |
 | Side tabs | 0.25 in, fold back behind the panel |
 | Bottom tab | 0.20 in, folds back inside; the card stands on it |
 | Inside width | 2.60 in (card 2.50 + 0.05 each side) |
@@ -38,12 +39,16 @@ centered (0.20 in from each side). The card top is then 4.85 in below the top tr
 
 ## Card (2.5 × 2.5)
 
-- In the pocket only the top 0.35 in shows (0.65 in at the notch): sprigs and the hole.
-  All words start below 0.70 in, so the pocket never cuts a line in half.
-- Punch a 1/4 in hole at the top center, 0.25 in from the top edge. Tie the key with jute
-  twine so the key lies on the pocket front over the sunburst, as in the art.
-- QR code: `https://floatarete.com/key` (version 2, 25 × 25 modules, 0.92 in with its white
-  border). `/key` forwards to `/holiday` with the door-hanger tags. It decodes from the card
+- Top of the card: a small evergreen wreath (the same sprig art and colours as the corner
+  sprigs). In the pocket the top 0.35 in shows, and the notch shows the whole wreath.
+  All words start below 0.75 in, so the pocket never cuts a line in half.
+- Punch a 1/4 in hole in the **centre of the wreath: centred left to right, 0.39 in below
+  the card's top edge**. The printed opening is 0.35 in across, so the punch has about
+  0.05 in of room on every side. A card-sized template with the hole marked keeps it centred.
+- Tie the key with jute twine through that hole so the key lies on the pocket front over
+  the sunburst.
+- QR code: `https://floatarete.com/key` (version 2, 25 × 25 modules, 0.76 in including its
+  quiet zone, printed on the cream card). `/key` forwards to `/holiday` with the door-hanger tags. It decodes from the card
   file at 600, 300 and 150 ppi. **The website change must be live before printing.**
 
 ## Print shop
